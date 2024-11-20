@@ -1,0 +1,928 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Speechain">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../asr/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>Datasets - Speechain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#datasets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Speechain" class="md-header__button md-logo" aria-label="Speechain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Speechain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Datasets
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Speechain" class="md-nav__button md-logo" aria-label="Speechain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Speechain
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SpeeChain
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Datasets
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Datasets
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      File System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metadata-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata Format
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metadata Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idx2wav" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2wav
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idx2wav_len" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2wav_len
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idx2feat" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2feat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idx2feat_len" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2feat_len
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idx2text" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2text
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idx2spk" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2spk
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idx2spk_feat" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2spk_feat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spk_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      spk_list
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idx2gen" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2gen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-dump-a-dataset-on-your-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Dump a Dataset on your Machine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-extract-speaker-embedding-by-my-own-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Extract Speaker Embedding by my own model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-contribute-a-new-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Contribute a New Dataset
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automatic Speech Recognition (ASR)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text-To-Speech Synthesis (TTS)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      File System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metadata-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata Format
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metadata Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idx2wav" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2wav
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idx2wav_len" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2wav_len
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idx2feat" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2feat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idx2feat_len" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2feat_len
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idx2text" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2text
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idx2spk" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2spk
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idx2spk_feat" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2spk_feat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spk_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      spk_list
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idx2gen" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2gen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-dump-a-dataset-on-your-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Dump a Dataset on your Machine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-extract-speaker-embedding-by-my-own-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Extract Speaker Embedding by my own model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-contribute-a-new-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Contribute a New Dataset
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="datasets">Datasets</h1>
+<p>This folder contains all the available datasets in this toolkit. 
+Each dataset corresponds to a sub-folder and has a uniform file system. 
+You can easily dump your target dataset to your machine by following the instructions below. 
+If you want to contribute a new dataset, we would appreciate it if you could follow our file systems and metadata formats.</p>
+<p>👆<a href="https://github.com/ahclab/SpeeChain/blob/main/handbook.md#speechain-handbook">Back to the handbook page</a></p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#file-system"><strong>File System</strong></a></li>
+<li><a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#metadata-format"><strong>Metadata Format</strong></a><ol>
+<li><a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#idx2wav">idx2wav</a></li>
+<li><a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#idx2wav_len">idx2wav_len</a></li>
+<li><a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#idx2feat">idx2feat</a></li>
+<li><a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#idx2feat_len">idx2feat_len</a></li>
+<li><a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#idx2text">idx2text</a></li>
+<li><a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#idx2spk">idx2spk</a></li>
+<li><a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#idx2spk_feat">idx2spk_feat</a></li>
+<li><a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#spk_list">spk_list</a></li>
+<li><a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#idx2gen">idx2gen</a></li>
+</ol>
+</li>
+<li><a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#how-to-dump-a-dataset-on-your-machine"><strong>How to Dump a Dataset on your Machine</strong></a></li>
+<li><a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#how-to-extract-speaker-embedding-by-my-own-model"><strong>How to Extract Speaker Embedding by my own model</strong></a></li>
+<li><a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#how-to-contribute-a-new-dataset"><strong>How to Contribute a New Dataset</strong></a></li>
+</ol>
+<h2 id="file-system">File System</h2>
+<pre><code>/datasets
+    /pyscripts                  # fixed .py scripts provided by the toolkit
+    data_dumping.sh             # the shared .sh script across all the speech-text datasets. It contains the complete pipeline of data dumping.
+    meta_generator.py           # the abstract .py script used by each dataset to decide their own meta generation logic.
+    meta_post_processor.py      # the abstract .py script used by each dataset to decide their own meta post-processing logic.
+    /{dataset_name}             # root folder of each dataset
+        /data                       # main folder of each dataset (the folder name 'data' is shared across all the datasets)
+            /wav                        # waveform folder (the folder name 'wav' is shared across all the datasets)
+                /{subset_name}              # the name of a subset in this dataset 
+                    /wav_{comp_file_ext}        # (optional) the folder that contains the compressed package files of all the waveform data
+                    idx2wav_{comp_file_ext}     # (optional) the file that contains the pairs of index and the absolute address of waveforms in the compressed package files
+                    idx2wav                     # the file that contains the pairs of index and the absolute address of waveform files
+                    idx2wav_len                 # the file that contains the pairs of index and waveform length
+                    idx2{txt_format}_text       # the file that contains the pairs of index and transcript text. (txt_format is the format of processed text which is used to distinguish different idx2text files)
+                    ...                         # (optional) some other metadata files available in the dataset (such as idx2spk, idx2spk_feat, idx2gen, ...)
+            /wav{sample_rate}           # (optional) downsampled waveform folder (sample_rate is the samping rate of waveforms after downsampling)
+                ...                         # same structure as '/wav'
+            /{feat_config}              # (optional) acoustic feature folder by a given configuration (feat_config is the name of the configuration file)
+                /{subset_name}              # the name of a subset in this dataset 
+                    /feat_{comp_file_ext}       # (optional) the folder that contains the compressed chunk files of all the acoustic feature data
+                    idx2feat_{comp_file_ext}    # (optional) the file that contains the pairs of index and the absolute address of waveforms in the compressed package files
+                    idx2feat                    # the file that contains the pairs of index and the absolute address of acoustic feature files
+                    idx2feat_len                # the file that contains the pairs of index and feature length
+                    idx2{txt_format}_text       # the file that contains the pairs of index and transcript text. (txt_format is the format of processed text which is used to distinguish different idx2text files)
+                    ...                         # (optional) some metadata files available in the dataset (such as idx2spk, idx2gen, ...)
+            /{token_type}               # token folder of a specific type (token_type is the name of the specified token type)
+                /{src_subset}               # the source subset used for generating the token vocabulary (src_subset is the name of the used source subset)
+                    /{token_config}             # the configuration for generating the vocabulary list.
+                        /{txt_format}               # the format of text data used to generate the token vocabulary
+                            idx2text                    # the file that contains the pairs of index and transcript text after tokenization
+                            idx2text_len                # the file that contains the pairs of index and transcript text length after tokenization
+                            vocab                       # token vocabulary
+                            model                       # (optional) tokenizer model. Used for sentencepiece tokenizers.
+        run.sh                      # the dataset-specific .sh script that controls how the data dumping for the corresponding dataset is going
+        data_download.sh            # the dataset-specific .sh script that downloads the corresponding dataset from the internet
+        meta_generator.py           # the dataset-specific .py script that generates the meta data files of the dataset (idx2wav, idx2spk, ...)
+        meta_post_processor.py      # (optional) the dataset-specific .py script that performs post-processing for the meta data files (needed by some datasets like LibriSpeech)
+</code></pre>
+<p>The names in the braces({}) mean the undefined names depending on the settings of datasets and configuration.</p>
+<p>👆<a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#table-of-contents">Back to the table of contents</a></p>
+<h2 id="metadata-format">Metadata Format</h2>
+<p>Metadata files are suffix-free .<em>txt</em> files used to access data instances during training. 
+The data formats of metadata files are uniform for all datasets. 
+The format uniformity enables the automatic configuration for the data loading part of our toolkit. 
+The format for each metadata file is shown below.</p>
+<h4 id="idx2wav">idx2wav</h4>
+<p>In <code>idx2wav</code>, each line corresponds to a pair of file index and the absolute address of raw waveforms. 
+Index and address are separated by a blank. </p>
+<p>For example, </p>
+<pre><code>103-1240-0000 ${SPEECHAIN_ROOT}/datasets/librispeech/data/wav/train-clean-100/103/1240/103-1240-0000.flac
+103-1240-0001 ${SPEECHAIN_ROOT}/datasets/librispeech/data/wav/train-clean-100/103/1240/103-1240-0001.flac
+103-1240-0002 ${SPEECHAIN_ROOT}/datasets/librispeech/data/wav/train-clean-100/103/1240/103-1240-0002.flac
+103-1240-0003 ${SPEECHAIN_ROOT}/datasets/librispeech/data/wav/train-clean-100/103/1240/103-1240-0003.flac
+103-1240-0004 ${SPEECHAIN_ROOT}/datasets/librispeech/data/wav/train-clean-100/103/1240/103-1240-0004.flac
+</code></pre>
+<p>Any audio files that can be processed by <code>soundfile.read()</code> (such as .flac, .wav, ...) are OK in <em>idx2wav</em>.</p>
+<p>👆<a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#table-of-contents">Back to the table of contents</a></p>
+<h4 id="idx2wav_len">idx2wav_len</h4>
+<p>In <code>idx2wav_len</code>, each line corresponds to a pair of file index and file length which are separated by a blank. 
+The file length means the number of sampling points of the waveform.</p>
+<p>For example, </p>
+<pre><code>103-1240-0000 225360
+103-1240-0001 255120
+103-1240-0002 223120
+103-1240-0003 235360
+103-1240-0004 200240
+</code></pre>
+<p>👆<a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#table-of-contents">Back to the table of contents</a></p>
+<h4 id="idx2feat">idx2feat</h4>
+<p>In <code>idx2feat</code>, each line corresponds to a pair of file index and absolute address of the acoustic feature. 
+The index and absolute address are separated by a blank. </p>
+<p>For example, </p>
+<pre><code>103-1240-0000 ${SPEECHAIN_ROOT}/datasets/librispeech/data/{feat_config}/train-clean-100/103-1240-0000.npz
+103-1240-0001 ${SPEECHAIN_ROOT}/datasets/librispeech/data/{feat_config}/train-clean-100/103-1240-0001.npz
+103-1240-0002 ${SPEECHAIN_ROOT}/datasets/librispeech/data/{feat_config}/train-clean-100/103-1240-0002.npz
+103-1240-0003 ${SPEECHAIN_ROOT}/datasets/librispeech/data/{feat_config}/train-clean-100/103-1240-0003.npz
+103-1240-0004 ${SPEECHAIN_ROOT}/datasets/librispeech/data/{feat_config}/train-clean-100/103-1240-0004.npz
+</code></pre>
+<p>feat_config is the name of the used feature extraction configuration file.
+In our toolkit, acoustic feature of a waveform is saved as a .npy file by the NumPy package.</p>
+<p>👆<a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#table-of-contents">Back to the table of contents</a></p>
+<h4 id="idx2feat_len">idx2feat_len</h4>
+<p>In <code>idx2feat_len</code>, each line corresponds to a pair of file index and file length which are separated by a blank. 
+The file length means the number of time frames in the extracted acoustic features (e.g. log-mel spectrogram or MFCC).</p>
+<p>For example, </p>
+<pre><code>103-1240-0000 1408
+103-1240-0001 1594
+103-1240-0002 1394
+103-1240-0003 1471
+103-1240-0004 1251
+</code></pre>
+<p>👆<a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#table-of-contents">Back to the table of contents</a></p>
+<h4 id="idx2text">idx2text</h4>
+<p>In <code>idx2text</code>, each line corresponds to a pair of file index and transcript text string which are separated by a blank. 
+<code>idx2text</code> will be renamed as <code>idx2{txt_format}_text</code> to indicate the text processing format used to generate this file.
+In our toolkit, there are many available text processing format to generate transcript text strings with different styles.</p>
+<p>For example, </p>
+<pre><code>103-1240-0000 chapter one missus rachel lynde is surprised missus rachel lynde lived just where the avonlea main road dipped down into a little hollow fringed with alders and ladies eardrops and traversed by a brook
+103-1240-0001 that had its source away back in the woods of the old cuthbert place it was reputed to be an intricate headlong brook in its earlier course through those woods with dark secrets of pool and cascade but by the time it reached lynde's hollow it was a quiet well conducted little stream
+103-1240-0002 for not even a brook could run past missus rachel lynde's door without due regard for decency and decorum it probably was conscious that missus rachel was sitting at her window keeping a sharp eye on everything that passed from brooks and children up
+103-1240-0003 and that if she noticed anything odd or out of place she would never rest until she had ferreted out the whys and wherefores thereof there are plenty of people in avonlea and out of it who can attend closely to their neighbor's business by dint of neglecting their own
+103-1240-0004 but missus rachel lynde was one of those capable creatures who can manage their own concerns and those of other folks into the bargain she was a notable housewife her work was always done and well done she ran the sewing circle
+</code></pre>
+<p><strong>Note</strong>: you don't need to worry about the blanks inside each transcript text string. 
+Those additional blanks will be ignored in the subsequent processing.</p>
+<p>👆<a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#table-of-contents">Back to the table of contents</a></p>
+<h4 id="idx2spk">idx2spk</h4>
+<p>In <code>idx2spk</code>, each line corresponds to a pair of file index and speaker ID. </p>
+<p>For example, </p>
+<pre><code>103-1240-0000 103
+103-1240-0001 103
+103-1240-0002 103
+103-1240-0003 103
+103-1240-0004 103
+</code></pre>
+<p>👆<a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#table-of-contents">Back to the table of contents</a></p>
+<h4 id="idx2spk_feat">idx2spk_feat</h4>
+<p>In <code>idx2spk_feat</code>, each line corresponds to a pair of file index and the absolute address of a speaker embedding. </p>
+<p>For example, </p>
+<pre><code>1034_121119_000001_000001 ${SPEECHAIN_ROOT}/datasets/libritts/data/wav/train-clean-100/xvector/1034_121119_000001_000001.npy
+1034_121119_000002_000001 ${SPEECHAIN_ROOT}/datasets/libritts/data/wav/train-clean-100/xvector/1034_121119_000002_000001.npy
+1034_121119_000010_000004 ${SPEECHAIN_ROOT}/datasets/libritts/data/wav/train-clean-100/xvector/1034_121119_000010_000004.npy
+1034_121119_000010_000006 ${SPEECHAIN_ROOT}/datasets/libritts/data/wav/train-clean-100/xvector/1034_121119_000010_000006.npy
+1034_121119_000012_000000 ${SPEECHAIN_ROOT}/datasets/libritts/data/wav/train-clean-100/xvector/1034_121119_000012_000000.npy
+1034_121119_000014_000000 ${SPEECHAIN_ROOT}/datasets/libritts/data/wav/train-clean-100/xvector/1034_121119_000014_000000.npy
+1034_121119_000018_000000 ${SPEECHAIN_ROOT}/datasets/libritts/data/wav/train-clean-100/xvector/1034_121119_000018_000000.npy
+</code></pre>
+<p>👆<a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#table-of-contents">Back to the table of contents</a></p>
+<h4 id="spk_list">spk_list</h4>
+<p>In <em>spk_list</em>, each line corresponds the string ID of a speaker in the corresponding subset of the dataset. 
+This file is mainly used for training multi-speaker TTS models.</p>
+<p>For example, </p>
+<pre><code>116
+1255
+1272
+1462
+1585
+1630
+1650
+1651
+1673
+1686
+</code></pre>
+<p>👆<a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#table-of-contents">Back to the table of contents</a></p>
+<h4 id="idx2gen">idx2gen</h4>
+<p>In <em>idx2gen</em>, each line corresponds to a pair of file index and gender. </p>
+<p>For example, </p>
+<pre><code>103-1240-0000 F
+103-1240-0001 F
+103-1240-0002 F
+103-1240-0003 F
+103-1240-0004 F
+</code></pre>
+<p>👆<a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#table-of-contents">Back to the table of contents</a></p>
+<h2 id="how-to-dump-a-dataset-on-your-machine">How to Dump a Dataset on your Machine</h2>
+<p>For dumping an existing dataset, 
+   1. Go to the folder of your target dataset <code>${SPEECHAIN_ROOT}/datasets/{dataset_name}</code> (e.g. if you want to dump LibriTTS, please go to <code>${SPEECHAIN_ROOT}/datasets/libritts</code>)
+   2. Run <code>bash run.sh --help</code> to familiarize yourself with the involved arguments.
+   3. Run <code>bash run.sh</code> to dump your target dataset (add some arguments if needed).</p>
+<p><strong>Note:</strong><br />
+   1. <strong>If you already have the <em>decompressed</em> dataset on your disk</strong>, please attach the argument <code>--src_path {the-path-of-your-existing-dataset}</code> to the command <code>bash run.sh</code> in the no.3 step above.
+   Please make sure that <code>src_path</code> is an absolute path starting with a slash '/' and the content of <code>src_path</code> should be exactly the same with the one downloaded from the internet (please see the help message of <code>--src_path</code> in each <code>run.sh</code>).
+   2. <strong>If you want to save the dumped data and metadata files outside the toolkit folder (<code>${SPEECHAIN_ROOT}</code>)</strong>, please attach the argument <code>--tgt_path {the-path-you-want-to-save-files}</code> to the command <code>bash run.sh</code> in the no.3 step above.
+   Please make sure that <code>tgt_path</code> is an absolute path starting with a slash '/'.</p>
+<p>👆<a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#table-of-contents">Back to the table of contents</a></p>
+<h2 id="how-to-extract-speaker-embedding-by-my-own-model">How to Extract Speaker Embedding by my own model</h2>
+<p>If you want to use the pretrained speaker embedding model on your machine, please
+1. Don't give the argument <code>--spk_emb_model</code> when running the command <code>bash run.sh</code>
+3. Write your own extraction script. You can use the metadata files <code>idx2wav</code> and <code>idx2wav_len</code> to read and organize the audio files. 
+Please save all the speaker embedding vectors to a specific folder in the same directory of <code>idx2wav</code> and give a metadata file named <code>idx2spk_feat</code> for data reference.<br />
+<strong>Note:</strong> 
+   1. For the file format of <code>idx2spk_feat</code>, please click <a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#idx2spk_feat">here</a> for reference.
+   2. Please keep the same data index with <code>idx2wav</code> in your <code>idx2spk_feat</code>.
+   3. Each speaker embedding vector should be in the shape of <code>[1, spk_feat_dim]</code>.
+   4. Speaker embedding vectors could be saved in two ways:
+      1. save each vector to an individual <code>.npy</code> file
+      2. save all vectors to a <code>.npz</code> file where the index of each vector is exactly the one in <code>idx2spk_feat</code>.</p>
+<p>👆<a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#table-of-contents">Back to the table of contents</a></p>
+<h2 id="how-to-contribute-a-new-dataset">How to Contribute a New Dataset</h2>
+<p>If the dataset that you want to use for your experiments is not included here, 
+you could make the dumping pipeline of your target dataset by the following instructions:
+1. Go to <code>${SPEECHAIN_ROOT}/datasets/</code>.
+2. Run <code>bash data_dumping.sh --help</code> to familiarize yourself with the involved arguments.
+3. Make a new folder in <code>${SPEECHAIN_ROOT}/datasets/</code> with the name as your target dataset.
+4. Make a new <strong><em>data_download.sh</em></strong> in <code>${SPEECHAIN_ROOT}/datasets/{dataset_name}</code> to download your target dataset from the internet.
+Please download the dataset into <code>${SPEECHAIN_ROOT}/datasets/{dataset_name}/data/wav</code>.
+5. Make a new <strong><em>meta_generator.py</em></strong> in <code>${SPEECHAIN_ROOT}/datasets/{dataset_name}</code> to extract the metadata files of your target dataset. 
+Please refer to <code>${SPEECHAIN_ROOT}/datasets/meta_generator.py</code> for instructions of how to override the pipeline of metadata generation.
+6. If needed, make a new <strong><em>meta_post_processor.py</em></strong> in <code>${SPEECHAIN_ROOT}/datasets/{dataset_name}</code> to post-process the extracted metadata files of all the subsets. 
+(e.g. combine <em>train-clean-100</em> and <em>train-clean-360</em> of <em>LibriSpeech</em> into <em>train-clean-460</em>)
+Please refer to <code>${SPEECHAIN_ROOT}/datasets/meta_post_processor.py</code> for instructions of how to override the pipeline of metadata post-processing.
+7. Make a new <strong><em>run.sh</em></strong> in <code>${SPEECHAIN_ROOT}/datasets/{dataset_name}</code> to manipulate the dumping pipeline of your target dataset. 
+You could refer to the ones in the existing dataset folders as a template.</p>
+<p><strong>Note</strong>: Please keep the same script names (i.e., <code>data_download.sh</code>, <code>meta_generator.py</code>, and <code>meta_post_processor.py</code>) for the compatibility with <code>data_dumping.sh</code>.</p>
+<p>👆<a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#table-of-contents">Back to the table of contents</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

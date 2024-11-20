@@ -11,6 +11,10 @@
       
       
       
+        <link rel="prev" href="../asr/">
+      
+      
+        <link rel="next" href="../reference/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Readme - Speechain</title>
+        <title>Text-To-Speech Synthesis (TTS) - Speechain</title>
       
     
     
@@ -62,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-build-speechain-documentation" class="md-skip">
+        <a href="#text-to-speech-synthesis-tts" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Readme
+              Text-To-Speech Synthesis (TTS)
             
           </span>
         </div>
@@ -248,10 +252,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../tts/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Text-To-Speech Synthesis (TTS)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -260,6 +284,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-backbones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available Backbones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-durations-for-fastspeech2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparing Durations for FastSpeech2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-an-tts-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training an TTS model
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -301,6 +381,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -309,9 +391,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-build-speechain-documentation" class="md-nav__link">
+  <a href="#table-of-contents" class="md-nav__link">
     <span class="md-ellipsis">
-      How to build speechain documentation
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-backbones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available Backbones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-durations-for-fastspeech2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparing Durations for FastSpeech2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-an-tts-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training an TTS model
     </span>
   </a>
   
@@ -332,21 +441,69 @@
                   
 
 
-  <h1>Readme</h1>
+<h1 id="text-to-speech-synthesis-tts">Text-To-Speech Synthesis (TTS)</h1>
+<p>👆<a href="https://github.com/ahclab/SpeeChain/tree/main/recipes#recipes-folder-of-the-speechain-toolkit">Back to the recipe README.md</a></p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="https://github.com/ahclab/SpeeChain/tree/main/recipes/tts#available-backbones">Available Backbones</a></li>
+<li><a href="https://github.com/ahclab/SpeeChain/tree/main/recipes/tts#preparing-durations-for-fastspeech2">Preparing Durations for FastSpeech2</a></li>
+<li><a href="https://github.com/ahclab/SpeeChain/tree/main/recipes/tts#training-a-tts-model">Training a TTS model</a></li>
+</ol>
+<h2 id="available-backbones">Available Backbones</h2>
+<p>Below is a table of available backbones:</p>
+<table>
+    <tr>
+        <th>Dataset</th>
+        <th>Subset</th>
+        <th>Configuration</th>
+        <th>Audio Samples Link</th> 
+    </tr>
+    <tr>
+        <td rowspan="3">libritts</td>
+        <td>train-clean-100</td>
+        <td></td>
+        <td>  </td>
+    </tr>
+    <tr>
+        <td>train-clean-460</td>
+        <td></td>
+        <td>  </td>
+    </tr>
+    <tr>
+        <td>train-960</td>
+        <td></td>
+        <td>  </td>
+    </tr>
+    <tr>
+        <td rowspan="1">ljspeech</td>
+        <td></td>
+        <td></td>
+        <td>  </td>
+    </tr>
+    <tr>
+        <td rowspan="1">vctk</td>
+        <td></td>
+        <td></td>
+        <td>  </td>
+    </tr>
+</table>
 
-<h2 id="how-to-build-speechain-documentation">How to build speechain documentation</h2>
-<pre><code class="language-bash"># install necessary packages
-pip install mkdocs-material mkdocstrings[python]
-
-# build documentation
-mkdocs build
-
-# serve documentation
-mkdocs serve
-
-# deploy to github pages
-mkdocs gh-deploy
-</code></pre>
+<p>👆<a href="https://github.com/ahclab/SpeeChain/tree/main/recipes/tts#table-of-contents">Back to the table of contents</a></p>
+<h2 id="preparing-durations-for-fastspeech2">Preparing Durations for FastSpeech2</h2>
+<p>For training a FastSpeech2 model, you need to acquire additional duration data for your target dataset. 
+Follow these steps:
+1. Create a virtual environment for MFA: <code>conda create -n speechain_mfa -c conda-forge montreal-forced-aligner gdown</code>.
+2. Activate the <code>speechain_mfa</code> environment: <code>conda activate speechain_mfa</code>.
+3. Downsample your target TTS dataset to 16khz. For details, please see <a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#how-to-dump-a-dataset-on-your-machine">how to dump a dataset on your machine</a>.
+4. By default, MFA package will store all the temporary files to your user directory. If you lack sufficient space, add <code>export MFA_ROOT_DIR={your-target-directory}</code> to <code>~/.bashrc</code> and run <code>source ~/.bashrc</code>.
+5. Navigate to <code>${SPEECHAIN_ROOT}/datasets</code> and run <code>bash mfa_preparation.sh -h</code> for help. Then, add appropriate arguments to <code>bash mfa_preparation.sh</code> to acquire duration data.</p>
+<p><strong>Note:</strong> MFA cannot process duration calculations for multiple datasets concurrently on a single machine (or a single node on a cluster). 
+Please process each dataset one at a time.</p>
+<p>👆<a href="https://github.com/ahclab/SpeeChain/tree/main/recipes/tts#table-of-contents">Back to the table of contents</a></p>
+<h2 id="training-an-tts-model">Training an TTS model</h2>
+<p>To train a TTS model, follow the <a href="https://github.com/ahclab/SpeeChain/tree/main/recipes/asr#training-an-asr-model">ASR model training instructions</a> located in <code>recipes/asr</code>. 
+Make sure to replace the folder names and configuration file names from <code>recipes/asr</code> with their corresponding names in <code>recipes/tts</code>.</p>
+<p>👆<a href="https://github.com/ahclab/SpeeChain/tree/main/recipes/tts#table-of-contents">Back to the table of contents</a></p>
 
 
 
