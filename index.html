@@ -476,45 +476,55 @@ i.e. the joint model of automatic speech recognition (ASR) and text-to-speech sy
 Anytime when you encounter problems when using our toolkit, please don't hesitate to leave us an issue!</p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ol>
-<li><a href="https://github.com/ahclab/SpeeChain#machine-speech-chain"><strong>Machine Speech Chain</strong></a></li>
-<li><a href="https://github.com/ahclab/SpeeChain#toolkit-characteristics"><strong>Toolkit Characteristics</strong></a></li>
-<li><a href="https://github.com/ahclab/SpeeChain#get-a-quick-start"><strong>Get a Quick Start</strong></a></li>
+<li><a href="https://github.com/bagustris/SpeeChain#machine-speech-chain"><strong>Machine Speech Chain</strong></a></li>
+<li><a href="https://github.com/bagustris/SpeeChain#toolkit-characteristics"><strong>Toolkit Characteristics</strong></a></li>
+<li><a href="https://github.com/bagustris/SpeeChain#get-a-quick-start"><strong>Get a Quick Start</strong></a></li>
 </ol>
 <h2 id="machine-speech-chain">Machine Speech Chain</h2>
 <ul>
 <li>Offline TTS→ASR Chain</li>
 </ul>
-<p>👆<a href="https://github.com/ahclab/SpeeChain#table-of-contents">Back to the table of contents</a></p>
+<p>👆<a href="https://github.com/bagustris/SpeeChain#table-of-contents">Back to the table of contents</a></p>
 <h2 id="toolkit-characteristics">Toolkit Characteristics</h2>
 <ul>
-<li><strong>Data Processing:</strong></li>
-<li>On-the-fly Log-Mel Spectrogram Extraction</li>
-<li>On-the-fly SpecAugment</li>
-<li>On-the-fly Feature Normalization</li>
-<li><strong>Model Training:</strong></li>
-<li>Multi-GPU Model Distribution based on <em>torch.nn.parallel.DistributedDataParallel</em></li>
-<li>Real-time status reporting by online <em>Tensorboard</em> and offline <em>Matplotlib</em></li>
-<li>Real-time learning dynamics visualization (attention visualization, spectrogram visualization)</li>
-<li><strong>Data Loading:</strong></li>
-<li>On-the-fly mixture of multiple datasets in a single dataloader</li>
-<li>On-the-fly data selection for each dataloader to filter the undesired data samples.</li>
-<li>Multi-dataloader batch generation to form training batches by multiple datasets. </li>
-<li><strong>Optimization:</strong></li>
-<li>Model training can be done by multiple optimizers. Each optimizer is responsible for a specific part -  model parameters.</li>
-<li>Gradient accumulation for mimicking the large-batch gradients by the ones on several small batches.</li>
-<li>Easy-to-set finetuning factor to scale down the learning rates without any modification of the scheduler configuration. </li>
-<li><strong>Model Evaluation:</strong></li>
-<li>Multi-level <em>.md</em> evaluation reports (overall-level, group-level model, and sample-level) without any - yout misplacement. </li>
-<li>Histogram visualization for the distribution of evaluation metrics</li>
+<li><strong>Data Processing:</strong><ul>
+<li>On-the-fly Log-Mel Spectrogram Extraction  </li>
+<li>On-the-fly SpecAugment  </li>
+<li>On-the-fly Feature Normalization  </li>
+</ul>
+</li>
+<li><strong>Model Training:</strong><ul>
+<li>Multi-GPU Model Distribution based on <em>torch.nn.parallel.DistributedDataParallel</em>   </li>
+<li>Real-time status reporting by online <em>Tensorboard</em> and offline <em>Matplotlib</em>  </li>
+<li>Real-time learning dynamics visualization (attention visualization, spectrogram visualization)  </li>
+</ul>
+</li>
+<li><strong>Data Loading:</strong><ul>
+<li>On-the-fly mixture of multiple datasets in a single dataloader.  </li>
+<li>On-the-fly data selection for each dataloader to filter the undesired data samples.  </li>
+<li>Multi-dataloader batch generation to form training batches by multiple datasets.   </li>
+</ul>
+</li>
+<li><strong>Optimization:</strong><ul>
+<li>Model training can be done by multiple optimizers. Each optimizer is responsible for a specific part -  model parameters.  </li>
+<li>Gradient accumulation for mimicking the large-batch gradients by the ones on several small batches.  </li>
+<li>Easy-to-set finetuning factor to scale down the learning rates without any modification of the scheduler configuration.  </li>
+</ul>
+</li>
+<li><strong>Model Evaluation:</strong><ul>
+<li>Multi-level <em>.md</em> evaluation reports (overall-level, group-level model, and sample-level) without any - yout misplacement.  </li>
+</ul>
+</li>
+<li>Histogram visualization for the distribution of evaluation metrics.  </li>
 <li>TopN bad case analysis for better model diagnosis.</li>
 </ul>
-<p>👆<a href="https://github.com/ahclab/SpeeChain#table-of-contents">Back to the table of contents</a></p>
+<p>👆<a href="https://github.com/bagustris/SpeeChain#table-of-contents">Back to the table of contents</a></p>
 <h2 id="get-a-quick-start">Get a Quick Start</h2>
 <p>We recommend you first install <em>Anaconda</em> into your machine before using our toolkit. 
 After the installation of <em>Anaconda</em>, please follow the steps below to deploy our toolkit on your machine:</p>
 <ol>
 <li>Find a path with enough disk memory space. (e.g. at least 500GB if you want to use <em>LibriSpeech</em> or <em>LibriTTS</em> datasets).  </li>
-<li>Clone our toolkit by <code>git clone https://github.com/ahclab/SpeeChain.git</code>.  </li>
+<li>Clone our toolkit by <code>git clone https://github.com/bagustris/SpeeChain.git</code>.  </li>
 <li>Go to the root path of our toolkit by <code>cd SpeeChain</code>.  </li>
 <li>Run <code>source envir_preparation.sh</code> to build the environment for SpeeChain toolkit.<br />
 After execution, a virtual environment named <code>speechain</code> will be created and two environmental variables <code>SPEECHAIN_ROOT</code> and <code>SPEECHAIN_PYTHON</code> will be initialized in your <code>~/.bashrc</code>.<br />
@@ -533,10 +543,10 @@ If the environment <code>speechain</code> is not successfully activated, please 
 </ul>
 </li>
 <li>
-<p>Read the <a href="https://github.com/ahclab/SpeeChain/blob/main/handbook.md#speechain-handbook">handbook</a> and start your journey in SpeeChain!  </p>
+<p>Read the <a href="https://github.com/bagustris/SpeeChain/blob/main/handbook.md#speechain-handbook">handbook</a> and start your journey in SpeeChain!  </p>
 </li>
 </ol>
-<p>👆<a href="https://github.com/ahclab/SpeeChain#table-of-contents">Back to the table of contents</a></p>
+<p>👆<a href="https://github.com/bagustris/SpeeChain#table-of-contents">Back to the table of contents</a></p>
 
 
 
