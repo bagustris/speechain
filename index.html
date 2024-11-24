@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Speechain">
+        <meta name="description" content="Documentation for Speechain Toolkit">
       
       
       
@@ -150,6 +150,18 @@
 </div>
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/bagustris/speechain" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
   </nav>
   
 </header>
@@ -183,6 +195,18 @@
     </a>
     Speechain
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/bagustris/speechain" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -438,6 +462,9 @@
                 
                   
 
+  
+  
+
 
 <h1 id="speechain">SpeeChain</h1>
 <p><strong>A Machine Speech Chain Toolkit for ASR, TTS and Both</strong></p>
@@ -473,31 +500,42 @@ Anytime when you encounter problems when using our toolkit, please don't hesitat
 <li>On-the-fly data selection for each dataloader to filter the undesired data samples.</li>
 <li>Multi-dataloader batch generation to form training batches by multiple datasets. </li>
 <li><strong>Optimization:</strong></li>
-<li>Model training can be done by multiple optimizers. Each optimizer is responsible for a specific part of model parameters.</li>
+<li>Model training can be done by multiple optimizers. Each optimizer is responsible for a specific part -  model parameters.</li>
 <li>Gradient accumulation for mimicking the large-batch gradients by the ones on several small batches.</li>
 <li>Easy-to-set finetuning factor to scale down the learning rates without any modification of the scheduler configuration. </li>
 <li><strong>Model Evaluation:</strong></li>
-<li>Multi-level <em>.md</em> evaluation reports (overall-level, group-level model, and sample-level) without any layout misplacement. </li>
+<li>Multi-level <em>.md</em> evaluation reports (overall-level, group-level model, and sample-level) without any - yout misplacement. </li>
 <li>Histogram visualization for the distribution of evaluation metrics</li>
 <li>TopN bad case analysis for better model diagnosis.</li>
 </ul>
 <p>👆<a href="https://github.com/ahclab/SpeeChain#table-of-contents">Back to the table of contents</a></p>
 <h2 id="get-a-quick-start">Get a Quick Start</h2>
 <p>We recommend you first install <em>Anaconda</em> into your machine before using our toolkit. 
-After the installation of <em>Anaconda</em>, please follow the steps below to deploy our toolkit on your machine:
-1. Find a path with enough disk memory space. (e.g. at least 500GB if you want to use <em>LibriSpeech</em> or <em>LibriTTS</em> datasets).
-2. Clone our toolkit by <code>git clone https://github.com/ahclab/SpeeChain.git</code>.
-3. Go to the root path of our toolkit by <code>cd SpeeChain</code>.
-4. Run <code>source envir_preparation.sh</code> to build the environment for SpeeChain toolkit. 
+After the installation of <em>Anaconda</em>, please follow the steps below to deploy our toolkit on your machine:</p>
+<ol>
+<li>Find a path with enough disk memory space. (e.g. at least 500GB if you want to use <em>LibriSpeech</em> or <em>LibriTTS</em> datasets).  </li>
+<li>Clone our toolkit by <code>git clone https://github.com/ahclab/SpeeChain.git</code>.  </li>
+<li>Go to the root path of our toolkit by <code>cd SpeeChain</code>.  </li>
+<li>Run <code>source envir_preparation.sh</code> to build the environment for SpeeChain toolkit.<br />
 After execution, a virtual environment named <code>speechain</code> will be created and two environmental variables <code>SPEECHAIN_ROOT</code> and <code>SPEECHAIN_PYTHON</code> will be initialized in your <code>~/.bashrc</code>.<br />
-<strong>Note:</strong> It must be executed in the root path <code>SpeeChain</code> and by the command <code>source</code> rather than <code>./envir_preparation.sh</code>.
-5. Run <code>conda activate speechain</code> in your terminal to examine the installation of Conda environment. 
-If the environment <code>speechain</code> is not successfully activated, please run <code>conda env create -f environment.yaml</code>, <code>conda activate speechain</code> and <code>pip install -e ./</code> to manually install it.
-6. Run <code>echo ${SPEECHAIN_ROOT}</code> and <code>echo ${SPEECHAIN_PYTHON}</code> in your terminal to examine the environmental variables. 
-If either one is empty, please manually add them into your <code>~/.bashrc</code> by <code>export SPEECHAIN_ROOT=xxx</code> or <code>export SPEECHAIN_PYTHON=xxx</code> and then activate them by <code>source ~/.bashrc</code>.<br />
-   1. <code>SPEECHAIN_ROOT</code> should be the absolute path of the <code>SpeeChain</code> folder you have just cloned (i.e. <code>/xxx/SpeeChain</code> where <code>/xxx/</code> is the parent directory);<br />
-   2. <code>SPEECHAIN_PYTHON</code> should be the absolute path of the python compiler in the folder of <code>speechain</code> environment (i.e. <code>/xxx/anaconda3/envs/speechain/bin/python3.X</code> where <code>/xxx/</code> is where your <code>anaconda3</code> is placed and <code>X</code> depends on <code>environment.yaml</code>).
-7. Read the <a href="https://github.com/ahclab/SpeeChain/blob/main/handbook.md#speechain-handbook">handbook</a> and start your journey in SpeeChain!</p>
+<strong>Note:</strong> It must be executed in the root path <code>SpeeChain</code> and by the command <code>source</code> rather than <code>./envir_preparation.sh</code>.  </li>
+<li>Run <code>conda activate speechain</code> in your terminal to examine the installation of Conda environment. 
+If the environment <code>speechain</code> is not successfully activated, please run <code>conda env create -f environment.yaml</code>, <code>conda activate speechain</code> and <code>pip install -e ./</code> to manually install it.  </li>
+<li>
+<p>Run <code>echo ${SPEECHAIN_ROOT}</code> and <code>echo ${SPEECHAIN_PYTHON}</code> in your terminal to examine the environmental variables. If either one is empty, please manually add them into your <code>~/.bashrc</code> by <code>export SPEECHAIN_ROOT=xxx</code> or <code>export SPEECHAIN_PYTHON=xxx</code> and then activate them by <code>source ~/.bashrc</code>. </p>
+<ul>
+<li>
+<p><code>SPEECHAIN_ROOT</code> should be the absolute path of the <code>SpeeChain</code> folder you have just cloned (i.e. <code>/xxx/SpeeChain</code> where <code>/xxx/</code> is the parent directory); </p>
+</li>
+<li>
+<p><code>SPEECHAIN_PYTHON</code> should be the absolute path of the python compiler in the folder of <code>speechain</code> environment (i.e. <code>/xxx/anaconda3/envs/speechain/bin/python3.X</code> where <code>/xxx/</code> is where your <code>anaconda3</code> is placed and <code>X</code> depends on <code>environment.yaml</code>).  </p>
+</li>
+</ul>
+</li>
+<li>
+<p>Read the <a href="https://github.com/ahclab/SpeeChain/blob/main/handbook.md#speechain-handbook">handbook</a> and start your journey in SpeeChain!  </p>
+</li>
+</ol>
 <p>👆<a href="https://github.com/ahclab/SpeeChain#table-of-contents">Back to the table of contents</a></p>
 
 
