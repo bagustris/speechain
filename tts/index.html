@@ -3152,12 +3152,12 @@
 <p>👆<a href="https://github.com/ahclab/SpeeChain/tree/main/recipes/tts#table-of-contents">Back to the table of contents</a></p>
 <h2 id="preparing-durations-for-fastspeech2">Preparing Durations for FastSpeech2</h2>
 <p>For training a FastSpeech2 model, you need to acquire additional duration data for your target dataset. 
-Follow these steps:
-1. Create a virtual environment for MFA: <code>conda create -n speechain_mfa -c conda-forge montreal-forced-aligner gdown</code>.
-2. Activate the <code>speechain_mfa</code> environment: <code>conda activate speechain_mfa</code>.
-3. Downsample your target TTS dataset to 16khz. For details, please see <a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#how-to-dump-a-dataset-on-your-machine">how to dump a dataset on your machine</a>.
-4. By default, MFA package will store all the temporary files to your user directory. If you lack sufficient space, add <code>export MFA_ROOT_DIR={your-target-directory}</code> to <code>~/.bashrc</code> and run <code>source ~/.bashrc</code>.
-5. Navigate to <code>${SPEECHAIN_ROOT}/datasets</code> and run <code>bash mfa_preparation.sh -h</code> for help. Then, add appropriate arguments to <code>bash mfa_preparation.sh</code> to acquire duration data.</p>
+Follow these steps:<br />
+1. Create a virtual environment for MFA: <code>conda create -n speechain_mfa -c conda-forge montreal-forced-aligner gdown</code>.<br />
+2. Activate the <code>speechain_mfa</code> environment: <code>conda activate speechain_mfa</code>.<br />
+3. Downsample your target TTS dataset to 16khz. For details, please see <a href="https://github.com/ahclab/SpeeChain/tree/main/datasets#how-to-dump-a-dataset-on-your-machine">how to dump a dataset on your machine</a>.<br />
+4. By default, MFA package will store all the temporary files to your user directory. If you lack sufficient space, add <code>export MFA_ROOT_DIR={your-target-directory}</code> to <code>~/.bashrc</code> and run <code>source ~/.bashrc</code>.<br />
+5. Navigate to <code>${SPEECHAIN_ROOT}/datasets</code> and run <code>bash mfa_preparation.sh -h</code> for help. Then, add appropriate arguments to <code>bash mfa_preparation.sh</code> to acquire duration data.  </p>
 <p><strong>Note:</strong> MFA cannot process duration calculations for multiple datasets concurrently on a single machine (or a single node on a cluster). 
 Please process each dataset one at a time.</p>
 <p>👆<a href="https://github.com/ahclab/SpeeChain/tree/main/recipes/tts#table-of-contents">Back to the table of contents</a></p>
