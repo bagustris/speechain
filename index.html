@@ -290,9 +290,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#get-a-quick-start" class="md-nav__link">
+  <a href="#directory-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      Get a Quick Start
+      Directory Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Start
     </span>
   </a>
   
@@ -3073,9 +3082,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#get-a-quick-start" class="md-nav__link">
+  <a href="#directory-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      Get a Quick Start
+      Directory Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Start
     </span>
   </a>
   
@@ -3100,18 +3118,20 @@
 
 
 <h1 id="overview">Overview</h1>
-<p><strong>A Machine Speech Chain Toolkit for ASR, TTS and Both</strong></p>
+<p><strong>A Machine Speech Chain Toolkit for ASR, TTS, and Both</strong></p>
 <p><em>SpeeChain</em> is an open-source PyTorch-based speech and language processing toolkit produced by the <a href="https://ahcweb01.naist.jp/en/"><em>AHC lab</em></a> at Nara Institute of Science and Technology (NAIST). 
 This toolkit is designed to simplify the pipeline of the research on the machine speech chain, 
-i.e. the joint model of automatic speech recognition (ASR) and text-to-speech synthesis (TTS). </p>
-<p><em>SpeeChain is currently in beta.</em> Contribution to this toolkit is warmly welcomed anywhere anytime! </p>
+i.e., the joint model of automatic speech recognition (ASR) and text-to-speech synthesis (TTS). </p>
+<p><em>SpeeChain is currently in beta.</em> Contribution to this toolkit is warmly welcomed anywhere, anytime! </p>
 <p>If you find our toolkit helpful for your research, we sincerely hope that you can give us a star⭐! 
-Anytime when you encounter problems when using our toolkit, please don't hesitate to leave us an issue!</p>
+Anytime you encounter problems when using our toolkit, please don't hesitate to leave us an issue!</p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ol>
 <li><a href="https://github.com/bagustris/SpeeChain#machine-speech-chain"><strong>Machine Speech Chain</strong></a></li>
 <li><a href="https://github.com/bagustris/SpeeChain#toolkit-characteristics"><strong>Toolkit Characteristics</strong></a></li>
-<li><a href="https://github.com/bagustris/SpeeChain#get-a-quick-start"><strong>Get a Quick Start</strong></a></li>
+<li><a href="#directory-structure"><strong>Directory Structure</strong></a></li>
+<li><a href="#quick-start"><strong>Quick Start</strong></a></li>
+<li><a href="#work-flow"><strong>Work flow</strong></a></li>
 </ol>
 <h2 id="machine-speech-chain">Machine Speech Chain</h2>
 <ul>
@@ -3135,7 +3155,7 @@ Anytime when you encounter problems when using our toolkit, please don't hesitat
 <li><strong>Data Loading:</strong><ul>
 <li>On-the-fly mixture of multiple datasets in a single dataloader.  </li>
 <li>On-the-fly data selection for each dataloader to filter the undesired data samples.  </li>
-<li>Multi-dataloader batch generation to form training batches by multiple datasets.   </li>
+<li>Multi-dataloader batch generation is used to form training batches using multiple datasets.   </li>
 </ul>
 </li>
 <li><strong>Optimization:</strong><ul>
@@ -3147,16 +3167,61 @@ Anytime when you encounter problems when using our toolkit, please don't hesitat
 <li><strong>Model Evaluation:</strong><ul>
 <li>Multi-level <em>.md</em> evaluation reports (overall-level, group-level model, and sample-level) without any - yout misplacement.  </li>
 <li>Histogram visualization for the distribution of evaluation metrics.  </li>
-<li>TopN bad case analysis for better model diagnosis.</li>
+<li>Top N bad case analysis for better model diagnosis.</li>
 </ul>
 </li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain#table-of-contents">Back to the table of contents</a></p>
-<h2 id="get-a-quick-start">Get a Quick Start</h2>
+<h2 id="directory-structure">Directory Structure</h2>
+<pre><code class="language-shell">├── config                # configuration for feature extraction
+│   └── feat
+├── CONTRIBUTING.md       # convention for contributor
+├── create_env.sh         # bash shell to create environment
+├── datasets              # dataset folder, put data here, make softlink, or set in config file
+│   ├── data_dumping.sh
+│   ├── librispeech
+│   ├── libritts
+│   ├── ljspeech
+│   ├── meta_generator.py
+│   ├── meta_post_processor.py
+│   ├── mfa_preparation.sh
+│   └── vctk
+├── docs                  # folder to build docs
+├── environment.yaml    
+├── LICENSE              
+├── recipes               # folder for experiment, you will work here
+│   ├── asr
+│   ├── lm
+│   ├── offline_tts2asr
+│   ├── run.sh
+│   └── tts
+├── requirements.txt
+├── run.sh
+├── scripts
+│   └── gen_ref_pages.py
+├── setup.py
+└── speechain             # directory for speechain toolkit code
+    ├── criterion
+    ├── dataset
+    ├── infer_func
+    ├── iterator
+    ├── model
+    ├── module
+    ├── monitor.py
+    ├── optim_sche
+    ├── pyscripts
+    ├── runner.py
+    ├── snapshooter.py
+    ├── tokenizer
+    └── utilbox
+</code></pre>
+<h2 id="quick-start">Quick Start</h2>
+<p>Try minilibrispeech recipe <code>train-clean-5</code> in ASR.</p>
+<h1 id="workflow">Workflow</h1>
 <p>We recommend you first install <em>Anaconda</em> into your machine before using our toolkit. 
 After the installation of <em>Anaconda</em>, please follow the steps below to deploy our toolkit on your machine:</p>
 <ol>
-<li>Find a path with enough disk memory space. (e.g. at least 500GB if you want to use <em>LibriSpeech</em> or <em>LibriTTS</em> datasets).  </li>
+<li>Find a path with enough disk memory space. (e.g., at least 500GB if you want to use <em>LibriSpeech</em> or <em>LibriTTS</em> datasets).  </li>
 <li>Clone our toolkit by <code>git clone https://github.com/bagustris/SpeeChain.git</code>.  </li>
 <li>Go to the root path of our toolkit by <code>cd SpeeChain</code>.  </li>
 <li>Run <code>source envir_preparation.sh</code> to build the environment for SpeeChain toolkit.<br />
@@ -3176,7 +3241,7 @@ If the environment <code>speechain</code> is not successfully activated, please 
 </ul>
 </li>
 <li>
-<p>Read the <a href="https://github.com/bagustris/SpeeChain/blob/main/handbook.md#speechain-handbook">handbook</a> and start your journey in SpeeChain!  </p>
+<p>Read the <a href="./handbook">handbook</a> and start your journey in SpeeChain!  </p>
 </li>
 </ol>
 <p>👆<a href="https://github.com/bagustris/SpeeChain#table-of-contents">Back to the table of contents</a></p>
