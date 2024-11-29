@@ -86,7 +86,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Speechain" class="md-header__button md-logo" aria-label="Speechain" data-md-component="logo">
       
-  <img src="../../img/speechain.png" alt="logo">
+  <img src="../../img/speechain_inverted.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -192,7 +192,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Speechain" class="md-nav__button md-logo" aria-label="Speechain" data-md-component="logo">
       
-  <img src="../../img/speechain.png" alt="logo">
+  <img src="../../img/speechain_inverted.png" alt="logo">
 
     </a>
     Speechain
@@ -900,6 +900,27 @@
             model
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/abs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    abs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -7422,8 +7443,8 @@ and let us know.</p>
 
         <span class="c1"># check the GPU configuration</span>
         <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gpus</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">args</span><span class="o">.</span><span class="n">ngpu</span><span class="p">,</span> <span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;The visible GPUs </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">gpus</span><span class="si">}</span><span class="s2"> are fewer than the GPUs you would like to use </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">ngpu</span><span class="si">}</span><span class="s2">! &quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;Please use the argument &#39;--gpus&#39; to directly specify your target GPUs.&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Error: The visible GPUs </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">gpus</span><span class="si">}</span><span class="s2"> are fewer than the GPUs you would like to use </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">ngpu</span><span class="si">}</span><span class="s2">, default is 2! &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Use the argument &#39;--gpu&#39; to directly specify your target GPUs.&quot;</span>
         <span class="p">)</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gpus</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="n">args</span><span class="o">.</span><span class="n">gpus</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">gpus</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -8951,8 +8972,8 @@ The input arguments for the experiment.</p>
 
     <span class="c1"># check the GPU configuration</span>
     <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gpus</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">args</span><span class="o">.</span><span class="n">ngpu</span><span class="p">,</span> <span class="p">(</span>
-        <span class="sa">f</span><span class="s2">&quot;The visible GPUs </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">gpus</span><span class="si">}</span><span class="s2"> are fewer than the GPUs you would like to use </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">ngpu</span><span class="si">}</span><span class="s2">! &quot;</span>
-        <span class="sa">f</span><span class="s2">&quot;Please use the argument &#39;--gpus&#39; to directly specify your target GPUs.&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;Error: The visible GPUs </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">gpus</span><span class="si">}</span><span class="s2"> are fewer than the GPUs you would like to use </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">ngpu</span><span class="si">}</span><span class="s2">, default is 2! &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;Use the argument &#39;--gpu&#39; to directly specify your target GPUs.&quot;</span>
     <span class="p">)</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gpus</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="n">args</span><span class="o">.</span><span class="n">gpus</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">gpus</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
