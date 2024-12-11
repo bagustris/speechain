@@ -3417,7 +3417,9 @@ In the decay stage, the learning rate decreases in the level of square root.</p>
 <span class="normal">62</span>
 <span class="normal">63</span>
 <span class="normal">64</span>
-<span class="normal">65</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Noamlr</span><span class="p">(</span><span class="n">OptimScheduler</span><span class="p">):</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Noamlr</span><span class="p">(</span><span class="n">OptimScheduler</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The OptimScheduler where the scheduling contains a LR warmup stage and a LR decay stage.</span>
 <span class="sd">    In the warmup stage, the learning rate increases linearly to the peak.</span>
@@ -3453,7 +3455,9 @@ In the decay stage, the learning rate decreases in the level of square root.</p>
         <span class="c1"># para recording</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">d_model</span> <span class="o">=</span> <span class="n">d_model</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">init_lr</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">d_model</span><span class="o">**-</span><span class="mf">0.5</span> <span class="k">if</span> <span class="n">d_model</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_lr</span><span class="p">()</span> <span class="o">*</span> <span class="n">warmup_steps</span><span class="o">**</span><span class="mf">0.5</span>
+            <span class="n">d_model</span><span class="o">**-</span><span class="mf">0.5</span>
+            <span class="k">if</span> <span class="n">d_model</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_lr</span><span class="p">()</span> <span class="o">*</span> <span class="n">warmup_steps</span><span class="o">**</span><span class="mf">0.5</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">warmup_steps</span> <span class="o">=</span> <span class="n">warmup_steps</span>
 
@@ -3609,7 +3613,9 @@ The number of warming up steps.</p>
 <span class="normal">45</span>
 <span class="normal">46</span>
 <span class="normal">47</span>
-<span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">sche_init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d_model</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">warmup_steps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4000</span><span class="p">):</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">sche_init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d_model</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">warmup_steps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4000</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The learning rate calculation is different depending on whether d_model is given or not.</span>
 
@@ -3635,7 +3641,9 @@ The number of warming up steps.</p>
     <span class="c1"># para recording</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">d_model</span> <span class="o">=</span> <span class="n">d_model</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">init_lr</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">d_model</span><span class="o">**-</span><span class="mf">0.5</span> <span class="k">if</span> <span class="n">d_model</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_lr</span><span class="p">()</span> <span class="o">*</span> <span class="n">warmup_steps</span><span class="o">**</span><span class="mf">0.5</span>
+        <span class="n">d_model</span><span class="o">**-</span><span class="mf">0.5</span>
+        <span class="k">if</span> <span class="n">d_model</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_lr</span><span class="p">()</span> <span class="o">*</span> <span class="n">warmup_steps</span><span class="o">**</span><span class="mf">0.5</span>
     <span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">warmup_steps</span> <span class="o">=</span> <span class="n">warmup_steps</span>
 </code></pre></div></td></tr></table></div>
@@ -3691,9 +3699,7 @@ Will be different from self.step_num when self.accum_grad is layer than 1.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/optim_sche/noam.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">52</span>
 <span class="normal">53</span>
 <span class="normal">54</span>
 <span class="normal">55</span>
@@ -3703,7 +3709,9 @@ Will be different from self.step_num when self.accum_grad is layer than 1.</p>
 <span class="normal">59</span>
 <span class="normal">60</span>
 <span class="normal">61</span>
-<span class="normal">62</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update_lr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">real_step</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">epoch_num</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update_lr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">real_step</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">epoch_num</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">    Args:</span>

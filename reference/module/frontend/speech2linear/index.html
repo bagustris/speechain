@@ -4060,9 +4060,9 @@ Date: 2022.07</p>
                 <span class="c1"># move the weight from _parameters to _buffers so that these parameters won&#39;t influence the training</span>
                 <span class="n">_para_keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">inv_preemph_filter</span><span class="o">.</span><span class="n">_parameters</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
                 <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">_para_keys</span><span class="p">:</span>
-                    <span class="n">inv_preemph_filter</span><span class="o">.</span><span class="n">_buffers</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
-                        <span class="n">inv_preemph_filter</span><span class="o">.</span><span class="n">_parameters</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-                    <span class="p">)</span>
+                    <span class="n">inv_preemph_filter</span><span class="o">.</span><span class="n">_buffers</span><span class="p">[</span>
+                        <span class="n">name</span>
+                    <span class="p">]</span> <span class="o">=</span> <span class="n">inv_preemph_filter</span><span class="o">.</span><span class="n">_parameters</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">inv_preemph_filter</span> <span class="o">=</span> <span class="n">inv_preemph_filter</span>
 
             <span class="n">wav</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">wav</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">inv_preemph_winlen</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
@@ -5226,9 +5226,9 @@ The log base for the log-mel spectrogram. None means the natural log base e.</p>
             <span class="c1"># move the weight from _parameters to _buffers so that these parameters won&#39;t influence the training</span>
             <span class="n">_para_keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">inv_preemph_filter</span><span class="o">.</span><span class="n">_parameters</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
             <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">_para_keys</span><span class="p">:</span>
-                <span class="n">inv_preemph_filter</span><span class="o">.</span><span class="n">_buffers</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
-                    <span class="n">inv_preemph_filter</span><span class="o">.</span><span class="n">_parameters</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-                <span class="p">)</span>
+                <span class="n">inv_preemph_filter</span><span class="o">.</span><span class="n">_buffers</span><span class="p">[</span>
+                    <span class="n">name</span>
+                <span class="p">]</span> <span class="o">=</span> <span class="n">inv_preemph_filter</span><span class="o">.</span><span class="n">_parameters</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">inv_preemph_filter</span> <span class="o">=</span> <span class="n">inv_preemph_filter</span>
 
         <span class="n">wav</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">wav</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">inv_preemph_winlen</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
