@@ -2940,6 +2940,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../utilbox/humanfriendly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    humanfriendly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../utilbox/import_util/" class="md-nav__link">
         
   
@@ -3071,6 +3092,27 @@
   
   <span class="md-ellipsis">
     tensor_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utilbox/test_humanfriendly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    test_humanfriendly
   </span>
   
 
@@ -3417,10 +3459,10 @@ Date: 2022.07</p>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            hypo_text:</span>
-<span class="sd">            real_text:</span>
-<span class="sd">            tokenizer:</span>
-<span class="sd">            do_aver:</span>
+<span class="sd">            hypo_text (torch.Tensor or List[str] or str): the hypothesis text</span>
+<span class="sd">            real_text (torch.Tensor or List[str] or str): the reference text</span>
+<span class="sd">            tokenizer (Tokenizer): the tokenizer</span>
+<span class="sd">            do_aver (bool): whether to average the error rate over the batch</span>
 
 <span class="sd">        Returns:</span>
 
@@ -3518,7 +3560,7 @@ Date: 2022.07</p>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>the hypothesis text</p>
               </div>
             </td>
             <td>
@@ -3534,7 +3576,7 @@ Date: 2022.07</p>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>the reference text</p>
               </div>
             </td>
             <td>
@@ -3550,7 +3592,7 @@ Date: 2022.07</p>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>the tokenizer</p>
               </div>
             </td>
             <td>
@@ -3566,7 +3608,7 @@ Date: 2022.07</p>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>whether to average the error rate over the batch</p>
               </div>
             </td>
             <td>
@@ -3651,10 +3693,10 @@ Date: 2022.07</p>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        hypo_text:</span>
-<span class="sd">        real_text:</span>
-<span class="sd">        tokenizer:</span>
-<span class="sd">        do_aver:</span>
+<span class="sd">        hypo_text (torch.Tensor or List[str] or str): the hypothesis text</span>
+<span class="sd">        real_text (torch.Tensor or List[str] or str): the reference text</span>
+<span class="sd">        tokenizer (Tokenizer): the tokenizer</span>
+<span class="sd">        do_aver (bool): whether to average the error rate over the batch</span>
 
 <span class="sd">    Returns:</span>
 
