@@ -3519,266 +3519,214 @@
 
 
 <h1 id="asr">ASR</h1>
-<p>ASR (Automatic Speech Recognition) is a technology that converts spoken language into text. ASR is widely used in
-various applications such as voice assistants, dictation software, and transcription services. SpeeChain provides a
-collection of ASR recipes that allow users to train and evaluate ASR models on various datasets. The recipes include
-configurations for different backbones, such as transformer and conformer, and provide pretrained models for
-reproducibility. Users can also create their own ASR models by following the instructions in the recipes.</p>
-<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/recipes#recipes-folder-of-the-speechain-toolkit">Back to the recipe
-README.md</a></p>
+<p>ASR (Automatic Speech Recognition) is a technology that converts spoken language into text. ASR is widely used in various applications such as voice assistants, dictation software, and transcription services. SpeeChain provides a collection of ASR recipes that allow users to train and evaluate ASR models on various datasets. The recipes include configurations for different backbones, such as transformer and conformer, and provide pretrained models for reproducibility. Users can also create their own ASR models by following the instructions in the recipes.</p>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/recipes#recipes-folder-of-the-speechain-toolkit">Back to the recipe README.md</a></p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ol>
 <li><a href="https://github.com/bagustris/SpeeChain/tree/main/recipes/asr#available-backbones">Available Backbones</a></li>
-<li><a href="https://github.com/bagustris/SpeeChain/tree/main/recipes/asr#pretrained-models-for-reproducibility">Pretrained Models for
-Reproducibility</a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/recipes/asr#pretrained-models-for-reproducibility">Pretrained Models for Reproducibility</a></li>
 <li><a href="https://github.com/bagustris/SpeeChain/tree/main/recipes/asr#training-an-asr-model">Training an ASR model</a></li>
 <li><a href="https://github.com/bagustris/SpeeChain/tree/main/recipes/asr#creating-your-own-asr-model">Creating your own ASR model</a></li>
 </ol>
 <h2 id="available-backbones-wer-withwithout-lm">Available Backbones (WER with/without LM)</h2>
 <table>
+    <tr>
+        <th>Dataset</th>
+        <th>Subset</th>
+        <th>Configuration</th>
+        <th>Test Clean</th>  
+        <th>Test Other</th>  
+    </tr>
    <tr>
-      <th>Dataset</th>
-      <th>Subset</th>
-      <th>Configuration</th>
-      <th>Test Clean</th>
-      <th>Test Other</th>
-   </tr>
-   <tr>
-      <td rowspan="9">librispeech</td>
+      <td rowspan="8">librispeech</td>
       <td rowspan="1">train-clean-5</td>
       <td>5-bpe5k_conformer-small_lr2e-3</td>
       <td>15.2% / 35.8%</td>
       <td>35.8% / 42.3%</td>
    </tr>
-   <tr>
-      <!-- <td rowspan="8">librispeech</td> -->
-      <td rowspan="4">train-clean-100</td>
-      <td>100-bpe5k_transformer-wide_lr2e-3</td>
-      <td> 8.40% / 21.92% </td>
-      <td> 5.50% / 15.56% </td>
-   </tr>
-   <tr>
-      <td>100-bpe5k_conformer-small_lr2e-3</td>
-      <td> 6.3% / 9.3% </td>
-      <td> 19.14% / 25.2% </td>
-   </tr>
-   <tr>
-      <td>100-bpe5k_conformer-medium_lr2e-3</td>
-      <td> 7.87% / 21.36% </td>
-      <td> 5.30% / 15.57% </td>
-   </tr>
-   <tr>
-      <td>100-bpe5k_conformer-large_lr2e-3</td>
-      <td> 7.30% / 20.24% </td>
-      <td> 5.33% / 15.15% </td>
-   </tr>
-   <tr>
-      <td rowspan="2">train-clean-460</td>
-      <td>460-bpe5k_transformer-large</td>
-      <td> % / % </td>
-      <td> % / % </td>
-   </tr>
-   <tr>
-      <td>460-bpe5k_conformer-large</td>
-      <td> % / % </td>
-      <td> % / % </td>
-   </tr>
-   <tr>
-      <td rowspan="2">train-960</td>
-      <td>960-bpe5k_transformer-large</td>
-      <td> % / % </td>
-      <td> % / % </td>
-   </tr>
-   <tr>
-      <td>960-bpe5k_conformer-large</td>
-      <td> % / % </td>
-      <td> % / % </td>
-   </tr>
-   <tr>
-      <td rowspan="1">libritts_librispeech</td>
-      <td rowspan="1">train-960</td>
-      <td>960-bpe5k_transformer-large</td>
-      <td> % / % </td>
-      <td> % / % </td>
-   </tr>
+    <tr>
+        <!-- <td rowspan="8">librispeech</td> -->
+        <td rowspan="4">train-clean-100</td>
+        <td>100-bpe5k_transformer-wide_lr2e-3</td>
+        <td> 8.40% / 21.92% </td>
+        <td> 5.50% / 15.56% </td>
+    </tr>
+    <tr>
+        <td>100-bpe5k_conformer-small_lr2e-3</td>
+        <td> 6.3% / 9.3% </td>
+        <td> 19.14% / 25.2% </td>
+    </tr>
+    <tr>
+        <td>100-bpe5k_conformer-medium_lr2e-3</td>
+        <td> 7.87% / 21.36% </td>
+        <td> 5.30% / 15.57% </td>
+    </tr>
+    <tr>
+        <td>100-bpe5k_conformer-large_lr2e-3</td>
+        <td> 7.30% / 20.24% </td>
+        <td> 5.33% / 15.15% </td>
+    </tr>
+    <tr>
+        <td rowspan="2">train-clean-460</td>
+        <td>460-bpe5k_transformer-large</td>
+        <td> % / % </td>
+        <td> % / % </td>
+    </tr>
+    <tr>
+        <td>460-bpe5k_conformer-large</td>
+        <td> % / % </td>
+        <td> % / % </td>
+    </tr>
+    <tr>
+        <td rowspan="2">train-960</td>
+        <td>960-bpe5k_transformer-large</td>
+        <td> % / % </td>
+        <td> % / % </td>
+    </tr>
+    <tr>
+        <td>960-bpe5k_conformer-large</td>
+        <td> % / % </td>
+        <td> % / % </td>
+    </tr>
+    <tr>
+        <td rowspan="1">libritts_librispeech</td>
+        <td rowspan="1">train-960</td>
+        <td>960-bpe5k_transformer-large</td>
+        <td> % / % </td>
+        <td> % / % </td>
+    </tr>
 </table>
 
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/recipes/asr#table-of-contents">Back to the table of contents</a></p>
 <h2 id="pretrained-models-for-reproducibility">Pretrained Models for Reproducibility</h2>
-<p>For reproducibility of our ASR model configuration files in <code>${SPEECHAIN_ROOT}/recipes/asr/</code>, we provide the following
-pretrained models to ensure consistent performance:
-1. SentencePiece tokenizer models
-(<a href="https://drive.google.com/drive/u/0/folders/1ZrnodlK2Ta6wnvhpXf79W27omSUVOaG0">GoogleDrive</a>).
-* Please download tokenizer model and vocabulary to where your dataset is dumped. The default path is
-<code>${SPEECHAIN_ROOT}/datasets</code>.
-<strong>Note:</strong> If your dataset is dumped outside SpeeChain, please replace <code>${SPEECHAIN_ROOT}/datasets</code> in the following
-commands by your place.
-* <strong>LibriSpeech:</strong>
-1. <strong>train-clean-100:</strong></p>
-<pre><code># Download BPE model
-gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc
-https://drive.google.com/uc?id=1OQGKJqpEykl6hQwx-3xuWeaEdU7kDVTS
+<p>For reproducibility of our ASR model configuration files in <code>${SPEECHAIN_ROOT}/recipes/asr/</code>, we provide the following pretrained models to ensure consistent performance:
+1. SentencePiece tokenizer models (<a href="https://drive.google.com/drive/u/0/folders/1ZrnodlK2Ta6wnvhpXf79W27omSUVOaG0">GoogleDrive</a>). 
+   * Please download tokenizer model and vocabulary to where your dataset is dumped. The default path is <code>${SPEECHAIN_ROOT}/datasets</code>. <br />
+<strong>Note:</strong> If your dataset is dumped outside SpeeChain, please replace <code>${SPEECHAIN_ROOT}/datasets</code> in the following commands by your place.
+   * <strong>LibriSpeech:</strong>
+     1. <strong>train-clean-100:</strong> 
+          ```
+          # Download BPE model
+          gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc https://drive.google.com/uc?id=1OQGKJqpEykl6hQwx-3xuWeaEdU7kDVTS</p>
+<div class="language-text highlight"><pre><span></span><code>      # Download BPE vocabulary
+      gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc https://drive.google.com/uc?id=1lGhDi2NI_ukI5Z9Z-MjOHoUEz5YGcJX9
+      ```
+ 2. **train-clean-460:** 
+      ```
+      # Download BPE model
+      gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc https://drive.google.com/uc?id=1WAmcHvilnzB7r0kgND91LLReeX_NW7A4
 
-# Download BPE vocabulary
-gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc
-https://drive.google.com/uc?id=1lGhDi2NI_ukI5Z9Z-MjOHoUEz5YGcJX9
-</code></pre>
+      # Download BPE vocabulary
+      gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc https://drive.google.com/uc?id=1isfQn75l-Szu0WPGBr1ZaR3pb20SDa2F
+      ```
+ 3. **train-960:** 
+      ```
+      # Download BPE model
+      gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc https://drive.google.com/uc?id=1uFRm1DcPivFqjo1Kiy-uVSFTf3e9y1S4
+
+      # Download BPE vocabulary by 
+      gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc https://drive.google.com/uc?id=13ERNAA_5glzjvJkmUW7edf94IPfAejiL
+      ```
+</code></pre></div>
 <ol>
-<li><strong>train-clean-460:</strong></li>
+<li>Transformer-based language models (<a href="https://drive.google.com/drive/u/0/folders/1yviJZLGyGKiQ_ldtRjEaX-rZjWt7R4eS">GoogleDrive</a>).</li>
+<li>Please download both LM model and configuration file. The default path is <code>${SPEECHAIN_ROOT}/recipes/lm</code>. <br />
+<strong>Note:</strong> If you want to store model files outside SpeeChain, please replace <code>${SPEECHAIN_ROOT}/recipes/lm</code> in the following commands by your place. Also, change the <code>lm_cfg_path</code> and <code>lm_model_path</code> arguments in each ASR configuration file.</li>
+<li><strong>LibriSpeech:</strong><ol>
+<li>
+<p><strong>train-clean-100:</strong> 
+      ```
+      # Download LM model
+      gdown -O ${SPEECHAIN_ROOT}/recipes/lm/librispeech/lm_text/exp/100-bpe5k_transformer_gelu/models https://drive.google.com/uc?id=1ZsFKRb8UBpzDjWcjpQcxt4rT4J6CuKAm</p>
+<p># Download LM configuration
+  gdown -O ${SPEECHAIN_ROOT}/recipes/lm/librispeech/lm_text/exp/100-bpe5k_transformer_gelu https://drive.google.com/uc?id=1TRtIOu2ptXTKphY77cF3fne9b-i-vNJD
+  <code>3. **train-960:**</code>
+  # Download LM model
+  gdown -O ${SPEECHAIN_ROOT}/recipes/lm/librispeech/train-960_lm_text/exp/960-bpe5k_transformer_gelu/models https://drive.google.com/uc?id=1hMFlaJVojonyBiwaXmC_I7iLxI-kSWit</p>
+<p># Download LM configuration
+  gdown -O ${SPEECHAIN_ROOT}/recipes/lm/librispeech/train-960_lm_text/exp/960-bpe5k_transformer_gelu https://drive.google.com/uc?id=1fAMDjPxBDnTp2tiUNTNIMtqGl-vQ2gzz
+  ```</p>
+</li>
 </ol>
-<pre><code># Download BPE model
-gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc
-https://drive.google.com/uc?id=1WAmcHvilnzB7r0kgND91LLReeX_NW7A4
-
-# Download BPE vocabulary
-gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc
-https://drive.google.com/uc?id=1isfQn75l-Szu0WPGBr1ZaR3pb20SDa2F
-</code></pre>
-<ol>
-<li><strong>train-960:</strong></li>
+</li>
 </ol>
-<pre><code># Download BPE model
-gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc
-https://drive.google.com/uc?id=1uFRm1DcPivFqjo1Kiy-uVSFTf3e9y1S4
-
-# Download BPE vocabulary by
-gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc
-https://drive.google.com/uc?id=13ERNAA_5glzjvJkmUW7edf94IPfAejiL
-</code></pre>
-<ol>
-<li>Transformer-based language models
-(<a href="https://drive.google.com/drive/u/0/folders/1yviJZLGyGKiQ_ldtRjEaX-rZjWt7R4eS">GoogleDrive</a>).</li>
-<li>Please download both LM model and configuration file. The default path is <code>${SPEECHAIN_ROOT}/recipes/lm</code>.
-<strong>Note:</strong> If you want to store model files outside SpeeChain, please replace <code>${SPEECHAIN_ROOT}/recipes/lm</code> in the
-following commands by your place. Also, change the <code>lm_cfg_path</code> and <code>lm_model_path</code> arguments in each ASR configuration
-file.</li>
-<li><strong>LibriSpeech:</strong></li>
-<li><strong>train-clean-100:</strong></li>
-</ol>
-<pre><code># Download LM model
-gdown -O ${SPEECHAIN_ROOT}/recipes/lm/librispeech/lm_text/exp/100-bpe5k_transformer_gelu/models
-https://drive.google.com/uc?id=1ZsFKRb8UBpzDjWcjpQcxt4rT4J6CuKAm
-
-# Download LM configuration
-gdown -O ${SPEECHAIN_ROOT}/recipes/lm/librispeech/lm_text/exp/100-bpe5k_transformer_gelu
-https://drive.google.com/uc?id=1TRtIOu2ptXTKphY77cF3fne9b-i-vNJD
-</code></pre>
-<ol>
-<li><strong>train-960:</strong></li>
-</ol>
-<pre><code># Download LM model
-gdown -O ${SPEECHAIN_ROOT}/recipes/lm/librispeech/train-960_lm_text/exp/960-bpe5k_transformer_gelu/models
-https://drive.google.com/uc?id=1hMFlaJVojonyBiwaXmC_I7iLxI-kSWit
-
-# Download LM configuration
-gdown -O ${SPEECHAIN_ROOT}/recipes/lm/librispeech/train-960_lm_text/exp/960-bpe5k_transformer_gelu
-https://drive.google.com/uc?id=1fAMDjPxBDnTp2tiUNTNIMtqGl-vQ2gzz
-</code></pre>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/recipes/asr#table-of-contents">Back to the table of contents</a></p>
 <h2 id="training-an-asr-model">Training an ASR model</h2>
-<p>Before training an ASR model, ensure that your target datasets are dumped by the scripts in
-<code>${SPEECHAIN_ROOT}/datasets/{your-target-dataset}</code>.
-More details on how to dump a dataset can be found
-<a href="https://github.com/bagustris/SpeeChain/tree/main/datasets#how-to-dump-a-dataset-on-your-machine">here</a>.</p>
+<p>Before training an ASR model, ensure that your target datasets are dumped by the scripts in <code>${SPEECHAIN_ROOT}/datasets/{your-target-dataset}</code>.
+More details on how to dump a dataset can be found <a href="https://github.com/bagustris/SpeeChain/tree/main/datasets#how-to-dump-a-dataset-on-your-machine">here</a>.</p>
 <h3 id="use-an-existing-dataset-with-a-pre-tuned-configuration">Use an existing dataset with a pre-tuned configuration</h3>
 <ol>
-<li>locate a <em>.yaml</em> configuration file in <code>${SPEECHAIN_ROOT}/recipes/asr</code>.
-Suppose we want to train an ASR model by the configuration
-<code>${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960/exp_cfg/960-bpe5k_transformer-wide_ctc_perturb.yaml</code>.</li>
-<li>Train and evaluate the ASR model on your target training set</li>
+<li>locate a <em>.yaml</em> configuration file in <code>${SPEECHAIN_ROOT}/recipes/asr</code>. 
+   Suppose we want to train an ASR model by the configuration <code>${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960/exp_cfg/960-bpe5k_transformer-wide_ctc_perturb.yaml</code>.</li>
+<li>Train and evaluate the ASR model on your target training set
+   <code>cd ${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960
+   bash run.sh --exp_cfg 960-bpe5k_transformer-wide_ctc_perturb (--ngpu x --gpus x,x)</code>
+   <strong>Note:</strong> </li>
+<li>Review the comments on the top of the configuration file to ensure that your computational resources fit the configuration before training the model.
+      If your resources do not match the configuration, adjust it by <code>--ngpu</code> and <code>--gpus</code> to match your available GPU memory.</li>
+<li>To save the experimental results outside the toolkit folder <code>${SPEECHAIN_ROOT}</code>, 
+      specify your desired location by appending <code>--train_result_path {your-target-path}</code> to <code>bash run.sh</code>.<br />
+      In this example, <code>bash run.sh --exp_cfg 960-bpe5k_transformer-wide_ctc_perturb --train_result_path /a/b/c</code>
+      will save results to <code>/a/b/c/960-bpe5k_transformer-wide_ctc_perturb</code>.</li>
 </ol>
-<pre><code>cd ${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960
-bash run.sh --exp_cfg 960-bpe5k_transformer-wide_ctc_perturb (--ngpu x --gpus x,x)
-</code></pre>
-<p><strong>Note:</strong>
-1. Review the comments on the top of the configuration file to ensure that your computational resources fit the
-configuration before training the model.
-If your resources do not match the configuration, adjust it by <code>--ngpu</code> and <code>--gpus</code> to match your available GPU memory.
-2. To save the experimental results outside the toolkit folder <code>${SPEECHAIN_ROOT}</code>,
-specify your desired location by appending <code>--train_result_path {your-target-path}</code> to <code>bash run.sh</code>.
-In this example, <code>bash run.sh --exp_cfg 960-bpe5k_transformer-wide_ctc_perturb --train_result_path /a/b/c</code>
-will save results to <code>/a/b/c/960-bpe5k_transformer-wide_ctc_perturb</code>.</p>
 <h3 id="creating-a-new-configuration-for-a-non-existing-dataset">Creating a new configuration for a non-existing dataset</h3>
 <ol>
-<li>Dump your target dataset from the Internet following these
-<a href="https://github.com/bagustris/SpeeChain/tree/main/datasets#how-to-contribute-a-new-dataset">instructions</a>.</li>
-<li>Create a folder for your dumped dataset <code>${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}</code>:</li>
+<li>Dump your target dataset from the Internet following these <a href="https://github.com/bagustris/SpeeChain/tree/main/datasets#how-to-contribute-a-new-dataset">instructions</a>.</li>
+<li>Create a folder for your dumped dataset <code>${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}</code>:
+   <code>mkdir ${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}
+   cp ${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960/run.sh ${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}/run.sh</code>
+   <strong>Note:</strong> </li>
+<li>Update the arguments <code>dataset</code> and <code>subset</code> (line no.16 &amp; 17) in <code>${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}/run.sh</code>:
+      <code>dataset=librispeech -&gt; 'your-new-dataset'
+      subset='train-960' -&gt; 'your-new-dataset'</code></li>
+<li>Copy a pre-tuned configuration file into your newly created folder. 
+   Suppose we want to use the configuration <code>${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960/exp_cfg/960-bpe5k_transformer-wide_ctc_perturb.yaml</code>:
+   <code>cd ${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}
+   mkdir ./data_cfg ./exp_cfg
+   cp ${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960/exp_cfg/960-bpe5k_transformer-wide_ctc_perturb.yaml ./exp_cfg</code>
+   <strong>Note:</strong> </li>
+<li>
+<p>Update the dataset arguments at the beginning of your selected configuration:
+      ```
+      # dataset-related
+      dataset: librispeech -&gt; 'your-new-dataset'
+      train_set: train-960 -&gt; 'your-target-subset'
+      valid_set: dev -&gt; 'valid-set-of-new-dataset'</p>
+<p># tokenizer-related
+  txt_format: asr
+  vocab_set: train-960 -&gt; 'your-target-subset'
+  token_type: sentencepiece
+  token_num: bpe5k
+  <code>4. Train the ASR model on your target training set:</code>
+   cd ${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}
+   bash run.sh --test false --exp_cfg 960-bpe5k_transformer-wide_ctc_perturb (--ngpu x --gpus x,x)
+   <code>**Note:** 
+   1. `--test false` is used to skip the testing stage.
+   2. Ensure your computational resources match the configuration before training the model.
+   3. To save experimental results outside ${SPEECHAIN_ROOT}, specify your desired location by appending --train_result_path {your-target-path} to bash run.sh.
+5. Tune the inference hyperparameters on the corresponding validation set</code>
+   cp ${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960/data_cfg/test_dev-clean+other.yaml ./data_cfg
+   mv ./data_cfg/test_dev-clean.yaml ./data_cfg/test_{your-valid-set-name}.yaml
+   bash run.sh --train false --exp_cfg 960-bpe5k_transformer-wide_ctc_perturb --data_cfg test_{your-valid-set-name}
+   <code>**Note:** 
+   1. Update the dataset arguments in `./data_cfg/test_{your-valid-set-name}.yaml`:</code>
+  dataset: librispeech -&gt; 'your-new-dataset'
+  valid_dset: &amp;valid_dset dev-clean -&gt; &amp;valid_dset 'valid-set-of-new-dataset'
+  <code>2. `--train false` is used to skip the training stage.
+   3. `--data_cfg` switches the data loading configuration from the original one for training in exp_cfg to the one for validation tuning.
+   4. To access experimental results saved outside `${SPEECHAIN_ROOT}`, append `--train_result_path {your-target-path}` to `bash run.sh`.
+6. Evaluate the trained ASR model on the official test sets</code>
+   bash run.sh --train false --exp_cfg 960-bpe5k_transformer-wide_ctc_perturb --infer_cfg "{the-best-configuration-you-get-during-validation-tuning}"
+   <code>``
+   **Note:** 
+   1.</code>--train false<code>is used to skip the training stage.
+   2. There are two ways to specify the optimal</code>infer_cfg<code>tuned on the validation set:
+  1. Update</code>infer_cfg<code>in</code>${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}/exp_cfg/960-bpe5k_transformer-wide_ctc_perturb.yaml<code>.
+  2. Provide a parsable string as the value for</code>--infer_cfg<code>in the terminal. For example,</code>beam_size:16,ctc_weight:0.2<code>can be converted into a dictionary with two key-value items (</code>beam_size=16<code>and</code>ctc_weight=0.2<code>).  
+  For more details about this syntax, refer to [**here**](https://github.com/bagustris/SpeeChain/blob/main/handbook.md#convertable-arguments-in-the-terminal).
+   3. To access experimental results saved outside</code>${SPEECHAIN_ROOT}<code>, append</code>--train_result_path {your-target-path}<code>to</code>bash run.sh`.</p>
+</li>
 </ol>
-<pre><code>mkdir ${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}
-cp ${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960/run.sh
-${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}/run.sh
-</code></pre>
-<p><strong>Note:</strong>
-1. Update the arguments <code>dataset</code> and <code>subset</code> (line no.16 &amp; 17) in
-<code>${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}/run.sh</code>:</p>
-<pre><code>dataset=librispeech -&gt; 'your-new-dataset'
-subset='train-960' -&gt; 'your-new-dataset'
-</code></pre>
-<ol>
-<li>Copy a pre-tuned configuration file into your newly created folder.
-Suppose we want to use the configuration
-<code>${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960/exp_cfg/960-bpe5k_transformer-wide_ctc_perturb.yaml</code>:</li>
-</ol>
-<pre><code>cd ${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}
-mkdir ./data_cfg ./exp_cfg
-cp ${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960/exp_cfg/960-bpe5k_transformer-wide_ctc_perturb.yaml ./exp_cfg
-</code></pre>
-<p><strong>Note:</strong>
-1. Update the dataset arguments at the beginning of your selected configuration:</p>
-<pre><code># dataset-related
-dataset: librispeech -&gt; 'your-new-dataset'
-train_set: train-960 -&gt; 'your-target-subset'
-valid_set: dev -&gt; 'valid-set-of-new-dataset'
-
-# tokenizer-related
-txt_format: asr
-vocab_set: train-960 -&gt; 'your-target-subset'
-token_type: sentencepiece
-token_num: bpe5k
-</code></pre>
-<ol>
-<li>Train the ASR model on your target training set:</li>
-</ol>
-<pre><code>cd ${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}
-bash run.sh --test false --exp_cfg 960-bpe5k_transformer-wide_ctc_perturb (--ngpu x --gpus x,x)
-</code></pre>
-<p><strong>Note:</strong>
-1. <code>--test false</code> is used to skip the testing stage.
-2. Ensure your computational resources match the configuration before training the model.
-3. To save experimental results outside ${SPEECHAIN_ROOT}, specify your desired location by appending
---train_result_path {your-target-path} to bash run.sh.
-5. Tune the inference hyperparameters on the corresponding validation set</p>
-<pre><code>cp ${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960/data_cfg/test_dev-clean+other.yaml ./data_cfg
-mv ./data_cfg/test_dev-clean.yaml ./data_cfg/test_{your-valid-set-name}.yaml
-bash run.sh --train false --exp_cfg 960-bpe5k_transformer-wide_ctc_perturb --data_cfg test_{your-valid-set-name}
-</code></pre>
-<p><strong>Note:</strong>
-1. Update the dataset arguments in <code>./data_cfg/test_{your-valid-set-name}.yaml</code>:</p>
-<pre><code>dataset: librispeech -&gt; 'your-new-dataset'
-valid_dset: &amp;valid_dset dev-clean -&gt; &amp;valid_dset 'valid-set-of-new-dataset'
-</code></pre>
-<ol>
-<li><code>--train false</code> is used to skip the training stage.</li>
-<li><code>--data_cfg</code> switches the data loading configuration from the original one for training in exp_cfg to the one for
-validation tuning.</li>
-<li>To access experimental results saved outside <code>${SPEECHAIN_ROOT}</code>, append <code>--train_result_path {your-target-path}</code> to
-<code>bash run.sh</code>.</li>
-<li>Evaluate the trained ASR model on the official test sets</li>
-</ol>
-<pre><code>bash run.sh --train false --exp_cfg 960-bpe5k_transformer-wide_ctc_perturb --infer_cfg
-&quot;{the-best-configuration-you-get-during-validation-tuning}&quot;
-</code></pre>
-<p><strong>Note:</strong>
-1. <code>--train false</code> is used to skip the training stage.
-2. There are two ways to specify the optimal <code>infer_cfg</code> tuned on the validation set:
-1. Update <code>infer_cfg</code> in
-<code>${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}/exp_cfg/960-bpe5k_transformer-wide_ctc_perturb.yaml</code>.
-2. Provide a parsable string as the value for <code>--infer_cfg</code> in the terminal. For example, <code>beam_size:16,ctc_weight:0.2</code>
-can be converted into a dictionary with two key-value items (<code>beam_size=16</code> and <code>ctc_weight=0.2</code>).
-For more details about this syntax, refer to
-<a href="https://github.com/bagustris/SpeeChain/blob/main/handbook.md#convertable-arguments-in-the-terminal"><strong>here</strong></a>.
-3. To access experimental results saved outside <code>${SPEECHAIN_ROOT}</code>, append <code>--train_result_path {your-target-path}</code> to
-<code>bash run.sh</code>.</p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/recipes/asr#table-of-contents">Back to the table of contents</a></p>
 <h1 id="how-to-create-your-own-asr-model">How to create your own ASR model</h1>
 <p>The detailed instructions for creating your own ASR model using SpeeChain are coming soon.</p>
