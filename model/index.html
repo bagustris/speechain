@@ -1,0 +1,4491 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Speechain Toolkit">
+      
+      
+      
+      
+        <link rel="prev" href="../iterator/">
+      
+      
+        <link rel="next" href="../module/">
+      
+      
+      <link rel="icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Model - Speechain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../css/code_select.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#model" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Speechain" class="md-header__button md-logo" aria-label="Speechain" data-md-component="logo">
+      
+  <img src="../img/speechain_inverted.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Speechain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Model
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/bagustris/speechain" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Speechain" class="md-nav__button md-logo" aria-label="Speechain" data-md-component="logo">
+      
+  <img src="../img/speechain_inverted.png" alt="logo">
+
+    </a>
+    Speechain
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/bagustris/speechain" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets (Directory)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recipes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TTS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../criterion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Criterion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dataset (Module)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iterator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Iterator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Model
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Model
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-file-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration File Format
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Library
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Document
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Document">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#speechainmodelabsmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      speechain.model.abs.Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="speechain.model.abs.Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__init__self-args-device-model_conf-module_conf-criterion_conf" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__(self, args, device, model_conf, module_conf, criterion_conf)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch_to_cudaself-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      batch_to_cuda(self, data)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forwardself-batch_data-epoch-kwargs" class="md-nav__link">
+    <span class="md-ellipsis">
+      forward(self, batch_data, epoch, **kwargs)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aver_metrics_across_procsself-metrics-batch_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      aver_metrics_across_procs(self, metrics, batch_data)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluateself-test_batch-infer_conf" class="md-nav__link">
+    <span class="md-ellipsis">
+      evaluate(self, test_batch, infer_conf)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad_cases_selection_init_fn" class="md-nav__link">
+    <span class="md-ellipsis">
+      bad_cases_selection_init_fn()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module_initself-kwargs" class="md-nav__link">
+    <span class="md-ellipsis">
+      module_init(self, **kwargs)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterion_initself-criterion_conf" class="md-nav__link">
+    <span class="md-ellipsis">
+      criterion_init(self, **criterion_conf)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch_preprocess_fnself-batch_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      batch_preprocess_fn(self, batch_data)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module_forwardself-batch_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      module_forward(self, **batch_data)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterion_forwardself-kwargs" class="md-nav__link">
+    <span class="md-ellipsis">
+      criterion_forward(self, **kwargs)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizeself-epoch-sample_index-valid_sample" class="md-nav__link">
+    <span class="md-ellipsis">
+      visualize(self, epoch, sample_index, **valid_sample)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inferenceself-infer_conf-kwargs" class="md-nav__link">
+    <span class="md-ellipsis">
+      inference(self, infer_conf, **kwargs)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-freeze-a-specific-part-of-your-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Freeze a Specific Part of your Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-initialize-your-model-by-the-pretrained-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Initialize your Model by the Pretrained Model
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../optim_sche/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OptimScheduler
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokenizer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tokenizer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../handbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Handbook
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/criterion/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    criterion
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_1" id="__nav_14_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_1">
+            <span class="md-nav__icon md-icon"></span>
+            criterion
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/criterion/abs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    abs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/criterion/accuracy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    accuracy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/criterion/att_guid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    att_guid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/criterion/bce_logits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    bce_logits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/criterion/cross_entropy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cross_entropy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/criterion/ctc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ctc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/criterion/error_rate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    error_rate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/criterion/fbeta_score/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    fbeta_score
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/criterion/least_error/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    least_error
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/criterion/perplexity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    perplexity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/dataset/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    dataset
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_2" id="__nav_14_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_2">
+            <span class="md-nav__icon md-icon"></span>
+            dataset
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/dataset/abs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    abs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/dataset/speech_text/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    speech_text
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/infer_func/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    infer_func
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_3" id="__nav_14_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_3">
+            <span class="md-nav__icon md-icon"></span>
+            infer_func
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/infer_func/beam_search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    beam_search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/infer_func/ctc_decoding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ctc_decoding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/infer_func/tts_decoding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tts_decoding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/iterator/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    iterator
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_4" id="__nav_14_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_4">
+            <span class="md-nav__icon md-icon"></span>
+            iterator
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/iterator/abs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    abs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/iterator/block/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    block
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/model/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    model
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_5" id="__nav_14_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_5">
+            <span class="md-nav__icon md-icon"></span>
+            model
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/model/abs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    abs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/model/ar_asr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ar_asr
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/model/ar_tts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ar_tts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/model/lm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/model/nar_tts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nar_tts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    module
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6" id="__nav_14_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6">
+            <span class="md-nav__icon md-icon"></span>
+            module
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/abs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    abs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/augment/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    augment
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_2" id="__nav_14_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            augment
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/augment/specaug/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    specaug
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/conformer/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    conformer
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_3" id="__nav_14_6_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            conformer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/conformer/attention/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    attention
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/conformer/encoder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    encoder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/conformer/pos_enc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pos_enc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/decoder/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    decoder
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_4" id="__nav_14_6_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            decoder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/decoder/ar_asr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ar_asr
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/decoder/ar_tts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ar_tts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/decoder/nar_tts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nar_tts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/encoder/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    encoder
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_5" id="__nav_14_6_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            encoder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/encoder/asr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    asr
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/encoder/speaker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    speaker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/encoder/test_speaker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    test_speaker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/encoder/tts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/frontend/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    frontend
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_6" id="__nav_14_6_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            frontend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/frontend/delta_feat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    delta_feat
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/frontend/linear2mel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    linear2mel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/frontend/speech2linear/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    speech2linear
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/frontend/speech2mel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    speech2mel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/norm/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    norm
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_7" id="__nav_14_6_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_7">
+            <span class="md-nav__icon md-icon"></span>
+            norm
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/norm/feat_norm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    feat_norm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/postnet/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    postnet
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_8" id="__nav_14_6_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_8">
+            <span class="md-nav__icon md-icon"></span>
+            postnet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/postnet/conv1d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    conv1d
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/postnet/token/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    token
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/prenet/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    prenet
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_9" id="__nav_14_6_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_9">
+            <span class="md-nav__icon md-icon"></span>
+            prenet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/prenet/conv1d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    conv1d
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/prenet/conv2d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    conv2d
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/prenet/embed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    embed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/prenet/linear/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    linear
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/prenet/spk_embed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    spk_embed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/prenet/var_pred/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    var_pred
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_10" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/standalone/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    standalone
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_10" id="__nav_14_6_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_10">
+            <span class="md-nav__icon md-icon"></span>
+            standalone
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/standalone/lm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_11" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/transformer/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    transformer
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_11" id="__nav_14_6_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_11">
+            <span class="md-nav__icon md-icon"></span>
+            transformer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/transformer/attention/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    attention
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/transformer/decoder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    decoder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/transformer/encoder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    encoder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/transformer/feed_forward/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    feed_forward
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/transformer/pos_enc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pos_enc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_12" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/vocoder/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    vocoder
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_12" id="__nav_14_6_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_12">
+            <span class="md-nav__icon md-icon"></span>
+            vocoder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/vocoder/hifigan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hifigan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/vocoder/test_hifigan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    test_hifigan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/monitor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    monitor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/optim_sche/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    optim_sche
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_8" id="__nav_14_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_8">
+            <span class="md-nav__icon md-icon"></span>
+            optim_sche
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/optim_sche/abs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    abs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/optim_sche/exp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    exp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/optim_sche/noam/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    noam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/pyscripts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    pyscripts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_9" id="__nav_14_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_9">
+            <span class="md-nav__icon md-icon"></span>
+            pyscripts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/pyscripts/empty_file_checker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    empty_file_checker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/pyscripts/folder_summarizer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    folder_summarizer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/pyscripts/model_para_renamer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    model_para_renamer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/pyscripts/phn_duaration_visualizer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    phn_duaration_visualizer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/pyscripts/text_dist_visualizer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    text_dist_visualizer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/pyscripts/wavlen_dist_visualizer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    wavlen_dist_visualizer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/runner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    runner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/snapshooter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    snapshooter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_12" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/tokenizer/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    tokenizer
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_12" id="__nav_14_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_12">
+            <span class="md-nav__icon md-icon"></span>
+            tokenizer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tokenizer/abs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    abs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tokenizer/char/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    char
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tokenizer/g2p/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    g2p
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tokenizer/sp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_13" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/utilbox/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    utilbox
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_13" id="__nav_14_13_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_13">
+            <span class="md-nav__icon md-icon"></span>
+            utilbox
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/data_loading_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    data_loading_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/data_saving_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    data_saving_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/dump_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    dump_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/eval_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    eval_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/feat_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    feat_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/humanfriendly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    humanfriendly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/import_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    import_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/log_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    log_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/md_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    md_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/regex_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    regex_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/sb_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sb_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/spk_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    spk_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/tensor_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tensor_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/test_humanfriendly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    test_humanfriendly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/text_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    text_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/train_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    train_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/type_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    type_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/yaml_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    yaml_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-file-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration File Format
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Library
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Document
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Document">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#speechainmodelabsmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      speechain.model.abs.Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="speechain.model.abs.Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__init__self-args-device-model_conf-module_conf-criterion_conf" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__(self, args, device, model_conf, module_conf, criterion_conf)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch_to_cudaself-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      batch_to_cuda(self, data)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forwardself-batch_data-epoch-kwargs" class="md-nav__link">
+    <span class="md-ellipsis">
+      forward(self, batch_data, epoch, **kwargs)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aver_metrics_across_procsself-metrics-batch_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      aver_metrics_across_procs(self, metrics, batch_data)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluateself-test_batch-infer_conf" class="md-nav__link">
+    <span class="md-ellipsis">
+      evaluate(self, test_batch, infer_conf)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad_cases_selection_init_fn" class="md-nav__link">
+    <span class="md-ellipsis">
+      bad_cases_selection_init_fn()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module_initself-kwargs" class="md-nav__link">
+    <span class="md-ellipsis">
+      module_init(self, **kwargs)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterion_initself-criterion_conf" class="md-nav__link">
+    <span class="md-ellipsis">
+      criterion_init(self, **criterion_conf)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch_preprocess_fnself-batch_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      batch_preprocess_fn(self, batch_data)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module_forwardself-batch_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      module_forward(self, **batch_data)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterion_forwardself-kwargs" class="md-nav__link">
+    <span class="md-ellipsis">
+      criterion_forward(self, **kwargs)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizeself-epoch-sample_index-valid_sample" class="md-nav__link">
+    <span class="md-ellipsis">
+      visualize(self, epoch, sample_index, **valid_sample)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inferenceself-infer_conf-kwargs" class="md-nav__link">
+    <span class="md-ellipsis">
+      inference(self, infer_conf, **kwargs)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-freeze-a-specific-part-of-your-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Freeze a Specific Part of your Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-initialize-your-model-by-the-pretrained-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Initialize your Model by the Pretrained Model
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="model">Model</h1>
+<p><a href="https://github.com/bagustris/SpeeChain/blob/main/speechain/model/abs.py"><em>Model</em></a> is the hub of this part where different <em>Module</em> and <em>Criterion</em> objects can be freely assembled to create a model.
+<em>Model</em> encapsulates the general model-related services and provides sufficient interface functions for you to override to customize your own models. </p>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/blob/main/handbook.md#speechain-handbook">Back to the handbook page</a></p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#configuration-file-format"><strong>Configuration File Format</strong></a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#model-library"><strong>Model Library</strong></a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#api-document"><strong>API Document</strong></a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#supported-models"><strong>Supported Models</strong></a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#how-to-freeze-a-specific-part-of-your-model"><strong>How to Freeze a Specific Part of your Model</strong></a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#how-to-initialize-your-model-by-the-pretrained-model"><strong>How to Initialize your Model by the Pretrained Models</strong></a></li>
+</ol>
+<h2 id="configuration-file-format">Configuration File Format</h2>
+<p>The configuration of your model is given in <em>train_cfg</em>. 
+The configuration format is shown below.</p>
+<pre><code>model:
+    model_type: {file_name}.{class_name}
+    model_conf:
+        init: {init_function}
+        frozen_modules:
+            - {frozen_module1}
+            - {frozen_module2}
+            - ...
+        pretrained_model:
+            - path: {model_path1}
+              mapping: 
+                {src_name1}: {tgt_name1}
+                {src_name2}: {tgt_name2}
+                ...
+            - path: {model_path2}
+            - ...
+        visual_infer_conf:
+            ...
+        customize_conf: 
+            {customize_arg1}: {arg_value1}
+            {customize_arg2}: {arg_value2}
+            ...
+    module_conf:
+        ...
+    criterion_conf:
+        ...    
+</code></pre>
+<ul>
+<li>The first-level key must be <strong>model</strong> to notify the framework of the model configuration.</li>
+<li>
+<p><strong>model_type</strong> is used as the query to pick up your target <em>Model</em> subclass in <code>{SPEECHAIN_ROOT}/speechain/model/</code> for model initialization.
+  Your given query should be in the form of <code>{file_name}.{class_name}</code>, e.g., <code>asr.ASR</code> means the subclass <code>ASR</code> in <code>{SPEECHAIN_ROOT}/speechain/model/asr.py</code>.</p>
+</li>
+<li>
+<p><strong>model_conf</strong> contains the general configuration of your model. It is made up of the following 4 parts:</p>
+<ol>
+<li><strong>init</strong> indicates the function used to initialize the parameters of your model before training. 
+  The available initialization functions are shown in the keys of the built-in dictionary <code>init_class_dict</code>.<br />
+  For more details about the available initialization functions, please refer to the built-in dictionary <code>init_class_dict</code>.</li>
+<li><strong>frozen_modules</strong> contains the names of the modules that don't need to be updated during training. 
+  If a list of module names is given, all those modules will be frozen.</li>
+<li><strong>pretrained_model</strong> contains the pretrained models you would like to load into your model as the initial parameters. 
+  If a list of pretrained models is given, all those pretrained models will be used to initialize your model.  <ol>
+<li><strong>path</strong> indicates where the pretrained model file is placed.</li>
+<li><strong>mapping</strong> is a dictionary used to solve the mismatch between the parameter names of the pretrained model and the model you want to train. 
+ Each key-value item solves a name mismatch where the key is the name in the pretrained model and the value is the name in the model to be trained.</li>
+</ol>
+</li>
+<li><strong>visual_infer_conf</strong> contains the inference configuration you want to use for model visualization during training. 
+     This argument is default to be an empty dictionary which means the default inference configuration of each model will be used.<br />
+     For more details, please refer to the docstring of <code>inference()</code> of each <em>Model</em> subclass.</li>
+<li><strong>customize_conf</strong> will be used to initialize the main body of the model in the interface function <em>module_init()</em>.<br />
+     For more details about the argument setting, please refer to the README.md of each <em>Model</em> subclass.</li>
+</ol>
+</li>
+<li>
+<p><strong>module_conf</strong> contains all the configuration about the module initialization. 
+  These configuration arguments will be used to initialize the network structure of the model in the interface function <em>module_init()</em>.<br />
+  For more details about the argument setting, please refer to the README.md of each <em>Model</em> subclass.</p>
+</li>
+<li>
+<p><strong>criterion_conf</strong> contains all the information about the criterion initialization. 
+  These configuration arguments will be used to initialize all the criteria of the model in the interfance function <em>criterion_init()</em>.<br />
+  For more details about the argument setting, please refer to the README.md of each <em>Model</em> subclass.</p>
+</li>
+</ul>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#table-of-contents">Back to the table of contents</a></p>
+<h2 id="model-library">Model Library</h2>
+<pre><code>/speechain
+    /model
+        /abs.py     # Abstract Model class. Base of all Model implementations.
+        /asr.py     # All the model implementations of ASR.
+        /tts.py     # All the model implementations of TTS.
+</code></pre>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#table-of-contents">Back to the table of contents</a></p>
+<h2 id="api-document">API Document</h2>
+<p><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#speechainmodelabsmodel"><strong>speechain.model.abs.Model</strong></a><br />
+1. <em>Non-overridable backbone functions:</em>
+   1. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#__init__self-args-device-model_conf-module_conf-criterion_conf">__init__</a>
+   2. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#batch_to_cudaself-data">batch_to_cuda</a>
+   3. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#forwardself-batch_data-epoch-kwargs">forward</a>
+   4. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#aver_metrics_across_procsself-metrics-batch_data">aver_metrics_across_procs</a>
+   5. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#evaluateself-test_batch-infer_conf">evaluate</a></p>
+<ol>
+<li><em>Overridable interface functions:</em>  </li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#bad_cases_selection_init_fn">bad_cases_selection_init_fn</a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#module_initself-kwargs">module_init</a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#criterion_initself-criterion_conf">criterion_init</a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#batch_preprocess_fnself-batch_data">batch_preprocess_fn</a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#module_forwardself-batch_data">module_forward</a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#criterion_forwardself-kwargs">criterion_forward</a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#visualizeself-epoch-sample_index-valid_sample">visualize</a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#inferenceself-infer_conf-kwargs">inference</a></li>
+</ol>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#table-of-contents">Back to the table of contents</a></p>
+<h3 id="speechainmodelabsmodel">speechain.model.abs.Model</h3>
+<p><em>speechain.model.abs.Model</em> is the base class for all models in this toolkit. 
+The main job of a model includes: 
+1. (optional) preprocess the input batch data to the trainable format
+2. calculate the model prediction results by the <em>Module</em> members
+3. evaluate the prediction results by the <em>Criterion</em> members</p>
+<p>Each model has several built-in <em>Module</em> members that make up the neural network structure of the model. 
+These <em>Module</em> members will be initialized by the <code>module_conf</code> given in your configuration.</p>
+<p>There are a built-in dictionary named <code>init_class_dict</code> and a built-in list named <code>default_init_modules</code> in the base class.
+<code>init_class_dict</code> contains all the available initialization functions of the model parameters while <code>default_init_modules</code> includes the network layers that have their own initialization functions.</p>
+<h4 id="__init__self-args-device-model_conf-module_conf-criterion_conf">__init__(self, args, device, model_conf, module_conf, criterion_conf)</h4>
+<ul>
+<li>
+<p><strong>Description:</strong><br />
+    In this initialization function, there are two parts of initialization: model-specific customized initialization and model-independent general initialization.</p>
+<ol>
+<li>
+<p>Model-specific customized initialization is done by two interface functions: <code>module_init()</code> and <code>criterion_init()</code>. 
+<code>module_init()</code> initializes the neural network structure of the model while <code>criterion_init()</code> initializes the criteria used to optimize (loss functions) and evaluate (validation metrics) the model.</p>
+</li>
+<li>
+<p>After the customized initialization, there are 3 steps for general initialization shared by all <em>Model</em> subclasses:</p>
+</li>
+<li>
+<p>Pretrained parameters will be loaded into your model if the key <code>pretrained_model</code> is given. 
+   Multiple pretrained models can be specified and each of them can be loaded into different parts of your model. 
+   The mismatch between the names of pretrained parameters and the parameters of your model is handled by the key <code>mapping</code>. 
+   The value of the key <code>mapping</code> is a dictionary where each key-value item corresponds to a mapping of parameter names. 
+   The key is the parameter name in the pretrained parameters while the value is the parameter name of your model.</p>
+</li>
+<li>
+<p>If <code>pretrained_model</code> is not given, the parameters of your model will be initialized by the function that matches your input query <code>init</code>. 
+   For more details about the available initialization functions, please refer to the built-in dictionary <code>init_class_dict</code>. 
+   If <code>init</code> is not given, the default initialization function <code>torch.nn.init.xavier_normal_</code> will be used to initialize your model.</p>
+</li>
+<li>
+<p>Finally, the specified parts of your model will be frozen if <code>frozen_modules</code> is given. 
+   If there is only one frozen module, you can directly give the string of its name to <code>frozen_modules</code> like <code>frozen_modules: {module_name}</code>. 
+   If there are multiple modules you want to freeze, you can give their names in a list as
+      ```
+      frozen_modules:</p>
+<ul>
+<li>{module_name1}</li>
+<li>{module_name2}</li>
+<li>...
+  <code>``
+   Moreover, the frozen granularity depends on your input</code>frozen_modules`. For example,</li>
+</ul>
+</li>
+<li>If you give <code>frozen_modules: encoder_prenet</code>, all parameters of the prenet of your encoder will be frozen</li>
+<li>If you give <code>frozen_modules: encoder_prenet.conv</code>, only the convolution layers of the prenet of your encoder will be frozen</li>
+<li>If you give <code>frozen_modules: encoder_prenet.conv.0</code>, only the first convolution layer of the prenet of your encoder will be frozen</li>
+<li>If you give <code>frozen_modules: encoder_prenet.conv.0.bias</code>, only the bias vector of the first convolution layer of the prenet of your encoder will be frozen</li>
+<li><strong>Arguments:</strong></li>
+<li><em><strong>args:</strong></em> argparse.Namespace<br />
+Experiment pipeline arguments received from the <code>Runner</code> object in <code>runner.py</code>.</li>
+<li><em><strong>device:</strong></em> torch.device<br />
+The computational device used for model calculation in the current GPU process.</li>
+<li><em><strong>model_conf:</strong></em> Dict<br />
+The model configuration used for general model initialization.</li>
+<li><em><strong>module_conf:</strong></em> Dict<br />
+The module configuration used for network structure initialization.</li>
+<li><em><strong>criterion_conf:</strong></em> Dict = None<br />
+The criterion configuration used for criterion (loss functions and evaluation metrics) initialization.</li>
+</ol>
+</li>
+</ul>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#api-document">Back to the API list</a></p>
+<h4 id="batch_to_cudaself-data">batch_to_cuda(self, data)</h4>
+<ul>
+<li><strong>Description:</strong><br />
+    The recursive function that transfers the batch data to the specified device in the current process.</li>
+<li><strong>Arguments:</strong></li>
+<li><em><strong>data:</strong></em> Dict or torch.Tensor<br />
+    The input batch data. It should be either a Tensor or a Dict of Tensors. 
+    For the Dict input, the function itself will be called once by each Tensor element.</li>
+<li><strong>Return:</strong> Dict or torch.Tensor<br />
+    If the input is a Dict, the returned output will also be a Dict of Tensors transferred to the target device;<br />
+    If the input is a Tensor, the returned output will be its copy on the target device.</li>
+</ul>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#api-document">Back to the API list</a></p>
+<h4 id="forwardself-batch_data-epoch-kwargs">forward(self, batch_data, epoch, **kwargs)</h4>
+<ul>
+<li>
+<p><strong>Description:</strong><br />
+    The general model forward function shared by all the <em>Model</em> subclasses. This forward function has 3 steps:</p>
+<ol>
+<li>preprocess and transfer the batch data to GPUs</li>
+<li>obtain the model prediction results</li>
+<li>calculate the loss function and evaluate the prediction results</li>
+</ol>
+<p>For each step above, we provide interface functions for you to override and make your own implementation.
+* <strong>Arguments:</strong>
+  * <em><strong>batch_data:</strong></em> Dict<br />
+The input batch data received from the <code>train</code> or <code>valid</code> dataloader object in the experimental pipeline. 
+The batch is in the form of a Dict where the key is the data name and the value is the data content. 
+  * <em><strong>epoch:</strong></em> int = None<br />
+The number of the current epoch. Used for real-time model visualization and model prediction.
+  * <em><strong><em>*kwargs:</em>*_<br />
+The additional arguments for real-time model visualization. If given, the code will go through the model visualization branch.
+* </strong>Return:**<br />
+In the training branch, the loss functions and evaluation metrics will be returned each of which is in the form of a _Dict</em>.<br />
+In the validation branch, only the evaluation metrics will be returned.<br />
+In the visualization branch, the model snapshots on the given validation instance will be returned.</p>
+</li>
+</ul>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#api-document">Back to the API list</a></p>
+<h4 id="aver_metrics_across_procsself-metrics-batch_data">aver_metrics_across_procs(self, metrics, batch_data)</h4>
+<ul>
+<li><strong>Description:</strong><br />
+    This function averages the evaluation metrics across all GPU processes in the DDP mode for model distribution.</li>
+<li><strong>Arguments:</strong></li>
+<li><em><strong>metrics:</strong></em> Dict[str, torch.Tensor]<br />
+    The evaluation metrics to be averaged across all GPU processes. </li>
+<li><em><strong>batch_data:</strong></em> Dict<br />
+    The input batch data used to calculate the batch size for averaging evaluation metrics.</li>
+<li><strong>Return:</strong> Dict[str, torch.Tensor]<br />
+    The evaluation metrics <em>Dict</em> after averaging. The key names remain the same.</li>
+</ul>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#api-document">Back to the API list</a></p>
+<h4 id="evaluateself-test_batch-infer_conf">evaluate(self, test_batch, infer_conf)</h4>
+<ul>
+<li>
+<p><strong>Description:</strong><br />
+    The shared evaluation function by all <em>Model</em> subclasses. This evaluation function has 2 steps:</p>
+<ol>
+<li>preprocess and transfer the batch data to GPUs</li>
+<li>calculate the inference results</li>
+</ol>
+<p>For each step above, we provide interface functions for you to override and make your own implementation.
+* <strong>Arguments:</strong>
+  * <em><strong>test_batch:</strong></em> Dict<br />
+The input batch data received from the <code>test</code> dataloader object in the experimental pipeline.
+  * <em><strong>infer_conf:</strong></em> Dict<br />
+The configuration used for model inference.
+* <strong>Return:</strong> Dict<br />
+A Dict of the inference results where each key-value item corresponds to one evaluation metric you want to save to the disk.</p>
+</li>
+</ul>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#api-document">Back to the API list</a></p>
+<h4 id="bad_cases_selection_init_fn">bad_cases_selection_init_fn()</h4>
+<ul>
+<li><strong>Description:</strong><br />
+    This hook function returns the default bad case selection method of each <em>Model</em> object. 
+    This default value will be referred by the <em>Runner</em> to present the top-N bad cases. 
+    The original hook implementation in the base Model class returns None which means no default value.</li>
+<li><strong>Return:</strong> List[List[str or int]]<br />
+    The returned default value should be a list of tri-list where each tri-list is in the form of [<code>selection_metric</code>, <code>selection_mode</code>, <code>case_number</code>].<br />
+    For example, ['wer', 'max', 50] means 50 testing waveforms with the largest WER will be selected.</li>
+</ul>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#api-document">Back to the API list</a></p>
+<h4 id="module_initself-kwargs">module_init(self, **kwargs)</h4>
+<ul>
+<li><strong>Description:</strong><br />
+    The interface function that initializes the <em>Module</em> members of the model. These <em>Module</em> members make up the neural network structure of the model. 
+    Some models have their customized part that also needs to be initialization in this function, e.g. the tokenizer of ASR and TTS models.<br />
+<strong>Note:</strong> This interface function must be overridden for each <em>Model</em> subclass.</li>
+<li><strong>Arguments:</strong></li>
+<li><em><strong>**kwargs:</strong></em><br />
+    The combination of the arguments in your <code>module_conf</code> and <code>model_conf['customize_conf']</code>.</li>
+</ul>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#api-document">Back to the API list</a></p>
+<h4 id="criterion_initself-criterion_conf">criterion_init(self, **criterion_conf)</h4>
+<ul>
+<li><strong>Description:</strong><br />
+    The interface function that initializes the <em>Criterion</em> members of the model. 
+    These <em>Criterion</em> members can be divided into two parts: the loss functions used for training and the evaluation metrics used for validation.<br />
+<strong>Note:</strong> This interface function must be overridden for each <em>Model</em> subclass.</li>
+<li><strong>Arguments:</strong></li>
+<li><em><strong>**criterion_conf:</strong></em><br />
+    The arguments in your given <code>criterion_conf</code>.</li>
+</ul>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#api-document">Back to the API list</a></p>
+<h4 id="batch_preprocess_fnself-batch_data">batch_preprocess_fn(self, batch_data)</h4>
+<ul>
+<li><strong>Description:</strong>
+  This hook function does the preprocessing for the input batch data before using them in <code>self.model_forward()</code>. 
+  This function is not mandatory to be overridden and the original implementation in the base <em>Model</em> class does nothing but return the input <code>batch_data</code>.<br />
+<strong>Note:</strong> the key names in the returned Dict should match the argument names in <code>self.model_forward()</code>.</li>
+<li><strong>Arguments:</strong></li>
+<li><em><strong>batch_data:</strong></em> Dict<br />
+    Raw data of the input batch to be preprocessed in this hook function.</li>
+<li><strong>Return:</strong> Dict<br />
+    Processed data of the input batch that is ready to be used in <code>self.model_forward()</code>.</li>
+</ul>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#api-document">Back to the API list</a></p>
+<h4 id="module_forwardself-batch_data">module_forward(self, **batch_data)</h4>
+<ul>
+<li><strong>Description:</strong><br />
+    This interface function forwards the input batch data by all <em>Module</em> members.<br />
+<strong>Note:</strong> <ol>
+<li>This interface function must be overridden for each <em>Model</em> subclass.</li>
+<li>The argument names should match the key names in the returned Dict of <code>self.batch_preprocess_fn()</code>.</li>
+<li>The key names in the returned Dict should match the argument names of <code>self.loss_calculation()</code> and <code>self.metrics_calculation()</code>.</li>
+</ol>
+</li>
+<li><strong>Arguments:</strong></li>
+<li><em><strong>**batch_data:</strong></em><br />
+    Processed data of the input batch received from <code>self.batch_preprocess_fn()</code>.</li>
+<li><strong>Return:</strong> Dict<br />
+    Prediction results (logits) of the model on the input batch data. 
+    Some intermediate results (e.g., attention matrices) can also be returned for later use.</li>
+</ul>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#api-document">Back to the API list</a></p>
+<h4 id="criterion_forwardself-kwargs">criterion_forward(self, **kwargs)</h4>
+<ul>
+<li><strong>Description:</strong><br />
+    This interface function is activated after <code>self.model_forward()</code>. 
+    It receives the model prediction results from <code>self.model_forward()</code> and input batch data from <code>self.batch_preprocess_fn()</code>.<br />
+<strong>Note:</strong> This interface function must be overridden for each <em>Model</em> subclass.</li>
+<li><strong>Arguments:</strong></li>
+<li><em><strong>**kwargs:</strong></em> 
+    The combination of the returned arguments from <code>self.batch_preprocess_fn()</code> and <code>self.model_forward()</code>.</li>
+<li><strong>Return:</strong> (Dict[str, torch.Tensor], Dict[str, torch.Tensor]) or Dict[str, torch.Tensor]<br />
+    The returned values should be different for the training and validation branches.<ol>
+<li>For training, two Dict[str, torch.Tensor] should be returned where the first one contains all the trainable training losses for optimization and the second one contains all the non-trainable evaluation metrics used to record the training status.</li>
+<li>For validation, only one Dict[str, torch.Tensor] should be returned which contains all the non-trainable evaluation metrics used to record the validation status.</li>
+</ol>
+</li>
+</ul>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#api-document">Back to the API list</a></p>
+<h4 id="visualizeself-epoch-sample_index-valid_sample">visualize(self, epoch, sample_index, **valid_sample)</h4>
+<ul>
+<li><strong>Description:</strong></li>
+<li><strong>Arguments:</strong></li>
+<li><strong>Return:</strong></li>
+</ul>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#api-document">Back to the API list</a></p>
+<h4 id="inferenceself-infer_conf-kwargs">inference(self, infer_conf, **kwargs)</h4>
+<ul>
+<li>
+<p><strong>Description:</strong><br />
+    This function receives the test data and test configuration. 
+    The inference results will be packaged into a <em>Dict[str, Dict]</em> which is passed to the <em>TestMonitor</em> object for disk storage. 
+    The returned <em>Dict</em> should be in the form of
+    <code>python
+    dict(
+        {file_name}=dict(
+            format={file_format},
+            content={file_content}
+        )
+    )</code>
+    The first-level key is used to decide the name of the meta file as <code>idx2{file_name}</code>. 
+    Its value is also a <em>Dict</em> and there must be two keys in this sub-<em>Dict</em>: <code>format</code> and <code>content</code>. 
+    The configuration of the sub-<em>Dict</em> is different for different file formats:</p>
+<ol>
+<li>
+<p>For pure text metadata files, the value of <code>format</code> must be <code>txt</code> and the value of <code>content</code> must be a <em>List</em> of Python built-in data type (i.e.,. int, float, str, bool, ...).
+Each line of the file <code>idx2{file_name}</code> will be made up of the index of a test data instance and its metadata value in the <code>content</code> <em>List</em> which are separated by a blank.<br />
+For example, <code>dict(cer=dict(format='txt', content=[0.1, 0.2, 0.3]))</code> will create a pure text file named <code>idx2cer</code> which looks like<br />
+<code>{test_index1} 0.1
+    {test_index2} 0.2
+    {test_index3} 0.3</code>
+    <strong>Note:</strong> if the first-level key ends with <em>.md</em>, there will not be <em>'idx2'</em> attached at the beginning of the file name.</p>
+</li>
+<li>
+<p>For audio files, the value of <code>format</code> must be either <code>wav</code> or <code>flac</code> and the value of <code>content</code> must be a <em>List</em> of array-like data type (e.g. numpy.ndarry, torch.Tensor, ...).
+Moreover, there must be an additional key named <code>sample_rate</code> to indicate the sampling rate of the waveforms to be saved in audio files.
+There will be a folder named <code>{file_name}</code> that contains all the audio files and a pure text file named <code>idx2{file_name}</code> that contains the absolute paths of all the saved audio files.<br />
+For example, <code>dict(wav=dict(format='flac', content=[np_arr1, np_arr2, np_arr3]))</code> will create a folder named <code>wav</code> and a pure text file named <code>idx2wav</code> in the same directory. 
+The file <code>idx2wav</code> looks like:
+     <code>{test_index1} /x/xx/wav/{test_index1}.flac
+     {test_index2} /x/xx/wav/{test_index2}.flac
+     {test_index3} /x/xx/wav/{test_index3}.flac</code>
+     where <code>/x/xx/</code> is your result path given in your <code>exp_cfg</code>.</p>
+</li>
+<li>
+<p>For binary files, the value of <code>format</code> in the sub-<em>Dict</em> must be <code>npy</code> and the value of <code>content</code> must be a <em>List</em> of numpy.ndarry (torch.Tensor is not supported).
+There will be a folder named <code>{file_name}</code> that contains all the <em>.npy</em> files and a pure text file named <code>idx2{file_name}</code> that contains the absolute paths of all the saved binary files.<br />
+For example, <code>dict(feat=dict(format='npy', content=[np_arr1, np_arr2, np_arr3]))</code> will create a folder named <code>feat</code> and a pure text file named <code>idx2feat</code>. 
+The <code>idx2feat</code> file is like:
+   <code>{test_index1} /x/xx/feat/{test_index1}.npy
+   {test_index2} /x/xx/feat/{test_index2}.npy
+   {test_index3} /x/xx/feat/{test_index3}.npy</code>
+   where <code>/x/xx/</code> is your result path given in your <code>exp_cfg</code>.</p>
+</li>
+<li><strong>Arguments:</strong></li>
+<li><em><strong>infer_conf:</strong></em> Dict<br />
+The configuration Dict used for model inference.</li>
+<li><em><strong>**kwargs:</strong></em><br />
+The testing data loaded from <code>test</code> dataloader object in the experimental pipeline. </li>
+<li><strong>Return:</strong> Dict[str, Dict[str, str or List]]<br />
+The model inference results to be saved on the disk.</li>
+</ol>
+</li>
+</ul>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#api-document">Back to the API list</a></p>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#table-of-contents">Back to the table of contents</a></p>
+<h2 id="supported-models">Supported Models</h2>
+<ol>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/recipes/asr#automatic-speech-recognition-asr">ASR Recipes</a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/blob/main/speechain/model/asr.py#L29">asr.ARASR</a>  <ul>
+<li><strong>Structure:</strong> Auto-Regressive CTC-Attention ASR model.  </li>
+<li><strong>Input:</strong> One tuple of speech-text paired data (<em>feat</em>, <em>feat_len</em>, <em>text</em>, <em>text_len</em>) in <em>model_forward()</em>.  </li>
+<li><strong>Output:</strong> One ASR loss calculated on the input data tuple in <em>criterion_calculation()</em>.</li>
+</ul>
+</li>
+<li><a href="https://github.com/bagustris/SpeeChain/blob/main/speechain/model/asr.py#L658">asr.SemiARASR</a> <ul>
+<li><strong>Structure:</strong> Semi-supervised Auto-Regressive CTC-Attention ASR model.  </li>
+<li><strong>Input:</strong> Multiple tuples of speech-text paired data  (<em>feat</em>, <em>feat_len</em>, <em>text</em>, <em>text_len</em>) in <em>model_forward()</em>. 
+  Each of them is generated by a specific <code>torch.utils.data.Dataloader</code>.</li>
+<li><strong>Output:</strong> Multiple ASR losses calculated on all the input data tuples in <em>criterion_calculation()</em>. 
+  A loss named <em>loss</em> is also returned which is the trainable overall loss summed by all ASR losses. </li>
+</ul>
+</li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/recipes/tts#text-to-speech-synthesis-tts">TTS Recipes</a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/blob/main/speechain/model/tts.py#L36">tts.ARTTS</a><ul>
+<li><strong>Structure:</strong> Auto-Regressive Attention TTS model.  </li>
+<li><strong>Input:</strong> One tuple of speech-text paired data (<em>feat</em>, <em>feat_len</em>, <em>text</em>, <em>text_len</em>) in <em>model_forward()</em>.  </li>
+<li><strong>Output:</strong> One TTS loss calculated on the input data tuple in <em>criterion_calculation()</em>.</li>
+</ul>
+</li>
+</ol>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#table-of-contents">Back to the table of contents</a></p>
+<h2 id="how-to-freeze-a-specific-part-of-your-model">How to Freeze a Specific Part of your Model</h2>
+<p>Parameter freezing can be done simply by giving the name of the module you want to freeze in <em>frozen_modules</em>. 
+In the example below, the encoder of the ASR model will be frozen while other modules are still trainable.</p>
+<pre><code>model:
+    model_type: asr.ARASR
+    model_conf:
+        frozen_modules: encoder
+</code></pre>
+<p>If you want to freeze multiple modules, you can give their names as a list in <em>frozen_modules</em>. 
+In the example below, the prenets of both the encoder and decoder will be frozen.</p>
+<pre><code>model:
+    model_type: asr.ARASR
+    model_conf:
+        frozen_modules:
+          - encoder.prenet
+          - decoder.prenet
+</code></pre>
+<p>The parameter freezing granularity can be very fine if you specify the module name by a series of dots. 
+In the example below, the convolution layers of the prenet of the encoder will be frozen.</p>
+<pre><code>model:
+    model_type: asr.ARASR
+    model_conf:
+        frozen_modules: 
+            - encoder.prenet.conv
+</code></pre>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#table-of-contents">Back to the table of contents</a></p>
+<h2 id="how-to-initialize-your-model-by-the-pretrained-model">How to Initialize your Model by the Pretrained Model</h2>
+<p>Pretrained model loading can be easily done by giving the model path in <em>pretrained_model</em>. 
+In the example below, the entire ASR model will be initialized by the given <em>best_accuracy.pth</em> model.</p>
+<pre><code>mdl_root: recipe/asr/librispeech/train-clean-100/exp/{exp_name}/models
+model:
+    model_type: asr.ARASR
+    model_conf:
+        pretrained_model:
+            path: !ref &lt;mdl_root&gt;/accuracy_best.pth
+</code></pre>
+<p>If you only want to initialize a part of your model, you can use the <em>mapping</em> argument in <em>pretrained_model</em>. 
+The parameter name mismatch can also be solved by the <em>mapping</em> argument. 
+In the example below, only the encoder of the ASR model will be initialized by the given pretrained model. 
+Even though the pretrained model is constructed by unit modules, it can still be loaded into the ASR model constructed by template modules by aligning their module names.</p>
+<pre><code>model_root: recipe/asr/librispeech/train-clean-100/exp/{exp_name}/models
+model:
+    model_type: asr.ARASR
+    model_conf:
+        pretrained_model:
+            path: !ref &lt;model_root&gt;/accuracy_best.pth
+            mapping: 
+              encoder_prenet: encoder.prenet
+              encoder: encoder.encoder
+</code></pre>
+<p>There could be multiple pretrained models in <em>pretrained_model</em> that are used to initialize your model. 
+In the example below, the encoder and decoder of the ASR model are initialized by different pretrained models.</p>
+<p>Note that if there are overlapping modules between the <em>mapping</em> arguments of different pretrained models, 
+the module will be initialized by the pretrained models at the back of the list.</p>
+<pre><code>model_root: recipe/asr/librispeech/train-clean-100/exp/{exp_name}/models
+model:
+    model_type: asr.ARASR
+    model_conf:
+        pretrained_model:
+            - path: !ref &lt;model_root&gt;/accuracy_best.pth
+              mapping:
+                encoder_prenet: encoder.prenet
+                encoder: encoder.encoder
+            - path: !ref &lt;model_root&gt;/10_accuracy_average.pth
+              mapping:
+                decoder_prenet: decoder.prenet
+                decoder: decoder.decoder
+                decoder_postnet: decoder.postnet
+</code></pre>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#table-of-contents">Back to the table of contents</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

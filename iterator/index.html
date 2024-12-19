@@ -1,0 +1,4066 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Speechain Toolkit">
+      
+      
+      
+      
+        <link rel="prev" href="../dataset/">
+      
+      
+        <link rel="next" href="../model/">
+      
+      
+      <link rel="icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Iterator - Speechain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../css/code_select.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#iterator" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Speechain" class="md-header__button md-logo" aria-label="Speechain" data-md-component="logo">
+      
+  <img src="../img/speechain_inverted.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Speechain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Iterator
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/bagustris/speechain" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Speechain" class="md-nav__button md-logo" aria-label="Speechain" data-md-component="logo">
+      
+  <img src="../img/speechain_inverted.png" alt="logo">
+
+    </a>
+    Speechain
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/bagustris/speechain" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets (Directory)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recipes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TTS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../criterion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Criterion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dataset (Module)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Iterator
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Iterator
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-file-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration File Format
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterator-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterator Library
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Document
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Document">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#speechainiteratorabsiterator" class="md-nav__link">
+    <span class="md-ellipsis">
+      speechain.iterator.abs.Iterator
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="speechain.iterator.abs.Iterator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__init__self-dataset_type-dataset_conf-batches_per_epoch-data_len-group_info-data_selection-is_descending-shuffle-seed-ngpu-num_workers-pin_memory-distributed-iter_conf" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__(self, dataset_type, dataset_conf, batches_per_epoch, data_len, group_info, data_selection, is_descending, shuffle, seed, ngpu, num_workers, pin_memory, distributed, **iter_conf)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__len__self" class="md-nav__link">
+    <span class="md-ellipsis">
+      __len__(self)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_batch_indicesself" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_batch_indices(self)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_group_infoself" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_group_info(self)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build_loaderself-epoch-start_step" class="md-nav__link">
+    <span class="md-ellipsis">
+      build_loader(self, epoch, start_step)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batches_generate_fnself-data_index-data_len-batch_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      batches_generate_fn(self, data_index, data_len, batch_size)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-construct-multiple-dataloaders" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Construct Multiple Dataloaders
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../optim_sche/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OptimScheduler
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokenizer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tokenizer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../handbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Handbook
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/criterion/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    criterion
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_1" id="__nav_14_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_1">
+            <span class="md-nav__icon md-icon"></span>
+            criterion
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/criterion/abs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    abs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/criterion/accuracy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    accuracy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/criterion/att_guid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    att_guid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/criterion/bce_logits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    bce_logits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/criterion/cross_entropy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cross_entropy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/criterion/ctc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ctc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/criterion/error_rate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    error_rate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/criterion/fbeta_score/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    fbeta_score
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/criterion/least_error/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    least_error
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/criterion/perplexity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    perplexity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/dataset/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    dataset
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_2" id="__nav_14_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_2">
+            <span class="md-nav__icon md-icon"></span>
+            dataset
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/dataset/abs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    abs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/dataset/speech_text/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    speech_text
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/infer_func/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    infer_func
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_3" id="__nav_14_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_3">
+            <span class="md-nav__icon md-icon"></span>
+            infer_func
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/infer_func/beam_search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    beam_search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/infer_func/ctc_decoding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ctc_decoding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/infer_func/tts_decoding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tts_decoding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/iterator/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    iterator
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_4" id="__nav_14_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_4">
+            <span class="md-nav__icon md-icon"></span>
+            iterator
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/iterator/abs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    abs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/iterator/block/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    block
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/model/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    model
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_5" id="__nav_14_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_5">
+            <span class="md-nav__icon md-icon"></span>
+            model
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/model/abs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    abs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/model/ar_asr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ar_asr
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/model/ar_tts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ar_tts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/model/lm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/model/nar_tts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nar_tts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    module
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6" id="__nav_14_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6">
+            <span class="md-nav__icon md-icon"></span>
+            module
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/abs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    abs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/augment/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    augment
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_2" id="__nav_14_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            augment
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/augment/specaug/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    specaug
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/conformer/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    conformer
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_3" id="__nav_14_6_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            conformer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/conformer/attention/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    attention
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/conformer/encoder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    encoder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/conformer/pos_enc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pos_enc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/decoder/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    decoder
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_4" id="__nav_14_6_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            decoder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/decoder/ar_asr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ar_asr
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/decoder/ar_tts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ar_tts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/decoder/nar_tts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nar_tts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/encoder/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    encoder
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_5" id="__nav_14_6_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            encoder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/encoder/asr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    asr
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/encoder/speaker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    speaker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/encoder/test_speaker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    test_speaker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/encoder/tts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/frontend/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    frontend
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_6" id="__nav_14_6_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            frontend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/frontend/delta_feat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    delta_feat
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/frontend/linear2mel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    linear2mel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/frontend/speech2linear/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    speech2linear
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/frontend/speech2mel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    speech2mel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/norm/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    norm
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_7" id="__nav_14_6_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_7">
+            <span class="md-nav__icon md-icon"></span>
+            norm
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/norm/feat_norm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    feat_norm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/postnet/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    postnet
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_8" id="__nav_14_6_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_8">
+            <span class="md-nav__icon md-icon"></span>
+            postnet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/postnet/conv1d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    conv1d
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/postnet/token/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    token
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/prenet/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    prenet
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_9" id="__nav_14_6_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_9">
+            <span class="md-nav__icon md-icon"></span>
+            prenet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/prenet/conv1d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    conv1d
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/prenet/conv2d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    conv2d
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/prenet/embed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    embed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/prenet/linear/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    linear
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/prenet/spk_embed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    spk_embed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/prenet/var_pred/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    var_pred
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_10" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/standalone/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    standalone
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_10" id="__nav_14_6_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_10">
+            <span class="md-nav__icon md-icon"></span>
+            standalone
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/standalone/lm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_11" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/transformer/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    transformer
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_11" id="__nav_14_6_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_11">
+            <span class="md-nav__icon md-icon"></span>
+            transformer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/transformer/attention/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    attention
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/transformer/decoder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    decoder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/transformer/encoder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    encoder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/transformer/feed_forward/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    feed_forward
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/transformer/pos_enc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pos_enc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_6_12" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/module/vocoder/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    vocoder
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_6_12" id="__nav_14_6_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_6_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_6_12">
+            <span class="md-nav__icon md-icon"></span>
+            vocoder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/vocoder/hifigan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hifigan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/module/vocoder/test_hifigan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    test_hifigan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/monitor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    monitor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/optim_sche/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    optim_sche
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_8" id="__nav_14_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_8">
+            <span class="md-nav__icon md-icon"></span>
+            optim_sche
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/optim_sche/abs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    abs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/optim_sche/exp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    exp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/optim_sche/noam/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    noam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/pyscripts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    pyscripts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_9" id="__nav_14_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_9">
+            <span class="md-nav__icon md-icon"></span>
+            pyscripts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/pyscripts/empty_file_checker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    empty_file_checker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/pyscripts/folder_summarizer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    folder_summarizer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/pyscripts/model_para_renamer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    model_para_renamer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/pyscripts/phn_duaration_visualizer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    phn_duaration_visualizer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/pyscripts/text_dist_visualizer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    text_dist_visualizer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/pyscripts/wavlen_dist_visualizer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    wavlen_dist_visualizer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/runner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    runner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/snapshooter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    snapshooter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_12" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/tokenizer/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    tokenizer
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_12" id="__nav_14_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_12">
+            <span class="md-nav__icon md-icon"></span>
+            tokenizer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tokenizer/abs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    abs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tokenizer/char/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    char
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tokenizer/g2p/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    g2p
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tokenizer/sp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_13" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/utilbox/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    utilbox
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_13" id="__nav_14_13_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_13">
+            <span class="md-nav__icon md-icon"></span>
+            utilbox
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/data_loading_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    data_loading_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/data_saving_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    data_saving_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/dump_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    dump_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/eval_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    eval_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/feat_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    feat_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/humanfriendly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    humanfriendly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/import_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    import_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/log_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    log_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/md_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    md_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/regex_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    regex_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/sb_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sb_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/spk_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    spk_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/tensor_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tensor_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/test_humanfriendly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    test_humanfriendly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/text_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    text_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/train_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    train_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/type_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    type_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utilbox/yaml_util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    yaml_util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-file-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration File Format
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterator-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterator Library
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Document
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Document">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#speechainiteratorabsiterator" class="md-nav__link">
+    <span class="md-ellipsis">
+      speechain.iterator.abs.Iterator
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="speechain.iterator.abs.Iterator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__init__self-dataset_type-dataset_conf-batches_per_epoch-data_len-group_info-data_selection-is_descending-shuffle-seed-ngpu-num_workers-pin_memory-distributed-iter_conf" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__(self, dataset_type, dataset_conf, batches_per_epoch, data_len, group_info, data_selection, is_descending, shuffle, seed, ngpu, num_workers, pin_memory, distributed, **iter_conf)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__len__self" class="md-nav__link">
+    <span class="md-ellipsis">
+      __len__(self)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_batch_indicesself" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_batch_indices(self)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_group_infoself" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_group_info(self)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build_loaderself-epoch-start_step" class="md-nav__link">
+    <span class="md-ellipsis">
+      build_loader(self, epoch, start_step)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batches_generate_fnself-data_index-data_len-batch_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      batches_generate_fn(self, data_index, data_len, batch_size)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-construct-multiple-dataloaders" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Construct Multiple Dataloaders
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="iterator">Iterator</h1>
+<p><a href="https://github.com/bagustris/SpeeChain/blob/main/speechain/iterator/abs.py"><em>Iterator</em></a> is the base class that takes charge of grouping data instances into batches for training or testing models.
+Each iterator object has a built-in <em>speechain.dataset.Dataset</em> object as a member variable. 
+Actually, an <em>Iterator</em> object cannot directly access the data instances in the built-in <em>Dataset</em> object but maintains a batching view of the indices of the data instances used for model training or testing.</p>
+<p>The iterators are divided into 3 groups: <em>train</em>, <em>valid</em>, and <em>test</em>. 
+In each group, 2 or more iterator objects can be constructed so that there could be multiple data-label pairs in a single batch.</p>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/blob/main/handbook.md#speechain-handbook">Back to the handbook page</a></p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#configuration-file-format"><strong>Configuration File Format</strong></a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#iterator-library"><strong>Iterator Library</strong></a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#api-document"><strong>API Document</strong></a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#how-to-construct-multiple-dataloaders"><strong>How to Construct Multiple Dataloaders for a Batch</strong></a></li>
+</ol>
+<h2 id="configuration-file-format">Configuration File Format</h2>
+<p>The configuration of <em>Iterator</em> is given in <em>data_cfg</em>. 
+The configuration format is shown below.</p>
+<pre><code>train:
+    {iterator_name}:
+        type: {file_name}.{class_name}
+        conf:
+            # Built-in Dataset Configuration
+            dataset_type: {file_name}.{class_name}
+            dataset_conf:
+                ...
+            # General Iterator Configuration
+            batches_per_epoch:
+            data_selection:
+            is_descending:
+            shuffle:
+            data_len:
+            group_info:
+            # Customized Iterator Configuration
+            ...
+    ...
+valid:
+    {iterator_name}:
+        type: {file_name}.{class_name}
+        conf:
+            dataset_type: {file_name}.{class_name}
+            dataset_conf:
+                ...
+            ...
+    ...
+test:
+    {test_set_name}:
+        {iterator_name}:
+            type: {file_name}.{class_name}
+            conf:
+                dataset_type: {file_name}.{class_name}
+                dataset_conf:
+                    ...
+                ...
+        ...
+</code></pre>
+<ul>
+<li>The first-level keys must be one of <strong><em>train</em></strong>, <strong><em>valid</em></strong>, and <strong><em>test</em></strong>. 
+The combination of your first-level keys must be one of <strong>train &amp; valid &amp; test</strong> (for training and testing), <strong>train &amp; valid</strong> (for training only), or <strong>test</strong> (for testing only).</li>
+<li>The second-level keys are iterator names used for distinguishing the loaded data of each iterator. 
+   There is no restriction on the iterator names, so you can name them in your own preference.<br />
+   Under the name of each iterator, there are two third-level keys whose names are fixed:<ol>
+<li><strong>type:</strong><br />
+ The value of this key acts as the query string to pick up your target <em>Iterator</em> subclass in <code>SPEECHAIN_ROOT/speechain/iterator/</code>. 
+ Your given query should be in the form of <code>{file_name}.{class_name}</code> where <code>file_name</code> specifies your target <em>.py</em> file in <code>SPEECHAIN_ROOT/speechain/iterator/</code> and <code>class_name</code> indicates your target <em>Iterator</em> subclass in <code>SPEECHAIN_ROOT/speechain/iterator/{file_name}.py</code>. <br />
+ For example, <code>block.BlockIterator</code> means the subclass <code>BlockIterator</code> in <code>SPEECHAIN_ROOT/speechain/iterator/block.py</code>.</li>
+<li><strong>conf:</strong><br />
+ The value of this key indicates the configuration of your iterator. 
+ The configuration is made up of the following 4 fourth-level keys:<ol>
+<li><strong>dataset_type:</strong><br />
+ The value of this key acts as the query string to pick up your target built-in <em>Dataset</em> subclass in <code>SPEECHAIN_ROOT/speechain/dataset/</code>.
+ Your given query should be in the form of <code>{file_name}.{class_name}</code> where <code>file_name</code> specifies your target <em>.py</em> file in <code>SPEECHAIN_ROOT/speechain/dataset/</code>, and <code>class_name</code> indicates your target <em>Dataset</em> subclass in <code>SPEECHAIN_ROOT/speechain/dataset/{file_name}.py</code>. <br />
+ For example, <code>speech_text.SpeechTextDataset</code> means the subclass <code>SpeechTextDataset</code> in <code>./speechain/dataset/speech_text.py</code>.</li>
+<li><strong>dataset_conf:</strong><br />
+ The value of this key contains all the configuration used to initialize the built-in <em>Dataset</em> object. 
+ Please refer to <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#api-document">Dataset API Document</a> for more details.</li>
+<li><strong>General Iterator Configuration:</strong><br />
+ These configurations are used to initialize the general part shared by all iterator subclasses. 
+ There are 6 general arguments that can be set manually in <em>data_cfg:</em> (please refer to <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#__init__self-dataset_type-dataset_conf-batches_per_epoch-data_len-group_info-data_selection-is_descending-shuffle-seed-ngpu-num_workers-pin_memory-distributed-iter_conf">speechain.iterator.abs.Iterator.__init__</a> for more details)  <ol>
+<li>batches_per_epoch</li>
+<li>is_descending</li>
+<li>shuffle</li>
+<li>data_len</li>
+<li>group_info</li>
+</ol>
+</li>
+<li><strong>Customized Iterator Configuration:</strong><br />
+ The arguments of the customized configuration are used by each <em>Iterator</em> subclass to generate the batching view. 
+ Please refer to your target <em>Iterator</em> subclass for more details.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#table-of-contents">Back to the table of contents</a></p>
+<h2 id="iterator-library">Iterator Library</h2>
+<pre><code>/speechain
+    /iterator
+        /abs.py         # Abstract class of Iterator. Base of all Iterator implementations.
+        /block.py       # Iterator implementation of the block strategy (variable utterances per batch). Mainly used for ASR and TTS training.
+        /piece.py       # Iterator implementation of the piece strategy (fixed utterances per batch). Mainly used for ASR and TTS evaluation.
+</code></pre>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#table-of-contents">Back to the table of contents</a></p>
+<h2 id="api-document">API Document</h2>
+<p><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#speechainiteratorabsiterator"><strong>speechain.iterator.abs.Iterator</strong></a><br />
+1. <em>Non-overridable backbone functions:</em>
+   1. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#__init__self-dataset_type-dataset_conf-batches_per_epoch-data_len-group_info-data_selection-is_descending-shuffle-seed-ngpu-num_workers-pin_memory-distributed-iter_conf">__init__</a>
+   2. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#__len__self">__len__</a>
+   3. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#get_batch_indicesself">get_batch_indices</a>
+   4. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#get_group_infoself">get_group_info</a>
+   5. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#build_loaderself-epoch-start_step">build_loader</a>
+2. <em>Overridable interface functions:</em><br />
+   1. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#batches_generate_fnself-data_index-data_len-batch_size">batches_generate_fn</a></p>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#table-of-contents">Back to the table of contents</a></p>
+<h3 id="speechainiteratorabsiterator">speechain.iterator.abs.Iterator</h3>
+<p>The initialization of the built-in <em>Dataset</em> object is done automatically during the initialization of the iterator.
+At the beginning of each epoch, the iterator generates a <code>torch.utils.data.DataLoader</code> object to fetch the batches of data instances from the disk.<br />
+Each iterator subclass should override a static hook function <code>batches_generate_fn()</code> to generate the batching view of data instances in the built-in <em>Dataset</em> object based on their own data batching strategy.</p>
+<h4 id="__init__self-dataset_type-dataset_conf-batches_per_epoch-data_len-group_info-data_selection-is_descending-shuffle-seed-ngpu-num_workers-pin_memory-distributed-iter_conf">__init__(self, dataset_type, dataset_conf, batches_per_epoch, data_len, group_info, data_selection, is_descending, shuffle, seed, ngpu, num_workers, pin_memory, distributed, **iter_conf)</h4>
+<ul>
+<li><strong>Description:</strong><br />
+    The general initialization function shared by all the <em>Iterator</em> classes. 
+    <em>Dataset</em> initialization is automatically done here by the given <em>dataset_type</em> and <em>dataset_conf</em>.</li>
+<li><strong>Arguments:</strong></li>
+<li><strong><em>dataset_type:</em></strong> str<br />
+    Query string to pick up the target Dataset subclass in <code>SPEECHAIN_ROOT/speechain/dataset/</code></li>
+<li><strong><em>dataset_conf:</em></strong>  Dict<br />
+    Dataset configuration for the automatic initialization of the built-in <em>Dataset</em> object.</li>
+<li><strong><em>batches_per_epoch:</em></strong> int = None<br />
+    The number of batches in each epoch. This number can be either smaller or larger than the real batch number. 
+    If not given (None), all batches will be used in each epoch.</li>
+<li><strong><em>data_len:</em></strong> str or List[str] = None<br />
+    The path of the data length file. Multiple data length files can be given in a list, but they must contain non-overlapping data instances.</li>
+<li><em><strong>group_info:</strong></em> Dict[str, str or List[str]]<br />
+    The dictionary of paths for the <em>idx2data</em> files used for group-wise evaluation results visualization.</li>
+<li><strong><em>is_descending:</em></strong> bool = True<br />
+    Whether the batches are sorted in the descending order by the length (True) or in the ascending order (False). 
+    This argument is effective only when <em>data_len</em> is given.</li>
+<li><strong><em>shuffle:</em></strong> bool = True<br />
+    Whether the batches are shuffled at the beginning of each epoch.</li>
+<li><strong><em>seed:</em></strong> int = 0<br />
+    Random seed for iterator initialization. This argument is automatically given by the experiment environment configuration.<br />
+    The seed will be used to<ol>
+<li>shuffle batches before giving to the Dataloader of each epoch.</li>
+<li>initialize all the workers of the Dataloader for the reproducibility.</li>
+</ol>
+</li>
+<li><strong><em>ngpu:</em></strong> int = 1<br />
+    The number of GPUs used to train or test models. This argument is automatically given by the experiment environment configuration.<br />
+    The GPU number is used to ensure that each GPU process in the DDP mode has the batches with the same number of data instances.</li>
+<li><strong><em>num_workers:</em></strong> int = 1<br />
+    Number of workers for the Dataloader. This argument is automatically given by the experiment environment configuration.  </li>
+<li><strong><em>pin_memory:</em></strong> bool = False<br />
+    Whether pin_memory is activated in the Dataloader. This argument is automatically given by the experiment environment configuration.  </li>
+<li><strong><em>distributed:</em></strong> bool = False<br />
+    Whether DDP is used to distribute the model. This argument is automatically given by the experiment environment configuration.  </li>
+<li><strong><em>iter_conf:</em></strong> Dict<br />
+    Iterator configuration for customized batch generation</li>
+</ul>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#api-document">Back to the API list</a></p>
+<h4 id="__len__self">__len__(self)</h4>
+<ul>
+<li><strong>Description:</strong><br />
+    Get the number of batches the iterator will load in each epoch. </li>
+<li><strong>Return:</strong><br />
+    If <em>batches_per_epoch</em> is given, its value will be returned; otherwise, the total number of all the batches in the built-in <em>Dataset</em> object will be returned.</li>
+</ul>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#api-document">Back to the API list</a></p>
+<h4 id="get_batch_indicesself">get_batch_indices(self)</h4>
+<ul>
+<li><strong>Description:</strong><br />
+    This function return the current batching view of the iterator object.</li>
+<li><strong>Return:</strong> List[List[str]]<br />
+    The batching view generated by the customized hook interface <code>batches_generate_fn()</code>. 
+    Each element of the returned batching view list is a sub-list of data indices where each index corresponds to a data instance in the built-in <em>Dataset</em> object.</li>
+</ul>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#api-document">Back to the API list</a></p>
+<h4 id="get_group_infoself">get_group_info(self)</h4>
+<ul>
+<li><strong>Description:</strong><br />
+    This function returns the group information of the data instances in the built-in <em>Dataset</em> object.
+    The returned metadata is mainly used for group-wise testing results visualization.</li>
+<li><strong>Return:</strong> Dict<br />
+    If metadata information is not initialized in the built-in <em>Dataset</em> object, None will be returned.
+    Otherwise, the meta_info member of the built-in <em>Dataset</em> object will be returned which is a dictionary.</li>
+</ul>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#api-document">Back to the API list</a></p>
+<h4 id="build_loaderself-epoch-start_step">build_loader(self, epoch, start_step)</h4>
+<ul>
+<li><strong>Description:</strong><br />
+    This function generate a <code>torch.util.data.DataLoader</code> object to load the batches of data instances for the current epoch.<br />
+    If <code>batches_per_epoch</code> is not given, all the batches in <code>self.batches</code> will be used to generate the Dataloader;
+    If <code>batches_per_epoch</code> is given, a batch clip containing <code>batches_per_epoch</code> batches will be used to generate the Dataloader.<br />
+<code>batches_per_epoch</code> can be either larger or smaller than the total number of batches. 
+    For a smaller <code>batches_per_epoch</code>, a part of <code>self.batches</code> will be used as the batch clip; 
+    For a larger <code>batches_per_epoch</code>, <code>self.batches</code> will be supplemented by a part of itself to form the batch clip.</li>
+<li><strong>Arguments:</strong>  </li>
+<li><strong><em>epoch:</em></strong> int = 1<br />
+    The number of the current epoch. Used as part of the random seed to shuffle the batches.</li>
+<li><strong><em>start_step:</em></strong> int = 0<br />
+    The start point for the dataloader of the current epoch. 
+    Mainly used for resuming a model testing job from a checkpoint.</li>
+<li><strong>Return:</strong> torch.util.data.DataLoader<br />
+    A DataLoader built on the batch clip of the current epoch. 
+    If <code>batches_per_epoch</code> is not given, the batch clip is <code>self.batches</code>.</li>
+</ul>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#api-document">Back to the API list</a></p>
+<h4 id="batches_generate_fnself-data_index-data_len-batch_size">batches_generate_fn(self, data_index, data_len, batch_size)</h4>
+<ul>
+<li><strong>Description:</strong><br />
+    This hook function generates the batching view based on your customized batch generation strategy.<br />
+    Your overridden function should return the batches of instance indices as a List[List[str]] where each sub-list corresponds to a batch of data instances. 
+    Each element in the sub-list is the index of a data instance.<br />
+    In this original hook implementation, all the data instances in the built-in <em>Dataset</em> object will be grouped into batches with exactly the same amount of instances. 
+    <code>data_len</code> is not used in this hook function but used for sorting all the instances in the general initialization function of the iterator. 
+    The sorted data instances make sure that the instances in a single batch have similar lengths.</li>
+<li><strong>Arguments:</strong></li>
+<li><em><strong>data_index:</strong></em> List[str]<br />
+    The list of indices of all the data instances available to generate the batching view.</li>
+<li><em><strong>data_len:</strong></em> Dict[str, int]<br />
+    The dictionary that indicates the data length of each available data instance in data_index.</li>
+<li><em><strong>batch_size:</strong></em> int = None<br />
+    How many data instances does a batch should have. 
+    If not given, it will be the number of GPUs (ngpu) to ensure that the model validation or testing is done one data instance at each step on a single GPU process.<br />
+<strong>Note:</strong> <code>batch_size</code> is implicitly given by <code>**iter_conf</code> in <code>__init__()</code> to this static hook function, so your implementation don't need to keep this argument, and you can declare your own argument.</li>
+<li><strong>Return:</strong> List[List[str]]<br />
+  A list of batches generated by your batching strategy. This List[List[str]] is called the batching view of the iterator object.
+  Each batch in the returned list is a sub-list whose elements are the indices of data instances in the corresponding batch.</li>
+</ul>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#api-document">Back to the API list</a></p>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#table-of-contents">Back to the table of contents</a></p>
+<h2 id="how-to-construct-multiple-dataloaders">How to Construct Multiple Dataloaders</h2>
+<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#table-of-contents">Back to the table of contents</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

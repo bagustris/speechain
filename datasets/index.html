@@ -11,6 +11,10 @@
       
       
       
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../recipes/">
       
       
       <link rel="icon" href="../img/favicon.ico">
@@ -232,18 +236,199 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../datasets.md - ljspeech.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Datasets (Directory)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    None
+    Datasets (Directory)
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      File System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metadata-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata Format
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metadata Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idx2wav" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2wav
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idx2wav_len" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2wav_len
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idx2feat" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2feat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idx2feat_len" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2feat_len
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idx2text" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2text
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idx2spk" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2spk
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idx2spk_feat" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2spk_feat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spk_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      spk_list
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idx2gen" class="md-nav__link">
+    <span class="md-ellipsis">
+      idx2gen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-dump-a-dataset-on-your-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Dump a Dataset on your Machine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-extract-speaker-embedding-by-my-own-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Extract Speaker Embedding by my own model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-contribute-a-new-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Contribute a New Dataset
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -315,11 +500,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../criterion.md" class="md-nav__link">
+      <a href="../criterion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    None
+    Criterion
   </span>
   
 
@@ -335,11 +520,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../dataset.md" class="md-nav__link">
+      <a href="../dataset/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    None
+    Dataset (Module)
   </span>
   
 
@@ -355,11 +540,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../iterator.md" class="md-nav__link">
+      <a href="../iterator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    None
+    Iterator
   </span>
   
 
@@ -375,11 +560,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../model.md" class="md-nav__link">
+      <a href="../model/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    None
+    Model
   </span>
   
 
@@ -395,11 +580,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../module.md" class="md-nav__link">
+      <a href="../module/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    None
+    Module
   </span>
   
 
@@ -415,11 +600,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../optim_sche.md" class="md-nav__link">
+      <a href="../optim_sche/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    None
+    OptimScheduler
   </span>
   
 
@@ -435,11 +620,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../tokenizer.md" class="md-nav__link">
+      <a href="../tokenizer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    None
+    Tokenizer
   </span>
   
 
