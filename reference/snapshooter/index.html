@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
@@ -1521,6 +1521,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../module/encoder/speaker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    speaker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module/encoder/test_speaker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    test_speaker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../module/encoder/tts/" class="md-nav__link">
         
   
@@ -2231,6 +2273,99 @@
   
   <span class="md-ellipsis">
     pos_enc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6_12" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../module/vocoder/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    vocoder
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_6_12" id="__nav_7_6_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_6_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6_12">
+            <span class="md-nav__icon md-icon"></span>
+            vocoder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module/vocoder/hifigan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hifigan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module/vocoder/test_hifigan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    test_hifigan
   </span>
   
 
@@ -3622,7 +3757,7 @@ Date: 2022.07</p>
               Bases: <code><a class="autorefs autorefs-internal" title="snapshooter.Plotter" href="#snapshooter.Plotter">Plotter</a></code></p>
 
 
-        
+        <p>CurvePlotter does the job of plotting the curve of the given material.</p>
 
 
 
@@ -3759,14 +3894,14 @@ Date: 2022.07</p>
 <span class="normal">172</span>
 <span class="normal">173</span>
 <span class="normal">174</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">CurvePlotter</span><span class="p">(</span><span class="n">Plotter</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;CurvePlotter does the job of plotting the curve of the given material.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plot_conf</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">grid_conf</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the CurvePlotter.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            plot_conf:</span>
-<span class="sd">            grid_conf:</span>
+<span class="sd">            plot_conf (Dict): the configuration of the plot</span>
+<span class="sd">            grid_conf (Dict): the configuration of the grid</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># default arguments of the plot_conf</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">plot_conf</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -3791,18 +3926,18 @@ Date: 2022.07</p>
         <span class="n">ylabel</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">x_stride</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
     <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Plot the curve of the given material.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            ax:</span>
-<span class="sd">            material:</span>
-<span class="sd">            fig_name:</span>
-<span class="sd">            xlabel:</span>
-<span class="sd">            ylabel:</span>
-<span class="sd">            x_stride:</span>
+<span class="sd">            ax (matplotlib.axes._subplots.AxesSubplot): the axis of the figure</span>
+<span class="sd">            material (List or Dict[str, List]): the material to be plotted</span>
+<span class="sd">            fig_name (str): the name of the figure</span>
+<span class="sd">            xlabel (str): the label of x-axis</span>
+<span class="sd">            ylabel (str): the label of y-axis</span>
+<span class="sd">            x_stride (int): the stride of the x-axis</span>
 
 <span class="sd">        Returns:</span>
-
+<span class="sd">            None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># set up the figure label of x and y axes</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span> <span class="k">if</span> <span class="n">xlabel</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
@@ -3814,7 +3949,7 @@ Date: 2022.07</p>
         <span class="c1"># only one curve in the figure</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">material</span><span class="p">,</span> <span class="n">List</span><span class="p">):</span>
             <span class="c1"># for the stand-alone figure, only show up to 5 points at x-axis</span>
-            <span class="n">x_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">material</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span> <span class="o">*</span> <span class="n">x_stride</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">x_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">material</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">)</span> <span class="o">*</span> <span class="n">x_stride</span> <span class="o">+</span> <span class="mi">1</span>
             <span class="n">interval</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_axis</span><span class="p">)</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)</span>
             <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span>
                 <span class="n">x_axis</span><span class="p">,</span>
@@ -3831,7 +3966,7 @@ Date: 2022.07</p>
                 <span class="n">keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">material</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
                 <span class="c1"># for the summary figure, only show up to 5 points at x-axis</span>
                 <span class="n">x_axis</span> <span class="o">=</span> <span class="p">(</span>
-                    <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">material</span><span class="p">[</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span> <span class="o">*</span> <span class="n">x_stride</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">material</span><span class="p">[</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">)</span> <span class="o">*</span> <span class="n">x_stride</span>
                 <span class="p">)</span>
                 <span class="n">interval</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_axis</span><span class="p">)</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)</span>
                 <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span>
@@ -3846,12 +3981,12 @@ Date: 2022.07</p>
                 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">materials</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">save_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">x_stride</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Save the given material into a specific .txt file for easy visualization.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            materials:</span>
-<span class="sd">            save_path:</span>
-<span class="sd">            x_stride:</span>
+<span class="sd">            materials (Dict): the material to be saved</span>
+<span class="sd">            save_path (str): the path to save the materials</span>
+<span class="sd">            x_stride (int): the stride of the x-axis</span>
 
 <span class="sd">        Returns:</span>
 
@@ -3861,7 +3996,7 @@ Date: 2022.07</p>
             <span class="c1"># only one file</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">material</span><span class="p">,</span> <span class="n">List</span><span class="p">):</span>
                 <span class="c1"># initialize the horizontal axis</span>
-                <span class="n">x_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">material</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span> <span class="o">*</span> <span class="n">x_stride</span>
+                <span class="n">x_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">material</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">)</span> <span class="o">*</span> <span class="n">x_stride</span>
                 <span class="n">save_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
                     <span class="p">(</span><span class="n">x_axis</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">material</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span>
                 <span class="p">)</span>
@@ -3871,7 +4006,7 @@ Date: 2022.07</p>
                 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">material</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
                     <span class="n">keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">material</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
                     <span class="n">x_axis</span> <span class="o">=</span> <span class="p">(</span>
-                        <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">material</span><span class="p">[</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+                        <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">material</span><span class="p">[</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">)</span>
                         <span class="o">*</span> <span class="n">x_stride</span>
                     <span class="p">)</span>
                     <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
@@ -3912,6 +4047,7 @@ Date: 2022.07</p>
 
     <div class="doc doc-contents ">
 
+        <p>Initialize the CurvePlotter.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -3934,7 +4070,7 @@ Date: 2022.07</p>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>the configuration of the plot</p>
               </div>
             </td>
             <td>
@@ -3950,7 +4086,7 @@ Date: 2022.07</p>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>the configuration of the grid</p>
               </div>
             </td>
             <td>
@@ -3982,11 +4118,11 @@ Date: 2022.07</p>
 <span class="normal">67</span>
 <span class="normal">68</span>
 <span class="normal">69</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plot_conf</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">grid_conf</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize the CurvePlotter.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        plot_conf:</span>
-<span class="sd">        grid_conf:</span>
+<span class="sd">        plot_conf (Dict): the configuration of the plot</span>
+<span class="sd">        grid_conf (Dict): the configuration of the grid</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># default arguments of the plot_conf</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">plot_conf</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -4018,6 +4154,7 @@ Date: 2022.07</p>
 
     <div class="doc doc-contents ">
 
+        <p>Plot the curve of the given material.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4036,10 +4173,11 @@ Date: 2022.07</p>
                 <code>ax</code>
             </td>
             <td>
+                  <code><span title="matplotlib.axes._subplots.AxesSubplot">AxesSubplot</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>the axis of the figure</p>
               </div>
             </td>
             <td>
@@ -4055,7 +4193,7 @@ Date: 2022.07</p>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>the material to be plotted</p>
               </div>
             </td>
             <td>
@@ -4071,7 +4209,7 @@ Date: 2022.07</p>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>the name of the figure</p>
               </div>
             </td>
             <td>
@@ -4087,7 +4225,7 @@ Date: 2022.07</p>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>the label of x-axis</p>
               </div>
             </td>
             <td>
@@ -4103,7 +4241,7 @@ Date: 2022.07</p>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>the label of y-axis</p>
               </div>
             </td>
             <td>
@@ -4119,7 +4257,7 @@ Date: 2022.07</p>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>the stride of the x-axis</p>
               </div>
             </td>
             <td>
@@ -4128,7 +4266,28 @@ Date: 2022.07</p>
           </tr>
       </tbody>
     </table>
-        <p>Returns:</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>None</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
             <details class="quote">
               <summary>Source code in <code>speechain/snapshooter.py</code></summary>
@@ -4202,18 +4361,18 @@ Date: 2022.07</p>
     <span class="n">ylabel</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">x_stride</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot the curve of the given material.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        ax:</span>
-<span class="sd">        material:</span>
-<span class="sd">        fig_name:</span>
-<span class="sd">        xlabel:</span>
-<span class="sd">        ylabel:</span>
-<span class="sd">        x_stride:</span>
+<span class="sd">        ax (matplotlib.axes._subplots.AxesSubplot): the axis of the figure</span>
+<span class="sd">        material (List or Dict[str, List]): the material to be plotted</span>
+<span class="sd">        fig_name (str): the name of the figure</span>
+<span class="sd">        xlabel (str): the label of x-axis</span>
+<span class="sd">        ylabel (str): the label of y-axis</span>
+<span class="sd">        x_stride (int): the stride of the x-axis</span>
 
 <span class="sd">    Returns:</span>
-
+<span class="sd">        None</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># set up the figure label of x and y axes</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span> <span class="k">if</span> <span class="n">xlabel</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
@@ -4225,7 +4384,7 @@ Date: 2022.07</p>
     <span class="c1"># only one curve in the figure</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">material</span><span class="p">,</span> <span class="n">List</span><span class="p">):</span>
         <span class="c1"># for the stand-alone figure, only show up to 5 points at x-axis</span>
-        <span class="n">x_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">material</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span> <span class="o">*</span> <span class="n">x_stride</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">x_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">material</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">)</span> <span class="o">*</span> <span class="n">x_stride</span> <span class="o">+</span> <span class="mi">1</span>
         <span class="n">interval</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_axis</span><span class="p">)</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span>
             <span class="n">x_axis</span><span class="p">,</span>
@@ -4242,7 +4401,7 @@ Date: 2022.07</p>
             <span class="n">keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">material</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
             <span class="c1"># for the summary figure, only show up to 5 points at x-axis</span>
             <span class="n">x_axis</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">material</span><span class="p">[</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span> <span class="o">*</span> <span class="n">x_stride</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">material</span><span class="p">[</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">)</span> <span class="o">*</span> <span class="n">x_stride</span>
             <span class="p">)</span>
             <span class="n">interval</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_axis</span><span class="p">)</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)</span>
             <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span>
@@ -4272,6 +4431,7 @@ Date: 2022.07</p>
 
     <div class="doc doc-contents ">
 
+        <p>Save the given material into a specific .txt file for easy visualization.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4294,7 +4454,7 @@ Date: 2022.07</p>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>the material to be saved</p>
               </div>
             </td>
             <td>
@@ -4310,7 +4470,7 @@ Date: 2022.07</p>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>the path to save the materials</p>
               </div>
             </td>
             <td>
@@ -4326,7 +4486,7 @@ Date: 2022.07</p>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>the stride of the x-axis</p>
               </div>
             </td>
             <td>
@@ -4380,12 +4540,12 @@ Date: 2022.07</p>
 <span class="normal">172</span>
 <span class="normal">173</span>
 <span class="normal">174</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">materials</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">save_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">x_stride</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save the given material into a specific .txt file for easy visualization.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        materials:</span>
-<span class="sd">        save_path:</span>
-<span class="sd">        x_stride:</span>
+<span class="sd">        materials (Dict): the material to be saved</span>
+<span class="sd">        save_path (str): the path to save the materials</span>
+<span class="sd">        x_stride (int): the stride of the x-axis</span>
 
 <span class="sd">    Returns:</span>
 
@@ -4395,7 +4555,7 @@ Date: 2022.07</p>
         <span class="c1"># only one file</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">material</span><span class="p">,</span> <span class="n">List</span><span class="p">):</span>
             <span class="c1"># initialize the horizontal axis</span>
-            <span class="n">x_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">material</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span> <span class="o">*</span> <span class="n">x_stride</span>
+            <span class="n">x_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">material</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">)</span> <span class="o">*</span> <span class="n">x_stride</span>
             <span class="n">save_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
                 <span class="p">(</span><span class="n">x_axis</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">material</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span>
             <span class="p">)</span>
@@ -4405,7 +4565,7 @@ Date: 2022.07</p>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">material</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">material</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
                 <span class="n">x_axis</span> <span class="o">=</span> <span class="p">(</span>
-                    <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">material</span><span class="p">[</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">material</span><span class="p">[</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">)</span>
                     <span class="o">*</span> <span class="n">x_stride</span>
                 <span class="p">)</span>
                 <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
@@ -4450,7 +4610,7 @@ Date: 2022.07</p>
               Bases: <code><a class="autorefs autorefs-internal" title="snapshooter.Plotter" href="#snapshooter.Plotter">Plotter</a></code></p>
 
 
-        
+        <p>HistPlotter does the job of plotting the histogram of the given material.</p>
 
 
 
@@ -4534,15 +4694,17 @@ Date: 2022.07</p>
 <span class="normal">321</span>
 <span class="normal">322</span>
 <span class="normal">323</span>
-<span class="normal">324</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">HistPlotter</span><span class="p">(</span><span class="n">Plotter</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+<span class="normal">324</span>
+<span class="normal">325</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">HistPlotter</span><span class="p">(</span><span class="n">Plotter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;HistPlotter does the job of plotting the histogram of the given material.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plot_conf</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">grid_conf</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize the HistPlotter.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            plot_conf:</span>
-<span class="sd">            grid_conf:</span>
+<span class="sd">            plot_conf (Dict): the configuration of the plot</span>
+<span class="sd">            grid_conf (Dict): the configuration of the grid</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># default arguments of the plot_conf</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">plot_conf</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
@@ -4561,7 +4723,7 @@ Date: 2022.07</p>
     <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">material</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span> <span class="n">fig_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">xlabel</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ylabel</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Plot the histogram of the given material.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            ax:</span>
@@ -4636,6 +4798,7 @@ Date: 2022.07</p>
 
     <div class="doc doc-contents ">
 
+        <p>Initialize the HistPlotter.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4658,7 +4821,7 @@ Date: 2022.07</p>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>the configuration of the plot</p>
               </div>
             </td>
             <td>
@@ -4674,7 +4837,7 @@ Date: 2022.07</p>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>the configuration of the grid</p>
               </div>
             </td>
             <td>
@@ -4705,12 +4868,14 @@ Date: 2022.07</p>
 <span class="normal">268</span>
 <span class="normal">269</span>
 <span class="normal">270</span>
-<span class="normal">271</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plot_conf</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">grid_conf</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="normal">271</span>
+<span class="normal">272</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plot_conf</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">grid_conf</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initialize the HistPlotter.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        plot_conf:</span>
-<span class="sd">        grid_conf:</span>
+<span class="sd">        plot_conf (Dict): the configuration of the plot</span>
+<span class="sd">        grid_conf (Dict): the configuration of the grid</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># default arguments of the plot_conf</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">plot_conf</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
@@ -4742,6 +4907,7 @@ Date: 2022.07</p>
 
     <div class="doc doc-contents ">
 
+        <p>Plot the histogram of the given material.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4855,8 +5021,7 @@ Date: 2022.07</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/snapshooter.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">273</span>
-<span class="normal">274</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">274</span>
 <span class="normal">275</span>
 <span class="normal">276</span>
 <span class="normal">277</span>
@@ -4903,10 +5068,11 @@ Date: 2022.07</p>
 <span class="normal">318</span>
 <span class="normal">319</span>
 <span class="normal">320</span>
-<span class="normal">321</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">plot</span><span class="p">(</span>
+<span class="normal">321</span>
+<span class="normal">322</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">plot</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">material</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span> <span class="n">fig_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">xlabel</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ylabel</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot the histogram of the given material.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        ax:</span>
@@ -4982,7 +5148,7 @@ Date: 2022.07</p>
               Bases: <code><a class="autorefs autorefs-internal" title="snapshooter.Plotter" href="#snapshooter.Plotter">Plotter</a></code></p>
 
 
-        
+        <p>Plot the matrix of the given material.</p>
 
 
 
@@ -5061,16 +5227,16 @@ Date: 2022.07</p>
 <span class="normal">244</span>
 <span class="normal">245</span>
 <span class="normal">246</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">MatrixPlotter</span><span class="p">(</span><span class="n">Plotter</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot the matrix of the given material.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">plot_conf</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the plotter.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            **plot_conf:</span>
 
 <span class="sd">        Returns:</span>
-
+<span class="sd">            None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># default arguments of the plot_conf</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">plot_conf</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
@@ -5119,15 +5285,15 @@ Date: 2022.07</p>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">materials</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span> <span class="n">epoch</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">save_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Save the materials into a .npz file on disk for future usage.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            materials:</span>
-<span class="sd">            epoch:</span>
-<span class="sd">            save_path:</span>
+<span class="sd">            materials (Dict[str, np.ndarray]): the materials to be saved</span>
+<span class="sd">            epoch (int): the epoch of the materials</span>
+<span class="sd">            save_path (str): the path to save the materials</span>
 
 <span class="sd">        Returns:</span>
-
+<span class="sd">            None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">np</span><span class="o">.</span><span class="n">savez</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">save_path</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;epoch</span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="s2">.npz&quot;</span><span class="p">),</span> <span class="o">**</span><span class="n">materials</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -5156,6 +5322,7 @@ Date: 2022.07</p>
 
     <div class="doc doc-contents ">
 
+        <p>Initialize the plotter.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -5186,7 +5353,28 @@ Date: 2022.07</p>
           </tr>
       </tbody>
     </table>
-        <p>Returns:</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>None</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
             <details class="quote">
               <summary>Source code in <code>speechain/snapshooter.py</code></summary>
@@ -5210,13 +5398,13 @@ Date: 2022.07</p>
 <span class="normal">197</span>
 <span class="normal">198</span>
 <span class="normal">199</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">plot_conf</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize the plotter.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        **plot_conf:</span>
 
 <span class="sd">    Returns:</span>
-
+<span class="sd">        None</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># default arguments of the plot_conf</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">plot_conf</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
@@ -5246,6 +5434,7 @@ Date: 2022.07</p>
 
     <div class="doc doc-contents ">
 
+        <p>Save the materials into a .npz file on disk for future usage.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -5268,7 +5457,7 @@ Date: 2022.07</p>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>the materials to be saved</p>
               </div>
             </td>
             <td>
@@ -5284,7 +5473,7 @@ Date: 2022.07</p>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>the epoch of the materials</p>
               </div>
             </td>
             <td>
@@ -5300,7 +5489,7 @@ Date: 2022.07</p>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>the path to save the materials</p>
               </div>
             </td>
             <td>
@@ -5309,7 +5498,28 @@ Date: 2022.07</p>
           </tr>
       </tbody>
     </table>
-        <p>Returns:</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>None</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
             <details class="quote">
               <summary>Source code in <code>speechain/snapshooter.py</code></summary>
@@ -5325,15 +5535,15 @@ Date: 2022.07</p>
 <span class="normal">244</span>
 <span class="normal">245</span>
 <span class="normal">246</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">materials</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span> <span class="n">epoch</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">save_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save the materials into a .npz file on disk for future usage.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        materials:</span>
-<span class="sd">        epoch:</span>
-<span class="sd">        save_path:</span>
+<span class="sd">        materials (Dict[str, np.ndarray]): the materials to be saved</span>
+<span class="sd">        epoch (int): the epoch of the materials</span>
+<span class="sd">        save_path (str): the path to save the materials</span>
 
 <span class="sd">    Returns:</span>
-
+<span class="sd">        None</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">np</span><span class="o">.</span><span class="n">savez</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">save_path</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;epoch</span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="s2">.npz&quot;</span><span class="p">),</span> <span class="o">**</span><span class="n">materials</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -5366,7 +5576,7 @@ Date: 2022.07</p>
               Bases: <code><span title="abc.ABC">ABC</span></code></p>
 
 
-        
+        <p>Plotter is the base class for all plotters.</p>
 
 
 
@@ -5391,7 +5601,7 @@ Date: 2022.07</p>
 <span class="normal">42</span>
 <span class="normal">43</span>
 <span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Plotter</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plotter is the base class for all plotters.&quot;&quot;&quot;</span>
 
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -5452,8 +5662,7 @@ Date: 2022.07</p>
 
               <details class="quote">
                 <summary>Source code in <code>speechain/snapshooter.py</code></summary>
-                <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">355</span>
-<span class="normal">356</span>
+                <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">356</span>
 <span class="normal">357</span>
 <span class="normal">358</span>
 <span class="normal">359</span>
@@ -5893,14 +6102,8 @@ Date: 2022.07</p>
 <span class="normal">793</span>
 <span class="normal">794</span>
 <span class="normal">795</span>
-<span class="normal">796</span>
-<span class="normal">797</span>
-<span class="normal">798</span>
-<span class="normal">799</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">SnapShooter</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    SnapShooter does the job of recording snapshots of the model during training or validation.</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="normal">796</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">SnapShooter</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;SnapShooter does the job of recording snapshots of the model during training or validation.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -5912,8 +6115,7 @@ Date: 2022.07</p>
         <span class="n">matrix_plotter_conf</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">hist_plotter_conf</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the SnapShooter.</span>
 <span class="sd">        Args:</span>
 <span class="sd">            result_path:</span>
 <span class="sd">            fig_width:</span>
@@ -6302,7 +6504,7 @@ Date: 2022.07</p>
             <span class="p">)</span>
 
             <span class="k">if</span> <span class="n">epoch</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">data_save</span><span class="p">:</span>
-                <span class="n">x_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">material</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span> <span class="o">*</span> <span class="n">x_stride</span> <span class="o">+</span> <span class="mi">1</span>
+                <span class="n">x_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">material</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">)</span> <span class="o">*</span> <span class="n">x_stride</span> <span class="o">+</span> <span class="mi">1</span>
                 <span class="n">save_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
                     <span class="p">(</span><span class="n">x_axis</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">material</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span>
                 <span class="p">)</span>
@@ -6367,121 +6569,20 @@ Date: 2022.07</p>
 
     <div class="doc doc-contents ">
 
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>result_path</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>fig_width</code>
-            </td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                
-              </div>
-            </td>
-            <td>
-                  <code>6.4</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>fig_height</code>
-            </td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                
-              </div>
-            </td>
-            <td>
-                  <code>4.8</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>curve_plotter_conf</code>
-            </td>
-            <td>
-                  <code><span title="typing.Dict">Dict</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>matrix_plotter_conf</code>
-            </td>
-            <td>
-                  <code><span title="typing.Dict">Dict</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>hist_plotter_conf</code>
-            </td>
-            <td>
-                  <code><span title="typing.Dict">Dict</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+        <p>Initialize the SnapShooter.
+Args:
+    result_path:
+    fig_width:
+    fig_height:
+    curve_plotter_conf:
+    matrix_plotter_conf:
+    hist_plotter_conf:</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/snapshooter.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">361</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
 <span class="normal">362</span>
 <span class="normal">363</span>
 <span class="normal">364</span>
@@ -6526,10 +6627,7 @@ Date: 2022.07</p>
 <span class="normal">403</span>
 <span class="normal">404</span>
 <span class="normal">405</span>
-<span class="normal">406</span>
-<span class="normal">407</span>
-<span class="normal">408</span>
-<span class="normal">409</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="normal">406</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">result_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">snap_mode</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -6539,8 +6637,7 @@ Date: 2022.07</p>
     <span class="n">matrix_plotter_conf</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">hist_plotter_conf</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize the SnapShooter.</span>
 <span class="sd">    Args:</span>
 <span class="sd">        result_path:</span>
 <span class="sd">        fig_width:</span>
@@ -6604,6 +6701,7 @@ Date: 2022.07</p>
 
     <div class="doc doc-contents ">
 
+        <p>Snapshot the model during training or validation.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -6671,8 +6769,7 @@ Date: 2022.07</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/snapshooter.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">327</span>
-<span class="normal">328</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">328</span>
 <span class="normal">329</span>
 <span class="normal">330</span>
 <span class="normal">331</span>
@@ -6696,10 +6793,11 @@ Date: 2022.07</p>
 <span class="normal">349</span>
 <span class="normal">350</span>
 <span class="normal">351</span>
-<span class="normal">352</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">snapshot_logs</span><span class="p">(</span>
+<span class="normal">352</span>
+<span class="normal">353</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">snapshot_logs</span><span class="p">(</span>
     <span class="n">logs_queue</span><span class="p">:</span> <span class="n">Queue</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="n">Event</span><span class="p">,</span> <span class="n">snapshooter_conf</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">wait_time</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Snapshot the model during training or validation.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        logs_queue:</span>
@@ -6784,7 +6882,7 @@ Date: 2022.07</p>
     <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
     
   </body>

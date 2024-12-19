@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
@@ -1523,6 +1523,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../../encoder/speaker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    speaker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../encoder/test_speaker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    test_speaker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../encoder/tts/" class="md-nav__link">
         
   
@@ -2322,6 +2364,99 @@
   
   <span class="md-ellipsis">
     pos_enc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6_12" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../vocoder/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    vocoder
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_6_12" id="__nav_7_6_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_6_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6_12">
+            <span class="md-nav__icon md-icon"></span>
+            vocoder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vocoder/hifigan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hifigan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vocoder/test_hifigan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    test_hifigan
   </span>
   
 
@@ -3690,7 +3825,7 @@ log-mel spectrogram by mel-fbank filters. Finally, the delta features of log-mel
 <span class="sd">            window: str</span>
 <span class="sd">                The window type for STFT.</span>
 <span class="sd">            center: bool</span>
-<span class="sd">                 whether to pad input on both sides so that the t-th frame is centered at time t × hop_length.</span>
+<span class="sd">                 whether to pad input on both sides so that the t-th frame is centered at time `t x hop_length`.</span>
 <span class="sd">            normalized: bool</span>
 <span class="sd">                controls whether to return the normalized STFT results</span>
 <span class="sd">            onesided: bool</span>
@@ -3717,10 +3852,10 @@ log-mel spectrogram by mel-fbank filters. Finally, the delta features of log-mel
 <span class="sd">                Whether perform the area normalization to the mel-fbank filters.</span>
 <span class="sd">            delta_order: int</span>
 <span class="sd">                The delta order you want to add to the original log-mel spectrogram.</span>
-<span class="sd">                1 means original log-mel spectrogram + Δ Log-mel spectrogram</span>
-<span class="sd">                2 means original log-mel spectrogram + Δ Log-mel spectrogram + ΔΔ log-mel spectrogram</span>
+<span class="sd">                1 means original log-mel spectrogram + $\delta$ Log-mel spectrogram</span>
+<span class="sd">                2 means original log-mel spectrogram + $\delta$ Log-mel spectrogram + $\delta\delta$ log-mel spectrogram</span>
 <span class="sd">            delta_N: int</span>
-<span class="sd">                The number of neighbouring points used for calculating the delta features.</span>
+<span class="sd">                The number of neighboring points used for calculating the delta features.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># if hop_length and win_length are given in the unit of seconds, turn them into the corresponding time steps</span>
@@ -4187,7 +4322,7 @@ The window type for STFT.</p>
             <td>
               <div class="doc-md-description">
                 <p>bool
- whether to pad input on both sides so that the t-th frame is centered at time t × hop_length.</p>
+ whether to pad input on both sides so that the t-th frame is centered at time <code>t x hop_length</code>.</p>
               </div>
             </td>
             <td>
@@ -4394,8 +4529,8 @@ Whether perform the area normalization to the mel-fbank filters.</p>
               <div class="doc-md-description">
                 <p>int
 The delta order you want to add to the original log-mel spectrogram.
-1 means original log-mel spectrogram + Δ Log-mel spectrogram
-2 means original log-mel spectrogram + Δ Log-mel spectrogram + ΔΔ log-mel spectrogram</p>
+1 means original log-mel spectrogram + $\delta$ Log-mel spectrogram
+2 means original log-mel spectrogram + $\delta$ Log-mel spectrogram + $\delta\delta$ log-mel spectrogram</p>
               </div>
             </td>
             <td>
@@ -4412,7 +4547,7 @@ The delta order you want to add to the original log-mel spectrogram.
             <td>
               <div class="doc-md-description">
                 <p>int
-The number of neighbouring points used for calculating the delta features.</p>
+The number of neighboring points used for calculating the delta features.</p>
               </div>
             </td>
             <td>
@@ -4605,7 +4740,7 @@ The number of neighbouring points used for calculating the delta features.</p>
 <span class="sd">        window: str</span>
 <span class="sd">            The window type for STFT.</span>
 <span class="sd">        center: bool</span>
-<span class="sd">             whether to pad input on both sides so that the t-th frame is centered at time t × hop_length.</span>
+<span class="sd">             whether to pad input on both sides so that the t-th frame is centered at time `t x hop_length`.</span>
 <span class="sd">        normalized: bool</span>
 <span class="sd">            controls whether to return the normalized STFT results</span>
 <span class="sd">        onesided: bool</span>
@@ -4632,10 +4767,10 @@ The number of neighbouring points used for calculating the delta features.</p>
 <span class="sd">            Whether perform the area normalization to the mel-fbank filters.</span>
 <span class="sd">        delta_order: int</span>
 <span class="sd">            The delta order you want to add to the original log-mel spectrogram.</span>
-<span class="sd">            1 means original log-mel spectrogram + Δ Log-mel spectrogram</span>
-<span class="sd">            2 means original log-mel spectrogram + Δ Log-mel spectrogram + ΔΔ log-mel spectrogram</span>
+<span class="sd">            1 means original log-mel spectrogram + $\delta$ Log-mel spectrogram</span>
+<span class="sd">            2 means original log-mel spectrogram + $\delta$ Log-mel spectrogram + $\delta\delta$ log-mel spectrogram</span>
 <span class="sd">        delta_N: int</span>
-<span class="sd">            The number of neighbouring points used for calculating the delta features.</span>
+<span class="sd">            The number of neighboring points used for calculating the delta features.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># if hop_length and win_length are given in the unit of seconds, turn them into the corresponding time steps</span>
@@ -4867,7 +5002,7 @@ The number of neighbouring points used for calculating the delta features.</p>
     <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
     
   </body>
