@@ -3943,7 +3943,7 @@
 <h1 id="model">Model</h1>
 <p><a href="https://github.com/bagustris/SpeeChain/blob/main/speechain/model/abs.py"><em>Model</em></a> is the hub of this part where different <em>Module</em> and <em>Criterion</em> objects can be freely assembled to create a model.
 <em>Model</em> encapsulates the general model-related services and provides sufficient interface functions for you to override to customize your own models. </p>
-<p>👆<a href="https://github.com/bagustris/SpeeChain/blob/main/handbook.md#speechain-handbook">Back to the handbook page</a></p>
+<p>👆<a href="../handbook/">Back to the handbook page</a></p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ol>
 <li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#configuration-file-format"><strong>Configuration File Format</strong></a></li>
@@ -3956,57 +3956,69 @@
 <h2 id="configuration-file-format">Configuration File Format</h2>
 <p>The configuration of your model is given in <em>train_cfg</em>. 
 The configuration format is shown below.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>model:
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    model_type: {file_name}.{class_name}
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    model_conf:
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        init: {init_function}
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        frozen_modules:
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>            - {frozen_module1}
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>            - {frozen_module2}
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>            - ...
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        pretrained_model:
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>            - path: {model_path1}
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>              mapping: 
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>                {src_name1}: {tgt_name1}
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>                {src_name2}: {tgt_name2}
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>                ...
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>            - path: {model_path2}
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>            - ...
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        visual_infer_conf:
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>            ...
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>        customize_conf: 
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>            {customize_arg1}: {arg_value1}
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>            {customize_arg2}: {arg_value2}
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>            ...
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    module_conf:
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>        ...
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    criterion_conf:
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>        ...    
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">model</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">model_type</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">file_name</span><span class="p p-Indicator">}</span><span class="l l-Scalar l-Scalar-Plain">.{class_name}</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">model_conf</span><span class="p">:</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="nt">init</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">init_function</span><span class="p p-Indicator">}</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="nt">frozen_modules</span><span class="p">:</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">frozen_module1</span><span class="p p-Indicator">}</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">frozen_module2</span><span class="p p-Indicator">}</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="nt">pretrained_model</span><span class="p">:</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">model_path1</span><span class="p p-Indicator">}</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">              </span><span class="nt">mapping</span><span class="p">:</span><span class="w"> </span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">                </span><span class="p p-Indicator">{</span><span class="nv">src_name1</span><span class="p p-Indicator">}:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">tgt_name1</span><span class="p p-Indicator">}</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">                </span><span class="p p-Indicator">{</span><span class="nv">src_name2</span><span class="p p-Indicator">}:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">tgt_name2</span><span class="p p-Indicator">}</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">                </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">model_path2</span><span class="p p-Indicator">}</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="nt">visual_infer_conf</span><span class="p">:</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="nt">customize_conf</span><span class="p">:</span><span class="w"> </span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">            </span><span class="p p-Indicator">{</span><span class="nv">customize_arg1</span><span class="p p-Indicator">}:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">arg_value1</span><span class="p p-Indicator">}</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">            </span><span class="p p-Indicator">{</span><span class="nv">customize_arg2</span><span class="p p-Indicator">}:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">arg_value2</span><span class="p p-Indicator">}</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="nt">module_conf</span><span class="p">:</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="nt">criterion_conf</span><span class="p">:</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w">    </span>
 </span></code></pre></div>
-* The first-level key must be <strong>model</strong> to notify the framework of the model configuration.
-  1. <strong>model_type</strong> is used as the query to pick up your target <em>Model</em> subclass in <code>{SPEECHAIN_ROOT}/speechain/model/</code> for model initialization.
-  Your given query should be in the form of <code>{file_name}.{class_name}</code>, e.g., <code>asr.ASR</code> means the subclass <code>ASR</code> in <code>{SPEECHAIN_ROOT}/speechain/model/asr.py</code>.</p>
+The first-level key must be <strong>model</strong> to notify the framework of the model configuration.  </p>
 <ol>
 <li>
-<p><strong>model_conf</strong> contains the general configuration of your model. It is made up of the following 4 parts:</p>
+<p><strong>model_type</strong> is used as the query to pick up your target <em>Model</em> subclass in <code>{SPEECHAIN_ROOT}/speechain/model/</code> for model initialization.
+  Your given query should be in the form of <code>{file_name}.{class_name}</code>, e.g., <code>asr.ASR</code> means the subclass <code>ASR</code> in <code>{SPEECHAIN_ROOT}/speechain/model/asr.py</code>.</p>
+</li>
+<li>
+<p><strong>model_conf</strong> contains the general configuration of your model. It is made up of the following 5 parts:</p>
 <ol>
-<li><strong>init</strong> indicates the function used to initialize the parameters of your model before training. 
+<li>
+<p><strong>init</strong> indicates the function used to initialize the parameters of your model before training. 
   The available initialization functions are shown in the keys of the built-in dictionary <code>init_class_dict</code>.<br />
-  For more details about the available initialization functions, please refer to the built-in dictionary <code>init_class_dict</code>.</li>
-<li><strong>frozen_modules</strong> contains the names of the modules that don't need to be updated during training. 
-  If a list of module names is given, all those modules will be frozen.</li>
-<li><strong>pretrained_model</strong> contains the pretrained models you would like to load into your model as the initial parameters. 
-  If a list of pretrained models is given, all those pretrained models will be used to initialize your model.  <ol>
+  For more details about the available initialization functions, please refer to the built-in dictionary <code>init_class_dict</code>.</p>
+</li>
+<li>
+<p><strong>frozen_modules</strong> contains the names of the modules that don't need to be updated during training. 
+  If a list of module names is given, all those modules will be frozen. </p>
+</li>
+<li>
+<p><strong>pretrained_model</strong> contains the pretrained models you would like to load into your model as the initial parameters. 
+  If a list of pretrained models is given, all those pretrained models will be used to initialize your model.  </p>
+<ol>
 <li><strong>path</strong> indicates where the pretrained model file is placed.</li>
 <li><strong>mapping</strong> is a dictionary used to solve the mismatch between the parameter names of the pretrained model and the model you want to train. 
  Each key-value item solves a name mismatch where the key is the name in the pretrained model and the value is the name in the model to be trained.</li>
 </ol>
 </li>
-<li><strong>visual_infer_conf</strong> contains the inference configuration you want to use for model visualization during training. 
+<li>
+<p><strong>visual_infer_conf</strong> contains the inference configuration you want to use for model visualization during training. 
      This argument is default to be an empty dictionary which means the default inference configuration of each model will be used.<br />
-     For more details, please refer to the docstring of <code>inference()</code> of each <em>Model</em> subclass.</li>
-<li><strong>customize_conf</strong> will be used to initialize the main body of the model in the interface function <em>module_init()</em>.<br />
-     For more details about the argument setting, please refer to the README.md of each <em>Model</em> subclass.</li>
+     For more details, please refer to the docstring of <code>inference()</code> of each <em>Model</em> subclass.</p>
+</li>
+<li>
+<p><strong>customize_conf</strong> will be used to initialize the main body of the model in the interface function <em>module_init()</em>.<br />
+     For more details about the argument setting, please refer to the README.md of each <em>Model</em> subclass.</p>
+</li>
 </ol>
 </li>
 <li>
@@ -4022,39 +4034,49 @@ The configuration format is shown below.
 </ol>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#table-of-contents">Back to the table of contents</a></p>
 <h2 id="model-library">Model Library</h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/speechain
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    /model
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        /abs.py     # Abstract Model class. Base of all Model implementations.
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        /asr.py     # All the model implementations of ASR.
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        /tts.py     # All the model implementations of TTS.
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/speechain
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span>/model
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span>/abs.py<span class="w">     </span><span class="c1"># Abstract Model class. Base of all Model implementations.</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span>/asr.py<span class="w">     </span><span class="c1"># All the model implementations of ASR.</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span>/tts.py<span class="w">     </span><span class="c1"># All the model implementations of TTS.</span>
 </span></code></pre></div>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#table-of-contents">Back to the table of contents</a></p>
 <h2 id="api-document">API Document</h2>
-<p><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#speechainmodelabsmodel"><strong>speechain.model.abs.Model</strong></a><br />
-1. <em>Non-overridable backbone functions:</em><br />
-   1. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#__init__self-args-device-model_conf-module_conf-criterion_conf">__init__</a>
-   2. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#batch_to_cudaself-data">batch_to_cuda</a><br />
-   3. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#forwardself-batch_data-epoch-kwargs">forward</a><br />
-   4. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#aver_metrics_across_procsself-metrics-batch_data">aver_metrics_across_procs</a><br />
-   5. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#evaluateself-test_batch-infer_conf">evaluate</a>  </p>
+<p><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#speechainmodelabsmodel"><strong>speechain.model.abs.Model</strong></a>  </p>
 <ol>
-<li><em>Overridable interface functions:</em>  </li>
-<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#bad_cases_selection_init_fn">bad_cases_selection_init_fn</a></li>
+<li>
+<p><em>Non-overridable backbone functions:</em>  </p>
+<ol>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#__init__self-args-device-model_conf-module_conf-criterion_conf">__init__</a>  </li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#batch_to_cudaself-data">batch_to_cuda</a>  </li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#forwardself-batch_data-epoch-kwargs">forward</a>  </li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#aver_metrics_across_procsself-metrics-batch_data">aver_metrics_across_procs</a>  </li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#evaluateself-test_batch-infer_conf">evaluate</a>  </li>
+</ol>
+</li>
+<li>
+<p><em>Overridable interface functions:</em>  </p>
+<ol>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#bad_cases_selection_init_fn">bad_cases_selection_init_fn</a>  </li>
 <li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#module_initself-kwargs">module_init</a></li>
-<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#criterion_initself-criterion_conf">criterion_init</a></li>
-<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#batch_preprocess_fnself-batch_data">batch_preprocess_fn</a></li>
-<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#module_forwardself-batch_data">module_forward</a></li>
-<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#criterion_forwardself-kwargs">criterion_forward</a></li>
-<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#visualizeself-epoch-sample_index-valid_sample">visualize</a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#criterion_initself-criterion_conf">criterion_init</a>  </li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#batch_preprocess_fnself-batch_data">batch_preprocess_fn</a>  </li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#module_forwardself-batch_data">module_forward</a>  </li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#criterion_forwardself-kwargs">criterion_forward</a>  </li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#visualizeself-epoch-sample_index-valid_sample">visualize</a>  </li>
 <li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#inferenceself-infer_conf-kwargs">inference</a></li>
+</ol>
+</li>
 </ol>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#table-of-contents">Back to the table of contents</a></p>
 <h3 id="speechainmodelabsmodel">speechain.model.abs.Model</h3>
 <p><em>speechain.model.abs.Model</em> is the base class for all models in this toolkit. 
-The main job of a model includes: <br />
-1. (optional) preprocess the input batch data to the trainable format<br />
-2. calculate the model prediction results by the <em>Module</em> members<br />
-3. evaluate the prediction results by the <em>Criterion</em> members  </p>
+The main job of a model includes:   </p>
+<ol>
+<li>(optional) preprocess the input batch data to the trainable format  </li>
+<li>calculate the model prediction results by the <em>Module</em> members  </li>
+<li>evaluate the prediction results by the <em>Criterion</em> members  </li>
+</ol>
 <p>Each model has several built-in <em>Module</em> members that make up the neural network structure of the model. 
 These <em>Module</em> members will be initialized by the <code>module_conf</code> given in your configuration.</p>
 <p>There are a built-in dictionary named <code>init_class_dict</code> and a built-in list named <code>default_init_modules</code> in the base class.
@@ -4088,45 +4110,49 @@ These <em>Module</em> members will be initialized by the <code>module_conf</code
 <p>Finally, the specified parts of your model will be frozen if <code>frozen_modules</code> is given. 
    If there is only one frozen module, you can directly give the string of its name to <code>frozen_modules</code> like <code>frozen_modules: {module_name}</code>. 
    If there are multiple modules you want to freeze, you can give their names in a list as</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>frozen_modules:
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a> - {module_name1}
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a> - {module_name2}
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a> - ...
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">frozen_modules</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">module_name1</span><span class="p p-Indicator">}</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">module_name2</span><span class="p p-Indicator">}</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 </span></code></pre></div>
 </li>
 </ol>
-<p>Moreover, the frozen granularity depends on your input <code>frozen_modules</code>. For example,
-   1. If you give <code>frozen_modules: encoder_prenet</code>, all parameters of the prenet of your encoder will be frozen<br />
-   2. If you give <code>frozen_modules: encoder_prenet.conv</code>, only the convolution layers of the prenet of your encoder will be frozen<br />
-   3. If you give <code>frozen_modules: encoder_prenet.conv.0</code>, only the first convolution layer of the prenet of your encoder will be frozen<br />
-   4. If you give <code>frozen_modules: encoder_prenet.conv.0.bias</code>, only the bias vector of the first convolution layer of the prenet of your encoder will be frozen</p>
+<p>Moreover, the frozen granularity depends on your input <code>frozen_modules</code>. For example,<br />
+    1. If you give <code>frozen_modules: encoder_prenet</code>, all parameters of the prenet of your encoder will be frozen<br />
+    2. If you give <code>frozen_modules: encoder_prenet.conv</code>, only the convolution layers of the prenet of your encoder will be frozen<br />
+    3. If you give <code>frozen_modules: encoder_prenet.conv.0</code>, only the first convolution layer of the prenet of your encoder will be frozen<br />
+    4. If you give <code>frozen_modules: encoder_prenet.conv.0.bias</code>, only the bias vector of the first convolution layer of the prenet of your encoder will be frozen</p>
 </li>
 <li>
 <p><strong>Arguments:</strong>  </p>
-</li>
+<ul>
 <li><em><strong>args:</strong></em> argparse.Namespace<br />
-    Experiment pipeline arguments received from the <code>Runner</code> object in <code>runner.py</code>.</li>
+  Experiment pipeline arguments received from the <code>Runner</code> object in <code>runner.py</code>.</li>
 <li><em><strong>device:</strong></em> torch.device <br />
-    The computational device used for model calculation in the current GPU process.</li>
+  The computational device used for model calculation in the current GPU process.</li>
 <li><em><strong>model_conf:</strong></em> Dict<br />
-    The model configuration used for general model initialization.</li>
+  The model configuration used for general model initialization.</li>
 <li><em><strong>module_conf:</strong></em> Dict<br />
-    The module configuration used for network structure initialization.</li>
+  The module configuration used for network structure initialization.</li>
 <li><em><strong>criterion_conf:</strong></em> Dict = None<br />
-    The criterion configuration used for criterion (loss functions and evaluation metrics) initialization.</li>
+  The criterion configuration used for criterion (loss functions and evaluation metrics) initialization.</li>
+</ul>
+</li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#api-document">Back to the API list</a></p>
 <h4 id="batch_to_cudaself-data">batch_to_cuda(self, data)</h4>
 <ul>
 <li><strong>Description:</strong><br />
     The recursive function that transfers the batch data to the specified device in the current process.</li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong><ul>
 <li><em><strong>data:</strong></em> Dict or torch.Tensor<br />
-    The input batch data. It should be either a Tensor or a Dict of Tensors. 
-    For the Dict input, the function itself will be called once by each Tensor element.</li>
+  The input batch data. It should be either a Tensor or a Dict of Tensors. 
+  For the Dict input, the function itself will be called once by each Tensor element.</li>
+</ul>
+</li>
 <li><strong>Return:</strong> Dict or torch.Tensor<br />
-    If the input is a Dict, the returned output will also be a Dict of Tensors transferred to the target device;<br />
-    If the input is a Tensor, the returned output will be its copy on the target device.</li>
+      If the input is a Dict, the returned output will also be a Dict of Tensors transferred to the target device;<br />
+      If the input is a Tensor, the returned output will be its copy on the target device.</li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#api-document">Back to the API list</a></p>
 <h4 id="forwardself-batch_data-epoch-kwargs">forward(self, batch_data, epoch, **kwargs)</h4>
@@ -4143,14 +4169,16 @@ These <em>Module</em> members will be initialized by the <code>module_conf</code
 </li>
 <li>
 <p><strong>Arguments:</strong>  </p>
-</li>
+<ul>
 <li><em><strong>batch_data:</strong></em> Dict<br />
-    The input batch data received from the <code>train</code> or <code>valid</code> dataloader object in the experimental pipeline.<br />
-    The batch is in the form of a Dict where the key is the data name and the value is the data content.   </li>
+  The input batch data received from the <code>train</code> or <code>valid</code> dataloader object in the experimental pipeline.<br />
+  The batch is in the form of a Dict where the key is the data name and the value is the data content.   </li>
 <li><em><strong>epoch:</strong></em> int = None <br />
-    The number of the current epoch. Used for real-time model visualization and model prediction.  </li>
+  The number of the current epoch. Used for real-time model visualization and model prediction.  </li>
 <li><em><strong>**kwargs:</strong></em><br />
-    The additional arguments for real-time model visualization. If given, the code will go through the model visualization branch.  </li>
+  The additional arguments for real-time model visualization. If given, the code will go through the model visualization branch.  </li>
+</ul>
+</li>
 <li><strong>Return:</strong><br />
     In the training branch, the loss functions and evaluation metrics will be returned each of which is in the form of a <em>Dict</em>.<br />
     In the validation branch, only the evaluation metrics will be returned.<br />
@@ -4161,11 +4189,13 @@ These <em>Module</em> members will be initialized by the <code>module_conf</code
 <ul>
 <li><strong>Description:</strong><br />
     This function averages the evaluation metrics across all GPU processes in the DDP mode for model distribution.</li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong><ul>
 <li><em><strong>metrics:</strong></em> Dict[str, torch.Tensor]<br />
-    The evaluation metrics to be averaged across all GPU processes. </li>
+  The evaluation metrics to be averaged across all GPU processes. </li>
 <li><em><strong>batch_data:</strong></em> Dict<br />
-    The input batch data used to calculate the batch size for averaging evaluation metrics.</li>
+  The input batch data used to calculate the batch size for averaging evaluation metrics.</li>
+</ul>
+</li>
 <li><strong>Return:</strong> Dict[str, torch.Tensor]<br />
     The evaluation metrics <em>Dict</em> after averaging. The key names remain the same.</li>
 </ul>
@@ -4179,15 +4209,19 @@ These <em>Module</em> members will be initialized by the <code>module_conf</code
 <li>preprocess and transfer the batch data to GPUs</li>
 <li>calculate the inference results</li>
 </ol>
-<p>For each step above, we provide interface functions for you to override and make your own implementation.
-* <strong>Arguments:</strong>
-  * <em><strong>test_batch:</strong></em> Dict<br />
-The input batch data received from the <code>test</code> dataloader object in the experimental pipeline.
-  * <em><strong>infer_conf:</strong></em> Dict<br />
-The configuration used for model inference.
-* <strong>Return:</strong> Dict<br />
-A Dict of the inference results where each key-value item corresponds to one evaluation metric you want to save to the disk.</p>
+<p>For each step above, we provide interface functions for you to override and make your own implementation.</p>
 </li>
+<li>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><em><strong>test_batch:</strong></em> Dict<br />
+  The input batch data received from the <code>test</code> dataloader object in the experimental pipeline.</li>
+<li><em><strong>infer_conf:</strong></em> Dict<br />
+  The configuration used for model inference.</li>
+</ul>
+</li>
+<li><strong>Return:</strong> Dict<br />
+    A Dict of the inference results where each key-value item corresponds to one evaluation metric you want to save to the disk.</li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#api-document">Back to the API list</a></p>
 <h4 id="bad_cases_selection_init_fn">bad_cases_selection_init_fn()</h4>
@@ -4207,9 +4241,11 @@ A Dict of the inference results where each key-value item corresponds to one eva
     The interface function that initializes the <em>Module</em> members of the model. These <em>Module</em> members make up the neural network structure of the model. 
     Some models have their customized part that also needs to be initialization in this function, e.g. the tokenizer of ASR and TTS models.<br />
 <strong>Note:</strong> This interface function must be overridden for each <em>Model</em> subclass.</li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong><ul>
 <li><em><strong>**kwargs:</strong></em><br />
-    The combination of the arguments in your <code>module_conf</code> and <code>model_conf['customize_conf']</code>.</li>
+  The combination of the arguments in your <code>module_conf</code> and <code>model_conf['customize_conf']</code>.</li>
+</ul>
+</li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#api-document">Back to the API list</a></p>
 <h4 id="criterion_initself-criterion_conf">criterion_init(self, **criterion_conf)</h4>
@@ -4218,9 +4254,11 @@ A Dict of the inference results where each key-value item corresponds to one eva
     The interface function that initializes the <em>Criterion</em> members of the model. 
     These <em>Criterion</em> members can be divided into two parts: the loss functions used for training and the evaluation metrics used for validation.<br />
 <strong>Note:</strong> This interface function must be overridden for each <em>Model</em> subclass.</li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong><ul>
 <li><em><strong>**criterion_conf:</strong></em><br />
-    The arguments in your given <code>criterion_conf</code>.</li>
+  The arguments in your given <code>criterion_conf</code>.</li>
+</ul>
+</li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#api-document">Back to the API list</a></p>
 <h4 id="batch_preprocess_fnself-batch_data">batch_preprocess_fn(self, batch_data)</h4>
@@ -4229,9 +4267,11 @@ A Dict of the inference results where each key-value item corresponds to one eva
   This hook function does the preprocessing for the input batch data before using them in <code>self.model_forward()</code>. 
   This function is not mandatory to be overridden and the original implementation in the base <em>Model</em> class does nothing but return the input <code>batch_data</code>.<br />
 <strong>Note:</strong> the key names in the returned Dict should match the argument names in <code>self.model_forward()</code>.</li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong><ul>
 <li><em><strong>batch_data:</strong></em> Dict<br />
-    Raw data of the input batch to be preprocessed in this hook function.</li>
+  Raw data of the input batch to be preprocessed in this hook function.</li>
+</ul>
+</li>
 <li><strong>Return:</strong> Dict<br />
     Processed data of the input batch that is ready to be used in <code>self.model_forward()</code>.</li>
 </ul>
@@ -4246,9 +4286,11 @@ A Dict of the inference results where each key-value item corresponds to one eva
 <li>The key names in the returned Dict should match the argument names of <code>self.loss_calculation()</code> and <code>self.metrics_calculation()</code>.</li>
 </ol>
 </li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong><ul>
 <li><em><strong>**batch_data:</strong></em><br />
-    Processed data of the input batch received from <code>self.batch_preprocess_fn()</code>.</li>
+  Processed data of the input batch received from <code>self.batch_preprocess_fn()</code>.</li>
+</ul>
+</li>
 <li><strong>Return:</strong> Dict<br />
     Prediction results (logits) of the model on the input batch data. 
     Some intermediate results (e.g., attention matrices) can also be returned for later use.</li>
@@ -4260,9 +4302,11 @@ A Dict of the inference results where each key-value item corresponds to one eva
     This interface function is activated after <code>self.model_forward()</code>. 
     It receives the model prediction results from <code>self.model_forward()</code> and input batch data from <code>self.batch_preprocess_fn()</code>.<br />
 <strong>Note:</strong> This interface function must be overridden for each <em>Model</em> subclass.</li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong><ul>
 <li><em><strong>**kwargs:</strong></em> 
-    The combination of the returned arguments from <code>self.batch_preprocess_fn()</code> and <code>self.model_forward()</code>.</li>
+  The combination of the returned arguments from <code>self.batch_preprocess_fn()</code> and <code>self.model_forward()</code>.</li>
+</ul>
+</li>
 <li><strong>Return:</strong> (Dict[str, torch.Tensor], Dict[str, torch.Tensor]) or Dict[str, torch.Tensor]<br />
     The returned values should be different for the training and validation branches.<ol>
 <li>For training, two Dict[str, torch.Tensor] should be returned where the first one contains all the trainable training losses for optimization and the second one contains all the non-trainable evaluation metrics used to record the training status.</li>
@@ -4291,13 +4335,11 @@ A Dict of the inference results where each key-value item corresponds to one eva
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="n">content</span><span class="o">=</span><span class="p">{</span><span class="n">file_content</span><span class="p">}</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="p">)</span>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">)</span>
-</span></code></pre></div>
-    The first-level key is used to decide the name of the meta file as <code>idx2{file_name}</code>. 
-    Its value is also a <em>Dict</em> and there must be two keys in this sub-<em>Dict</em>: <code>format</code> and <code>content</code>. 
-    The configuration of the sub-<em>Dict</em> is different for different file formats:</p>
-<ol>
-<li>
-<p>For pure text metadata files, the value of <code>format</code> must be <code>txt</code> and the value of <code>content</code> must be a <em>List</em> of Python built-in data type (i.e.,. int, float, str, bool, ...).
+</span></code></pre></div></p>
+<p>The first-level key is used to decide the name of the meta file as <code>idx2{file_name}</code>. 
+Its value is also a <em>Dict</em> and there must be two keys in this sub-<em>Dict</em>: <code>format</code> and <code>content</code>. 
+The configuration of the sub-<em>Dict</em> is different for different file formats:
+1. For pure text metadata files, the value of <code>format</code> must be <code>txt</code> and the value of <code>content</code> must be a <em>List</em> of Python built-in data type (i.e.,. int, float, str, bool, ...).
 Each line of the file <code>idx2{file_name}</code> will be made up of the index of a test data instance and its metadata value in the <code>content</code> <em>List</em> which are separated by a blank.<br />
 For example, <code>dict(cer=dict(format='txt', content=[0.1, 0.2, 0.3]))</code> will create a pure text file named <code>idx2cer</code> which looks like<br />
     <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>{test_index1} 0.1
@@ -4305,7 +4347,7 @@ For example, <code>dict(cer=dict(format='txt', content=[0.1, 0.2, 0.3]))</code> 
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>{test_index3} 0.3
 </span></code></pre></div>
     <strong>Note:</strong> if the first-level key ends with <em>.md</em>, there will not be <em>'idx2'</em> attached at the beginning of the file name.</p>
-</li>
+<ol>
 <li>
 <p>For audio files, the value of <code>format</code> must be either <code>wav</code> or <code>flac</code> and the value of <code>content</code> must be a <em>List</em> of array-like data type (e.g. numpy.ndarry, torch.Tensor, ...).
 Moreover, there must be an additional key named <code>sample_rate</code> to indicate the sampling rate of the waveforms to be saved in audio files.
@@ -4331,9 +4373,9 @@ The <code>idx2feat</code> file is like:
 </li>
 <li><strong>Arguments:</strong></li>
 <li><em><strong>infer_conf:</strong></em> Dict<br />
-The configuration Dict used for model inference.</li>
+  The configuration Dict used for model inference.</li>
 <li><em><strong>**kwargs:</strong></em><br />
-The testing data loaded from <code>test</code> dataloader object in the experimental pipeline. </li>
+  The testing data loaded from <code>test</code> dataloader object in the experimental pipeline. </li>
 <li><strong>Return:</strong> Dict[str, Dict[str, str or List]]<br />
 The model inference results to be saved on the disk.</li>
 </ol>
@@ -4343,7 +4385,7 @@ The model inference results to be saved on the disk.</li>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#table-of-contents">Back to the table of contents</a></p>
 <h2 id="supported-models">Supported Models</h2>
 <ol>
-<li><a href="https://github.com/bagustris/SpeeChain/tree/main/recipes/asr#automatic-speech-recognition-asr">ASR Recipes</a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/recipes/asr#automatic-speech-recognition-asr">ASR Recipes</a>  <ol>
 <li><a href="https://github.com/bagustris/SpeeChain/blob/main/speechain/model/asr.py#L29">asr.ARASR</a>  <ul>
 <li><strong>Structure:</strong> Auto-Regressive CTC-Attention ASR model.  </li>
 <li><strong>Input:</strong> One tuple of speech-text paired data (<em>feat</em>, <em>feat_len</em>, <em>text</em>, <em>text_len</em>) in <em>model_forward()</em>.  </li>
@@ -4353,12 +4395,14 @@ The model inference results to be saved on the disk.</li>
 <li><a href="https://github.com/bagustris/SpeeChain/blob/main/speechain/model/asr.py#L658">asr.SemiARASR</a> <ul>
 <li><strong>Structure:</strong> Semi-supervised Auto-Regressive CTC-Attention ASR model.  </li>
 <li><strong>Input:</strong> Multiple tuples of speech-text paired data  (<em>feat</em>, <em>feat_len</em>, <em>text</em>, <em>text_len</em>) in <em>model_forward()</em>. 
-  Each of them is generated by a specific <code>torch.utils.data.Dataloader</code>.</li>
+Each of them is generated by a specific <code>torch.utils.data.Dataloader</code>.</li>
 <li><strong>Output:</strong> Multiple ASR losses calculated on all the input data tuples in <em>criterion_calculation()</em>. 
-  A loss named <em>loss</em> is also returned which is the trainable overall loss summed by all ASR losses. </li>
+A loss named <em>loss</em> is also returned which is the trainable overall loss summed by all ASR losses. </li>
 </ul>
 </li>
-<li><a href="https://github.com/bagustris/SpeeChain/tree/main/recipes/tts#text-to-speech-synthesis-tts">TTS Recipes</a></li>
+</ol>
+</li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/recipes/tts#text-to-speech-synthesis-tts">TTS Recipes</a>  <ol>
 <li><a href="https://github.com/bagustris/SpeeChain/blob/main/speechain/model/tts.py#L36">tts.ARTTS</a><ul>
 <li><strong>Structure:</strong> Auto-Regressive Attention TTS model.  </li>
 <li><strong>Input:</strong> One tuple of speech-text paired data (<em>feat</em>, <em>feat_len</em>, <em>text</em>, <em>text_len</em>) in <em>model_forward()</em>.  </li>
@@ -4366,75 +4410,77 @@ The model inference results to be saved on the disk.</li>
 </ul>
 </li>
 </ol>
+</li>
+</ol>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#table-of-contents">Back to the table of contents</a></p>
 <h2 id="how-to-freeze-a-specific-part-of-your-model">How to Freeze a Specific Part of your Model</h2>
 <p>Parameter freezing can be done simply by giving the name of the module you want to freeze in <em>frozen_modules</em>. 
 In the example below, the encoder of the ASR model will be frozen while other modules are still trainable.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>model:
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    model_type: asr.ARASR
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    model_conf:
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>        frozen_modules: encoder
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">model</span><span class="p">:</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nt">model_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">asr.ARASR</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">model_conf</span><span class="p">:</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">        </span><span class="nt">frozen_modules</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">encoder</span>
 </span></code></pre></div>
 If you want to freeze multiple modules, you can give their names as a list in <em>frozen_modules</em>. 
 In the example below, the prenets of both the encoder and decoder will be frozen.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>model:
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    model_type: asr.ARASR
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    model_conf:
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>        frozen_modules:
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>          - encoder.prenet
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>          - decoder.prenet
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">model</span><span class="p">:</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nt">model_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">asr.ARASR</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">model_conf</span><span class="p">:</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">        </span><span class="nt">frozen_modules</span><span class="p">:</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">encoder.prenet</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">decoder.prenet</span>
 </span></code></pre></div>
 The parameter freezing granularity can be very fine if you specify the module name by a series of dots. 
 In the example below, the convolution layers of the prenet of the encoder will be frozen.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>model:
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    model_type: asr.ARASR
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    model_conf:
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>        frozen_modules: 
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>            - encoder.prenet.conv
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">model</span><span class="p">:</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nt">model_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">asr.ARASR</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nt">model_conf</span><span class="p">:</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">        </span><span class="nt">frozen_modules</span><span class="p">:</span><span class="w"> </span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">encoder.prenet.conv</span>
 </span></code></pre></div></p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#table-of-contents">Back to the table of contents</a></p>
 <h2 id="how-to-initialize-your-model-by-the-pretrained-model">How to Initialize your Model by the Pretrained Model</h2>
 <p>Pretrained model loading can be easily done by giving the model path in <em>pretrained_model</em>. 
 In the example below, the entire ASR model will be initialized by the given <em>best_accuracy.pth</em> model.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>mdl_root: recipe/asr/librispeech/train-clean-100/exp/{exp_name}/models
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>model:
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    model_type: asr.ARASR
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    model_conf:
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>        pretrained_model:
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>            path: !ref &lt;mdl_root&gt;/accuracy_best.pth
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">mdl_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">recipe/asr/librispeech/train-clean-100/exp/{exp_name}/models</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nt">model</span><span class="p">:</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nt">model_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">asr.ARASR</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="nt">model_conf</span><span class="p">:</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">        </span><span class="nt">pretrained_model</span><span class="p">:</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">            </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;mdl_root&gt;/accuracy_best.pth</span>
 </span></code></pre></div>
 If you only want to initialize a part of your model, you can use the <em>mapping</em> argument in <em>pretrained_model</em>. 
 The parameter name mismatch can also be solved by the <em>mapping</em> argument. 
 In the example below, only the encoder of the ASR model will be initialized by the given pretrained model. 
 Even though the pretrained model is constructed by unit modules, it can still be loaded into the ASR model constructed by template modules by aligning their module names.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>model_root: recipe/asr/librispeech/train-clean-100/exp/{exp_name}/models
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>model:
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    model_type: asr.ARASR
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    model_conf:
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>        pretrained_model:
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>            path: !ref &lt;model_root&gt;/accuracy_best.pth
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>            mapping: 
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>              encoder_prenet: encoder.prenet
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>              encoder: encoder.encoder
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">model_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">recipe/asr/librispeech/train-clean-100/exp/{exp_name}/models</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nt">model</span><span class="p">:</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nt">model_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">asr.ARASR</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="nt">model_conf</span><span class="p">:</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">        </span><span class="nt">pretrained_model</span><span class="p">:</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">            </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;model_root&gt;/accuracy_best.pth</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">            </span><span class="nt">mapping</span><span class="p">:</span><span class="w"> </span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">              </span><span class="nt">encoder_prenet</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">encoder.prenet</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">              </span><span class="nt">encoder</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">encoder.encoder</span>
 </span></code></pre></div>
 There could be multiple pretrained models in <em>pretrained_model</em> that are used to initialize your model. 
 In the example below, the encoder and decoder of the ASR model are initialized by different pretrained models.</p>
 <p>Note that if there are overlapping modules between the <em>mapping</em> arguments of different pretrained models, 
 the module will be initialized by the pretrained models at the back of the list.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>model_root: recipe/asr/librispeech/train-clean-100/exp/{exp_name}/models
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>model:
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    model_type: asr.ARASR
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    model_conf:
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>        pretrained_model:
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>            - path: !ref &lt;model_root&gt;/accuracy_best.pth
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>              mapping:
-</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>                encoder_prenet: encoder.prenet
-</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>                encoder: encoder.encoder
-</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>            - path: !ref &lt;model_root&gt;/10_accuracy_average.pth
-</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>              mapping:
-</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>                decoder_prenet: decoder.prenet
-</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>                decoder: decoder.decoder
-</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>                decoder_postnet: decoder.postnet
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">model_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">recipe/asr/librispeech/train-clean-100/exp/{exp_name}/models</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nt">model</span><span class="p">:</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="nt">model_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">asr.ARASR</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="nt">model_conf</span><span class="p">:</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">        </span><span class="nt">pretrained_model</span><span class="p">:</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;model_root&gt;/accuracy_best.pth</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">              </span><span class="nt">mapping</span><span class="p">:</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">                </span><span class="nt">encoder_prenet</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">encoder.prenet</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">                </span><span class="nt">encoder</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">encoder.encoder</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;model_root&gt;/10_accuracy_average.pth</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">              </span><span class="nt">mapping</span><span class="p">:</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">                </span><span class="nt">decoder_prenet</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">decoder.prenet</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">                </span><span class="nt">decoder</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">decoder.decoder</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">                </span><span class="nt">decoder_postnet</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">decoder.postnet</span>
 </span></code></pre></div></p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#table-of-contents">Back to the table of contents</a></p>
 

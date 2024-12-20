@@ -3865,7 +3865,7 @@ Some post-processing steps need to be done in the <em>Model</em> object later.</
 <li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#how-to-perform-data-selection-in-my-dataset-object"><strong>How to Perform Data Selection in my Dataset Object</strong></a></li>
 </ol>
 <h2 id="configuration-file-format">Configuration File Format</h2>
-<p><div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">dataset_conf</span><span class="p">:</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">dataset_conf</span><span class="p">:</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">main_data</span><span class="p">:</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="p p-Indicator">{</span><span class="nv">data_name1</span><span class="p p-Indicator">}:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">data_file_path1</span><span class="p p-Indicator">}</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="p p-Indicator">{</span><span class="nv">data_name2</span><span class="p p-Indicator">}:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">data_file_path2</span><span class="p p-Indicator">}</span>
@@ -3875,17 +3875,31 @@ Some post-processing steps need to be done in the <em>Model</em> object later.</
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="c1"># Customized Arguments passed to the hook dataset_init_fn()</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 </span></code></pre></div>
-* The first-level key should be <code>dataset_conf</code> to fit the setting of <em>Iterator</em>.
-  * The second-level keys are made up of two parts:
-    1. <strong>main_data:</strong><br />
-        The main body dictionary of the data instances you want to load for training or testing your models.<br />
-        Each key-value item corresponds to a data variable in a data instance where the key is the variable name and the value is the file path of the data to be extracted.<br />
-        For more details about how to give <code>data_name</code>, please refer to the API document of your target <em>Dataset</em> subclass.
-    2. <strong>data_selection:</strong><br />
-        This argument defines how to select the target data instances in the given dataset.<br />
-        For more details about how to configure this argument, please refer to the AIP document below.
-    3. Arguments that are passed to the hook <code>dataset_init_fn()</code> for customized <em>Dataset</em> initialization. 
-       For more details about the customized arguments, please refer to the AIP document of your target <em>Dataset</em> subclass.</p>
+<ul>
+<li>
+<p>The first-level key should be <code>dataset_conf</code> to fit the setting of <em>Iterator</em>.  </p>
+</li>
+<li>
+<p>The second-level keys are made up of two parts:</p>
+<ol>
+<li>
+<p><strong>main_data:</strong><br />
+    The main body dictionary of the data instances you want to load for training or testing your models.<br />
+    Each key-value item corresponds to a data variable in a data instance where the key is the variable name and the value is the file path of the data to be extracted.<br />
+    For more details about how to give <code>data_name</code>, please refer to the API document of your target <em>Dataset</em> subclass.</p>
+</li>
+<li>
+<p><strong>data_selection:</strong><br />
+    This argument defines how to select the target data instances in the given dataset.<br />
+    For more details about how to configure this argument, please refer to the AIP document below.</p>
+</li>
+<li>
+<p>Arguments that are passed to the hook <code>dataset_init_fn()</code> for customized <em>Dataset</em> initialization. 
+   For more details about the customized arguments, please refer to the AIP document of your target <em>Dataset</em> subclass.</p>
+</li>
+</ol>
+</li>
+</ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#table-of-contents">Back to the table of contents</a></p>
 <h2 id="dataset-library">Dataset Library</h2>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/speechain
@@ -3896,18 +3910,22 @@ Some post-processing steps need to be done in the <em>Model</em> object later.</
 👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#table-of-contents">Back to the table of contents</a></p>
 <h2 id="api-document">API Document</h2>
 <p><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#speechaindatasetabsdataset"><strong>speechain.dataset.abs.Dataset</strong></a><br />
-1. <em>Non-overridable backbone functions:</em>
-   1. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#__init__self-main_data-data_selection-dataset_conf">__init__</a>
-   2. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#__getitem__self-index">__getitem__</a>
-   3. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#data_selectionself-selection_mode-selection_num-meta_info">data_selection</a>
-   4. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#get_data_indexself">get_data_index</a>
-   5. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#remove_data_by_indexself">remove_data_by_index</a>
-   6. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#collate_fnself-batch">collate_fn</a>  </p>
+1. <em>Non-overridable backbone functions:</em>  </p>
 <ol>
-<li><em>Overridable interface functions:</em>  </li>
-<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#dataset_init_fnself-dataset_conf">dataset_init_fn</a></li>
-<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#extract_main_data_fnbatch_dict-main_data">extract_main_data_fn</a></li>
-<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#collate_main_data_fnself-batch_dict">collate_main_data_fn</a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#__init__self-main_data-data_selection-dataset_conf">__init__</a>  </li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#__getitem__self-index">__getitem__</a>  </li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#data_selectionself-selection_mode-selection_num-meta_info">data_selection</a>  </li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#get_data_indexself">get_data_index</a>  </li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#remove_data_by_indexself">remove_data_by_index</a>  </li>
+<li>
+<p><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#collate_fnself-batch">collate_fn</a>  </p>
+</li>
+<li>
+<p><em>Overridable interface functions:</em>  </p>
+</li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#dataset_init_fnself-dataset_conf">dataset_init_fn</a>  </li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#extract_main_data_fnbatch_dict-main_data">extract_main_data_fn</a>  </li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#collate_main_data_fnself-batch_dict">collate_main_data_fn</a>  </li>
 </ol>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#table-of-contents">Back to the table of contents</a></p>
 <h3 id="speechaindatasetabsdataset">speechain.dataset.abs.Dataset</h3>
@@ -3919,38 +3937,52 @@ If you want to make your own <em>Dataset</em> implementation, please follow the 
   This initialization function reads the main body of the data instances into its memory. 
   The main body is used to extract individual data instances from the disk to form a batch during model training or testing.<br />
   The hook <code>dataset_init_fn()</code> is executed here after reading the main body files.</li>
-<li><strong>Arguments:</strong></li>
+<li>
+<p><strong>Arguments:</strong></p>
+<ul>
 <li><em><strong>main_data:</strong></em> Dict[str, str or List[str]]<br />
-  The main body dictionary of the data instances used in this Dataset object. 
-  In each key-value item, the key is the name of the data variable and the value is the absolute path of the target <em>idx2data</em> files.
-  The value can be given as a single path string or a list of multiple path strings.</li>
-<li><strong><em>data_selection:</em></strong> List[str or List[str]] = None<br />
-    The strategies for data selection during the iterator initialization to shrink the used data instances.
-    Multiple strategies can be specified in a list. Each data selection strategy must be either a bi-list (non-meta strategy) or tri-list (meta strategy).<ol>
-<li><em>non-meta strategy:</em><br />
-The rule-based selection strategies that don't involve metadata. 
-These strategies should be given as a bi-list, i.e., ['selection mode', 'selection number'].<br />
-'selection mode' indicates the way to select data instances while 'selection number' indicates how many data instances to be selected.<br />
-Currently, available non-meta selection modes include:</li>
-<li>'order': Select the data instances from the beginning of the dataset.</li>
-<li>'rev_order': Select the data instances from the end of the dataset.</li>
+The main body dictionary of the data instances used in this Dataset object. 
+In each key-value item, the key is the name of the data variable and the value is the absolute path of the target <em>idx2data</em> files.
+The value can be given as a single path string or a list of multiple path strings.  </li>
+<li>
+<p><strong><em>data_selection:</em></strong> List[str or List[str]] = None<br />
+  The strategies for data selection during the iterator initialization to shrink the used data instances.
+  Multiple strategies can be specified in a list. Each data selection strategy must be either a bi-list (non-meta strategy) or tri-list (meta strategy).  </p>
+</li>
+<li>
+<p><em>non-meta strategy:</em><br />
+  The rule-based selection strategies that don't involve metadata. 
+  These strategies should be given as a bi-list, i.e., ['selection mode', 'selection number'].<br />
+  'selection mode' indicates the way to select data instances while 'selection number' indicates how many data instances to be selected.<br />
+  Currently, available non-meta selection modes include:</p>
+<ol>
+<li>'order': Select the data instances from the beginning of the dataset.  </li>
+<li>'rev_order': Select the data instances from the end of the dataset.  </li>
 <li>'random': Randomly select the data instances from the dataset.<br />
 <strong>Note:</strong> You should keep the same
-   random seeds for all the GPU processes in the DDP mode to ensure that the selected data instances
-   are the same in each process. In this case, please set the 'same_proc_seed' argument to True in
-   your configuration given to speechain.runner.py.</li>
-<li><em>meta strategy:</em><br />
-The selection strategies that involves metadata. 
-These strategies should be given as a tri-list, i.e., ['selection mode', 'selection threshold', 'metadata path']. <br />
-'selection mode' indicates the way to select data instances, 'selection threshold' indicates the metadata threshold to select data instances, and 'metadata path' indicates where is the metadata used for selection.<br />
-Currently, available meta selection modes include:</li>
-<li>'min': Select the data instances who have smaller metadata.</li>
-<li>'max': Select the data instances who have larger  metadata.</li>
-<li>'middle': Remove the data instances whose metadata is the largest and smallest.</li>
+  random seeds for all the GPU processes in the DDP mode to ensure that the selected data instances
+  are the same in each process. In this case, please set the 'same_proc_seed' argument to True in
+  your configuration given to speechain.runner.py.  </li>
 </ol>
 </li>
-<li><em>*<strong>*dataset_conf:</strong></em><br />
-  The configuration arguments for customized Dataset initialization.</li>
+<li>
+<p><em>meta strategy:</em><br />
+  The selection strategies that involves metadata. 
+  These strategies should be given as a tri-list, i.e., ['selection mode', 'selection threshold', 'metadata path']. <br />
+  'selection mode' indicates the way to select data instances, 'selection threshold' indicates the metadata threshold to select data instances, and 'metadata path' indicates where is the metadata used for selection.<br />
+  Currently, available meta selection modes include:</p>
+<ol>
+<li>'min': Select the data instances who have smaller metadata.  </li>
+<li>'max': Select the data instances who have larger  metadata.  </li>
+<li>'middle': Remove the data instances whose metadata is the largest and smallest.  </li>
+</ol>
+</li>
+<li>
+<p><em>*<strong>*dataset_conf:</strong></em><br />
+The configuration arguments for customized Dataset initialization.</p>
+</li>
+</ul>
+</li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#api-document">Back to the API list</a></p>
 <h4 id="__getitem__self-index">__getitem__(self, index)</h4>
@@ -4042,9 +4074,11 @@ Only 'min' and 'max' modes support string <em>selection_num</em>.<br />
  This hook function initializes the customized part of your <em>Dataset</em> implementations.
  This hook is not mandatory to be overridden and the original one in the base class does nothing.
  If your <em>Dataset</em> subclass has some customized part, please override this hook function and put your logic here.</li>
-<li><strong>Arguments:</strong></li>
-<li><em><strong>**dataset_conf:</strong></em><br />
-    The configuration arguments for customized Dataset initialization received from <code>__init__()</code>.</li>
+<li><strong>Arguments:</strong><ul>
+<li><em>*<strong>*dataset_conf:</strong></em><br />
+  The configuration arguments for customized Dataset initialization received from <code>__init__()</code>.</li>
+</ul>
+</li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#api-document">Back to the API list</a></p>
 <h4 id="extract_main_data_fnbatch_dict-main_data">extract_main_data_fn(batch_dict, main_data)</h4>
@@ -4053,10 +4087,12 @@ Only 'min' and 'max' modes support string <em>selection_num</em>.<br />
     This hook function extracts the selected data instance from the disk to the memory. 
     The original hook in the base class does nothing and directly return <code>main_data</code>. 
     If you want to implement your own data instance extraction, please override this hook function and give your logic here.</li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong><ul>
 <li><em><strong>main_data:</strong></em> Dict[str, str]<br />
-    The dictionary containing necessary information for extracting the data instance from the disk to the memory. 
-    For example, the audio file path for the waveform data and the feature file path for the speaker embedding.</li>
+  The dictionary containing necessary information for extracting the data instance from the disk to the memory. 
+  For example, the audio file path for the waveform data and the feature file path for the speaker embedding.</li>
+</ul>
+</li>
 <li><strong>Return:</strong> Dict[str, Any]<br />
     The dictionary containing the extracted data instance.</li>
 </ul>
@@ -4067,9 +4103,11 @@ Only 'min' and 'max' modes support string <em>selection_num</em>.<br />
     This hook function is used as the value of the argument <code>collate_fn</code> for initializing Dataloader object at the beginning of each epoch.<br />
     If you have your own batch collating strategy, we don't recommend you to override this hook but another hook named <code>collate_main_data_fn()</code>.
     This function should return the processed batch data in the form of a dictionary.</li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong><ul>
 <li><em><strong>batch:</strong></em> List[Dict[str, Any]]<br />
-    The tuple of data instance dictionaries extracted by <code>extract_main_data_fn()</code>.</li>
+  The tuple of data instance dictionaries extracted by <code>extract_main_data_fn()</code>.</li>
+</ul>
+</li>
 <li><strong>Return:</strong> Dict[str, Any]<br />
     The batch dictionary that will be passed to the model.</li>
 </ul>
@@ -4081,10 +4119,12 @@ Only 'min' and 'max' modes support string <em>selection_num</em>.<br />
     The original hook in the base class packages all the elements other than strings of the batch into a <code>torch.Tensor</code>. 
     Therefore, the <code>torch.Tensor</code> elements must have the same shape. The string elements will remain a list.<br />
     If you have your own batch collating strategy, please override this hook function and give your logic here.</li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong><ul>
 <li><em><strong>batch_dict:</strong></em> Dict[str, List]<br />
-    The reshaped dictionary of the extracted batch. 
-    In each key-value item, the key is the name of the data variable that will be passed to the model and the value is the list of unorganized data from all the elements in the batch.</li>
+  The reshaped dictionary of the extracted batch. 
+  In each key-value item, the key is the name of the data variable that will be passed to the model and the value is the list of unorganized data from all the elements in the batch.</li>
+</ul>
+</li>
 <li><strong>Return:</strong> Dict[str, torch.Tensor or List]<br />
   The dictionary containing the collated batch of data instances.</li>
 </ul>

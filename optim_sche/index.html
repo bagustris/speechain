@@ -4126,7 +4126,7 @@ Let me show you an intuitive example.
 Suppose we want to calculate the mean value of 1, 2, ..., 9, 10 but we cannot directly divide the sum by 10 because our calculator is not powerful enough. 
 Instead, we can calculate the mean value of two sub-groups: 1, 2, .., 5 and 6, 7, ..., 10. 
 We get two sub-mean values: 3 and 8. 
-The overall mean value can be calculated by taking the mean value of these two sub-mean values: (3 + 8) / 2 = 5.5</p>
+The overall mean value can be calculated by taking the mean value of these two sub-mean values: (3 + 8) / 2 = 5.5.</p>
 <p>Unfortunately, gradient accumulation is not identical to large batch training. 
 Since small batches are used to calculate the gradients of each step, some calculations of large batch training cannot be simulated (e.g. <em>BatchNorm</em> and <em>FeatureNormalization</em>). 
 Therefore, the performance of the model trained by gradient accumulation may be slightly different from the one trained by the actual large batches. </p>

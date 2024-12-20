@@ -3662,25 +3662,27 @@
 <p><a href="https://github.com/bagustris/SpeeChain/blob/main/speechain/criterion/abs.py"><em>Criterion</em></a>  is a Callable object which is the base class for all criterion objects in this toolkit. 
 It serves the role of evaluating the model forward calculation results. 
 Its output can be either a loss function used for training or an evaluation metric used for validation.</p>
-<p>This base class has two abstract interface functions: <code>criterion_init()</code> for criterion initialization and <code>__call__()</code> for criterion forward calculation.
-1. <code>__call__()</code> must be overridden if you want to make your own Criterion implementation.
-2. <code>criterion_init()</code> is not mandatory to be overridden because some criteria can directly be applied to the input data without any initialization such as <a href="https://github.com/bagustris/SpeeChain/blob/main/speechain/criterion/accuracy.py#L12">speechain.criterion.accuracy.Accuracy</a>.</p>
+<p>This base class has two abstract interface functions: <code>criterion_init()</code> for criterion initialization and <code>__call__()</code> for criterion forward calculation.  </p>
+<ol>
+<li><code>__call__()</code> must be overridden if you want to make your own Criterion implementation.  </li>
+<li><code>criterion_init()</code> is not mandatory to be overridden because some criteria can directly be applied to the input data without any initialization such as <a href="https://github.com/bagustris/SpeeChain/blob/main/speechain/criterion/accuracy.py#L12">speechain.criterion.accuracy.Accuracy</a>.</li>
+</ol>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/blob/main/handbook.md#speechain-handbook">Back to the handbook page</a></p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ol>
-<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/criterion#criterion-library"><strong>Criterion Library</strong></a></li>
-<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/criterion#api-document"><strong>API Document</strong></a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/criterion#criterion-library"><strong>Criterion Library</strong></a>  </li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/criterion#api-document"><strong>API Document</strong></a>  </li>
 </ol>
 <h2 id="criterion-library">Criterion Library</h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/speechain
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    /criterion          
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        /abs.py             # Abstract class of Criterion. Base of all Criterion implementations.
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        /accuracy.py        # Criterion implementation of classification accuracy. Mainly used for ASR teacher-forcing accuracy.
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        /bce_logits.py      # Criterion implementation of binary cross entropy. Mainly used for TTS stop flag.
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        /cross_entropy.py   # Criterion implementation of cross entropy. Mainly used for ASR seq2seq loss function.
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        /error_rate.py      # Criterion implementation of word and char error rate. Mainly used for ASR evaluation.
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        /fbeta_score.py     # Criterion implementation of F_beta score. Mainly used for evaluation of TTS stop flag.
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        /least_error.py     # Criterion implementation of mean square error and mean absolute error. Mainly used for TTS seq2seq loss function.
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/speechain
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span>/criterion<span class="w">          </span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span>/abs.py<span class="w">             </span><span class="c1"># Abstract class of Criterion. Base of all Criterion implementations.</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span>/accuracy.py<span class="w">        </span><span class="c1"># Criterion implementation of classification accuracy. Mainly used for ASR teacher-forcing accuracy.</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span>/bce_logits.py<span class="w">      </span><span class="c1"># Criterion implementation of binary cross entropy. Mainly used for TTS stop flag.</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span>/cross_entropy.py<span class="w">   </span><span class="c1"># Criterion implementation of cross entropy. Mainly used for ASR seq2seq loss function.</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span>/error_rate.py<span class="w">      </span><span class="c1"># Criterion implementation of word and char error rate. Mainly used for ASR evaluation.</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span>/fbeta_score.py<span class="w">     </span><span class="c1"># Criterion implementation of F_beta score. Mainly used for evaluation of TTS stop flag.</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span>/least_error.py<span class="w">     </span><span class="c1"># Criterion implementation of mean square error and mean absolute error. Mainly used for TTS seq2seq loss function.</span>
 </span></code></pre></div>
 <h2 id="api-document">API Document</h2>
 <ol>
@@ -3693,9 +3695,11 @@ Its output can be either a loss function used for training or an evaluation metr
 <li><strong>Description:</strong><br />
     This initialization function is shared by all <em>Criterion</em> subclasses.
     Currently, the shared logic only contains calling the initialization function of the parent class.</li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong><ul>
 <li><em><strong>**criterion_conf:</strong></em><br />
-    The arguments used by <code>criterion_init()</code> for your customized Criterion initialization.</li>
+  The arguments used by <code>criterion_init()</code> for your customized Criterion initialization.</li>
+</ul>
+</li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/criterion#api-document">Back to the API list</a></p>
 <h3 id="speechaincriterionabscriterioncriterion_initself-criterion_conf">speechain.criterion.abs.Criterion.criterion_init(self, **criterion_conf)</h3>
@@ -3703,10 +3707,12 @@ Its output can be either a loss function used for training or an evaluation metr
 <li><strong>Description:</strong><br />
     Abstract interface function for customized initialization of each <em>Criterion</em> subclass.
     This interface function is not mandatory to be overridden by your implementation.</li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong><ul>
 <li><em><strong>**criterion_conf:</strong></em><br />
-    The arguments used for customized <em>Criterion</em> initialization.
-    For more details, please refer to the docstring of your target <em>Criterion</em> subclass.</li>
+  The arguments used for customized <em>Criterion</em> initialization.
+  For more details, please refer to the docstring of your target <em>Criterion</em> subclass.</li>
+</ul>
+</li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/criterion#api-document">Back to the API list</a></p>
 <h3 id="speechaincriterionabscriterion__call__self-kwargs">speechain.criterion.abs.Criterion.__call__(self, **kwargs)</h3>
@@ -3715,10 +3721,12 @@ Its output can be either a loss function used for training or an evaluation metr
     This abstract interface function receives the model forward calculation results and ground-truth labels.
     The output is a scalar which could be either trainable for parameter optimization or non-trainable for information recording.<br />
     This interface function is mandatory to be overridden by your implementation.</li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong><ul>
 <li><em><strong>**kwargs:</strong></em><br />
-    model forward calculation results and ground-truth labels.<br />
-    For more details, please refer to the docstring of <code>__call__()</code> of your target <em>Criterion</em> subclass.</li>
+  model forward calculation results and ground-truth labels.<br />
+  For more details, please refer to the docstring of <code>__call__()</code> of your target <em>Criterion</em> subclass.</li>
+</ul>
+</li>
 <li><strong>Return:</strong>
   A trainable or non-trainable scalar.<br />
   For more details, please refer to the docstring of <code>__call__()</code> of your target <em>Criterion</em> subclass.</li>
