@@ -3715,27 +3715,27 @@
 <h1 id="module">Module</h1>
 <p><a href="https://github.com/bagustris/SpeeChain/blob/main/speechain/module/abs.py"><em>Module</em></a> inherits <code>torch.nn.Module</code> and it is the base class for all <em>Module</em> objects in this toolkit. 
 The neural network parts of all the <em>Model</em> objects in this toolkit are constructed by multiple <em>Module</em> objects in a nested structure.<br />
-Below is the nested <em>Module</em> tree of an encoder-decoder ASR model:</p>
-<pre><code>ASR (Model)
-    ---&gt; ASREncoder (Module)
-        ---&gt; Speech2MelSpec (Module)
-            ---&gt; Speech2LinearSpec (Module)
-            ---&gt; LinearSpec2MelSpec (Module)
-        ---&gt; Conv2dPrenet (Module)
-            ---&gt; LinearPrenet (Module)
-        ---&gt; TransformerEncoder (Module)
-            ---&gt; PositionalEncoding (Module)
-            ---&gt; MultiHeadedAttention (Module)
-            ---&gt; PositionwiseFeedForward (Module)
-    ---&gt; ASRDecoder (Module)
-        ---&gt; EmbedPrenet (Module)
-        ---&gt; TransformerDecoder (Module)
-            ---&gt; PositionalEncoding (Module)
-            ---&gt; MultiHeadedAttention (Module)
-            ---&gt; PositionwiseFeedForward (Module)
-        ---&gt; TokenPostnet (Module)
-</code></pre>
-<p>This base class has two required abstract interface functions that must be overriden by all <em>Module</em> subclasses: <code>module_init()</code> for module initialization and <code>forward()</code> for output calculation.</p>
+Below is the nested <em>Module</em> tree of an encoder-decoder ASR model:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ASR (Model)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    ---&gt; ASREncoder (Module)
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        ---&gt; Speech2MelSpec (Module)
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>            ---&gt; Speech2LinearSpec (Module)
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            ---&gt; LinearSpec2MelSpec (Module)
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        ---&gt; Conv2dPrenet (Module)
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>            ---&gt; LinearPrenet (Module)
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        ---&gt; TransformerEncoder (Module)
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>            ---&gt; PositionalEncoding (Module)
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>            ---&gt; MultiHeadedAttention (Module)
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>            ---&gt; PositionwiseFeedForward (Module)
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    ---&gt; ASRDecoder (Module)
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        ---&gt; EmbedPrenet (Module)
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        ---&gt; TransformerDecoder (Module)
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>            ---&gt; PositionalEncoding (Module)
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>            ---&gt; MultiHeadedAttention (Module)
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>            ---&gt; PositionwiseFeedForward (Module)
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        ---&gt; TokenPostnet (Module)
+</span></code></pre></div>
+This base class has two required abstract interface functions that must be overriden by all <em>Module</em> subclasses: <code>module_init()</code> for module initialization and <code>forward()</code> for output calculation.</p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/blob/main/handbook.md#speechain-handbook">Back to the handbook page</a></p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ol>
@@ -3743,40 +3743,40 @@ Below is the nested <em>Module</em> tree of an encoder-decoder ASR model:</p>
 <li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/module#api-document"><strong>API Document</strong></a></li>
 </ol>
 <h2 id="module-library">Module Library</h2>
-<pre><code>/speechain
-    /module
-        /abs.py             # Abstract class of Module. Base of all Module implementations.
-        /frontend           # Acoustic feature extraction frontend modules
-            /speech2linear.py   # Module implementation of speech-to-linear frontend. Used to transform the input speech waveforms into linear spectrogram.
-            /linear2mel.py      # Module implementation of linear-to-mel frontend. Used to transform the input linear spectrogram into log-mel spectrogram.
-            /speech2mel.py      # Module implementation of speech-to-mel frontend. Used to transform the input speech waveforms into log-mel spectrogram.
-            /delta_feat.py      # Module implementation of delta frontend. Mainly used for ASR training when we want to take the first and second derivatives of log-mel spectrogram.
-        /norm               # Normalization modules
-            /feat_norm.py       # Module implementation of per-channel feature normalization.
-        /augment            # Data augmentation modules
-            /specaug.py         # Module implementation of SpecAugment. Mainly used for ASR training.
-        /encoder            # Model encoder modules
-            /asr.py             # Module implementation of ASR encoders. Used for ASR model construction.
-            /tts.py             # Module implementation of TTS encoders. Used for TTS model construction.
-        /decoder            # Model decoder modules
-            /asr.py             # Module implementation of ASR autoregressive decoders. Used for autoregressive ASR model construction.
-            /tts.py             # Module implementation of TTS autoregressive decoders. Used for autoregressive TTS model construction.
-        /prenet             # Model prenet modules in front of encoders and decoders
-            /conv1d.py          # Module implementation of 1D Convolutional prenet.
-            /conv2d.py          # Module implementation of 2D Convolutional prenet.
-            /embed.py           # Module implementation of token embedding prenet.
-            /linear.py          # Module implementation of stacked linear prenet.
-            /spk_embed.py       # Module implementation of speaker embedding prenet.
-        /postnet            # Model postnet modules behind encoders and decoders
-            /conv1d.py          # Module implementation of 1D Convolutional postnet.
-            /token.py           # Module implementation of token prediction postnet.
-        /transformer        # Transformer-related modules
-            /encoder.py         # Module implementation of Transformer encoder layers. Used for decoder construction of ASR and TTS models.
-            /decoder.py         # Module implementation of Transformer autoregressive decoder layers. Used for decoder construction of autoregressive ASR and TTS models.
-            /pos_enc.py         # Module implementation of positional encoding layers.
-            /attention.py       # Module implementation of multi-head attention layers.
-            /feed_forward.py    # Module implementation of point-wise feed-forward layers.
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/speechain
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    /module
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        /abs.py             # Abstract class of Module. Base of all Module implementations.
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        /frontend           # Acoustic feature extraction frontend modules
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>            /speech2linear.py   # Module implementation of speech-to-linear frontend. Used to transform the input speech waveforms into linear spectrogram.
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>            /linear2mel.py      # Module implementation of linear-to-mel frontend. Used to transform the input linear spectrogram into log-mel spectrogram.
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>            /speech2mel.py      # Module implementation of speech-to-mel frontend. Used to transform the input speech waveforms into log-mel spectrogram.
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>            /delta_feat.py      # Module implementation of delta frontend. Mainly used for ASR training when we want to take the first and second derivatives of log-mel spectrogram.
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        /norm               # Normalization modules
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>            /feat_norm.py       # Module implementation of per-channel feature normalization.
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        /augment            # Data augmentation modules
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>            /specaug.py         # Module implementation of SpecAugment. Mainly used for ASR training.
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        /encoder            # Model encoder modules
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>            /asr.py             # Module implementation of ASR encoders. Used for ASR model construction.
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>            /tts.py             # Module implementation of TTS encoders. Used for TTS model construction.
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>        /decoder            # Model decoder modules
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>            /asr.py             # Module implementation of ASR autoregressive decoders. Used for autoregressive ASR model construction.
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>            /tts.py             # Module implementation of TTS autoregressive decoders. Used for autoregressive TTS model construction.
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>        /prenet             # Model prenet modules in front of encoders and decoders
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>            /conv1d.py          # Module implementation of 1D Convolutional prenet.
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>            /conv2d.py          # Module implementation of 2D Convolutional prenet.
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>            /embed.py           # Module implementation of token embedding prenet.
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>            /linear.py          # Module implementation of stacked linear prenet.
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>            /spk_embed.py       # Module implementation of speaker embedding prenet.
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>        /postnet            # Model postnet modules behind encoders and decoders
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>            /conv1d.py          # Module implementation of 1D Convolutional postnet.
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>            /token.py           # Module implementation of token prediction postnet.
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>        /transformer        # Transformer-related modules
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>            /encoder.py         # Module implementation of Transformer encoder layers. Used for decoder construction of ASR and TTS models.
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>            /decoder.py         # Module implementation of Transformer autoregressive decoder layers. Used for decoder construction of autoregressive ASR and TTS models.
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>            /pos_enc.py         # Module implementation of positional encoding layers.
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>            /attention.py       # Module implementation of multi-head attention layers.
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>            /feed_forward.py    # Module implementation of point-wise feed-forward layers.
+</span></code></pre></div>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/module#table-of-contents">Back to the table of contents</a></p>
 <h2 id="api-document">API Document</h2>
 <p><em>Non-overridable backbone functions:</em><br />
@@ -3860,19 +3860,21 @@ Below is the nested <em>Module</em> tree of an encoder-decoder ASR model:</p>
 <ul>
 <li><strong>Description:</strong><br />
   This function returns the parameters of the module that you want to record as part of step information.<br />
-  If you want to record the value of the customized parameters of your module:</li>
+  If you want to record the value of the customized parameters of your module:<ol>
 <li>when it is a leaf (no <em>Module</em> members) in the nested <em>Module</em> tree of the model, 
-     please override this function and return the parameter values in a <em>Dict</em>.<br />
-     For an example, you can refer to <a href="">${SPEECHAIN_ROOT}/speechain/module/transformer/pos_enc.py</a>.</li>
+  please override this function and return the parameter values in a <em>Dict</em>.<br />
+  For an example, you can refer to <a href="">${SPEECHAIN_ROOT}/speechain/module/transformer/pos_enc.py</a>.</li>
 <li>when it is a non-leaf (with <em>Module</em> members) in the nested <em>Module</em> tree of the model, 
-     please follow the pseudocode below:<br />
-<code>python
-     class YourModule(Module):
-        def get_recordable_para(self) -&gt; Dict or None:
-           output = dict()
-           # add the value of your target parameter into the output as key-value items
-           output.update(super(YourModule, self).get_recordable_para())
-           return output</code></li>
+  please follow the pseudocode below:<br />
+  <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span> <span class="nc">YourModule</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">def</span> <span class="nf">get_recordable_para</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>      <span class="n">output</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>      <span class="c1"># add the value of your target parameter into the output as key-value items</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>      <span class="n">output</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">super</span><span class="p">(</span><span class="n">YourModule</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_recordable_para</span><span class="p">())</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>      <span class="k">return</span> <span class="n">output</span>
+</span></code></pre></div></li>
+</ol>
+</li>
 <li><strong>Return:</strong> Dict or None<br />
   For the leaf module, the default implementation returns None;<br />
   For the non-leaf module, the default implementation returns a Dict containing names and recordable parameters of its member modules.</li>

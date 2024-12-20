@@ -3684,25 +3684,25 @@ For model forward calculation, the text data is better to be in the form of vect
 <p>👆<a href="https://github.com/bagustris/SpeeChain/blob/main/handbook.md#speechain-handbook">Back to the handbook page</a></p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ol>
-<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/tokenizer#tokenizer-library"><strong>Tokenizer Library</strong></a></li>
-<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/tokenizer#api-document"><strong>API Documents</strong></a></li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/tokenizer#tokenizer-library"><strong>Tokenizer Library</strong></a>  </li>
+<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/tokenizer#api-document"><strong>API Documents</strong></a>   </li>
 </ol>
 <h2 id="tokenizer-library">Tokenizer Library</h2>
-<pre><code>/speechain
-    /tokenizer
-        /abs.py         # Abstract class of Tokenizer. Base of all Tokenizer implementations.
-        /char.py        # Tokenizer implementation of the character tokenizer.
-        /sp.py          # Tokenizer implementation of the subword tokenizer by SentencePiece package.
-        /g2p.py         # Tokenizer implementation of the phoneme tokenizer by G2P package.
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/speechain
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    /tokenizer
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        /abs.py         # Abstract class of Tokenizer. Base of all Tokenizer implementations.
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        /char.py        # Tokenizer implementation of the character tokenizer.
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        /sp.py          # Tokenizer implementation of the subword tokenizer by SentencePiece package.
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        /g2p.py         # Tokenizer implementation of the phoneme tokenizer by G2P package.
+</span></code></pre></div>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/tokenizer#table-of-contents">Back to the table of contents</a></p>
 <h2 id="api-document">API Document</h2>
-<p><em>Non-overridable backbone functions:</em>
-1. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/tokenizer#speechaintokenizerabstokenizer__init__self-token_vocab-tokenizer_conf">speechain.tokenizer.abs.Tokenizer.__init__</a></p>
+<p><em>Non-overridable backbone functions:</em><br />
+1. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/  tokenizer#speechaintokenizerabstokenizer__init__self-token_vocab-tokenizer_conf">speechain.tokenizer.abs.Tokenizer.__init__</a></p>
 <p><em>Overridable interface functions:</em><br />
-1. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/tokenizer#speechaintokenizerabstokenizertokenizer_init_fnself-tokenizer_conf">speechain.tokenizer.abs.Tokenizer.tokenizer_init_fn</a>
-2. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/tokenizer#speechaintokenizerabstokenizertensor2textself-tensor">speechain.tokenizer.abs.Tokenizer.tensor2text</a>
-3. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/tokenizer#speechaintokenizerabstokenizertext2tensorself-text">speechain.tokenizer.abs.Tokenizer.text2tensor</a></p>
+1. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/tokenizer#speechaintokenizerabstokenizertokenizer_init_fnself-tokenizer_conf">speechain.tokenizer.abs.Tokenizer.tokenizer_init_fn</a><br />
+2. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/tokenizer#speechaintokenizerabstokenizertensor2textself-tensor">speechain.tokenizer.abs.Tokenizer.tensor2text</a><br />
+3. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/tokenizer#speechaintokenizerabstokenizertext2tensorself-text">speechain.tokenizer.abs.Tokenizer.text2tensor</a>  </p>
 <h3 id="speechaintokenizerabstokenizer__init__self-token_vocab-tokenizer_conf">speechain.tokenizer.abs.Tokenizer.__init__(self, token_vocab, **tokenizer_conf)</h3>
 <ul>
 <li><strong>Description:</strong><br />
@@ -3715,11 +3715,13 @@ For model forward calculation, the text data is better to be in the form of vect
 <li><code>self.unk_idx</code>: the index of the unknown token.</li>
 </ol>
 </li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong><ul>
 <li><em><strong>token_vocab:</strong></em> str<br />
-    The path where the token vocabulary is placed.</li>
+  The path where the token vocabulary is placed.</li>
 <li><em><strong>**tokenizer_conf:</strong></em><br />
-    The arguments used by <code>tokenizer_init_fn()</code> for your customized <em>Tokenizer</em> initialization.</li>
+  The arguments used by <code>tokenizer_init_fn()</code> for your customized <em>Tokenizer</em> initialization.</li>
+</ul>
+</li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/tokenizer#api-document">Back to the API list</a></p>
 <h3 id="speechaintokenizerabstokenizertokenizer_init_fnself-tokenizer_conf">speechain.tokenizer.abs.Tokenizer.tokenizer_init_fn(self, **tokenizer_conf)</h3>
@@ -3727,10 +3729,12 @@ For model forward calculation, the text data is better to be in the form of vect
 <li><strong>Description:</strong><br />
     This hook interface function initializes the customized part of a <em>Tokenizer</em> subclass if had.<br />
     This interface is not mandatory to be overridden.</li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong><ul>
 <li><em><strong>**tokenizer_conf:</strong></em><br />
-    The arguments used by <code>tokenizer_init_fn()</code> for your customized <em>Tokenizer</em> initialization.<br />
-    For more details, please refer to the docstring of your target <em>Tokenizer</em> subclass.</li>
+   The arguments used by <code>tokenizer_init_fn()</code> for your customized <em>Tokenizer</em> initialization.<br />
+   For more details, please refer to the docstring of your target <em>Tokenizer</em> subclass.</li>
+</ul>
+</li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/tokenizer#api-document">Back to the API list</a></p>
 <h3 id="speechaintokenizerabstokenizertensor2textself-tensor">speechain.tokenizer.abs.Tokenizer.tensor2text(self, tensor)</h3>
@@ -3741,9 +3745,11 @@ For model forward calculation, the text data is better to be in the form of vect
     If the token index is <code>self.unk_idx</code>, an asterisk (*) will be used to represent an unknown token in the string.<br />
     This interface is not mandatory to be overridden. If your <em>Tokenizer</em> subclass uses some third-party packages to decode the input tensor rather than the built-in <code>self.idx2token</code>, 
     please override this function.</li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong><ul>
 <li><em><strong>tensor:</strong></em> torch.LongTensor<br />
-    1D integer torch.Tensor that contains the token indices of the sentence to be decoded.</li>
+  1D integer torch.Tensor that contains the token indices of the sentence to be decoded.</li>
+</ul>
+</li>
 <li><strong>Return:</strong><br />
     The string of the decoded sentence.</li>
 </ul>
@@ -3756,11 +3762,11 @@ For model forward calculation, the text data is better to be in the form of vect
     By default, this function will attach two <sos/eos> at the beginning and end of the returned token id sequence.</li>
 <li><strong>Arguments:</strong>  <ul>
 <li><em><strong>text:</strong></em> str<br />
-  The input text string to be encoded</li>
+   The input text string to be encoded</li>
 <li><em><strong>no_sos:</strong></em> bool = False<br />
-  Whether to remove the <sos/eos> at the beginning of the token id sequence.</li>
+   Whether to remove the <sos/eos> at the beginning of the token id sequence.</li>
 <li><em><strong>no_eos:</strong></em> bool = False<br />
-  Whether to remove the <sos/eos> at the end of the token id sequence.</li>
+   Whether to remove the <sos/eos> at the end of the token id sequence.</li>
 </ul>
 </li>
 <li><strong>Return:</strong> torch.LongTensor<br />

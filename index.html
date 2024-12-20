@@ -3682,48 +3682,48 @@ Anytime you encounter problems when using our toolkit, please don't hesitate to 
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain#table-of-contents">Back to the table of contents</a></p>
 <h2 id="directory-structure">Directory Structure</h2>
-<pre><code class="language-shell">├── config                # configuration for feature extraction
-│   └── feat
-├── CONTRIBUTING.md       # convention for contributor
-├── create_env.sh         # bash shell to create environment
-├── datasets              # dataset folder, put data here, make softlink, or set in config file
-│   ├── data_dumping.sh
-│   ├── librispeech
-│   ├── libritts
-│   ├── ljspeech
-│   ├── meta_generator.py
-│   ├── meta_post_processor.py
-│   ├── mfa_preparation.sh
-│   └── vctk
-├── docs                  # folder to build docs
-├── environment.yaml    
-├── LICENSE              
-├── recipes               # folder for experiment, you will work here
-│   ├── asr
-│   ├── lm
-│   ├── offline_tts2asr
-│   ├── run.sh
-│   └── tts
-├── requirements.txt
-├── run.sh
-├── scripts
-│   └── gen_ref_pages.py
-├── setup.py
-└── speechain             # directory for speechain toolkit code
-    ├── criterion
-    ├── dataset
-    ├── infer_func
-    ├── iterator
-    ├── model
-    ├── module
-    ├── monitor.py
-    ├── optim_sche
-    ├── pyscripts
-    ├── runner.py
-    ├── snapshooter.py
-    ├── tokenizer
-    └── utilbox
-</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>├──<span class="w"> </span>config<span class="w">                </span><span class="c1"># configuration for feature extraction</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│<span class="w">   </span>└──<span class="w"> </span>feat
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├──<span class="w"> </span>CONTRIBUTING.md<span class="w">       </span><span class="c1"># convention for contributor</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├──<span class="w"> </span>create_env.sh<span class="w">         </span><span class="c1"># bash shell to create environment</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├──<span class="w"> </span>datasets<span class="w">              </span><span class="c1"># dataset folder, put data here, make softlink, or set in config file</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│<span class="w">   </span>├──<span class="w"> </span>data_dumping.sh
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│<span class="w">   </span>├──<span class="w"> </span>librispeech
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│<span class="w">   </span>├──<span class="w"> </span>libritts
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│<span class="w">   </span>├──<span class="w"> </span>ljspeech
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│<span class="w">   </span>├──<span class="w"> </span>meta_generator.py
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│<span class="w">   </span>├──<span class="w"> </span>meta_post_processor.py
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│<span class="w">   </span>├──<span class="w"> </span>mfa_preparation.sh
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│<span class="w">   </span>└──<span class="w"> </span>vctk
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>├──<span class="w"> </span>docs<span class="w">                  </span><span class="c1"># folder to build docs</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>├──<span class="w"> </span>environment.yaml<span class="w">    </span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>├──<span class="w"> </span>LICENSE<span class="w">              </span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>├──<span class="w"> </span>recipes<span class="w">               </span><span class="c1"># folder for experiment, you will work here</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>│<span class="w">   </span>├──<span class="w"> </span>asr
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>│<span class="w">   </span>├──<span class="w"> </span>lm
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>│<span class="w">   </span>├──<span class="w"> </span>offline_tts2asr
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>│<span class="w">   </span>├──<span class="w"> </span>run.sh
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>│<span class="w">   </span>└──<span class="w"> </span>tts
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>├──<span class="w"> </span>requirements.txt
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>├──<span class="w"> </span>run.sh
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>├──<span class="w"> </span>scripts
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>│<span class="w">   </span>└──<span class="w"> </span>gen_ref_pages.py
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>├──<span class="w"> </span>setup.py
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>└──<span class="w"> </span>speechain<span class="w">             </span><span class="c1"># directory for speechain toolkit code</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span>├──<span class="w"> </span>criterion
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span>├──<span class="w"> </span>dataset
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span>├──<span class="w"> </span>infer_func
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span>├──<span class="w"> </span>iterator
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">    </span>├──<span class="w"> </span>model
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span>├──<span class="w"> </span>module
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">    </span>├──<span class="w"> </span>monitor.py
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">    </span>├──<span class="w"> </span>optim_sche
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">    </span>├──<span class="w"> </span>pyscripts
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">    </span>├──<span class="w"> </span>runner.py
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">    </span>├──<span class="w"> </span>snapshooter.py
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">    </span>├──<span class="w"> </span>tokenizer
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">    </span>└──<span class="w"> </span>utilbox
+</span></code></pre></div>
 <h2 id="quick-start">Quick Start</h2>
 <p>Try minilibrispeech recipe <code>train-clean-5</code> in ASR.</p>
 <h1 id="workflow">Workflow</h1>

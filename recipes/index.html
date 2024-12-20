@@ -3693,124 +3693,124 @@ Every task sub-folder hosts second-level sub-folders that pertain to individual 
 <p>Each task comes with a dedicated README.md file found within its respective folder, providing further details and instructions. 
 Follow the hyperlinks below to navigate to the README.md file for your target task.</p>
 <h3 id="automatic-speech-recognition-asr"><a href="https://github.com/bagustris/SpeeChain/tree/main/recipes/asr#automatic-speech-recognition-asr">Automatic Speech Recognition (ASR)</a></h3>
-<p>Refer to this sample structure for an overview of how the ASR folder is organized:</p>
-<pre><code>/asr
-    /librispeech            # ASR Recipes for the LibriSpeech dataset
-        /train-clean-100        # Labeled data: train-clean-100
-            /data_cfg               # Data loading configuration files
-            /exp_cfg                # Experimental configuration files
-        /train-clean-460        # Labeled data: train-clean-460 (train-clean-100 + train-clean-360)
-            ...
-        /train-960              # Labeled data: train-960 (train-clean-460 + train-other-500)
-            ...
-    /libritts_librispeech   # ASR Recipes for the joint dataset of LibriSpeech and 16khz-downsampled LibriTTS
-        /train-960              # Labeled data: LibriSpeech_train-960 &amp; 16khz-LibriTTS_train-960
-            ...
-</code></pre>
+<p>Refer to this sample structure for an overview of how the ASR folder is organized:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/asr
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    /librispeech            # ASR Recipes for the LibriSpeech dataset
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        /train-clean-100        # Labeled data: train-clean-100
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>            /data_cfg               # Data loading configuration files
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            /exp_cfg                # Experimental configuration files
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        /train-clean-460        # Labeled data: train-clean-460 (train-clean-100 + train-clean-360)
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>            ...
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        /train-960              # Labeled data: train-960 (train-clean-460 + train-other-500)
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>            ...
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    /libritts_librispeech   # ASR Recipes for the joint dataset of LibriSpeech and 16khz-downsampled LibriTTS
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        /train-960              # Labeled data: LibriSpeech_train-960 &amp; 16khz-LibriTTS_train-960
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>            ...
+</span></code></pre></div></p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/recipes#table-of-contents">Back to the table of contents</a></p>
 <h3 id="text-to-speech-synthesis-tts"><a href="https://github.com/bagustris/SpeeChain/tree/main/recipes/tts#text-to-speech-synthesis-tts">Text-To-Speech Synthesis (TTS)</a></h3>
-<p>Refer to this sample structure for an overview of how the TTS folder is organized:</p>
-<pre><code>/tts
-    /libritts               # TTS Recipes for the LibriTTS dataset
-        /train-clean-100        # Labeled data: train-clean-100
-            /data_cfg               # Data loading configuration files that are shared by different models
-            /exp_cfg                # Experimental configuration files
-        /train-clean-460        # Labeled data: train-clean-460 (train-clean-100 + train-clean-360)
-            ...
-        /train-960              # Labeled data: train-960 (train-clean-460 + train-other-500)
-            ...
-    /ljspeech               # TTS Recipes for the LJSpeech dataset, LJSpeech doesn't have the official subset division.
-        ...
-    /vctk                   # TTS Recipes for the VCTK dataset, VCTK doesn't have the official subset division.
-</code></pre>
+<p>Refer to this sample structure for an overview of how the TTS folder is organized:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/tts
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    /libritts               # TTS Recipes for the LibriTTS dataset
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        /train-clean-100        # Labeled data: train-clean-100
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>            /data_cfg               # Data loading configuration files that are shared by different models
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>            /exp_cfg                # Experimental configuration files
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        /train-clean-460        # Labeled data: train-clean-460 (train-clean-100 + train-clean-360)
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>            ...
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        /train-960              # Labeled data: train-960 (train-clean-460 + train-other-500)
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>            ...
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    /ljspeech               # TTS Recipes for the LJSpeech dataset, LJSpeech doesn&#39;t have the official subset division.
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        ...
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    /vctk                   # TTS Recipes for the VCTK dataset, VCTK doesn&#39;t have the official subset division.
+</span></code></pre></div></p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/recipes#table-of-contents">Back to the table of contents</a></p>
 <h3 id="offline-tts-to-asr-chain"><a href="https://github.com/bagustris/SpeeChain/tree/main/recipes/offline_tts2asr#offline-tts-to-asr-chain">Offline TTS-to-ASR Chain</a></h3>
-<p>Refer to this sample structure for an overview of how the offline TTS-to-ASR Chain folder is organized:</p>
-<pre><code>/offline_tts2asr
-    /librispeech   # LibriSpeech is used as labeled data to train ASR models
-        /train-clean-100    # ASR Labeled data: LibriSpeech_train-clean-100
-            /data_cfg               # Data loading configuration files
-            /exp_cfg                # Experimental configuration files
-        /train-960          # ASR Labeled data: LibriSpeech_train-960
-            ...
-</code></pre>
+<p>Refer to this sample structure for an overview of how the offline TTS-to-ASR Chain folder is organized:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/offline_tts2asr
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    /librispeech   # LibriSpeech is used as labeled data to train ASR models
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        /train-clean-100    # ASR Labeled data: LibriSpeech_train-clean-100
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>            /data_cfg               # Data loading configuration files
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>            /exp_cfg                # Experimental configuration files
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        /train-960          # ASR Labeled data: LibriSpeech_train-960
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>            ...
+</span></code></pre></div></p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/recipes#table-of-contents">Back to the table of contents</a></p>
 <h2 id="experimental-file-system">Experimental File System</h2>
-<p>The file structure of an experiment folder is as follows:</p>
-<pre><code>/data_cfg
-/train_cfg
-/exp_cfg
-/exp                # 'exp' folder of each model
-    /{exp_name}         # Name of a specific experiment
-        /{test_cfg_name}    # Name of a testing configuration file
-            /{test_model_name}  # Name of the model you want to test the performance
-                /{test_set_name}    # Name of a test set
-                    /figures                # Folder that contains all the distribution figures of each metric on the test set
-                        {test_metric_name}.png  # Histogram distribution figure of the {test_metric_name} values of all the testing instances
-                        ...
-                    test.log                # Log file that contains the testing process of a specific test set
-                    overall_results.md      # .md file that contains the model overall performance on the test set
-                    instance_reports.md     # .md file that contains the detailed performance reports of each testing instance
-                    topn_(max/min)_{xxx}.md # .md file that contains the top-n bad cases selected by the metric 'xxx'
-                    idx2{xxx}               # suffix-free .txt files that contain individual metrics of each testing instance, a file corresponds to a metric 'xxx'
-                ...                 # other test sets
-            ...                 # other test models
-        ...                 # other test configurations
-
-        models/             # This sub-folder contains all the model files
-            N_{xxx}_average.pth # Average model obtained by the metric 'xxx' on 'N' best models
-            {xxx}_best.pth      # File soft link to the best model obtained by the metric 'xxx'
-            {xxx}_best_2.pth    # File soft link to the second best model obtained by the metric 'xxx'
-            ...                
-            {xxx}_best_n.pth    # File soft link to the n-th best model obtained by the metric 'xxx'  
-            epoch_{X}.pth       # Actual model file of the X-th epoch
-            epoch_{Y}.pth       # Actual model file of the Y-th epoch
-            ...          
-
-        figures/            # This sub-folder contains all the snapshotting figures. The .txt files in this folder contain the data used to plot summary.png which can be used to plot your own figures.
-            train/              # Snapshotting figures made during training
-                consumed_memory/    # Folder containing the GPU memory consumption records
-                     Rank0.txt                           # Numerical records of the memory consumption for the GPU rank.0 through epochs
-                     ...                                 # Other GPUs if have
-                     RankN.txt                           # Numerical records of the memory consumption for the GPU rank.N through epochs
-                     summary.png                         # Curve graph of all the records above through epochs
-                consumed_time/      # Folder containing the time consumption records
-                     data_load_time.txt                  # Numerical records of the data loading time through epochs
-                     model_forward_time.txt              # Numerical records of the model forward time through epochs
-                     loss_backward_time_{optim_name}.txt # Numerical records of the loss backward time for the optimizer named {optim_name} through epochs
-                     optim_time_{optim_name}.txt         # Numerical records of the parameter optimization time for the optimizer named {optim_name} through epochs
-                     summary.png                         # Curve graph of all the records above through epochs
-                criteria/           # Folder containing the training criterion value records
-                     {train_criterion_name}              # Numerical records of the training criterion named {train_criterion_name} through epochs
-                     ...                                 # Other training criteria if have
-                     summary.png                         # Curve graph of all the records above through epochs
-                optim_lr/           # Folder containing the learning rate records of each optimizer
-                     {optim_name}.txt                    # Numerical recores of the learning rates of the optimizer named {optim_name} through epochs
-                     ...                                 # Other optimizers if have
-                     summary.png                         # Curve graph of all the records above through epochs
-            valid/              # Snapshotting figures made during validation
-                consumed_memory/    
-                     Rank0.txt                           
-                     ...
-                     RankN.txt                           
-                     summary.png                         
-                consumed_time/      
-                     data_load_time.txt                  
-                     model_forward_time.txt              
-                     summary.png                         
-                criteria/           # Folder containing the validation criterion value records
-                     {valid_criterion_name}              # Numerical records of the validation criterion named {valid_criterion_name} through epochs
-                     ...                                 # Other validation criteria if have
-                     summary.png                         # Curve graph of all the records above through epochs
-
-        tensorboard/        # This sub-folder contains the writer events for tensorboard visualization 
-        checkpoint.pth      # Checkpoint of the training process so far, used for resuming the training process
-        train_data_cfg.yaml # Data loading configuration for the training-validation part of the experiment, used for resuming the training process
-        test_data_cfg.yaml  # Data loading configuration for the testing part of the experiment, used for resuming the testing process
-        exp_cfg.yaml        # Experiment environment configuration for the experiment, used for resuming the training process
-        train_cfg.yaml      # Model and optimizer configuration for the experiment, used for resuming the training process
-        train.log           # Log file that contains the training process of the given training sets and validation sets
-</code></pre>
+<p>The file structure of an experiment folder is as follows:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>/data_cfg
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>/train_cfg
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>/exp_cfg
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>/exp                # &#39;exp&#39; folder of each model
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    /{exp_name}         # Name of a specific experiment
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        /{test_cfg_name}    # Name of a testing configuration file
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>            /{test_model_name}  # Name of the model you want to test the performance
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>                /{test_set_name}    # Name of a test set
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>                    /figures                # Folder that contains all the distribution figures of each metric on the test set
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>                        {test_metric_name}.png  # Histogram distribution figure of the {test_metric_name} values of all the testing instances
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>                        ...
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>                    test.log                # Log file that contains the testing process of a specific test set
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>                    overall_results.md      # .md file that contains the model overall performance on the test set
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>                    instance_reports.md     # .md file that contains the detailed performance reports of each testing instance
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>                    topn_(max/min)_{xxx}.md # .md file that contains the top-n bad cases selected by the metric &#39;xxx&#39;
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>                    idx2{xxx}               # suffix-free .txt files that contain individual metrics of each testing instance, a file corresponds to a metric &#39;xxx&#39;
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>                ...                 # other test sets
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>            ...                 # other test models
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>        ...                 # other test configurations
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>        models/             # This sub-folder contains all the model files
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>            N_{xxx}_average.pth # Average model obtained by the metric &#39;xxx&#39; on &#39;N&#39; best models
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>            {xxx}_best.pth      # File soft link to the best model obtained by the metric &#39;xxx&#39;
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>            {xxx}_best_2.pth    # File soft link to the second best model obtained by the metric &#39;xxx&#39;
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>            ...                
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>            {xxx}_best_n.pth    # File soft link to the n-th best model obtained by the metric &#39;xxx&#39;  
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>            epoch_{X}.pth       # Actual model file of the X-th epoch
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>            epoch_{Y}.pth       # Actual model file of the Y-th epoch
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>            ...          
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>        figures/            # This sub-folder contains all the snapshotting figures. The .txt files in this folder contain the data used to plot summary.png which can be used to plot your own figures.
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>            train/              # Snapshotting figures made during training
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>                consumed_memory/    # Folder containing the GPU memory consumption records
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>                     Rank0.txt                           # Numerical records of the memory consumption for the GPU rank.0 through epochs
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>                     ...                                 # Other GPUs if have
+</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>                     RankN.txt                           # Numerical records of the memory consumption for the GPU rank.N through epochs
+</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>                     summary.png                         # Curve graph of all the records above through epochs
+</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>                consumed_time/      # Folder containing the time consumption records
+</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>                     data_load_time.txt                  # Numerical records of the data loading time through epochs
+</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>                     model_forward_time.txt              # Numerical records of the model forward time through epochs
+</span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>                     loss_backward_time_{optim_name}.txt # Numerical records of the loss backward time for the optimizer named {optim_name} through epochs
+</span><span id="__span-3-42"><a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>                     optim_time_{optim_name}.txt         # Numerical records of the parameter optimization time for the optimizer named {optim_name} through epochs
+</span><span id="__span-3-43"><a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>                     summary.png                         # Curve graph of all the records above through epochs
+</span><span id="__span-3-44"><a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>                criteria/           # Folder containing the training criterion value records
+</span><span id="__span-3-45"><a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>                     {train_criterion_name}              # Numerical records of the training criterion named {train_criterion_name} through epochs
+</span><span id="__span-3-46"><a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>                     ...                                 # Other training criteria if have
+</span><span id="__span-3-47"><a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>                     summary.png                         # Curve graph of all the records above through epochs
+</span><span id="__span-3-48"><a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>                optim_lr/           # Folder containing the learning rate records of each optimizer
+</span><span id="__span-3-49"><a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>                     {optim_name}.txt                    # Numerical recores of the learning rates of the optimizer named {optim_name} through epochs
+</span><span id="__span-3-50"><a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>                     ...                                 # Other optimizers if have
+</span><span id="__span-3-51"><a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>                     summary.png                         # Curve graph of all the records above through epochs
+</span><span id="__span-3-52"><a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>            valid/              # Snapshotting figures made during validation
+</span><span id="__span-3-53"><a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>                consumed_memory/    
+</span><span id="__span-3-54"><a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>                     Rank0.txt                           
+</span><span id="__span-3-55"><a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a>                     ...
+</span><span id="__span-3-56"><a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a>                     RankN.txt                           
+</span><span id="__span-3-57"><a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a>                     summary.png                         
+</span><span id="__span-3-58"><a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a>                consumed_time/      
+</span><span id="__span-3-59"><a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a>                     data_load_time.txt                  
+</span><span id="__span-3-60"><a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a>                     model_forward_time.txt              
+</span><span id="__span-3-61"><a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a>                     summary.png                         
+</span><span id="__span-3-62"><a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a>                criteria/           # Folder containing the validation criterion value records
+</span><span id="__span-3-63"><a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a>                     {valid_criterion_name}              # Numerical records of the validation criterion named {valid_criterion_name} through epochs
+</span><span id="__span-3-64"><a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a>                     ...                                 # Other validation criteria if have
+</span><span id="__span-3-65"><a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a>                     summary.png                         # Curve graph of all the records above through epochs
+</span><span id="__span-3-66"><a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a>
+</span><span id="__span-3-67"><a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a>        tensorboard/        # This sub-folder contains the writer events for tensorboard visualization 
+</span><span id="__span-3-68"><a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a>        checkpoint.pth      # Checkpoint of the training process so far, used for resuming the training process
+</span><span id="__span-3-69"><a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a>        train_data_cfg.yaml # Data loading configuration for the training-validation part of the experiment, used for resuming the training process
+</span><span id="__span-3-70"><a id="__codelineno-3-70" name="__codelineno-3-70" href="#__codelineno-3-70"></a>        test_data_cfg.yaml  # Data loading configuration for the testing part of the experiment, used for resuming the testing process
+</span><span id="__span-3-71"><a id="__codelineno-3-71" name="__codelineno-3-71" href="#__codelineno-3-71"></a>        exp_cfg.yaml        # Experiment environment configuration for the experiment, used for resuming the training process
+</span><span id="__span-3-72"><a id="__codelineno-3-72" name="__codelineno-3-72" href="#__codelineno-3-72"></a>        train_cfg.yaml      # Model and optimizer configuration for the experiment, used for resuming the training process
+</span><span id="__span-3-73"><a id="__codelineno-3-73" name="__codelineno-3-73" href="#__codelineno-3-73"></a>        train.log           # Log file that contains the training process of the given training sets and validation sets
+</span></code></pre></div></p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/recipes#table-of-contents">Back to the table of contents</a></p>
 
 

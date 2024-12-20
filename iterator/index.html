@@ -3794,91 +3794,83 @@ In each group, 2 or more iterator objects can be constructed so that there could
 </ol>
 <h2 id="configuration-file-format">Configuration File Format</h2>
 <p>The configuration of <em>Iterator</em> is given in <em>data_cfg</em>. 
-The configuration format is shown below.</p>
-<pre><code>train:
-    {iterator_name}:
-        type: {file_name}.{class_name}
-        conf:
-            # Built-in Dataset Configuration
-            dataset_type: {file_name}.{class_name}
-            dataset_conf:
-                ...
-            # General Iterator Configuration
-            batches_per_epoch:
-            data_selection:
-            is_descending:
-            shuffle:
-            data_len:
-            group_info:
-            # Customized Iterator Configuration
-            ...
-    ...
-valid:
-    {iterator_name}:
-        type: {file_name}.{class_name}
-        conf:
-            dataset_type: {file_name}.{class_name}
-            dataset_conf:
-                ...
-            ...
-    ...
-test:
-    {test_set_name}:
-        {iterator_name}:
-            type: {file_name}.{class_name}
-            conf:
-                dataset_type: {file_name}.{class_name}
-                dataset_conf:
-                    ...
-                ...
-        ...
-</code></pre>
-<ul>
-<li>The first-level keys must be one of <strong><em>train</em></strong>, <strong><em>valid</em></strong>, and <strong><em>test</em></strong>. 
-The combination of your first-level keys must be one of <strong>train &amp; valid &amp; test</strong> (for training and testing), <strong>train &amp; valid</strong> (for training only), or <strong>test</strong> (for testing only).</li>
-<li>The second-level keys are iterator names used for distinguishing the loaded data of each iterator. 
+The configuration format is shown below.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>train:
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    {iterator_name}:
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        type: {file_name}.{class_name}
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        conf:
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            # Built-in Dataset Configuration
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>            dataset_type: {file_name}.{class_name}
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>            dataset_conf:
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>                ...
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>            # General Iterator Configuration
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>            batches_per_epoch:
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>            data_selection:
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>            is_descending:
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>            shuffle:
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>            data_len:
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>            group_info:
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>            # Customized Iterator Configuration
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>            ...
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    ...
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>valid:
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    {iterator_name}:
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        type: {file_name}.{class_name}
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>        conf:
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>            dataset_type: {file_name}.{class_name}
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>            dataset_conf:
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>                ...
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>            ...
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    ...
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>test:
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>    {test_set_name}:
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>        {iterator_name}:
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>            type: {file_name}.{class_name}
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>            conf:
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>                dataset_type: {file_name}.{class_name}
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>                dataset_conf:
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>                    ...
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>                ...
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>        ...
+</span></code></pre></div>
+* The first-level keys must be one of <strong><em>train</em></strong>, <strong><em>valid</em></strong>, and <strong><em>test</em></strong>. 
+The combination of your first-level keys must be one of <strong>train &amp; valid &amp; test</strong> (for training and testing), <strong>train &amp; valid</strong> (for training only), or <strong>test</strong> (for testing only).
+   * The second-level keys are iterator names used for distinguishing the loaded data of each iterator. 
    There is no restriction on the iterator names, so you can name them in your own preference.<br />
-   Under the name of each iterator, there are two third-level keys whose names are fixed:<ol>
-<li><strong>type:</strong><br />
- The value of this key acts as the query string to pick up your target <em>Iterator</em> subclass in <code>SPEECHAIN_ROOT/speechain/iterator/</code>. 
- Your given query should be in the form of <code>{file_name}.{class_name}</code> where <code>file_name</code> specifies your target <em>.py</em> file in <code>SPEECHAIN_ROOT/speechain/iterator/</code> and <code>class_name</code> indicates your target <em>Iterator</em> subclass in <code>SPEECHAIN_ROOT/speechain/iterator/{file_name}.py</code>. <br />
- For example, <code>block.BlockIterator</code> means the subclass <code>BlockIterator</code> in <code>SPEECHAIN_ROOT/speechain/iterator/block.py</code>.</li>
-<li><strong>conf:</strong><br />
- The value of this key indicates the configuration of your iterator. 
- The configuration is made up of the following 4 fourth-level keys:<ol>
-<li><strong>dataset_type:</strong><br />
- The value of this key acts as the query string to pick up your target built-in <em>Dataset</em> subclass in <code>SPEECHAIN_ROOT/speechain/dataset/</code>.
- Your given query should be in the form of <code>{file_name}.{class_name}</code> where <code>file_name</code> specifies your target <em>.py</em> file in <code>SPEECHAIN_ROOT/speechain/dataset/</code>, and <code>class_name</code> indicates your target <em>Dataset</em> subclass in <code>SPEECHAIN_ROOT/speechain/dataset/{file_name}.py</code>. <br />
- For example, <code>speech_text.SpeechTextDataset</code> means the subclass <code>SpeechTextDataset</code> in <code>./speechain/dataset/speech_text.py</code>.</li>
-<li><strong>dataset_conf:</strong><br />
- The value of this key contains all the configuration used to initialize the built-in <em>Dataset</em> object. 
- Please refer to <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#api-document">Dataset API Document</a> for more details.</li>
-<li><strong>General Iterator Configuration:</strong><br />
- These configurations are used to initialize the general part shared by all iterator subclasses. 
- There are 6 general arguments that can be set manually in <em>data_cfg:</em> (please refer to <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#__init__self-dataset_type-dataset_conf-batches_per_epoch-data_len-group_info-data_selection-is_descending-shuffle-seed-ngpu-num_workers-pin_memory-distributed-iter_conf">speechain.iterator.abs.Iterator.__init__</a> for more details)  <ol>
-<li>batches_per_epoch</li>
-<li>is_descending</li>
-<li>shuffle</li>
-<li>data_len</li>
-<li>group_info</li>
-</ol>
-</li>
-<li><strong>Customized Iterator Configuration:</strong><br />
- The arguments of the customized configuration are used by each <em>Iterator</em> subclass to generate the batching view. 
- Please refer to your target <em>Iterator</em> subclass for more details.</li>
-</ol>
-</li>
-</ol>
-</li>
-</ul>
+   Under the name of each iterator, there are two third-level keys whose names are fixed:
+     1. <strong>type:</strong><br />
+     The value of this key acts as the query string to pick up your target <em>Iterator</em> subclass in <code>SPEECHAIN_ROOT/speechain/iterator/</code>. 
+     Your given query should be in the form of <code>{file_name}.{class_name}</code> where <code>file_name</code> specifies your target <em>.py</em> file in <code>SPEECHAIN_ROOT/speechain/iterator/</code> and <code>class_name</code> indicates your target <em>Iterator</em> subclass in <code>SPEECHAIN_ROOT/speechain/iterator/{file_name}.py</code>. <br />
+     For example, <code>block.BlockIterator</code> means the subclass <code>BlockIterator</code> in <code>SPEECHAIN_ROOT/speechain/iterator/block.py</code>.
+     2. <strong>conf:</strong><br />
+     The value of this key indicates the configuration of your iterator. 
+     The configuration is made up of the following 4 fourth-level keys:
+         1. <strong>dataset_type:</strong><br />
+         The value of this key acts as the query string to pick up your target built-in <em>Dataset</em> subclass in <code>SPEECHAIN_ROOT/speechain/dataset/</code>.
+         Your given query should be in the form of <code>{file_name}.{class_name}</code> where <code>file_name</code> specifies your target <em>.py</em> file in <code>SPEECHAIN_ROOT/speechain/dataset/</code>, and <code>class_name</code> indicates your target <em>Dataset</em> subclass in <code>SPEECHAIN_ROOT/speechain/dataset/{file_name}.py</code>. <br />
+         For example, <code>speech_text.SpeechTextDataset</code> means the subclass <code>SpeechTextDataset</code> in <code>./speechain/dataset/speech_text.py</code>.
+         2. <strong>dataset_conf:</strong><br />
+         The value of this key contains all the configuration used to initialize the built-in <em>Dataset</em> object. 
+         Please refer to <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#api-document">Dataset API Document</a> for more details.
+         3. <strong>General Iterator Configuration:</strong><br />
+         These configurations are used to initialize the general part shared by all iterator subclasses. 
+         There are 6 general arguments that can be set manually in <em>data_cfg:</em> (please refer to <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#__init__self-dataset_type-dataset_conf-batches_per_epoch-data_len-group_info-data_selection-is_descending-shuffle-seed-ngpu-num_workers-pin_memory-distributed-iter_conf">speechain.iterator.abs.Iterator.__init__</a> for more details)<br />
+            1. batches_per_epoch
+            2. is_descending
+            3. shuffle
+            4. data_len
+            5. group_info
+         4. <strong>Customized Iterator Configuration:</strong><br />
+         The arguments of the customized configuration are used by each <em>Iterator</em> subclass to generate the batching view. 
+         Please refer to your target <em>Iterator</em> subclass for more details.</p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#table-of-contents">Back to the table of contents</a></p>
 <h2 id="iterator-library">Iterator Library</h2>
-<pre><code>/speechain
-    /iterator
-        /abs.py         # Abstract class of Iterator. Base of all Iterator implementations.
-        /block.py       # Iterator implementation of the block strategy (variable utterances per batch). Mainly used for ASR and TTS training.
-        /piece.py       # Iterator implementation of the piece strategy (fixed utterances per batch). Mainly used for ASR and TTS evaluation.
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/speechain
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    /iterator
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        /abs.py         # Abstract class of Iterator. Base of all Iterator implementations.
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        /block.py       # Iterator implementation of the block strategy (variable utterances per batch). Mainly used for ASR and TTS training.
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        /piece.py       # Iterator implementation of the piece strategy (fixed utterances per batch). Mainly used for ASR and TTS evaluation.
+</span></code></pre></div>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#table-of-contents">Back to the table of contents</a></p>
 <h2 id="api-document">API Document</h2>
 <p><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#speechainiteratorabsiterator"><strong>speechain.iterator.abs.Iterator</strong></a><br />

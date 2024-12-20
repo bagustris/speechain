@@ -645,9 +645,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#recipe-folder" class="md-nav__link">
+  <a href="#recipes-folder" class="md-nav__link">
     <span class="md-ellipsis">
-      Recipe Folder
+      Recipes Folder
     </span>
   </a>
   
@@ -3880,9 +3880,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#recipe-folder" class="md-nav__link">
+  <a href="#recipes-folder" class="md-nav__link">
     <span class="md-ellipsis">
-      Recipe Folder
+      Recipes Folder
     </span>
   </a>
   
@@ -3996,12 +3996,12 @@ You can start the journey of SpeeChain by your current position.</p>
 <li><a href="https://github.com/bagustris/SpeeChain/blob/main/handbook.md#contribution-specifications">Contribution specifications</a></li>
 </ol>
 <h2 id="for-those-who-just-discovered-speechain">For those who just discovered SpeeChain</h2>
-<p>In SpeeChain toolkit, a basic research pipeline has 5 steps:
-1. Dump a dataset from the Internet to your disk.
-2. Prepare experimental configuration files.
-3. Train a model.
-4. Evaluate the trained model.
-5. Analyse the evaluation results.</p>
+<p>In SpeeChain toolkit, a basic research pipeline has 5 steps:<br />
+1. Dump a dataset from the Internet to your disk.<br />
+2. Prepare experimental configuration files.<br />
+3. Train a model.<br />
+4. Evaluate the trained model.<br />
+5. Analyse the evaluation results.  </p>
 <p>The following subsections will explain how to execute the steps above one by one.</p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/blob/main/handbook.md#table-of-contents">Back to the table of contents</a></p>
 <h3 id="how-to-dump-a-dataset-to-your-machine">How to dump a dataset to your machine</h3>
@@ -4029,200 +4029,224 @@ Please refer to <a href="https://github.com/bagustris/SpeeChain/tree/main/datase
 <p>Conventionally, it's hard for us to assign the values of <em>List</em> and <em>Dict</em> arguments in the terminal. 
 In SpeeChain, our framework provides a convenient way to convert your entered strings in the specified format into the corresponding <em>List</em> or <em>Dict</em> variables.</p>
 <ol>
-<li>For the <em>List</em> variables, your entered string should be surrounded by a pair of square brackets and each element inside the brackets should be split by a comma.
+<li>
+<p>For the <em>List</em> variables, your entered string should be surrounded by a pair of square brackets and each element inside the brackets should be split by a comma.
    The structure can be nested to initialize sub-<em>List</em> in the return <em>List</em> variable.<br />
-   For example, the string <code>[a,[1,2,[1.1,2.2,3.3],[h,i,j,k]],c,[d,e,[f,g,[h,i,j,k]]]]</code> will be parsed to</li>
-</ol>
-<p><code>bash
-   - 'a'
-   - - 1
-     - 2
-     - - 1.1
-       - 2.2
-       - 3.3
-     - - 'h'
-       - 'i'
-       - 'j'
-       - 'k'
-   - 'c'
-   - - 'd'
-     - 'e'
-     - - 'f'
-       - 'g'
-       - - 'h'
-         - 'i'
-         - 'j'
-         - 'k'</code></p>
-<ol>
+   For example, the string <code>[a,[1,2,[1.1,2.2,3.3],[h,i,j,k]],c,[d,e,[f,g,[h,i,j,k]]]]</code> will be parsed to
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>-<span class="w"> </span><span class="s1">&#39;a&#39;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>-<span class="w"> </span>-<span class="w"> </span><span class="m">1</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>-<span class="w"> </span><span class="m">2</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>-<span class="w"> </span>-<span class="w"> </span><span class="m">1</span>.1
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span>-<span class="w"> </span><span class="m">2</span>.2
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span>-<span class="w"> </span><span class="m">3</span>.3
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span>-<span class="w"> </span>-<span class="w"> </span><span class="s1">&#39;h&#39;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span>-<span class="w"> </span><span class="s1">&#39;i&#39;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span>-<span class="w"> </span><span class="s1">&#39;j&#39;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span>-<span class="w"> </span><span class="s1">&#39;k&#39;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>-<span class="w"> </span><span class="s1">&#39;c&#39;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>-<span class="w"> </span>-<span class="w"> </span><span class="s1">&#39;d&#39;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span>-<span class="w"> </span><span class="s1">&#39;e&#39;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span>-<span class="w"> </span>-<span class="w"> </span><span class="s1">&#39;f&#39;</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span>-<span class="w"> </span><span class="s1">&#39;g&#39;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span>-<span class="w"> </span>-<span class="w"> </span><span class="s1">&#39;h&#39;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">      </span>-<span class="w"> </span><span class="s1">&#39;i&#39;</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">      </span>-<span class="w"> </span><span class="s1">&#39;j&#39;</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">      </span>-<span class="w"> </span><span class="s1">&#39;k&#39;</span>
+</span></code></pre></div></p>
+</li>
 <li>
 <p>For the <em>Dict</em> variables, the key and its value should be split by a colon. 
    The value should be surrounded by a pair of braces if it's a sub-<em>Dict</em>. 
    The structure can be nested to initialize sub-<em>Dict</em> in the return <em>Dict</em> variable.<br />
-   For example, the string <code>a:{b:12.3,c:{d:123,e:{g:xyz}}},g:xyz</code> will be parsed to</p>
-<p><code>bash
-a:
-    b: 12.3
-    c:
-        d: 123
-        e:
-            g:xyz
-g: xyz</code></p>
+   For example, the string <code>a:{b:12.3,c:{d:123,e:{g:xyz}}},g:xyz</code> will be parsed to<br />
+    <div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">a</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">b</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12.3</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">c</span><span class="p">:</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="nt">d</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">123</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="nt">e</span><span class="p">:</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">g:xyz</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nt">g</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xyz</span>
+</span></code></pre></div></p>
 </li>
 </ol>
 <p>Moreover, the <em>List</em> string can also be nested into the <em>Dict</em> string like <code>a:[1,2,3]</code> will be parsed as</p>
-<p><code>bash
-   a:
-   - 1
-   - 2
-   - 3</code></p>
+<div class="language-text highlight"><pre><span></span><code>```bash
+a:
+- 1
+- 2
+- 3
+```
+</code></pre></div>
 <h4 id="concise-configuration-file">Concise Configuration File</h4>
 <p>As the number of arguments increases, it would be hard for us to given all the arguments one by one in the terminal. 
 As a frequently-used file format for configuration, <em>.yaml</em> has been popular in many well-known toolkits. </p>
-<p>In SpeeChain, we wrap the conventional <em>.yaml</em> file and provides some advanced !-suffixed <em>.yaml</em> representers to further simplify its layout and improve the readability:<br />
-  1. <strong>!str</strong> allows you to cast a numerical value into a string by replacing <code>key_name: 10</code> with <code>key_name: !str 10</code>. 
-     In this scenario, the value of <code>key_name</code> will be a string '10' instead of an integer 10.
-  2. <strong>!list</strong> allows you to compress the configuration of a list into one line from  </p>
-<div class="language-text highlight"><pre><span></span><code>  ```yaml
-  key_name: 
-  - - a
-    - b
-    - c
-  - - d
-    - e
-    - f
-  ```
-  to
-  ```yaml
-  key_name:
-  - !list [a,b,c]
-  - !list [d,e,f]
-  ```
-  **Note:** 
-  1. The elements should be separated by commas &#39;,&#39; and surrounded by a pair of angle brackets &#39;[]&#39;. 
-  2. Nested structures like `key_name: !list [!list [a,b,c],!list [d,e,f]]` are not supported yet.
-</code></pre></div>
+<p>In SpeeChain, we wrap the conventional <em>.yaml</em> file and provides some advanced !-suffixed <em>.yaml</em> representers to further simplify its layout and improve the readability:  </p>
 <ol>
-<li><strong>!tuple</strong> allows you to create tuples in your configuration. 
+<li>
+<p><strong>!str</strong> allows you to cast a numerical value into a string by replacing <code>key_name: 10</code> with <code>key_name: !str 10</code>. 
+     In this scenario, the value of <code>key_name</code> will be a string '10' instead of an integer 10.</p>
+</li>
+<li>
+<p><strong>!list</strong> allows you to compress the configuration of a list into one line from<br />
+      <div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">key_name</span><span class="p">:</span><span class="w"> </span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">d</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">e</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f</span>
+</span></code></pre></div>
+      to
+      <div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">key_name</span><span class="p">:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!list</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">a</span><span class="p p-Indicator">,</span><span class="nv">b</span><span class="p p-Indicator">,</span><span class="nv">c</span><span class="p p-Indicator">]</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!list</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">d</span><span class="p p-Indicator">,</span><span class="nv">e</span><span class="p p-Indicator">,</span><span class="nv">f</span><span class="p p-Indicator">]</span>
+</span></code></pre></div>
+      <strong>Note:</strong>  </p>
+<ol>
+<li>The elements should be separated by commas ',' and surrounded by a pair of angle brackets '[]'.  </li>
+<li>Nested structures like <code>key_name: !list [!list [a,b,c],!list [d,e,f]]</code> are not supported yet.  </li>
+</ol>
+</li>
+<li>
+<p><strong>!tuple</strong> allows you to create tuples in your configuration. 
       The statement
-      ```yaml
-      key_name: <ul>
-<li>a</li>
-<li>b</li>
-<li>c
-  <code>``
-  can only give us a list, but sometimes we may need to create a tuple. Instead, we can use</code>key_name: !tuple (a,b,c)` to create a tuple.<br />
-<strong>Note:</strong> The elements should be separated by commas ',' and surrounded by a pair of brackets '()'. </li>
-</ul>
+      <div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">key_name</span><span class="p">:</span><span class="w"> </span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c</span>
+</span></code></pre></div>
+      can only give us a list, but sometimes we may need to create a tuple. Instead, we can use <code>key_name: !tuple (a,b,c)</code> to create a tuple.<br />
+<strong>Note:</strong> The elements should be separated by commas ',' and surrounded by a pair of brackets '()'. </p>
 </li>
 <li>
 <p><strong>!ref</strong> allows you to reuse the values you have already created by replacing</p>
-<p><code>yaml
-  key_name1: abc/def/ghi/jkl
-  key_name2: abc/def/ghi/jkl/mno
-  key_name3: abc/def/ghi/jkl/mno/pqr</code></p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">key_name1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc/def/ghi/jkl</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">key_name2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc/def/ghi/jkl/mno</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">key_name3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc/def/ghi/jkl/mno/pqr</span>
+</span></code></pre></div>
 <p>with</p>
-<p><code>yaml
-  key_name1: abc/def/ghi/jkl
-  key_name2: !ref &lt;key_name1&gt;/mno
-  key_name3: !ref &lt;key_name2&gt;/pqr</code></p>
-<p>In this scenario, the value of <code>key_name1</code> will be reused to create <code>key_name2</code> which will be further reused to create <code>key_name3</code>.<br />
-<strong>Note:</strong> 
-  1. Nested structures like<br />
-<code>yaml
-      key_name1: abc/def/ghi/jkl
-      key_name2: !ref &lt;key_name1&gt;/mno
-      key_name3: !list [!ref &lt;key_name1&gt;,!ref &lt;key_name2&gt;]</code>
-      are not supported yet.
-  2. Different !ref representers must be used in order. The following usage is invalid:  </p>
-<div class="language-text highlight"><pre><span></span><code>  ```yaml
-  key_name1: abc/def/ghi/jkl
-  key_name3: !ref &lt;key_name2&gt;/pqr
-  key_name2: !ref &lt;key_name1&gt;/mno
-  ```
-</code></pre></div>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">key_name1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc/def/ghi/jkl</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">key_name2</span><span class="p">:</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;key_name1&gt;/mno</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nt">key_name3</span><span class="p">:</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;key_name2&gt;/pqr</span>
+</span></code></pre></div>
+<p>In this scenario, the value of <code>key_name1</code> will be reused to create <code>key_name2</code> which will be further reused to create <code>key_name3</code>.  </p>
+<p><strong>Note:</strong>  </p>
+<ol>
+<li>
+<p>Nested structures like<br />
+      <div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">key_name1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc/def/ghi/jkl</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nt">key_name2</span><span class="p">:</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;key_name1&gt;/mno</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nt">key_name3</span><span class="p">:</span><span class="w"> </span><span class="kt">!list</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="kt">!ref</span><span class="w"> </span><span class="nv">&lt;key_name1&gt;</span><span class="p p-Indicator">,</span><span class="kt">!ref</span><span class="w"> </span><span class="nv">&lt;key_name2&gt;</span><span class="p p-Indicator">]</span>
+</span></code></pre></div>
+      are not supported yet.  </p>
+</li>
+<li>
+<p>Different <strong>!ref</strong> representers must be used in order. The following usage is invalid (<code>key_name3</code> is used before <code>key_name2</code>):<br />
+      <div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">key_name1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc/def/ghi/jkl</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nt">key_name3</span><span class="p">:</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;key_name2&gt;/pqr</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nt">key_name2</span><span class="p">:</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;key_name1&gt;/mno</span>
+</span></code></pre></div></p>
+</li>
+</ol>
 </li>
 </ol>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/blob/main/handbook.md#table-of-contents">Back to the table of contents</a></p>
 <h4 id="inference-configuration-for-hyperparameter-adjustment">Inference Configuration for hyperparameter adjustment</h4>
 <p>Model inference configuration is given by <code>infer_cfg</code> in the configuration file. 
-There could be either one inference configuration or multiple configurations in <em>infer_cfg</em>:<br />
-  1. If <em>infer_cfg</em> is not given, the default inference configuration will be used for model inference.
-  2. If you only want to give one inference configuration, please give it by either a string or a <em>Dict</em>.
-     1. <strong>String:</strong> The string indicates where the inference configuration file is placed. For example, 
-        <code>infer_cfg: config/infer/asr/greedy_decoding.yaml</code> means the configuration file <code>${SPEECHAIN_ROOT}/config/infer/asr/greedy_decoding.yaml</code> will be used for model inference. 
-        In this example, the evaluation results will be saved to a folder named <code>greedy_decoding</code>.<br />
-        If there are many arguments you need to give in the configuration, we recommend you to give them by a configuration file for concision. 
-     2. <strong>Dict:</strong> The <em>Dict</em> indicates the content of your inference configuration. For example.
-        <code>yaml
-        infer_cfg:
-            beam_size: 1
-            temperature: 1.0</code>
-        means that <code>beam_size=1</code> and <code>temperature=1.0</code> will be used for ASR decoding. 
-        In this example, the evaluation results will be saved to a folder named <code>beam_size=1_temperature=1.0</code> which is decided by the keys and values in your given <em>Dict</em>.<br />
-        If there are not so many arguments in your configuration, we recommend you to give them by a <em>Dict</em> to avoid messy configuration files on your disk.</p>
+There could be either one inference configuration or multiple configurations in <em>infer_cfg</em>:  </p>
 <ol>
-<li>If you want to give multiple inference configuration in <em>infer_cfg</em>, please give them by either a <em>List</em> or a <em>Dict</em>.  <ol>
 <li>
-<p><strong>List:</strong> Each element in the <em>List</em> could be either a string or a <em>Dict</em>.  </p>
-<ul>
-<li>The string indicates the file paths of a given inference configuration. For example,</li>
+<p>If <em>infer_cfg</em> is not given, the default inference configuration will be used for model inference.</p>
+</li>
+<li>
+<p>If you only want to give one inference configuration, please give it by either a string or a <em>Dict</em>.</p>
+<ol>
+<li>
+<p><strong>String:</strong> The string indicates where the inference configuration file is placed. For example, 
+    <code>infer_cfg: config/infer/asr/greedy_decoding.yaml</code> means the configuration file <code>${SPEECHAIN_ROOT}/config/infer/asr/greedy_decoding.yaml</code> will be used for model inference. 
+    In this example, the evaluation results will be saved to a folder named <code>greedy_decoding</code>.<br />
+    If there are many arguments you need to give in the configuration, we recommend you to give them by a configuration file for concision. </p>
+</li>
+<li>
+<p><strong>Dict:</strong> The <em>Dict</em> indicates the content of your inference configuration. For example.
+    <div class="language-yaml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">infer_cfg</span><span class="p">:</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nt">beam_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+</span></code></pre></div>
+    means that <code>beam_size=1</code> and <code>temperature=1.0</code> will be used for ASR decoding. 
+    In this example, the evaluation results will be saved to a folder named <code>beam_size=1_temperature=1.0</code> which is decided by the keys and values in your given <em>Dict</em>.<br />
+    If there are not so many arguments in your configuration, we recommend you to give them by a <em>Dict</em> to avoid messy configuration files on your disk.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>If you want to give multiple inference configuration in <em>infer_cfg</em>, please give them by either a <em>List</em> or a <em>Dict</em>.  </p>
+<ol>
+<li><strong>List:</strong> Each element in the <em>List</em> could be either a string or a <em>Dict</em>.  <ul>
+<li>The string indicates the file paths of a given inference configuration. For example,
+   <div class="language-yaml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">infer_cfg</span><span class="p">:</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config/infer/asr/greedy_decoding.yaml</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config/infer/asr/beam_size=16.yaml</span>
+</span></code></pre></div>
+   means that both <code>greedy_decoding.yaml</code> and <code>beam_size=16.yaml</code> in <code>${SPEECHAIN_ROOT}/config/infer/asr/</code> will be used for ASR decoding.  </li>
+<li>The <em>Dict</em> indicates the content of a given inference configuration. For example,
+   <div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">infer_cfg</span><span class="p">:</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">beam_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">beam_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+</span></code></pre></div>
+   could be used and two folders <code>beam_size=1_temperature=1.0</code> and <code>beam_size=16_temperature=1.0</code> will be created to place their evaluation results.  </li>
+<li>Of course, strings and <em>Dict</em>s can be mixed in <em>infer_cfg</em> like
+   <div class="language-yaml highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">infer_cfg</span><span class="p">:</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config/infer/asr/greedy_decoding.yaml</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">beam_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+</span></code></pre></div></li>
 </ul>
-<p><code>yaml
-  infer_cfg:
-    - config/infer/asr/greedy_decoding.yaml
-    - config/infer/asr/beam_size=16.yaml</code>
-  means that both <code>greedy_decoding.yaml</code> and <code>beam_size=16.yaml</code> in <code>${SPEECHAIN_ROOT}/config/infer/asr/</code> will be used for ASR decoding.<br />
-<em> The <em>Dict</em> indicates the content of a given inference configuration. For example,
-  <code>yaml
-  infer_cfg:
-    - beam_size: 1
-      temperature: 1.0
-    - beam_size: 16
-      temperature: 1.0</code>
-  could be used and two folders <code>beam_size=1_temperature=1.0</code> and <code>beam_size=16_temperature=1.0</code> will be created to place their evaluation results.<br />
-</em> Of course, strings and <em>Dict</em>s can be mixed in <em>infer_cfg</em> like
-  <code>yaml
-  infer_cfg:
-    - config/infer/asr/greedy_decoding.yaml
-    - beam_size: 16
-      temperature: 1.0</code>
-     2. <strong>Dict:</strong> There must be two keys in the <em>Dict</em>: <code>shared_args</code> and <code>exclu_args</code>.<br />
+</li>
+<li><strong>Dict:</strong> There must be two keys in the <em>Dict</em>: <code>shared_args</code> and <code>exclu_args</code>.<br />
 <code>shared_args</code> (short of 'shared arguments') is a <em>Dict</em> which contains the arguments shared by all the configurations in the <em>Dict</em>.<br />
 <code>exclu_args</code> (short of 'exclusive arguments') is a <em>List[Dict]</em> where each element contains the exclusive arguments for each configuration.<br />
-For example,
-<code>yaml
-  infer_cfg:
-    shared_args:
-        beam_size: 16
-    exclu_args:
-        - temperature: 1.0
-        - temperature: 1.5</code>
-means that there will be two configurations used for model inference:
-<code>yaml
-beam_size: 16
-temperature: 1.0</code>
-and
-<code>yaml
-beam_size: 16
-temperature: 1.5</code>
-Their evaluation results will be saved to <code>beam_size=16_temperature=1.0</code> and <code>beam_size=16_temperature=1.5</code>.<br />
-If your configurations don't contain too many arguments and you only want to change one or two arguments for each of them, we recommend you to give your configurations in this way.</p>
-</li>
+     For example,
+     <div class="language-yaml highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="w">  </span><span class="nt">infer_cfg</span><span class="p">:</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="nt">shared_args</span><span class="p">:</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">        </span><span class="nt">beam_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="nt">exclu_args</span><span class="p">:</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.5</span>
+</span></code></pre></div>
+     means that there will be two configurations used for model inference:
+     <div class="language-yaml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">beam_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+</span></code></pre></div>
+     and
+     <div class="language-yaml highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">beam_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.5</span>
+</span></code></pre></div>
+     Their evaluation results will be saved to <code>beam_size=16_temperature=1.0</code> and <code>beam_size=16_temperature=1.5</code>.<br />
+     If your configurations don't contain too many arguments and you only want to change one or two arguments for each of them, we recommend you to give your configurations in this way.</li>
 </ol>
 </li>
 </ol>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/blob/main/handbook.md#table-of-contents">Back to the table of contents</a></p>
 <h3 id="how-to-train-and-evaluate-a-model">How to train and evaluate a model</h3>
-<p>We provide two levels of executable bash scripts:
-1. All-in-one executable <code>run.sh</code> in <code>${SPEECHAIN_ROOT}/recipes/</code>. This bash script is task-independent and can be called everywhere to run an experimental job.<br />
-   For more details, please go to <code>${SPEECHAIN_ROOT}/recipes</code> and run <code>bash run.sh --help</code> for the message about involved arguments.
-2. Low-level <code>run.sh</code> designed for sub-folder in <code>${SPEECHAIN_ROOT}/recipes/</code>. Those scripts are used to run the experiments of the specific task.<br />
+<p>We provide two levels of executable bash scripts:</p>
+<ol>
+<li>
+<p>All-in-one executable <code>run.sh</code> in <code>${SPEECHAIN_ROOT}/recipes/</code>. This bash script is task-independent and can be called everywhere to run an experimental job.<br />
+   For more details, please go to <code>${SPEECHAIN_ROOT}/recipes</code> and run <code>bash run.sh --help</code> for the message about involved arguments.</p>
+</li>
+<li>
+<p>Low-level <code>run.sh</code> designed for sub-folder in <code>${SPEECHAIN_ROOT}/recipes/</code>. Those scripts are used to run the experiments of the specific task.<br />
    For more details, please go to the target sub-folder and run <code>bash run.sh --help</code> for the message about involved arguments.</p>
-<p>The execution hierarchy of the scripts is:</p>
-<pre><code class="language-bash">${SPEECHAIN_ROOT}/recipes/{task_name}/{dataset_name}/{subset_name}/run.sh
-    ---&gt;${SPEECHAIN_ROOT}/recipes/run.sh
-        ---&gt;${SPEECHAIN_ROOT}/speechain/runner.py
-</code></pre>
+</li>
+</ol>
+<p>The execution hierarchy of the scripts is:<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="si">${</span><span class="nv">SPEECHAIN_ROOT</span><span class="si">}</span>/recipes/<span class="o">{</span>task_name<span class="o">}</span>/<span class="o">{</span>dataset_name<span class="o">}</span>/<span class="o">{</span>subset_name<span class="o">}</span>/run.sh
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span>---&gt;<span class="si">${</span><span class="nv">SPEECHAIN_ROOT</span><span class="si">}</span>/recipes/run.sh
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">        </span>---&gt;<span class="si">${</span><span class="nv">SPEECHAIN_ROOT</span><span class="si">}</span>/speechain/runner.py
+</span></code></pre></div></p>
 <p>For the detailed instructions about how to launch the jobs for each model, please refer to <a href="https://github.com/bagustris/SpeeChain/tree/main/recipes#table-of-contents"><strong>here</strong></a> and click your target model.</p>
 <p>By the way, you can also directly use the command <code>${SPEECHAIN_PYTHON} ${SPEECHAIN_ROOT}/speechain/runn.py</code> in your terminal or your own bash script to run your experimental jobs. 
 Before doing so, we recommend you to first use the command <code>${SPEECHAIN_PYTHON} ${SPEECHAIN_ROOT}/speechain/runn.py --help</code> to familiarize yourself with the involved arguments.</p>
@@ -4235,94 +4259,94 @@ Before doing so, we recommend you to first use the command <code>${SPEECHAIN_PYT
 <h4 id="configuration-folder">Configuration Folder</h4>
 <p>This folder contains off-the-shelf configuration files that can be shared across different tasks, models, or datasets. 
 Each type of configuration corresponds to a specific sub-folder where each category of configuration corresponds to a specific sub-sub-folder.</p>
-<p>Folder architecture is shown below:</p>
-<pre><code class="language-bash">/config
-    /feat       # Configuration for acoustic feature extraction
-        /log_mel    # Configuration files for log-Mel spectrogram extraction
-            /...
-        /mfcc       # Configuration files for MFCC extraction
-            /...
-    /infer      # Configuration for model inference
-        /asr        # Configuration files for ASR inference
-            /...
-        /tts        # Configuration files for TTS inference
-            /...
-</code></pre>
-<p>For more details about the configuration files in <code>${SPEECHAIN_ROOT}/config/feat/</code>, please refer to the docstring of <a href="https://github.com/bagustris/SpeeChain/blob/main/datasets/pyscripts/feat_extractor.py">${SPEECHAIN_ROOT}/datasets/pyscripts/feat_extractor.py</a>.</p>
+<p>Folder architecture is shown below:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>/config
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span>/feat<span class="w">       </span><span class="c1"># Configuration for acoustic feature extraction</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">        </span>/log_mel<span class="w">    </span><span class="c1"># Configuration files for log-Mel spectrogram extraction</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">            </span>/...
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">        </span>/mfcc<span class="w">       </span><span class="c1"># Configuration files for MFCC extraction</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">            </span>/...
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span>/infer<span class="w">      </span><span class="c1"># Configuration for model inference</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">        </span>/asr<span class="w">        </span><span class="c1"># Configuration files for ASR inference</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">            </span>/...
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">        </span>/tts<span class="w">        </span><span class="c1"># Configuration files for TTS inference</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">            </span>/...
+</span></code></pre></div>
+For more details about the configuration files in <code>${SPEECHAIN_ROOT}/config/feat/</code>, please refer to the docstring of <a href="https://github.com/bagustris/SpeeChain/blob/main/datasets/pyscripts/feat_extractor.py">${SPEECHAIN_ROOT}/datasets/pyscripts/feat_extractor.py</a>.</p>
 <p>For more details about the configuration files in <code>${SPEECHAIN_ROOT}/config/infer/</code>, please refer to the docstring of the corresponding inference function in <a href="https://github.com/bagustris/SpeeChain/tree/main/config/infer">${SPEECHAIN_ROOT}/speechain/infer_func/</a>.</p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/blob/main/handbook.md#table-of-contents">Back to the table of contents</a></p>
 <h4 id="dataset-folder">Dataset Folder</h4>
 <p>This folder contains off-the-shelf processing scripts to dump datasets into your machine. 
 Each type of datasets corresponds to a specific sub-folder where each dataset corresponds a specific sub-sub-folder.</p>
-<p>Folder architecture is shown below:</p>
-<pre><code class="language-bash">/datasets
-    /speech_text        # Datasets that are made up of speech and text data
-        /librispeech        # Processing scripts for the LibriSpeech dataset
-            /...
-        /libritts           # Processing scripts for the LibriTTS dataset
-            /...
-        /ljspeech           # Processing scripts for the LJSpeech dataset
-            /...
-        /data_dumping.sh    # all-in-one speech-text dataset dumping script
-</code></pre>
-<p>For more details, please refer to the README.md of each type of dataset in <a href="https://github.com/bagustris/SpeeChain/tree/main/datasets">${SPEECHAIN_ROOT}/datasets/</a>.</p>
+<p>Folder architecture is shown below:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>/datasets
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span>/speech_text<span class="w">        </span><span class="c1"># Datasets that are made up of speech and text data</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">        </span>/librispeech<span class="w">        </span><span class="c1"># Processing scripts for the LibriSpeech dataset</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">            </span>/...
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">        </span>/libritts<span class="w">           </span><span class="c1"># Processing scripts for the LibriTTS dataset</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">            </span>/...
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">        </span>/ljspeech<span class="w">           </span><span class="c1"># Processing scripts for the LJSpeech dataset</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">            </span>/...
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">        </span>/data_dumping.sh<span class="w">    </span><span class="c1"># all-in-one speech-text dataset dumping script</span>
+</span></code></pre></div>
+For more details, please refer to the README.md of each type of dataset in <a href="https://github.com/bagustris/SpeeChain/tree/main/datasets">${SPEECHAIN_ROOT}/datasets/</a>.</p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/blob/main/handbook.md#table-of-contents">Back to the table of contents</a></p>
-<h4 id="recipe-folder">Recipe Folder</h4>
+<h4 id="recipes-folder">Recipes Folder</h4>
 <p>This folder contains our recipes for all tasks on the available datasets. 
 Each task corresponds to a specific sub-folder where each dataset corresponds a specific sub-sub-folder.
 In the dataset folder, there may be some sub-folders corresponding to different settings of model training where a sub-sub-folder <code>/data_cfg</code> contains all the configuration files of data loading that are shared by all the model sub-sub-folders.</p>
-<p>Folder architecture is shown below:</p>
-<pre><code class="language-bash">/recipes
-    /asr                    # Recipes for the ASR task
-        /librispeech            # Recipes for ASR models on the LibriSpeech dataset
-            ...                     # different ASR settings for LibriSpeech
-        /libritts               # Recipes for ASR models on the LibriTTS dataset
-            ...                     # different ASR settings for LibriTTS
-        /libritts+librispeech   # Recipes for ASR models on the 16khz-downsampled LibriTTS and LibriSpeech datasets
-            ...                     # different ASR settings for 16khz-downsampled LibriTTS and LibriSpeech
-    /tts                    # Recipes for the TTS task
-        /libritts               # Recipes for TTS models on the LibriTTS dataset
-            ...                     # different TTS settings for LibriTTS
-        /ljspeech               # Recipes for TTS models on the LJSpeech dataset
-            ...
-    /offline_tts2asr        # Recipes for the offline TTS-to-ASR chain
-        /libritts_librispeech   # Recipes for TTS trained on LibriTTS and ASR trained on LibriSpeech
-            ...                     # different TTS-to-ASR settings for LibriSpeech and LibriTTS
-    /offline_asr2tts        # Recipes for the offline ASR-to-TTS chain
-        /libritts                # Recipes for ASR and TTS trained on LibriTTS 
-            ...                     # different ASR-to-TTS settings for LibriTTS
-</code></pre>
-<p>For more details, please refer to <a href="https://github.com/bagustris/SpeeChain/tree/main/recipes#recipes-folder-of-the-speechain-toolkit">${SPEECHAIN_ROOT}/recipes/README.md</a>.</p>
+<p>Folder architecture is shown below:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>/recipes
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">    </span>/asr<span class="w">                    </span><span class="c1"># Recipes for the ASR task</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">        </span>/librispeech<span class="w">            </span><span class="c1"># Recipes for ASR models on the LibriSpeech dataset</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">            </span>...<span class="w">                     </span><span class="c1"># different ASR settings for LibriSpeech</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">        </span>/libritts<span class="w">               </span><span class="c1"># Recipes for ASR models on the LibriTTS dataset</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">            </span>...<span class="w">                     </span><span class="c1"># different ASR settings for LibriTTS</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">        </span>/libritts+librispeech<span class="w">   </span><span class="c1"># Recipes for ASR models on the 16khz-downsampled LibriTTS and LibriSpeech datasets</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">            </span>...<span class="w">                     </span><span class="c1"># different ASR settings for 16khz-downsampled LibriTTS and LibriSpeech</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">    </span>/tts<span class="w">                    </span><span class="c1"># Recipes for the TTS task</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">        </span>/libritts<span class="w">               </span><span class="c1"># Recipes for TTS models on the LibriTTS dataset</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">            </span>...<span class="w">                     </span><span class="c1"># different TTS settings for LibriTTS</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">        </span>/ljspeech<span class="w">               </span><span class="c1"># Recipes for TTS models on the LJSpeech dataset</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="w">            </span>...
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">    </span>/offline_tts2asr<span class="w">        </span><span class="c1"># Recipes for the offline TTS-to-ASR chain</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">        </span>/libritts_librispeech<span class="w">   </span><span class="c1"># Recipes for TTS trained on LibriTTS and ASR trained on LibriSpeech</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="w">            </span>...<span class="w">                     </span><span class="c1"># different TTS-to-ASR settings for LibriSpeech and LibriTTS</span>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="w">    </span>/offline_asr2tts<span class="w">        </span><span class="c1"># Recipes for the offline ASR-to-TTS chain</span>
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="w">        </span>/libritts<span class="w">                </span><span class="c1"># Recipes for ASR and TTS trained on LibriTTS </span>
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="w">            </span>...<span class="w">                     </span><span class="c1"># different ASR-to-TTS settings for LibriTTS</span>
+</span></code></pre></div>
+For more details, please refer to <a href="https://github.com/bagustris/SpeeChain/tree/main/recipes#recipes-folder-of-the-speechain-toolkit">${SPEECHAIN_ROOT}/recipes/README.md</a>.</p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/blob/main/handbook.md#table-of-contents">Back to the table of contents</a></p>
 <h4 id="main-folder">Main Folder</h4>
 <p>The folder <code>/speechain</code> is the core part of our toolkit where each sub-folder corresponds to a specific part of an experimental pipeline. 
 In each sub-folder, there is a .py file named <code>abs.py</code> that declares the abstract class of the corresponding pipeline part. 
-Based on the abstract class, many implementation classes are included in the same sub-folder with the name like <code>xxx.py</code>.</p>
-<pre><code class="language-bash">/speechain
-    # Sub-folders for all specific parts of an experimental pipeline
-    /criterion
-        ...
-    /dataset
-        ...
-    /infer_func
-        /beam_search.py     # Inference function of the beam searching. Mainly used for ASR models.
-        /tts_decoding.py    # Inference function of the autoregressive TTS decoding.
-        ...
-    /iterator
-        ...
-    /model
-        ...
-    /module
-        ...
-    /optim_sche
-        ...
-    /tokenizer
-        ...
-    # General part of the pipeline
-    /run.py             # The entrance of SpeeChain toolkit for both model training and testing.
-    /monitor.py         # The training and testing monitors. Used to record and regulate the training and testing process.
-    /snapshooter.py     # The figure snapshooter. Used to transform the input snapshotting materials into the visible figures.
-</code></pre>
+Based on the abstract class, many implementation classes are included in the same sub-folder with the name like <code>xxx.py</code>.
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>/speechain
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">    </span><span class="c1"># Sub-folders for all specific parts of an experimental pipeline</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">    </span>/criterion
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">        </span>...
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">    </span>/dataset
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">        </span>...
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">    </span>/infer_func
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">        </span>/beam_search.py<span class="w">     </span><span class="c1"># Inference function of the beam searching. Mainly used for ASR models.</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">        </span>/tts_decoding.py<span class="w">    </span><span class="c1"># Inference function of the autoregressive TTS decoding.</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">        </span>...
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">    </span>/iterator
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">        </span>...
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">    </span>/model
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="w">        </span>...
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="w">    </span>/module
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="w">        </span>...
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="w">    </span>/optim_sche
+</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="w">        </span>...
+</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a><span class="w">    </span>/tokenizer
+</span><span id="__span-21-20"><a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a><span class="w">        </span>...
+</span><span id="__span-21-21"><a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a><span class="w">    </span><span class="c1"># General part of the pipeline</span>
+</span><span id="__span-21-22"><a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a><span class="w">    </span>/run.py<span class="w">             </span><span class="c1"># The entrance of SpeeChain toolkit for both model training and testing.</span>
+</span><span id="__span-21-23"><a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a><span class="w">    </span>/monitor.py<span class="w">         </span><span class="c1"># The training and testing monitors. Used to record and regulate the training and testing process.</span>
+</span><span id="__span-21-24"><a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a><span class="w">    </span>/snapshooter.py<span class="w">     </span><span class="c1"># The figure snapshooter. Used to transform the input snapshotting materials into the visible figures.</span>
+</span></code></pre></div></p>
 <p>For more details about <code>/speechain/criterion</code>, please refer to <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/criterion#criterion">${SPEECHAIN_ROOT}/speechain/criterion/README.md</a>.<br />
 For more details about <code>/speechain/dataset</code>, please refer to <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset">${SPEECHAIN_ROOT}/speechain/dataset/README.md</a>.<br />
 For more details about <code>/speechain/iterator</code>, please refer to <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#iterator">${SPEECHAIN_ROOT}/speechain/iterator/README.md</a>.<br />
@@ -4354,44 +4378,52 @@ For more details about <code>/speechain/tokenizer</code>, please refer to <a hre
 <p>We recommend you to use the Google-style function docstring. 
 If you are using PyCharm, you can set the docstring style in File→Setting→Tools→Python Integrated Tools→Docstrings→Docstring format.</p>
 <p>As for argument explanation in the docstring, we recommend you to write the argument type after the colon and give its description below with a tab retract as follows.
-<code>python3
-    Args:
-        d_model: int
-            The dimension of the input feature sequences.</code>
+<div class="language-python3 highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>    <span class="n">Args</span><span class="p">:</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>        <span class="n">d_model</span><span class="p">:</span> <span class="nb">int</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>            <span class="n">The</span> <span class="n">dimension</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">feature</span> <span class="n">sequences</span><span class="o">.</span>
+</span></code></pre></div>
 If the argument type is <code>torch.Tensor</code> or <code>numpy.array</code>, please replace the type with its shape as follows.
-<code>python3
-    Args:
-        emb_feat: (batch_size, seq_len, d_model)
-            Embedded input feature sequences</code>
-    * For in-line comments, we recommend you start a new line every time you want to comment (it's better not to type a long comment after the code). 
-    The codes are better to be divided into several code blocks by their roles with an in-line comment right above the block as follows.
-      ```python3</p>
-<h1 id="member-registration">member registration</h1>
-<p>self.d_model = d_model
-self.num_layers = num_layers
-self.num_heads = num_heads
-self.layernorm_first = layernorm_first
-      ```</p>
+<div class="language-python3 highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>    <span class="n">Args</span><span class="p">:</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>        <span class="n">emb_feat</span><span class="p">:</span> <span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">d_model</span><span class="p">)</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>            <span class="n">Embedded</span> <span class="nb">input</span> <span class="n">feature</span> <span class="n">sequences</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>For in-line comments, we recommend you start a new line every time you want to comment (it's better not to type a long comment after the code). 
+The codes are better to be divided into several code blocks by their roles with an in-line comment right above the block as follows.
+  <div class="language-python3 highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>  <span class="c1"># member registration</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>  <span class="bp">self</span><span class="o">.</span><span class="n">d_model</span> <span class="o">=</span> <span class="n">d_model</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>  <span class="bp">self</span><span class="o">.</span><span class="n">num_layers</span> <span class="o">=</span> <span class="n">num_layers</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>  <span class="bp">self</span><span class="o">.</span><span class="n">num_heads</span> <span class="o">=</span> <span class="n">num_heads</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>  <span class="bp">self</span><span class="o">.</span><span class="n">layernorm_first</span> <span class="o">=</span> <span class="n">layernorm_first</span>
+</span></code></pre></div></p>
 </li>
 </ul>
-<p>Note you can format the docstring using <a href="https://github.com/PyCQA/docformatter">docformatter</a> with the following command.
-<code>bash
-docformatter --in-place -s google -r speechain --black</code>
-2. <strong>Naming</strong>: We have several recommendations for class names and variable names.
-* For class names, we recommend you to name your class in the CamelCase style. The names are better to be in the form of "What is it made up of" + "What is it". </p>
-<div class="language-text highlight"><pre><span></span><code>For example, `SpeechTextDataset` means a dataset class that returns speech-text paired data during training. 
-`Conv2dPrenet` means a prenet module that is made up of Conv2d layers.
-</code></pre></div>
+<p>Note you can format the docstring using <a href="https://github.com/PyCQA/docformatter">docformatter</a> with the following command at the root directory of SpeeChain.
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>docformatter<span class="w"> </span>--in-place<span class="w"> </span>-s<span class="w"> </span>google<span class="w"> </span>-r<span class="w"> </span>speechain<span class="w"> </span>--black
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Naming</strong>: We have several recommendations for class names and variable names.</p>
 <ul>
-<li>For long variable names, please make some abbreviations. For the abbreviations, we recommend the following 2 frequently-used strategies:<ul>
+<li>
+<p>For class names, we recommend you to name your class in the CamelCase style. The names are better to be in the form of "What is it made up of" + "What is it". </p>
+<p>For example, <code>SpeechTextDataset</code> means a dataset class that returns speech-text paired data during training. 
+ <code>Conv2dPrenet</code> means a prenet module that is made up of Conv2d layers.</p>
+</li>
+<li>
+<p>For long variable names, please make some abbreviations. For the abbreviations, we recommend the following 2 frequently-used strategies:</p>
+<ul>
 <li><strong>Tail-Truncating</strong>: delete the letters from the tail and only retain the part before the second vowel. 
-For example, '<em>convolution</em>' -&gt; '<em>conv</em>', '<em>previous</em>' -&gt; '<em>prev</em>'.</li>
+ For example, '<em>convolution</em>' -&gt; '<em>conv</em>', '<em>previous</em>' -&gt; '<em>prev</em>'.</li>
 <li><strong>Vowel-Omitting</strong>: directly delete all vowels and some trivial consonants behind each vowel. 
-For example, '<em>transformer</em>' -&gt; '<em>trfm</em>', '<em>source</em>' -&gt; '<em>src</em>', '<em>target</em>' -&gt; '<em>tgt</em>'.</li>
+ For example, '<em>transformer</em>' -&gt; '<em>trfm</em>', '<em>source</em>' -&gt; '<em>src</em>', '<em>target</em>' -&gt; '<em>tgt</em>'.</li>
 </ul>
 </li>
-<li>For the temporary variables only used to register data for a short period, please add an underline at the beginning of the name to notify other users.
-For example, '<em>_tmp_feat_dim</em>' means the temporary variable used to register the intermediate value of the feature dimension. </li>
+<li>
+<p>For the temporary variables only used to register data for a short period, please add an underline at the beginning of the name to notify other users.
+ For example, <code>_tmp_feat_dim</code> means the temporary variable used to register the intermediate value of the feature dimension. </p>
+</li>
 </ul>
 </li>
 </ol>

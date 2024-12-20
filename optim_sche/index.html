@@ -3855,55 +3855,69 @@ Each <em>OptimScheduler</em> object has one built-in member optimizer (<code>tor
 </ol>
 <h2 id="configuration-file-format">Configuration File Format</h2>
 <p>The configuration of <em>OptimScheduler</em> is given in the <code>optim_sches</code> tag of <em>train_cfg</em>. 
-The configuration format is shown below.</p>
-<pre><code class="language-yml">optim_sches:
-    type: {file_name}.{class_name}
-    conf:
-        optim_type: {class_name}
-        optim_conf:
-            ...
-        # general optimscheduler configuration
-        optim_loss:
-        updated_modules:
-        step_per_update:
-        # customized optimscheduler configuration
-        ...
-</code></pre>
+The configuration format is shown below.
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">optim_sches</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">file_name</span><span class="p p-Indicator">}</span><span class="l l-Scalar l-Scalar-Plain">.{class_name}</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">conf</span><span class="p">:</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="nt">optim_type</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">class_name</span><span class="p p-Indicator">}</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="nt">optim_conf</span><span class="p">:</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="c1"># general optimscheduler configuration</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="nt">optim_loss</span><span class="p">:</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="nt">updated_modules</span><span class="p">:</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="nt">step_per_update</span><span class="p">:</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="c1"># customized optimscheduler configuration</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span></code></pre></div></p>
 <ul>
-<li>The first-level key must be <strong>optim_sches</strong> to notify the framework of the optimscheduler configuration.</li>
-<li><strong>type</strong> is a second-level key that indicates your optimscheduler type. 
-  The value of this key is used as the query to pick up your target <em>OptimScheduler</em> subclass for initialization. 
-  Your given query should be in the form of <code>file_name.class_name</code> to indicate the place of your target subclass.<br />
-  For example, <code>noam.NoamLr</code> means the class <code>NoamLr</code> in <code>./speechain/optim_sche/noam.py</code>.</li>
-<li><strong>conf</strong> is a second-level key that indicates your optimscheduler configuration. 
-  The value of this key is a <em>Dict</em> whose configuration is as following:<ol>
-<li><strong>optim_type</strong> is a query that indicates the type of the built-in <code>torch.optim.Optimizer</code> in this optimscheduler. 
+<li>
+<p>The first-level key must be <strong>optim_sches</strong> to notify the framework of the optimscheduler configuration.  </p>
+<ol>
+<li>
+<p><strong>type</strong> is a second-level key that indicates your optimscheduler type. 
+The value of this key is used as the query to pick up your target <em>OptimScheduler</em> subclass for initialization. <br />
+Your given query should be in the form of <code>file_name.class_name</code> to indicate the place of your target subclass.<br />
+For example, <code>noam.NoamLr</code> means the class <code>NoamLr</code> in <code>./speechain/optim_sche/noam.py</code>.  </p>
+</li>
+<li>
+<p><strong>conf</strong> is a second-level key that indicates your optimscheduler configuration. 
+The value of this key is a <em>Dict</em> whose configuration is as following:</p>
+<ol>
+<li>
+<p><strong>optim_type</strong> is a query that indicates the type of the built-in <code>torch.optim.Optimizer</code> in this optimscheduler.<br />
   Your given query should be in the form of <code>class_name</code> to indicate your target subclass in <code>torch.optim</code>.<br />
-  For example, <code>Adam</code> means the class <code>torch.optim.Adam</code>.</li>
-<li><strong>optim_conf</strong> contains all the configuration used to initialize the built-in optimizer.<br />
-    For more details, please refer to the <a href="https://pytorch.org/docs/1.2.0/optim.html#algorithms"><em>PyTorch</em> document</a> of your target <code>torch.optim.Optimizer</code> subclass.</li>
-<li><strong>optimscheduler general configuration</strong> is shared by all <em>OptimScheduler</em> subclasses. <ol>
-<li>optim_loss</li>
-<li>updated_modules</li>
-<li>step_per_update</li>
+  For example, <code>Adam</code> means the class <code>torch.optim.Adam</code>.</p>
+</li>
+<li>
+<p><strong>optim_conf</strong> contains all the configuration used to initialize the built-in optimizer.<br />
+    For more details, please refer to the <a href="https://pytorch.org/docs/1.2.0/optim.html#algorithms"><em>PyTorch</em> document</a> of your target <code>torch.optim.Optimizer</code> subclass.  </p>
+</li>
+<li>
+<p><strong>optimscheduler general configuration</strong> is shared by all <em>OptimScheduler</em> subclasses.<br />
+        1. optim_loss<br />
+        2. updated_modules<br />
+        3. step_per_update  </p>
+</li>
+<li>
+<p><strong>optimscheduler customized configuration</strong> is used to initialize the customized part of each optimscheduler subclass. 
+  This part defines the scheduling strategy to adjust the learning rates during training.<br />
+  Please refer to the docstrings of your target <em>OptimScheduler</em> subclass for more details.</p>
+</li>
 </ol>
 </li>
-<li><strong>optimscheduler customized configuration</strong> is used to initialize the customized part of each optimscheduler subclass. 
-  This part defines the scheduling strategy to adjust the learning rates during training.
-  Please refer to the docstrings of your target <em>OptimScheduler</em> subclass for more details.</li>
 </ol>
 </li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/optim_sche#table-of-contents">Back to the table of contents</a></p>
 <h2 id="optimscheduler-library">OptimScheduler Library</h2>
-<pre><code>/speechain
-    /optim_sche
-        /abs.py     # Abstract class of OptimScheduler. Base of all OptimScheduler implementations.
-        /noam.py    # OptimScheduler implementation of the Noam scheduler. Mainly used for Transformer training.
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/speechain
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    /optim_sche
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        /abs.py     # Abstract class of OptimScheduler. Base of all OptimScheduler implementations.
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        /noam.py    # OptimScheduler implementation of the Noam scheduler. Mainly used for Transformer training.
+</span></code></pre></div>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/optim_sche#table-of-contents">Back to the table of contents</a></p>
 <h2 id="api-document">API Document</h2>
-<p><em>Non-overridable backbone functions:</em>
+<p><em>Non-overridable backbone functions:</em><br />
    1. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/optim_sche#speechain_optim_scheabsoptimscheduler__init__self-optim_type-optim_conf-model-distributed-optim_loss-updated_modules-step_per_update-use_amp-accum_grad-ft_factor-grad_clip-grad_norm_type-sche_conf">speechain_optim_sche.abs.OptimScheduler.__init__</a><br />
    2. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/optim_sche#speechain_optim_scheabsoptimschedulersteplosses-time_func-optim_name-step_num">speechain.optim_sche.abs.OptimScheduler.step</a><br />
    3. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/optim_sche#speechain_optim_scheabsoptimschedulerget_lrself">speechain.optim_sche.abs.OptimScheduler.get_lr</a><br />
@@ -3922,59 +3936,63 @@ The configuration format is shown below.</p>
     At the end of this function, an interface function <code>sche_init()</code> is called to initialize the customized part of each <em>OptimScheduler</em> subclass.</li>
 <li>
 <p><strong>Arguments:</strong>  </p>
-<p><em>Arguments received from <code>exp_cfg</code></em>:<br />
-  * <em><strong>model:</strong></em> speechain.model.abs.Model<br />
-The pointer to the model whose parameters will be optimized by the built-in <code>torch.optim.Optimizer</code>.<br />
-  * <em><strong>distributed:</strong></em> bool = False<br />
-Whether the model to be optimized is distributed to multiple GPUs. <br />
-If True, gradient accumulation will be done asynchronously in the DDP mode to speed up training.<br />
-  * <em><strong>use_amp:</strong></em> bool = True<br />
-Whether the Automatic Mixed Precision (AMP) technique is used during back-propagation.<br />
-If True, a built-in <code>torch.cuda.amp.GradScaler</code> will be initialized to calculate the gradients and optimize the parameters.<br />
-  * <em><strong>accum_grad:</strong></em> int = 1<br />
-The number of steps to accumulate gradients before optimization. 
-The larger this argument is, the larger your virtual batches will be.<br />
-  * <em><strong>ft_factor:</strong></em> float = 1.0<br />
-The finetuning factor used to scale down the learning rates during training.</p>
+<p><em>Arguments received from <code>exp_cfg</code></em>:  </p>
+<ul>
+<li><em><strong>model:</strong></em> speechain.model.abs.Model<br />
+   The pointer to the model whose parameters will be optimized by the built-in <code>torch.optim.Optimizer</code>.  </li>
+<li><em><strong>distributed:</strong></em> bool = False<br />
+   Whether the model to be optimized is distributed to multiple GPUs. <br />
+   If True, gradient accumulation will be done asynchronously in the DDP mode to speed up training.  </li>
+<li><em><strong>use_amp:</strong></em> bool = True<br />
+   Whether the Automatic Mixed Precision (AMP) technique is used during back-propagation.<br />
+   If True, a built-in <code>torch.cuda.amp.GradScaler</code> will be initialized to calculate the gradients and optimize the parameters.  </li>
+<li><em><strong>accum_grad:</strong></em> int = 1<br />
+   The number of steps to accumulate gradients before optimization. 
+   The larger this argument is, the larger your virtual batches will be.  </li>
+<li><em><strong>ft_factor:</strong></em> float = 1.0<br />
+   The finetuning factor used to scale down the learning rates during training.</li>
+</ul>
 </li>
 </ul>
 <p><em>Arguments received from <code>train_cfg</code></em>:  </p>
 <ul>
 <li><em><strong>optim_type:</strong></em> str<br />
-    The optimizer query used to pick up the target <em>Optimizer</em> subclass from <code>torch.optim</code>.  </li>
+     The optimizer query used to pick up the target <em>Optimizer</em> subclass from <code>torch.optim</code>.  </li>
 <li><em><strong>optim_conf:</strong></em> Dict<br />
-    The configuration used to initialize the built-in <code>torch.optim.Optimizer</code>.  </li>
+     The configuration used to initialize the built-in <code>torch.optim.Optimizer</code>.  </li>
 <li><em><strong>optim_loss:</strong></em> str = None<br />
-    The name of the target loss used in this <em>OptimScheduler</em> object to calculate the gradients. 
-    If not given, the loss named <code>loss</code> will be used for optimization.  </li>
+     The name of the target loss used in this <em>OptimScheduler</em> object to calculate the gradients. 
+     If not given, the loss named <code>loss</code> will be used for optimization.  </li>
 <li><em><strong>updated_modules:</strong></em> str or List[str]<br />
-    This argument allows you to update only a part of parameters of the built-in model pointer. 
-    <code>updated_modules</code> indicate the names of your target modules (first-level module in the nested module tree) in the built-in model pointer.<br />
-    Its value can be either a string (only one target module) or a list (multiple target modules).<br />
-    If not given, the entire model will be updated.  </li>
+     This argument allows you to update only a part of parameters of the built-in model pointer. 
+     <code>updated_modules</code> indicate the names of your target modules (first-level module in the nested module tree) in the built-in model pointer.<br />
+     Its value can be either a string (only one target module) or a list (multiple target modules).<br />
+     If not given, the entire model will be updated.  </li>
 <li><em><strong>step_per_update:</strong></em> int = 1<br />
-    The optimization interval for the built-in optimizer.
-    It means that the parameter optimization will be done once every <code>step_per_update</code> steps.  </li>
+     The optimization interval for the built-in optimizer.
+     It means that the parameter optimization will be done once every <code>step_per_update</code> steps.  </li>
 <li><em><strong>**sche_conf:</strong></em><br />
-    The arguments used to initialize the customized part of this <em>OptimScheduler</em>. <br />
-    Mainly used to decide the learning rate scheduling strategy.</li>
+     The arguments used to initialize the customized part of this <em>OptimScheduler</em>. <br />
+     Mainly used to decide the learning rate scheduling strategy.</li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/optim_sche#api-document">Back to the API list</a></p>
 <h3 id="speechain_optim_scheabsoptimschedulersteplosses-time_func-optim_name-step_num">speechain_optim_sche.abs.OptimScheduler.step(losses, time_func, optim_name, step_num)</h3>
 <ul>
 <li><strong>Description:</strong><br />
     This function optimizes the target parameters of the built-in model pointer with the input training losses.</li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong><ul>
 <li><em><strong>losses:</strong></em> Dict[str, torch.Tensor]<br />
-    The training loss Dict received from the <code>criterion_forward()</code> of the bulit-in model pointer.</li>
+  The training loss Dict received from the <code>criterion_forward()</code> of the bulit-in model pointer.</li>
 <li><em><strong>time_func:</strong></em><br />
-    The context function used to record the consumed time during gradient back-propagation and parameter optimization.</li>
+  The context function used to record the consumed time during gradient back-propagation and parameter optimization.</li>
 <li><em><strong>optim_name:</strong></em> str<br />
-    The name of the <em>OptimScheduler</em> object. 
-    This argument is used to identify the recorded consumed time information.</li>
+  The name of the <em>OptimScheduler</em> object. 
+  This argument is used to identify the recorded consumed time information.</li>
 <li><em><strong>step_num:</strong></em> int<br />
-    The number of the current training step. 
-    This argument is used to update the learning rate for the current step by <code>self.update_lr()</code>.</li>
+  The number of the current training step. 
+  This argument is used to update the learning rate for the current step by <code>self.update_lr()</code>.</li>
+</ul>
+</li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/optim_sche#api-document">Back to the API list</a></p>
 <h3 id="speechain_optim_scheabsoptimschedulerget_lrself">speechain_optim_sche.abs.OptimScheduler.get_lr(self)</h3>
@@ -3997,9 +4015,11 @@ The finetuning factor used to scale down the learning rates during training.</p>
 <ul>
 <li><strong>Description:</strong><br />
   This function loads the existing checkpoint information into the <em>OptimScheduler</em> object as the starting status.</li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong><ul>
 <li><em><strong>state_dict:</strong></em> Dict<br />
-    The status information loaded from the existing checkpoint.</li>
+  The status information loaded from the existing checkpoint.</li>
+</ul>
+</li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/optim_sche#api-document">Back to the API list</a></p>
 <h3 id="speechain_optim_scheabsoptimscheduler__repr__self">speechain_optim_sche.abs.OptimScheduler.__repr__(self)</h3>
@@ -4017,21 +4037,25 @@ The finetuning factor used to scale down the learning rates during training.</p>
 <li><strong>Description:</strong><br />
     This abstract interface function is the customized initialization function which decides how the learning rate is scheduled as the training goes.<br />
     This interface is mandatory to be overridden.  </li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong><ul>
 <li><em><strong>**sche_conf:</strong></em><br />
-    The arguments used to initialize the customized part of this OptimScheduler.
-    For more details about the learning rate scheduling strategy, please refer to the docstring of <code>sche_init()</code> of your target OptimScheduler subclass.  </li>
+  The arguments used to initialize the customized part of this OptimScheduler.
+  For more details about the learning rate scheduling strategy, please refer to the docstring of <code>sche_init()</code> of your target OptimScheduler subclass.  </li>
+</ul>
+</li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/optim_sche#api-document">Back to the API list</a></p>
 <h3 id="speechain_optim_scheabsoptimschedulerupdate_lrself-real_step">speechain_optim_sche.abs.OptimScheduler.update_lr(self, real_step)</h3>
 <ul>
 <li><strong>Description:</strong><br />
     This abstract interface function generates the learning rate by the input step number.  </li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong><ul>
 <li><em><strong>real_step:</strong></em> int<br />
-    The number of the real step for parameter optimization. 
-    Due to the existence of <code>self.accum_grad</code>, parameter optimization may not be done at each training step. 
-    The real step number here means the training steps where parameter optimization is done.</li>
+  The number of the real step for parameter optimization. 
+  Due to the existence of <code>self.accum_grad</code>, parameter optimization may not be done at each training step. 
+  The real step number here means the training steps where parameter optimization is done.</li>
+</ul>
+</li>
 <li><strong>Return:</strong> float<br />
     The learning rate used for parameter optimization in the current training step.</li>
 </ul>
@@ -4049,48 +4073,56 @@ The finetuning factor used to scale down the learning rates during training.</p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/optim_sche#api-document">Back to the API list</a></p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/optim_sche#table-of-contents">Back to the table of contents</a></p>
 <h2 id="how-to-construct-multiple-optimizers-on-multiple-losses">How to Construct Multiple Optimizers on Multiple Losses</h2>
-<p>The cooperation of multiple optimizers is handled by 3 arguments: <em>optim_losses</em>, <em>updated_modules</em>, and <em>step_per_update</em>. 
-1. <em>optim_losses</em> means the training loss used to calculate the gradients for the optimizer. 
-2. <em>update_modules</em> means the target module in your where that you would like the optimizer to update the parameters.
-3. <em>step_per_update</em> means the updating frequency of the optimizer (i.e. the parameter optimization can be done once per <em>step_per_update</em> steps).</p>
+<p>The cooperation of multiple optimizers is handled by 3 arguments: <em>optim_losses</em>, <em>updated_modules</em>, and <em>step_per_update</em>.  </p>
+<ol>
+<li>
+<p><em>optim_losses</em> means the training loss used to calculate the gradients for the optimizer.   </p>
+</li>
+<li>
+<p><em>update_modules</em> means the target module in your where that you would like the optimizer to update the parameters.  </p>
+</li>
+<li>
+<p><em>step_per_update</em> means the updating frequency of the optimizer (i.e. the parameter optimization can be done once per <em>step_per_update</em> steps).</p>
+</li>
+</ol>
 <p>In the example below, there are two optimschedulers for optimizing the parameters of an Encoder-Decoder model. 
 <em>encoder_optim</em> optimizes the encoder part using the training loss called <em>encoder_loss</em> while <em>decoder_optim</em> optimizes the decoder part using the training loss called <em>decoder_loss</em>. 
-The encoder optimization is done once every 2 steps while the decoder optimization is done once every step.</p>
-<pre><code class="language-yml">optim_sches:
-    encoder_optim:
-        type: noam.NoamLr
-        conf:
-            optim_type: Adam
-            optim_conf:
-                ...
-            optim_losses: encoder_loss
-            updated_modules: encoder
-            step_per_update: 2
-
-    decoder_optim:
-        type: noam.NoamLr
-        conf:
-            optim_type: Adam
-            optim_conf:
-                ...
-            optim_losses: decoder_loss
-            updated_modules: decoder
-</code></pre>
+The encoder optimization is done once every 2 steps while the decoder optimization is done once every step.
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">optim_sches</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">encoder_optim</span><span class="p">:</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">noam.NoamLr</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="nt">conf</span><span class="p">:</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">            </span><span class="nt">optim_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Adam</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">            </span><span class="nt">optim_conf</span><span class="p">:</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">                </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">            </span><span class="nt">optim_losses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">encoder_loss</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">            </span><span class="nt">updated_modules</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">encoder</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">            </span><span class="nt">step_per_update</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="nt">decoder_optim</span><span class="p">:</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">noam.NoamLr</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="nt">conf</span><span class="p">:</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">            </span><span class="nt">optim_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Adam</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">            </span><span class="nt">optim_conf</span><span class="p">:</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">                </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">            </span><span class="nt">optim_losses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">decoder_loss</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">            </span><span class="nt">updated_modules</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">decoder</span>
+</span></code></pre></div></p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/optim_sche#table-of-contents">Back to the table of contents</a></p>
 <h2 id="how-to-simulate-large-batch-training-with-limited-gpus">How to Simulate Large Batch Training with Limited GPUs</h2>
 <p>We provide a method called gradient accumulation (implemented by the argument <code>accum_grad</code> in <em>exp_cfg</em>) to train your model with large batches that are beyond the memory of your GPUs. 
 The basic idea is to accumulate the gradients calculated in several small batches and update the model with the accumulated gradients to mimic a large batch. 
 So, the actual batch size becomes <code>accum_grad * batch_size</code>.</p>
-<p>The pseudo-code of gradient accumulation is like this:</p>
-<pre><code class="language-python">for step in range(max_step):
-    loss /= accum_grad
-    loss.backward()
-    if step % accum_grad == 0:
-        # real_step = (step - 1) // accum_grad + 1
-        optimizer.step()
-        optimizer.zero_grad()
-</code></pre>
-<p>Let me show you an intuitive example. 
+<p>The pseudo-code of gradient accumulation is like this:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_step</span><span class="p">):</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">loss</span> <span class="o">/=</span> <span class="n">accum_grad</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="k">if</span> <span class="n">step</span> <span class="o">%</span> <span class="n">accum_grad</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="c1"># real_step = (step - 1) // accum_grad + 1</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+</span></code></pre></div>
+Let me show you an intuitive example. 
 Suppose we want to calculate the mean value of 1, 2, ..., 9, 10 but we cannot directly divide the sum by 10 because our calculator is not powerful enough. 
 Instead, we can calculate the mean value of two sub-groups: 1, 2, .., 5 and 6, 7, ..., 10. 
 We get two sub-mean values: 3 and 8. 
