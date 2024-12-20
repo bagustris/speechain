@@ -3802,62 +3802,79 @@ More details on how to dump a dataset can be found <a href="https://github.com/b
 </ol>
 <h3 id="creating-a-new-configuration-for-a-non-existing-dataset">Creating a new configuration for a non-existing dataset</h3>
 <ol>
-<li>Dump your target dataset from the Internet following these <a href="https://github.com/bagustris/SpeeChain/tree/main/datasets#how-to-contribute-a-new-dataset">instructions</a>.</li>
-<li>Create a folder for your dumped dataset <code>${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}</code>:
-   <code>mkdir ${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}
-   cp ${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960/run.sh ${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}/run.sh</code>
-   <strong>Note:</strong> </li>
-<li>Update the arguments <code>dataset</code> and <code>subset</code> (line no.16 &amp; 17) in <code>${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}/run.sh</code>:
-      <code>dataset=librispeech -&gt; 'your-new-dataset'
-      subset='train-960' -&gt; 'your-new-dataset'</code></li>
+<li>Dump your target dataset from the Internet following these <a href="https://github.com/bagustris/SpeeChain/tree/main/datasets#how-to-contribute-a-new-dataset">instructions</a>.  </li>
+<li>Create a folder for your dumped dataset <code>${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}</code>:</li>
+</ol>
+<p><code>bash
+   mkdir ${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}
+   cp ${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960/run.sh ${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}/run.sh</code></p>
+<p><strong>Note:</strong><br />
+   1. Update the arguments <code>dataset</code> and <code>subset</code> (line no.16 &amp; 17) in <code>${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}/run.sh</code>:</p>
+<div class="language-text highlight"><pre><span></span><code>  ```
+  dataset=librispeech -&gt; &#39;your-new-dataset&#39;
+  subset=&#39;train-960&#39; -&gt; &#39;your-new-dataset&#39;
+  ```
+</code></pre></div>
+<ol>
 <li>Copy a pre-tuned configuration file into your newly created folder. 
-   Suppose we want to use the configuration <code>${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960/exp_cfg/960-bpe5k_transformer-wide_ctc_perturb.yaml</code>:
-   <code>cd ${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}
+   Suppose we want to use the configuration <code>${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960/exp_cfg/960-bpe5k_transformer-wide_ctc_perturb.yaml</code>:  </li>
+</ol>
+<p><code>bash
+   cd ${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}
    mkdir ./data_cfg ./exp_cfg
-   cp ${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960/exp_cfg/960-bpe5k_transformer-wide_ctc_perturb.yaml ./exp_cfg</code>
-   <strong>Note:</strong> </li>
-<li>
-<p>Update the dataset arguments at the beginning of your selected configuration:
-      ```
-      # dataset-related
-      dataset: librispeech -&gt; 'your-new-dataset'
-      train_set: train-960 -&gt; 'your-target-subset'
-      valid_set: dev -&gt; 'valid-set-of-new-dataset'</p>
-<p># tokenizer-related
+   cp ${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960/exp_cfg/960-bpe5k_transformer-wide_ctc_perturb.yaml ./exp_cfg</code></p>
+<p><strong>Note:</strong><br />
+   - Update the dataset arguments at the beginning of your selected configuration:</p>
+<div class="language-text highlight"><pre><span></span><code>  ```
+  # dataset-related
+  dataset: librispeech -&gt; &#39;your-new-dataset&#39;
+  train_set: train-960 -&gt; &#39;your-target-subset&#39;
+  valid_set: dev -&gt; &#39;valid-set-of-new-dataset&#39;
+
+  # tokenizer-related
   txt_format: asr
-  vocab_set: train-960 -&gt; 'your-target-subset'
+  vocab_set: train-960 -&gt; &#39;your-target-subset&#39;
   token_type: sentencepiece
   token_num: bpe5k
-  <code>4. Train the ASR model on your target training set:</code>
+  ```
+</code></pre></div>
+<ol>
+<li>Train the ASR model on your target training set:</li>
+</ol>
+<p><code>bash
    cd ${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}
-   bash run.sh --test false --exp_cfg 960-bpe5k_transformer-wide_ctc_perturb (--ngpu x --gpus x,x)
-   <code>**Note:** 
-   1. `--test false` is used to skip the testing stage.
+   bash run.sh --test false --exp_cfg 960-bpe5k_transformer-wide_ctc_perturb (--ngpu x --gpus x,x)</code></p>
+<p><strong>Note:</strong><br />
+   1. <code>--test false</code> is used to skip the testing stage.
    2. Ensure your computational resources match the configuration before training the model.
    3. To save experimental results outside ${SPEECHAIN_ROOT}, specify your desired location by appending --train_result_path {your-target-path} to bash run.sh.
-5. Tune the inference hyperparameters on the corresponding validation set</code>
+5. Tune the inference hyperparameters on the corresponding validation set</p>
+<p><code>bash
    cp ${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960/data_cfg/test_dev-clean+other.yaml ./data_cfg
    mv ./data_cfg/test_dev-clean.yaml ./data_cfg/test_{your-valid-set-name}.yaml
-   bash run.sh --train false --exp_cfg 960-bpe5k_transformer-wide_ctc_perturb --data_cfg test_{your-valid-set-name}
-   <code>**Note:** 
-   1. Update the dataset arguments in `./data_cfg/test_{your-valid-set-name}.yaml`:</code>
-  dataset: librispeech -&gt; 'your-new-dataset'
-  valid_dset: &amp;valid_dset dev-clean -&gt; &amp;valid_dset 'valid-set-of-new-dataset'
-  <code>2. `--train false` is used to skip the training stage.
-   3. `--data_cfg` switches the data loading configuration from the original one for training in exp_cfg to the one for validation tuning.
-   4. To access experimental results saved outside `${SPEECHAIN_ROOT}`, append `--train_result_path {your-target-path}` to `bash run.sh`.
-6. Evaluate the trained ASR model on the official test sets</code>
-   bash run.sh --train false --exp_cfg 960-bpe5k_transformer-wide_ctc_perturb --infer_cfg "{the-best-configuration-you-get-during-validation-tuning}"
-   <code>``
-   **Note:** 
-   1.</code>--train false<code>is used to skip the training stage.
-   2. There are two ways to specify the optimal</code>infer_cfg<code>tuned on the validation set:
-  1. Update</code>infer_cfg<code>in</code>${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}/exp_cfg/960-bpe5k_transformer-wide_ctc_perturb.yaml<code>.
-  2. Provide a parsable string as the value for</code>--infer_cfg<code>in the terminal. For example,</code>beam_size:16,ctc_weight:0.2<code>can be converted into a dictionary with two key-value items (</code>beam_size=16<code>and</code>ctc_weight=0.2<code>).  
-  For more details about this syntax, refer to [**here**](https://github.com/bagustris/SpeeChain/blob/main/handbook.md#convertable-arguments-in-the-terminal).
-   3. To access experimental results saved outside</code>${SPEECHAIN_ROOT}<code>, append</code>--train_result_path {your-target-path}<code>to</code>bash run.sh`.</p>
-</li>
+   bash run.sh --train false --exp_cfg 960-bpe5k_transformer-wide_ctc_perturb --data_cfg test_{your-valid-set-name}</code></p>
+<p><strong>Note:</strong><br />
+   1. Update the dataset arguments in <code>./data_cfg/test_{your-valid-set-name}.yaml</code>:</p>
+<div class="language-text highlight"><pre><span></span><code>  ```
+  dataset: librispeech -&gt; &#39;your-new-dataset&#39;
+  valid_dset: &amp;valid_dset dev-clean -&gt; &amp;valid_dset &#39;valid-set-of-new-dataset&#39;
+  ```
+</code></pre></div>
+<ol>
+<li><code>--train false</code> is used to skip the training stage.</li>
+<li><code>--data_cfg</code> switches the data loading configuration from the original one for training in exp_cfg to the one for validation tuning.</li>
+<li>To access experimental results saved outside <code>${SPEECHAIN_ROOT}</code>, append <code>--train_result_path {your-target-path}</code> to <code>bash run.sh</code>.</li>
+<li>Evaluate the trained ASR model on the official test sets</li>
 </ol>
+<p><code>bash
+   bash run.sh --train false --exp_cfg 960-bpe5k_transformer-wide_ctc_perturb --infer_cfg "{the-best-configuration-you-get-during-validation-tuning}"</code></p>
+<p><strong>Note:</strong> 
+   1. <code>--train false</code> is used to skip the training stage.
+   2. There are two ways to specify the optimal <code>infer_cfg</code> tuned on the validation set:
+      1. Update <code>infer_cfg</code> in <code>${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}/exp_cfg/960-bpe5k_transformer-wide_ctc_perturb.yaml</code>.
+      2. Provide a parsable string as the value for <code>--infer_cfg</code> in the terminal. For example, <code>beam_size:16,ctc_weight:0.2</code> can be converted into a dictionary with two key-value items (<code>beam_size=16</code> and <code>ctc_weight=0.2</code>).<br />
+      For more details about this syntax, refer to <a href="https://github.com/bagustris/SpeeChain/blob/main/handbook.md#convertable-arguments-in-the-terminal"><strong>here</strong></a>.
+   3. To access experimental results saved outside <code>${SPEECHAIN_ROOT}</code>, append <code>--train_result_path {your-target-path}</code> to <code>bash run.sh</code>.</p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/recipes/asr#table-of-contents">Back to the table of contents</a></p>
 <h1 id="how-to-create-your-own-asr-model">How to create your own ASR model</h1>
 <p>The detailed instructions for creating your own ASR model using SpeeChain are coming soon.</p>
