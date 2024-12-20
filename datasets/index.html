@@ -4001,9 +4001,9 @@ This file is mainly used for training multi-speaker TTS models.</p>
 </code></pre>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/datasets#table-of-contents">Back to the table of contents</a></p>
 <h2 id="how-to-dump-a-dataset-on-your-machine">How to Dump a Dataset on your Machine</h2>
-<p>For dumping an existing dataset, 
-   1. Go to the folder of your target dataset <code>${SPEECHAIN_ROOT}/datasets/{dataset_name}</code> (e.g. if you want to dump LibriTTS, please go to <code>${SPEECHAIN_ROOT}/datasets/libritts</code>)
-   2. Run <code>bash run.sh --help</code> to familiarize yourself with the involved arguments.
+<p>For dumping an existing dataset,<br />
+   1. Go to the folder of your target dataset <code>${SPEECHAIN_ROOT}/datasets/{dataset_name}</code> (e.g. if you want to dump LibriTTS, please go to <code>${SPEECHAIN_ROOT}/datasets/libritts</code>)<br />
+   2. Run <code>bash run.sh --help</code> to familiarize yourself with the involved arguments.<br />
    3. Run <code>bash run.sh</code> to dump your target dataset (add some arguments if needed).</p>
 <p><strong>Note:</strong>  <br />
    1. <strong>If you already have the <em>decompressed</em> dataset on your disk</strong>, please attach the argument <code>--src_path {the-path-of-your-existing-dataset}</code> to the command <code>bash run.sh</code> in the no.3 step above.<br />
@@ -4016,10 +4016,10 @@ This file is mainly used for training multi-speaker TTS models.</p>
 1. Don't give the argument <code>--spk_emb_model</code> when running the command <code>bash run.sh</code><br />
 2. Write your own extraction script. You can use the metadata files <code>idx2wav</code> and <code>idx2wav_len</code> to read and organize the audio files.<br />
 Please save all the speaker embedding vectors to a specific folder in the same directory of <code>idx2wav</code> and give a metadata file named <code>idx2spk_feat</code> for data reference.  </p>
-<p><strong>Note:</strong> 
-   1. For the file format of <code>idx2spk_feat</code>, please click <a href="https://github.com/bagustris/SpeeChain/tree/main/datasets#idx2spk_feat">here</a> for reference.
-   2. Please keep the same data index with <code>idx2wav</code> in your <code>idx2spk_feat</code>.
-   3. Each speaker embedding vector should be in the shape of <code>[1, spk_feat_dim]</code>.
+<p><strong>Note:</strong><br />
+   1. For the file format of <code>idx2spk_feat</code>, please click <a href="https://github.com/bagustris/SpeeChain/tree/main/datasets#idx2spk_feat">here</a> for reference.<br />
+   2. Please keep the same data index with <code>idx2wav</code> in your <code>idx2spk_feat</code>.<br />
+   3. Each speaker embedding vector should be in the shape of <code>[1, spk_feat_dim]</code>.<br />
    4. Speaker embedding vectors could be saved in two ways:<br />
       1. save each vector to an individual <code>.npy</code> file<br />
       2. save all vectors to a <code>.npz</code> file where the index of each vector is exactly the one in <code>idx2spk_feat</code>.</p>
