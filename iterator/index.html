@@ -363,7 +363,7 @@
         
   
   <span class="md-ellipsis">
-    Dataset (Module)
+    Dataset (Class)
   </span>
   
 
@@ -3893,14 +3893,14 @@ The configuration format is shown below.
 </span></code></pre></div>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#table-of-contents">Back to the table of contents</a></p>
 <h2 id="api-document">API Document</h2>
-<p><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#speechainiteratorabsiterator"><strong>speechain.iterator.abs.Iterator</strong></a><br />
-1. <em>Non-overridable backbone functions:</em>
-   1. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#__init__self-dataset_type-dataset_conf-batches_per_epoch-data_len-group_info-data_selection-is_descending-shuffle-seed-ngpu-num_workers-pin_memory-distributed-iter_conf">__init__</a>
-   2. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#__len__self">__len__</a>
-   3. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#get_batch_indicesself">get_batch_indices</a>
-   4. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#get_group_infoself">get_group_info</a>
-   5. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#build_loaderself-epoch-start_step">build_loader</a>
-2. <em>Overridable interface functions:</em><br />
+<p><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#speechainiteratorabsiterator"><strong>speechain.iterator.abs.Iterator</strong></a>  </p>
+<p><em>Non-overridable backbone functions:</em><br />
+   1. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#__init__self-dataset_type-dataset_conf-batches_per_epoch-data_len-group_info-data_selection-is_descending-shuffle-seed-ngpu-num_workers-pin_memory-distributed-iter_conf">__init__</a><br />
+   2. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#__len__self">__len__</a><br />
+   3. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#get_batch_indicesself">get_batch_indices</a><br />
+   4. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#get_group_infoself">get_group_info</a><br />
+   5. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#build_loaderself-epoch-start_step">build_loader</a><br />
+<em>Overridable interface functions:</em><br />
    1. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#batches_generate_fnself-data_index-data_len-batch_size">batches_generate_fn</a></p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#table-of-contents">Back to the table of contents</a></p>
 <h3 id="speechainiteratorabsiterator">speechain.iterator.abs.Iterator</h3>
@@ -3912,41 +3912,43 @@ Each iterator subclass should override a static hook function <code>batches_gene
 <li><strong>Description:</strong><br />
     The general initialization function shared by all the <em>Iterator</em> classes. 
     <em>Dataset</em> initialization is automatically done here by the given <em>dataset_type</em> and <em>dataset_conf</em>.</li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong><ul>
 <li><strong><em>dataset_type:</em></strong> str<br />
-    Query string to pick up the target Dataset subclass in <code>SPEECHAIN_ROOT/speechain/dataset/</code></li>
+  Query string to pick up the target Dataset subclass in <code>SPEECHAIN_ROOT/speechain/dataset/</code></li>
 <li><strong><em>dataset_conf:</em></strong>  Dict<br />
-    Dataset configuration for the automatic initialization of the built-in <em>Dataset</em> object.</li>
+  Dataset configuration for the automatic initialization of the built-in <em>Dataset</em> object.</li>
 <li><strong><em>batches_per_epoch:</em></strong> int = None<br />
-    The number of batches in each epoch. This number can be either smaller or larger than the real batch number. 
-    If not given (None), all batches will be used in each epoch.</li>
+  The number of batches in each epoch. This number can be either smaller or larger than the real batch number. 
+  If not given (None), all batches will be used in each epoch.</li>
 <li><strong><em>data_len:</em></strong> str or List[str] = None<br />
-    The path of the data length file. Multiple data length files can be given in a list, but they must contain non-overlapping data instances.</li>
+  The path of the data length file. Multiple data length files can be given in a list, but they must contain non-overlapping data instances.</li>
 <li><em><strong>group_info:</strong></em> Dict[str, str or List[str]]<br />
-    The dictionary of paths for the <em>idx2data</em> files used for group-wise evaluation results visualization.</li>
+  The dictionary of paths for the <em>idx2data</em> files used for group-wise evaluation results visualization.</li>
 <li><strong><em>is_descending:</em></strong> bool = True<br />
-    Whether the batches are sorted in the descending order by the length (True) or in the ascending order (False). 
-    This argument is effective only when <em>data_len</em> is given.</li>
+  Whether the batches are sorted in the descending order by the length (True) or in the ascending order (False). 
+  This argument is effective only when <em>data_len</em> is given.</li>
 <li><strong><em>shuffle:</em></strong> bool = True<br />
-    Whether the batches are shuffled at the beginning of each epoch.</li>
+  Whether the batches are shuffled at the beginning of each epoch.</li>
 <li><strong><em>seed:</em></strong> int = 0<br />
-    Random seed for iterator initialization. This argument is automatically given by the experiment environment configuration.<br />
-    The seed will be used to<ol>
+  Random seed for iterator initialization. This argument is automatically given by the experiment environment configuration.<br />
+  The seed will be used to<ol>
 <li>shuffle batches before giving to the Dataloader of each epoch.</li>
 <li>initialize all the workers of the Dataloader for the reproducibility.</li>
 </ol>
 </li>
 <li><strong><em>ngpu:</em></strong> int = 1<br />
-    The number of GPUs used to train or test models. This argument is automatically given by the experiment environment configuration.<br />
-    The GPU number is used to ensure that each GPU process in the DDP mode has the batches with the same number of data instances.</li>
+  The number of GPUs used to train or test models. This argument is automatically given by the experiment environment configuration.<br />
+  The GPU number is used to ensure that each GPU process in the DDP mode has the batches with the same number of data instances.</li>
 <li><strong><em>num_workers:</em></strong> int = 1<br />
-    Number of workers for the Dataloader. This argument is automatically given by the experiment environment configuration.  </li>
+  Number of workers for the Dataloader. This argument is automatically given by the experiment environment configuration.  </li>
 <li><strong><em>pin_memory:</em></strong> bool = False<br />
-    Whether pin_memory is activated in the Dataloader. This argument is automatically given by the experiment environment configuration.  </li>
+  Whether pin_memory is activated in the Dataloader. This argument is automatically given by the experiment environment configuration.  </li>
 <li><strong><em>distributed:</em></strong> bool = False<br />
-    Whether DDP is used to distribute the model. This argument is automatically given by the experiment environment configuration.  </li>
+  Whether DDP is used to distribute the model. This argument is automatically given by the experiment environment configuration.  </li>
 <li><strong><em>iter_conf:</em></strong> Dict<br />
-    Iterator configuration for customized batch generation</li>
+  Iterator configuration for customized batch generation</li>
+</ul>
+</li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/iterator#api-document">Back to the API list</a></p>
 <h4 id="__len__self">__len__(self)</h4>
@@ -3985,12 +3987,14 @@ Each iterator subclass should override a static hook function <code>batches_gene
 <code>batches_per_epoch</code> can be either larger or smaller than the total number of batches. 
     For a smaller <code>batches_per_epoch</code>, a part of <code>self.batches</code> will be used as the batch clip; 
     For a larger <code>batches_per_epoch</code>, <code>self.batches</code> will be supplemented by a part of itself to form the batch clip.</li>
-<li><strong>Arguments:</strong>  </li>
+<li><strong>Arguments:</strong>  <ul>
 <li><strong><em>epoch:</em></strong> int = 1<br />
-    The number of the current epoch. Used as part of the random seed to shuffle the batches.</li>
+  The number of the current epoch. Used as part of the random seed to shuffle the batches.</li>
 <li><strong><em>start_step:</em></strong> int = 0<br />
-    The start point for the dataloader of the current epoch. 
-    Mainly used for resuming a model testing job from a checkpoint.</li>
+  The start point for the dataloader of the current epoch. 
+  Mainly used for resuming a model testing job from a checkpoint.</li>
+</ul>
+</li>
 <li><strong>Return:</strong> torch.util.data.DataLoader<br />
     A DataLoader built on the batch clip of the current epoch. 
     If <code>batches_per_epoch</code> is not given, the batch clip is <code>self.batches</code>.</li>
