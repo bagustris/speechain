@@ -3704,8 +3704,10 @@ Date: 2022.07</p>
               Bases: <code><span title="speechain.module.abs.Module">Module</span></code></p>
 
 
-        <p>Pre-compute position encodings (PE). In forward pass, this module adds the positional encodings to the embedded
-feature vectors to make the Transformer aware of the positional information of the sequences.</p>
+        <p>Pre-compute position encodings (PE).</p>
+<p>In forward pass, this module adds the positional encodings to the embedded feature
+vectors to make the Transformer aware of the positional information of the
+sequences.</p>
 
 
 
@@ -3889,13 +3891,12 @@ feature vectors to make the Transformer aware of the positional information of t
 <span class="normal">188</span>
 <span class="normal">189</span>
 <span class="normal">190</span>
-<span class="normal">191</span>
-<span class="normal">192</span>
-<span class="normal">193</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">PositionalEncoding</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Pre-compute position encodings (PE). In forward pass, this module adds the positional encodings to the embedded</span>
-<span class="sd">    feature vectors to make the Transformer aware of the positional information of the sequences.</span>
+<span class="normal">191</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">PositionalEncoding</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pre-compute position encodings (PE).</span>
 
+<span class="sd">    In forward pass, this module adds the positional encodings to the embedded feature</span>
+<span class="sd">    vectors to make the Transformer aware of the positional information of the</span>
+<span class="sd">    sequences.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
@@ -3909,8 +3910,7 @@ feature vectors to make the Transformer aware of the positional information of t
         <span class="n">max_len</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">,</span>
         <span class="n">dropout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
     <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Positional Encoding with maximum length max_len.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Positional Encoding with maximum length max_len.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            posenc_type: str</span>
@@ -3985,9 +3985,8 @@ feature vectors to make the Transformer aware of the positional information of t
         <span class="bp">self</span><span class="o">.</span><span class="n">dropout</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="n">dropout</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">reset_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Make sure that the scalar value is not influenced by different model initialization methods.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Make sure that the scalar value is not influenced by different model</span>
+<span class="sd">        initialization methods.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">init_alpha</span><span class="p">)</span>
 
@@ -4025,8 +4024,8 @@ feature vectors to make the Transformer aware of the positional information of t
         <span class="bp">self</span><span class="o">.</span><span class="n">register_buffer</span><span class="p">(</span><span class="s2">&quot;posenc&quot;</span><span class="p">,</span> <span class="n">posenc</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">emb_feat</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Embedded feature</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Embedded feature.</span>
+
 <span class="sd">            -&gt; LayerNorm(Embedded feature)</span>
 <span class="sd">                -&gt; LayerNorm(Embedded feature) * sqrt(d_model)</span>
 <span class="sd">                    -&gt; LayerNorm(Embedded feature) * sqrt(d_model) + Positional Encoding * learnable scalar</span>
@@ -4038,7 +4037,6 @@ feature vectors to make the Transformer aware of the positional information of t
 
 <span class="sd">        Returns:</span>
 <span class="sd">            Embedded input feature sequences with positional encoding</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># in case that the input sequence is longer than the preset max_len</span>
         <span class="k">if</span> <span class="n">emb_feat</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">posenc</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
@@ -4095,11 +4093,12 @@ feature vectors to make the Transformer aware of the positional information of t
 
     <div class="doc doc-contents ">
 
-        <p>Embedded feature
-    -&gt; LayerNorm(Embedded feature)
-        -&gt; LayerNorm(Embedded feature) * sqrt(d_model)
-            -&gt; LayerNorm(Embedded feature) * sqrt(d_model) + Positional Encoding * learnable scalar
-                -&gt; Dropout(LayerNorm(Embedded feature) * sqrt(d_model) + Positional Encoding * learnable scalar)</p>
+        <p>Embedded feature.</p>
+<div class="language-text highlight"><pre><span></span><code>-&gt; LayerNorm(Embedded feature)
+    -&gt; LayerNorm(Embedded feature) * sqrt(d_model)
+        -&gt; LayerNorm(Embedded feature) * sqrt(d_model) + Positional Encoding * learnable scalar
+            -&gt; Dropout(LayerNorm(Embedded feature) * sqrt(d_model) + Positional Encoding * learnable scalar)
+</code></pre></div>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4157,7 +4156,8 @@ Embedded input feature sequences</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/transformer/pos_enc.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">149</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">148</span>
+<span class="normal">149</span>
 <span class="normal">150</span>
 <span class="normal">151</span>
 <span class="normal">152</span>
@@ -4190,11 +4190,9 @@ Embedded input feature sequences</p>
 <span class="normal">179</span>
 <span class="normal">180</span>
 <span class="normal">181</span>
-<span class="normal">182</span>
-<span class="normal">183</span>
-<span class="normal">184</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">emb_feat</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Embedded feature</span>
+<span class="normal">182</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">emb_feat</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Embedded feature.</span>
+
 <span class="sd">        -&gt; LayerNorm(Embedded feature)</span>
 <span class="sd">            -&gt; LayerNorm(Embedded feature) * sqrt(d_model)</span>
 <span class="sd">                -&gt; LayerNorm(Embedded feature) * sqrt(d_model) + Positional Encoding * learnable scalar</span>
@@ -4206,7 +4204,6 @@ Embedded input feature sequences</p>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        Embedded input feature sequences with positional encoding</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># in case that the input sequence is longer than the preset max_len</span>
     <span class="k">if</span> <span class="n">emb_feat</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">posenc</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
@@ -4427,8 +4424,7 @@ The dropout rate for the Dropout layer after adding the positional encoding to t
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/transformer/pos_enc.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 23</span>
-<span class="normal"> 24</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 24</span>
 <span class="normal"> 25</span>
 <span class="normal"> 26</span>
 <span class="normal"> 27</span>
@@ -4522,8 +4518,7 @@ The dropout rate for the Dropout layer after adding the positional encoding to t
     <span class="n">max_len</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">,</span>
     <span class="n">dropout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Positional Encoding with maximum length max_len.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Positional Encoding with maximum length max_len.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        posenc_type: str</span>
@@ -4613,7 +4608,8 @@ The dropout rate for the Dropout layer after adding the positional encoding to t
 
     <div class="doc doc-contents ">
 
-        <p>Make sure that the scalar value is not influenced by different model initialization methods.</p>
+        <p>Make sure that the scalar value is not influenced by different model
+initialization methods.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/transformer/pos_enc.py</code></summary>
@@ -4621,11 +4617,9 @@ The dropout rate for the Dropout layer after adding the positional encoding to t
 <span class="normal">110</span>
 <span class="normal">111</span>
 <span class="normal">112</span>
-<span class="normal">113</span>
-<span class="normal">114</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">reset_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Make sure that the scalar value is not influenced by different model initialization methods.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="normal">113</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">reset_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Make sure that the scalar value is not influenced by different model</span>
+<span class="sd">    initialization methods.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">init_alpha</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -4679,7 +4673,8 @@ The dropout rate for the Dropout layer after adding the positional encoding to t
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/transformer/pos_enc.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">116</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">115</span>
+<span class="normal">116</span>
 <span class="normal">117</span>
 <span class="normal">118</span>
 <span class="normal">119</span>
@@ -4709,8 +4704,7 @@ The dropout rate for the Dropout layer after adding the positional encoding to t
 <span class="normal">143</span>
 <span class="normal">144</span>
 <span class="normal">145</span>
-<span class="normal">146</span>
-<span class="normal">147</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update_posenc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_len</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="normal">146</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update_posenc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_len</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">    Args:</span>

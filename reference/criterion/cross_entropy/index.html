@@ -3665,8 +3665,9 @@ Date: 2022.07</p>
               Bases: <code><span title="speechain.criterion.abs.Criterion">Criterion</span></code></p>
 
 
-        <p>This criterion calculates the cross entropy between model predictions and target labels.
-In this implementation, we realize the following functions:
+        <p>This criterion calculates the cross entropy between model predictions and target
+labels.</p>
+<p>In this implementation, we realize the following functions:
     1. Sentence normalization. The loss will be normalized according to the length of each sentence.
     2. Label smoothing. The target label will be transformed from a sharp one-hot vector to a smooth distribution vector.
     3. Token reweighting. The weight of each token in the cross entropy calculation can be customized manually.
@@ -3875,14 +3876,14 @@ In this implementation, we realize the following functions:
 <span class="normal">210</span>
 <span class="normal">211</span>
 <span class="normal">212</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">CrossEntropy</span><span class="p">(</span><span class="n">Criterion</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This criterion calculates the cross entropy between model predictions and target labels.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This criterion calculates the cross entropy between model predictions and target</span>
+<span class="sd">    labels.</span>
+
 <span class="sd">    In this implementation, we realize the following functions:</span>
 <span class="sd">        1. Sentence normalization. The loss will be normalized according to the length of each sentence.</span>
 <span class="sd">        2. Label smoothing. The target label will be transformed from a sharp one-hot vector to a smooth distribution vector.</span>
 <span class="sd">        3. Token reweighting. The weight of each token in the cross entropy calculation can be customized manually.</span>
 <span class="sd">        If you want to customize the weights, you need to give the token dictionary.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">criterion_init</span><span class="p">(</span>

@@ -3668,8 +3668,8 @@ Date: 2022.07</p>
               Bases: <code><span title="speechain.module.abs.Module">Module</span></code></p>
 
 
-        <p>Position-wise Feed-forward layer
-Projects the output vectors of multi-head attention layer to fdfwd_dim and then back to d_model.</p>
+        <p>Position-wise Feed-forward layer Projects the output vectors of multi- head
+attention layer to fdfwd_dim and then back to d_model.</p>
 
 
 
@@ -3767,14 +3767,9 @@ Projects the output vectors of multi-head attention layer to fdfwd_dim and then 
 <span class="normal">103</span>
 <span class="normal">104</span>
 <span class="normal">105</span>
-<span class="normal">106</span>
-<span class="normal">107</span>
-<span class="normal">108</span>
-<span class="normal">109</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">PositionwiseFeedForward</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Position-wise Feed-forward layer</span>
-<span class="sd">    Projects the output vectors of multi-head attention layer to fdfwd_dim and then back to d_model.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="normal">106</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">PositionwiseFeedForward</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Position-wise Feed-forward layer Projects the output vectors of multi- head</span>
+<span class="sd">    attention layer to fdfwd_dim and then back to d_model.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -3785,8 +3780,7 @@ Projects the output vectors of multi-head attention layer to fdfwd_dim and then 
         <span class="n">fdfwd_args</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{},</span>
         <span class="n">dropout</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
     <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Initializes position-wise feed-forward layer.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initializes position-wise feed-forward layer.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            d_model: int</span>
@@ -3924,7 +3918,10 @@ Projects the output vectors of multi-head attention layer to fdfwd_dim and then 
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/transformer/feed_forward.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 80</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
 <span class="normal"> 81</span>
 <span class="normal"> 82</span>
 <span class="normal"> 83</span>
@@ -3950,10 +3947,7 @@ Projects the output vectors of multi-head attention layer to fdfwd_dim and then 
 <span class="normal">103</span>
 <span class="normal">104</span>
 <span class="normal">105</span>
-<span class="normal">106</span>
-<span class="normal">107</span>
-<span class="normal">108</span>
-<span class="normal">109</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+<span class="normal">106</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">    Args:</span>
@@ -4120,7 +4114,9 @@ The dropout rate for the Dropout layer after the first linear feedforward layer<
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/transformer/feed_forward.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">23</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
 <span class="normal">24</span>
 <span class="normal">25</span>
 <span class="normal">26</span>
@@ -4172,10 +4168,7 @@ The dropout rate for the Dropout layer after the first linear feedforward layer<
 <span class="normal">72</span>
 <span class="normal">73</span>
 <span class="normal">74</span>
-<span class="normal">75</span>
-<span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
+<span class="normal">75</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">d_model</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">512</span><span class="p">,</span>
     <span class="n">fdfwd_dim</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2048</span><span class="p">,</span>
@@ -4184,8 +4177,7 @@ The dropout rate for the Dropout layer after the first linear feedforward layer<
     <span class="n">fdfwd_args</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{},</span>
     <span class="n">dropout</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Initializes position-wise feed-forward layer.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initializes position-wise feed-forward layer.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        d_model: int</span>

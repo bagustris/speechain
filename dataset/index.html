@@ -3865,7 +3865,7 @@ Some post-processing steps need to be done in the <em>Model</em> object later.</
 <li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#how-to-perform-data-selection-in-my-dataset-object"><strong>How to Perform Data Selection in my Dataset Object</strong></a></li>
 </ol>
 <h2 id="configuration-file-format">Configuration File Format</h2>
-<pre><code>dataset_conf:
+<pre><code class="language-yaml">dataset_conf:
     main_data:
         {data_name1}: {data_file_path1}
         {data_name2}: {data_file_path2}
@@ -3892,7 +3892,7 @@ Some post-processing steps need to be done in the <em>Model</em> object later.</
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#table-of-contents">Back to the table of contents</a></p>
 <h2 id="dataset-library">Dataset Library</h2>
-<pre><code>/speechain
+<pre><code class="language-bash">/speechain
     /dataset
         /abs.py             # Abstract class of Dataset. Base of all Dataset implementations.
         /speech_text.py     # Dataset implementation of speech-text datasets. Mainly used for ASR and TTS models.
@@ -3953,7 +3953,7 @@ Currently, available meta selection modes include:</li>
 <li>'middle': Remove the data instances whose metadata is the largest and smallest.</li>
 </ol>
 </li>
-<li><em><strong>**dataset_conf:</strong></em><br />
+<li><em>*<strong>*dataset_conf:</strong></em><br />
   The configuration arguments for customized Dataset initialization.</li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#api-document">Back to the API list</a></p>

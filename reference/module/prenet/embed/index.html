@@ -3667,7 +3667,8 @@ Date: 2022.07</p>
               Bases: <code><span title="speechain.module.abs.Module">Module</span></code></p>
 
 
-        <p>Create new embeddings for the vocabulary. Use scaling for the Transformer.</p>
+        <p>Create new embeddings for the vocabulary.</p>
+<p>Use scaling for the Transformer.</p>
 
 
 
@@ -3729,8 +3730,9 @@ Date: 2022.07</p>
 <span class="normal">64</span>
 <span class="normal">65</span>
 <span class="normal">66</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">EmbedPrenet</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Create new embeddings for the vocabulary. Use scaling for the Transformer.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create new embeddings for the vocabulary.</span>
+
+<span class="sd">    Use scaling for the Transformer.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
@@ -3767,8 +3769,7 @@ Date: 2022.07</p>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Perform lookup for input `x` in the embedding table.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Perform lookup for input `x` in the embedding table.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            text: (batch, seq_len)</span>
@@ -3864,8 +3865,7 @@ Date: 2022.07</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/prenet/embed.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">52</span>
-<span class="normal">53</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">53</span>
 <span class="normal">54</span>
 <span class="normal">55</span>
 <span class="normal">56</span>
@@ -3879,8 +3879,7 @@ Date: 2022.07</p>
 <span class="normal">64</span>
 <span class="normal">65</span>
 <span class="normal">66</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Perform lookup for input `x` in the embedding table.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Perform lookup for input `x` in the embedding table.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        text: (batch, seq_len)</span>
@@ -3995,8 +3994,7 @@ The token index used for padding the tail areas of the short sentences.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/prenet/embed.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">19</span>
-<span class="normal">20</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">20</span>
 <span class="normal">21</span>
 <span class="normal">22</span>
 <span class="normal">23</span>
@@ -4026,7 +4024,8 @@ The token index used for padding the tail areas of the short sentences.</p>
 <span class="normal">47</span>
 <span class="normal">48</span>
 <span class="normal">49</span>
-<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
+<span class="normal">50</span>
+<span class="normal">51</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="p">,</span> <span class="n">vocab_size</span><span class="p">,</span> <span class="n">scale</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">padding_idx</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>

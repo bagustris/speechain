@@ -4012,16 +4012,16 @@ This file is mainly used for training multi-speaker TTS models.</p>
    Please make sure that <code>tgt_path</code> is an absolute path starting with a slash '/'.</p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/datasets#table-of-contents">Back to the table of contents</a></p>
 <h2 id="how-to-extract-speaker-embedding-by-my-own-model">How to Extract Speaker Embedding by my own model</h2>
-<p>If you want to use the pretrained speaker embedding model on your machine, please
+<p>If you want to use the pretrained speaker embedding model on your machine, please:<br />
 1. Don't give the argument <code>--spk_emb_model</code> when running the command <code>bash run.sh</code><br />
-2. Write your own extraction script. You can use the metadata files <code>idx2wav</code> and <code>idx2wav_len</code> to read and organize the audio files. 
-Please save all the speaker embedding vectors to a specific folder in the same directory of <code>idx2wav</code> and give a metadata file named <code>idx2spk_feat</code> for data reference.<br />
-<strong>Note:</strong> 
+2. Write your own extraction script. You can use the metadata files <code>idx2wav</code> and <code>idx2wav_len</code> to read and organize the audio files.<br />
+Please save all the speaker embedding vectors to a specific folder in the same directory of <code>idx2wav</code> and give a metadata file named <code>idx2spk_feat</code> for data reference.  </p>
+<p><strong>Note:</strong> 
    1. For the file format of <code>idx2spk_feat</code>, please click <a href="https://github.com/bagustris/SpeeChain/tree/main/datasets#idx2spk_feat">here</a> for reference.
    2. Please keep the same data index with <code>idx2wav</code> in your <code>idx2spk_feat</code>.
    3. Each speaker embedding vector should be in the shape of <code>[1, spk_feat_dim]</code>.
-   4. Speaker embedding vectors could be saved in two ways:
-      1. save each vector to an individual <code>.npy</code> file
+   4. Speaker embedding vectors could be saved in two ways:<br />
+      1. save each vector to an individual <code>.npy</code> file<br />
       2. save all vectors to a <code>.npz</code> file where the index of each vector is exactly the one in <code>idx2spk_feat</code>.</p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/datasets#table-of-contents">Back to the table of contents</a></p>
 <h2 id="how-to-contribute-a-new-dataset">How to Contribute a New Dataset</h2>

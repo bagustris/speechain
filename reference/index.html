@@ -3565,9 +3565,9 @@ an <strong>information-oriented</strong> approach. See the <a href="https://gith
               Bases: <code><span title="speechain.dataset.abs.Dataset">Dataset</span></code></p>
 
 
-        <p>This Dataset subclass is mainly used by ASR and TTS models.
-In this subclass, each data instance is made up of an utterance and a sentence as well as the speaker information
-(speaker ID + speaker embedding feature).</p>
+        <p>This Dataset subclass is mainly used by ASR and TTS models.</p>
+<p>In this subclass, each data instance is made up of an utterance and a sentence as
+well as the speaker information (speaker ID + speaker embedding feature).</p>
 
 
 
@@ -4077,16 +4077,11 @@ In this subclass, each data instance is made up of an utterance and a sentence a
 <span class="normal">523</span>
 <span class="normal">524</span>
 <span class="normal">525</span>
-<span class="normal">526</span>
-<span class="normal">527</span>
-<span class="normal">528</span>
-<span class="normal">529</span>
-<span class="normal">530</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">SpeechTextDataset</span><span class="p">(</span><span class="n">Dataset</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This Dataset subclass is mainly used by ASR and TTS models.</span>
-<span class="sd">    In this subclass, each data instance is made up of an utterance and a sentence as well as the speaker information</span>
-<span class="sd">    (speaker ID + speaker embedding feature).</span>
+<span class="normal">526</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">SpeechTextDataset</span><span class="p">(</span><span class="n">Dataset</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This Dataset subclass is mainly used by ASR and TTS models.</span>
 
+<span class="sd">    In this subclass, each data instance is made up of an utterance and a sentence as</span>
+<span class="sd">    well as the speaker information (speaker ID + speaker embedding feature).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">dataset_init_fn</span><span class="p">(</span>
@@ -4182,9 +4177,8 @@ In this subclass, each data instance is made up of an utterance and a sentence a
     <span class="k">def</span> <span class="nf">collate_main_data_fn</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">batch_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span> <span class="ow">or</span> <span class="n">List</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        The utterances used for training ASR and TTS models may have different lengths, so we need to do the</span>
-<span class="sd">        padding operations to make them equal in length.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The utterances used for training ASR and TTS models may have different</span>
+<span class="sd">        lengths, so we need to do the padding operations to make them equal in length.</span>
 
 <span class="sd">        The loaded speech feature vectors will be arranged into a single matrix with 0 padding at the end of short</span>
 <span class="sd">        vectors. Text data remains unprocessed strings and the tokenization will be done later in the model.</span>
@@ -4201,7 +4195,6 @@ In this subclass, each data instance is made up of an utterance and a sentence a
 <span class="sd">            A dictionary mapping strings to either torch.Tensor or List, where:</span>
 <span class="sd">                - feat and spk_feat are three-dimensional torch.Tensor</span>
 <span class="sd">                - text and spk_ids are lists of raw strings whose discretization is done in the Model object</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="c1"># --- 1. Pad Speech Data and Stack them together --- #</span>
@@ -4289,9 +4282,9 @@ In this subclass, each data instance is made up of an utterance and a sentence a
         <span class="k">return</span> <span class="n">batch_dict</span>
 
     <span class="k">def</span> <span class="nf">extract_main_data_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">main_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        The function that loads speech-text data from the disk. If the speech is in the form of raw waveforms,</span>
-<span class="sd">        the last dimension should be expanded to 1 of raw speech for compatibility with acoustic feature.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The function that loads speech-text data from the disk. If the speech is in</span>
+<span class="sd">        the form of raw waveforms, the last dimension should be expanded to 1 of raw</span>
+<span class="sd">        speech for compatibility with acoustic feature.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            main_data: Dict[str, str]</span>
@@ -4311,7 +4304,6 @@ In this subclass, each data instance is made up of an utterance and a sentence a
 <span class="sd">        Returns:</span>
 <span class="sd">            `feat` and `spk_feat` are in the form of two-dimensional `torch.Tensor`;</span>
 <span class="sd">            `text` and `spk_ids` are in the form of raw strings whose discretization is done in the Model object.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">assert</span> <span class="p">(</span>
             <span class="s2">&quot;feat&quot;</span> <span class="ow">in</span> <span class="n">main_data</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;text&quot;</span> <span class="ow">in</span> <span class="n">main_data</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
@@ -4613,8 +4605,8 @@ In this subclass, each data instance is made up of an utterance and a sentence a
 
     <div class="doc doc-contents ">
 
-        <p>The utterances used for training ASR and TTS models may have different lengths, so we need to do the
-padding operations to make them equal in length.</p>
+        <p>The utterances used for training ASR and TTS models may have different
+lengths, so we need to do the padding operations to make them equal in length.</p>
 <p>The loaded speech feature vectors will be arranged into a single matrix with 0 padding at the end of short
 vectors. Text data remains unprocessed strings and the tokenization will be done later in the model.</p>
 
@@ -4681,7 +4673,8 @@ vectors. Text data remains unprocessed strings and the tokenization will be done
 
             <details class="quote">
               <summary>Source code in <code>speechain/dataset/speech_text.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">123</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">122</span>
+<span class="normal">123</span>
 <span class="normal">124</span>
 <span class="normal">125</span>
 <span class="normal">126</span>
@@ -4785,15 +4778,11 @@ vectors. Text data remains unprocessed strings and the tokenization will be done
 <span class="normal">224</span>
 <span class="normal">225</span>
 <span class="normal">226</span>
-<span class="normal">227</span>
-<span class="normal">228</span>
-<span class="normal">229</span>
-<span class="normal">230</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">collate_main_data_fn</span><span class="p">(</span>
+<span class="normal">227</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">collate_main_data_fn</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">batch_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">]</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span> <span class="ow">or</span> <span class="n">List</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    The utterances used for training ASR and TTS models may have different lengths, so we need to do the</span>
-<span class="sd">    padding operations to make them equal in length.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The utterances used for training ASR and TTS models may have different</span>
+<span class="sd">    lengths, so we need to do the padding operations to make them equal in length.</span>
 
 <span class="sd">    The loaded speech feature vectors will be arranged into a single matrix with 0 padding at the end of short</span>
 <span class="sd">    vectors. Text data remains unprocessed strings and the tokenization will be done later in the model.</span>
@@ -4810,7 +4799,6 @@ vectors. Text data remains unprocessed strings and the tokenization will be done
 <span class="sd">        A dictionary mapping strings to either torch.Tensor or List, where:</span>
 <span class="sd">            - feat and spk_feat are three-dimensional torch.Tensor</span>
 <span class="sd">            - text and spk_ids are lists of raw strings whose discretization is done in the Model object</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="c1"># --- 1. Pad Speech Data and Stack them together --- #</span>
@@ -4953,7 +4941,8 @@ vectors. Text data remains unprocessed strings and the tokenization will be done
 
             <details class="quote">
               <summary>Source code in <code>speechain/dataset/speech_text.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">107</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">106</span>
+<span class="normal">107</span>
 <span class="normal">108</span>
 <span class="normal">109</span>
 <span class="normal">110</span>
@@ -4966,8 +4955,7 @@ vectors. Text data remains unprocessed strings and the tokenization will be done
 <span class="normal">117</span>
 <span class="normal">118</span>
 <span class="normal">119</span>
-<span class="normal">120</span>
-<span class="normal">121</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
+<span class="normal">120</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
 <span class="k">def</span> <span class="nf">data_len_register_fn</span><span class="p">(</span>
     <span class="n">main_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">float</span><span class="p">]</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">:</span>
@@ -5128,7 +5116,8 @@ Pitch related: pitch_conf</p>
 </details>
             <details class="quote">
               <summary>Source code in <code>speechain/dataset/speech_text.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 33</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 32</span>
+<span class="normal"> 33</span>
 <span class="normal"> 34</span>
 <span class="normal"> 35</span>
 <span class="normal"> 36</span>
@@ -5199,8 +5188,7 @@ Pitch related: pitch_conf</p>
 <span class="normal">101</span>
 <span class="normal">102</span>
 <span class="normal">103</span>
-<span class="normal">104</span>
-<span class="normal">105</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">dataset_init_fn</span><span class="p">(</span>
+<span class="normal">104</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">dataset_init_fn</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">use_g2p</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">unk_mask_prob</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
@@ -5290,8 +5278,9 @@ Pitch related: pitch_conf</p>
 
     <div class="doc doc-contents ">
 
-        <p>The function that loads speech-text data from the disk. If the speech is in the form of raw waveforms,
-the last dimension should be expanded to 1 of raw speech for compatibility with acoustic feature.</p>
+        <p>The function that loads speech-text data from the disk. If the speech is in
+the form of raw waveforms, the last dimension should be expanded to 1 of raw
+speech for compatibility with acoustic feature.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -5371,7 +5360,10 @@ CPU burden.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/dataset/speech_text.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">232</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
 <span class="normal">233</span>
 <span class="normal">234</span>
 <span class="normal">235</span>
@@ -5653,14 +5645,10 @@ CPU burden.</p>
 <span class="normal">511</span>
 <span class="normal">512</span>
 <span class="normal">513</span>
-<span class="normal">514</span>
-<span class="normal">515</span>
-<span class="normal">516</span>
-<span class="normal">517</span>
-<span class="normal">518</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">extract_main_data_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">main_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    The function that loads speech-text data from the disk. If the speech is in the form of raw waveforms,</span>
-<span class="sd">    the last dimension should be expanded to 1 of raw speech for compatibility with acoustic feature.</span>
+<span class="normal">514</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">extract_main_data_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">main_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The function that loads speech-text data from the disk. If the speech is in</span>
+<span class="sd">    the form of raw waveforms, the last dimension should be expanded to 1 of raw</span>
+<span class="sd">    speech for compatibility with acoustic feature.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        main_data: Dict[str, str]</span>
@@ -5680,7 +5668,6 @@ CPU burden.</p>
 <span class="sd">    Returns:</span>
 <span class="sd">        `feat` and `spk_feat` are in the form of two-dimensional `torch.Tensor`;</span>
 <span class="sd">        `text` and `spk_ids` are in the form of raw strings whose discretization is done in the Model object.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">assert</span> <span class="p">(</span>
         <span class="s2">&quot;feat&quot;</span> <span class="ow">in</span> <span class="n">main_data</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;text&quot;</span> <span class="ow">in</span> <span class="n">main_data</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>

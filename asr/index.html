@@ -3739,52 +3739,43 @@
 
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/recipes/asr#table-of-contents">Back to the table of contents</a></p>
 <h2 id="pretrained-models-for-reproducibility">Pretrained Models for Reproducibility</h2>
-<p>For reproducibility of our ASR model configuration files in <code>${SPEECHAIN_ROOT}/recipes/asr/</code>, we provide the following pretrained models to ensure consistent performance:<br />
-1. SentencePiece tokenizer models (<a href="https://drive.google.com/drive/u/0/folders/1ZrnodlK2Ta6wnvhpXf79W27omSUVOaG0">GoogleDrive</a>). 
-   * Please download tokenizer model and vocabulary to where your dataset is dumped. The default path is <code>${SPEECHAIN_ROOT}/datasets</code>. <br />
-<strong>Note:</strong> If your dataset is dumped outside SpeeChain, please replace <code>${SPEECHAIN_ROOT}/datasets</code> in the following commands by your place.
-   * <strong>LibriSpeech:</strong>
-     1. <strong>train-clean-100:</strong> 
-          ```
-          # Download BPE model
-          gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc https://drive.google.com/uc?id=1OQGKJqpEykl6hQwx-3xuWeaEdU7kDVTS</p>
-<div class="language-text highlight"><pre><span></span><code>      # Download BPE vocabulary
-      gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc https://drive.google.com/uc?id=1lGhDi2NI_ukI5Z9Z-MjOHoUEz5YGcJX9
-      ```
- 2. **train-clean-460:** 
-      ```
-      # Download BPE model
-      gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc https://drive.google.com/uc?id=1WAmcHvilnzB7r0kgND91LLReeX_NW7A4
-
-      # Download BPE vocabulary
-      gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc https://drive.google.com/uc?id=1isfQn75l-Szu0WPGBr1ZaR3pb20SDa2F
-      ```
- 3. **train-960:** 
-      ```
-      # Download BPE model
-      gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc https://drive.google.com/uc?id=1uFRm1DcPivFqjo1Kiy-uVSFTf3e9y1S4
-
-      # Download BPE vocabulary by 
-      gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc https://drive.google.com/uc?id=13ERNAA_5glzjvJkmUW7edf94IPfAejiL
-      ```
-</code></pre></div>
+<p>For reproducibility of our ASR model configuration files in <code>${SPEECHAIN_ROOT}/recipes/asr/</code>, we provide the following pretrained models to ensure consistent performance:  </p>
 <ol>
-<li>Transformer-based language models (<a href="https://drive.google.com/drive/u/0/folders/1yviJZLGyGKiQ_ldtRjEaX-rZjWt7R4eS">GoogleDrive</a>).</li>
-<li>Please download both LM model and configuration file. The default path is <code>${SPEECHAIN_ROOT}/recipes/lm</code>. <br />
-<strong>Note:</strong> If you want to store model files outside SpeeChain, please replace <code>${SPEECHAIN_ROOT}/recipes/lm</code> in the following commands by your place. Also, change the <code>lm_cfg_path</code> and <code>lm_model_path</code> arguments in each ASR configuration file.</li>
+<li>SentencePiece tokenizer models  </li>
+<li>Please download tokenizer model and vocabulary to where your dataset is dumped. The default path is <code>${SPEECHAIN_ROOT}/datasets</code>. <br />
+<strong>Note:</strong> If your dataset is dumped outside SpeeChain, please replace <code>${SPEECHAIN_ROOT}/datasets</code> in the following commands by your place.</li>
 <li><strong>LibriSpeech:</strong><ol>
 <li>
 <p><strong>train-clean-100:</strong> 
-      ```
-      # Download LM model
-      gdown -O ${SPEECHAIN_ROOT}/recipes/lm/librispeech/lm_text/exp/100-bpe5k_transformer_gelu/models https://drive.google.com/uc?id=1ZsFKRb8UBpzDjWcjpQcxt4rT4J6CuKAm</p>
-<p># Download LM configuration
-  gdown -O ${SPEECHAIN_ROOT}/recipes/lm/librispeech/lm_text/exp/100-bpe5k_transformer_gelu https://drive.google.com/uc?id=1TRtIOu2ptXTKphY77cF3fne9b-i-vNJD
-  <code>2. **train-960:**</code>
+      ```bash
+      # Download BPE model
+      gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc </p>
+<p># Download BPE vocabulary
+  gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc 
+  <code>2. **train-clean-460:**</code>bash
+  # Download BPE model
+  gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc </p>
+<p># Download BPE vocabulary
+  gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc 
+  <code>3. **train-960:**</code>bash
+  # Download BPE model
+  gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc </p>
+<p># Download BPE vocabulary by 
+  gdown -O ${SPEECHAIN_ROOT}/datasets/librispeech/data/sentencepiece/train-clean-100/bpe5k/no-punc 
+  <code>3. Transformer-based language models  
+   * Please download both LM model and configuration file. The default path is `${SPEECHAIN_ROOT}/recipes/lm`.   
+     **Note:** If you want to store model files outside SpeeChain, please replace `${SPEECHAIN_ROOT}/recipes/lm` in the following commands by your place. Also, change the `lm_cfg_path` and `lm_model_path` arguments in each ASR configuration file.
+   * **LibriSpeech:**
+     1. **train-clean-100:**</code>bash
   # Download LM model
-  gdown -O ${SPEECHAIN_ROOT}/recipes/lm/librispeech/train-960_lm_text/exp/960-bpe5k_transformer_gelu/models https://drive.google.com/uc?id=1hMFlaJVojonyBiwaXmC_I7iLxI-kSWit</p>
+  gdown -O ${SPEECHAIN_ROOT}/recipes/lm/librispeech/lm_text/exp/100-bpe5k_transformer_gelu/models </p>
 <p># Download LM configuration
-  gdown -O ${SPEECHAIN_ROOT}/recipes/lm/librispeech/train-960_lm_text/exp/960-bpe5k_transformer_gelu https://drive.google.com/uc?id=1fAMDjPxBDnTp2tiUNTNIMtqGl-vQ2gzz
+  gdown -O ${SPEECHAIN_ROOT}/recipes/lm/librispeech/lm_text/exp/100-bpe5k_transformer_gelu 
+  <code>2. **train-960:**</code>bash
+  # Download LM model
+  gdown -O ${SPEECHAIN_ROOT}/recipes/lm/librispeech/train-960_lm_text/exp/960-bpe5k_transformer_gelu/models </p>
+<p># Download LM configuration
+  gdown -O ${SPEECHAIN_ROOT}/recipes/lm/librispeech/train-960_lm_text/exp/960-bpe5k_transformer_gelu 
   ```</p>
 </li>
 </ol>

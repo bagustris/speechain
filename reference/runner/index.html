@@ -5984,23 +5984,7 @@ and let us know.</p>
 <span class="normal">2121</span>
 <span class="normal">2122</span>
 <span class="normal">2123</span>
-<span class="normal">2124</span>
-<span class="normal">2125</span>
-<span class="normal">2126</span>
-<span class="normal">2127</span>
-<span class="normal">2128</span>
-<span class="normal">2129</span>
-<span class="normal">2130</span>
-<span class="normal">2131</span>
-<span class="normal">2132</span>
-<span class="normal">2133</span>
-<span class="normal">2134</span>
-<span class="normal">2135</span>
-<span class="normal">2136</span>
-<span class="normal">2137</span>
-<span class="normal">2138</span>
-<span class="normal">2139</span>
-<span class="normal">2140</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Runner</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="normal">2124</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Runner</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Runner is the entrance of our toolkit. This static class is made up of several static functions. The</span>
 <span class="sd">    whole pipeline is done by all static functions step by step. The reason why the functions are all static is to</span>
@@ -6020,8 +6004,7 @@ and let us know.</p>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">add_parse</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">parser</span><span class="p">:</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        The interface where users can add their own arguments.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The interface where users can add their own arguments.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            parser: argparse.ArgumentParser</span>
@@ -6030,18 +6013,15 @@ and let us know.</p>
 <span class="sd">        Returns:</span>
 <span class="sd">            parser: argparse.ArgumentParser</span>
 <span class="sd">                The name space containing your arguments.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">parser</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        The static function that outputs all the default arguments for the runner.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The static function that outputs all the default arguments for the runner.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            a Dict containing the key-value pairs of all arguments</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
 
@@ -6518,9 +6498,8 @@ and let us know.</p>
     <span class="k">def</span> <span class="nf">build_iterators</span><span class="p">(</span>
         <span class="bp">cls</span><span class="p">,</span> <span class="n">data_cfg</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">],</span> <span class="n">args</span><span class="p">:</span> <span class="n">argparse</span><span class="o">.</span><span class="n">Namespace</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">]</span> <span class="ow">or</span> <span class="n">Iterator</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This static function builds all iterators used in the experiment. The configuration of iterators is given in</span>
-<span class="sd">        your specified &#39;data_cfg&#39;.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This static function builds all iterators used in the experiment. The</span>
+<span class="sd">        configuration of iterators is given in your specified &#39;data_cfg&#39;.</span>
 
 <span class="sd">        The iterators are returned as a dictionary where the first-level keys indicate different iterator groups:</span>
 <span class="sd">        &#39;train&#39;, &#39;valid&#39;, and &#39;test&#39;. The second-level keys in each group indicates the iterators belonging to the</span>
@@ -6536,7 +6515,6 @@ and let us know.</p>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            The dictionary of the iterators of all groups (train, valid, test).</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="k">def</span> <span class="nf">recur_iterator_init</span><span class="p">(</span><span class="n">_data_cfg</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">_dset</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
@@ -6633,9 +6611,9 @@ and let us know.</p>
     <span class="k">def</span> <span class="nf">build_model</span><span class="p">(</span>
         <span class="bp">cls</span><span class="p">,</span> <span class="n">model_cfg</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">args</span><span class="p">:</span> <span class="n">argparse</span><span class="o">.</span><span class="n">Namespace</span><span class="p">,</span> <span class="n">device</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Model</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This static function builds the model used in the experiment. The configuration of the model is given in</span>
-<span class="sd">        the value of the &#39;model&#39; key in your specified &#39;model_cfg&#39;.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This static function builds the model used in the experiment. The</span>
+<span class="sd">        configuration of the model is given in the value of the &#39;model&#39; key in your</span>
+<span class="sd">        specified &#39;model_cfg&#39;.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            model_cfg: Dict</span>
@@ -6645,7 +6623,6 @@ and let us know.</p>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            The target Model object initialized by your given configuration</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">assert</span> <span class="s2">&quot;model_type&quot;</span> <span class="ow">in</span> <span class="n">model_cfg</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="s2">&quot;Please specify the model_type!&quot;</span>
         <span class="k">assert</span> <span class="s2">&quot;module_conf&quot;</span> <span class="ow">in</span> <span class="n">model_cfg</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="s2">&quot;Please specify the module_conf!&quot;</span>
@@ -6669,9 +6646,9 @@ and let us know.</p>
     <span class="k">def</span> <span class="nf">build_optim_sches</span><span class="p">(</span>
         <span class="bp">cls</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">Model</span><span class="p">,</span> <span class="n">optim_sche_cfg</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">args</span><span class="p">:</span> <span class="n">argparse</span><span class="o">.</span><span class="n">Namespace</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">OptimScheduler</span><span class="p">]</span> <span class="ow">or</span> <span class="n">OptimScheduler</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This static function builds the OptimSchedulers used in the pipeline. The configuration of the</span>
-<span class="sd">        OptimSchedulers is given in the value of &#39;optim_sches&#39; key in your specified &#39;train_cfg&#39;.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This static function builds the OptimSchedulers used in the pipeline. The</span>
+<span class="sd">        configuration of the OptimSchedulers is given in the value of &#39;optim_sches&#39; key</span>
+<span class="sd">        in your specified &#39;train_cfg&#39;.</span>
 
 <span class="sd">        This function must be done after DDP wrapping because we need to make sure that the model parameters received</span>
 <span class="sd">        by the optimizer in each process are identical. With the identical model parameters, it&#39;s safe to consider that</span>
@@ -6687,7 +6664,6 @@ and let us know.</p>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            The Dict of the initialized OptimSchedulers.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># single-optimizer scenario</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">optim_sche_cfg</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="p">(</span>
@@ -6748,9 +6724,9 @@ and let us know.</p>
     <span class="k">def</span> <span class="nf">resume</span><span class="p">(</span>
         <span class="bp">cls</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="n">argparse</span><span class="o">.</span><span class="n">Namespace</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">Model</span><span class="p">,</span> <span class="n">monitor</span><span class="p">:</span> <span class="n">TrainValidMonitor</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        load the model parameters to the current process. This operation is necessary in our toolkit because we need to</span>
-<span class="sd">        make sure that the models in all the processes have the same buffer and parameter tensors.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Load the model parameters to the current process. This operation is necessary</span>
+<span class="sd">        in our toolkit because we need to make sure that the models in all the processes</span>
+<span class="sd">        have the same buffer and parameter tensors.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            args: argparse.Namespace</span>
@@ -6763,7 +6739,6 @@ and let us know.</p>
 <span class="sd">        Returns:</span>
 <span class="sd">            The number of the starting epoch. If the training resumes from an existing checkpoint, then the starting</span>
 <span class="sd">            epoch will be loaded from the checkpoint; otherwise, 1 will be returned.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># start the training from the existing checkpoint</span>
         <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">resume</span><span class="p">:</span>
@@ -7547,15 +7522,14 @@ and let us know.</p>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">set_random_seeds</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Set random seeds for python environment, numpy environment and torch environment</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set random seeds for python environment, numpy environment and torch</span>
+<span class="sd">        environment.</span>
 
 <span class="sd">        Note:</span>
 <span class="sd">            1. torch.random.manual_seed(seed) is the same with torch.manual_seed(seed),</span>
 <span class="sd">                so it is not necessary to be included here.</span>
 <span class="sd">            2. torch.cuda.manual_seed_all(seed) is also not included here because we initialize the processes on</span>
 <span class="sd">                different GPUs with different random seeds depending on the GPU number to avoid the process homogeneity.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
         <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
@@ -7605,13 +7579,11 @@ and let us know.</p>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">main_worker</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">gpu</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="n">argparse</span><span class="o">.</span><span class="n">Namespace</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        The main body of a process on one GPU.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The main body of a process on one GPU.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            gpu:</span>
 <span class="sd">            args:</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># --- 0. Random Seed Preparation --- #</span>
         <span class="c1"># set different random seeds for the different GPU processes in DDP mode to avoid the process homogeneity</span>
@@ -7902,14 +7874,12 @@ and let us know.</p>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="n">argparse</span><span class="o">.</span><span class="n">Namespace</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        The beginning of a experiment branch (training or testing).</span>
-<span class="sd">        This function decides the single-GPU or multi-GPU training sub-branch.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The beginning of a experiment branch (training or testing). This function</span>
+<span class="sd">        decides the single-GPU or multi-GPU training sub-branch.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            args: argparse.Namespace</span>
 <span class="sd">                The input arguments for the experiment.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># This block is for safely calling torch.cuda API in the main process</span>
         <span class="k">try</span><span class="p">:</span>
@@ -8016,10 +7986,8 @@ and let us know.</p>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        The preparation area of Runner where the configuration is parsed and converted into code-friendly format.</span>
-
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The preparation area of Runner where the configuration is parsed and</span>
+<span class="sd">        converted into code-friendly format.&quot;&quot;&quot;</span>
         <span class="c1"># --- 0. Get the Command Line Arguments --- #</span>
         <span class="n">args</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span>
 
@@ -8205,12 +8173,9 @@ The name space containing your arguments.</p>
 <span class="normal">65</span>
 <span class="normal">66</span>
 <span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">68</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">add_parse</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">parser</span><span class="p">:</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    The interface where users can add their own arguments.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The interface where users can add their own arguments.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        parser: argparse.ArgumentParser</span>
@@ -8219,7 +8184,6 @@ The name space containing your arguments.</p>
 <span class="sd">    Returns:</span>
 <span class="sd">        parser: argparse.ArgumentParser</span>
 <span class="sd">            The name space containing your arguments.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">parser</span>
 </code></pre></div></td></tr></table></div>
@@ -8243,8 +8207,8 @@ The name space containing your arguments.</p>
 
     <div class="doc doc-contents ">
 
-        <p>This static function builds all iterators used in the experiment. The configuration of iterators is given in
-your specified 'data_cfg'.</p>
+        <p>This static function builds all iterators used in the experiment. The
+configuration of iterators is given in your specified 'data_cfg'.</p>
 <p>The iterators are returned as a dictionary where the first-level keys indicate different iterator groups:
 'train', 'valid', and 'test'. The second-level keys in each group indicates the iterators belonging to the
 group. In the value of each second-level key, there are two third-level keys: 'type' and 'conf'. 'type'
@@ -8325,7 +8289,11 @@ The arguments of the runner in this experiment.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/runner.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">552</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">548</span>
+<span class="normal">549</span>
+<span class="normal">550</span>
+<span class="normal">551</span>
+<span class="normal">552</span>
 <span class="normal">553</span>
 <span class="normal">554</span>
 <span class="normal">555</span>
@@ -8432,19 +8400,12 @@ The arguments of the runner in this experiment.</p>
 <span class="normal">656</span>
 <span class="normal">657</span>
 <span class="normal">658</span>
-<span class="normal">659</span>
-<span class="normal">660</span>
-<span class="normal">661</span>
-<span class="normal">662</span>
-<span class="normal">663</span>
-<span class="normal">664</span>
-<span class="normal">665</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">659</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">build_iterators</span><span class="p">(</span>
     <span class="bp">cls</span><span class="p">,</span> <span class="n">data_cfg</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">],</span> <span class="n">args</span><span class="p">:</span> <span class="n">argparse</span><span class="o">.</span><span class="n">Namespace</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">]</span> <span class="ow">or</span> <span class="n">Iterator</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This static function builds all iterators used in the experiment. The configuration of iterators is given in</span>
-<span class="sd">    your specified &#39;data_cfg&#39;.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This static function builds all iterators used in the experiment. The</span>
+<span class="sd">    configuration of iterators is given in your specified &#39;data_cfg&#39;.</span>
 
 <span class="sd">    The iterators are returned as a dictionary where the first-level keys indicate different iterator groups:</span>
 <span class="sd">    &#39;train&#39;, &#39;valid&#39;, and &#39;test&#39;. The second-level keys in each group indicates the iterators belonging to the</span>
@@ -8460,7 +8421,6 @@ The arguments of the runner in this experiment.</p>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        The dictionary of the iterators of all groups (train, valid, test).</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">recur_iterator_init</span><span class="p">(</span><span class="n">_data_cfg</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">_dset</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
@@ -8573,8 +8533,9 @@ The arguments of the runner in this experiment.</p>
 
     <div class="doc doc-contents ">
 
-        <p>This static function builds the model used in the experiment. The configuration of the model is given in
-the value of the 'model' key in your specified 'model_cfg'.</p>
+        <p>This static function builds the model used in the experiment. The
+configuration of the model is given in the value of the 'model' key in your
+specified 'model_cfg'.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -8665,7 +8626,13 @@ Model Configuration</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/runner.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">667</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">661</span>
+<span class="normal">662</span>
+<span class="normal">663</span>
+<span class="normal">664</span>
+<span class="normal">665</span>
+<span class="normal">666</span>
+<span class="normal">667</span>
 <span class="normal">668</span>
 <span class="normal">669</span>
 <span class="normal">670</span>
@@ -8692,20 +8659,13 @@ Model Configuration</p>
 <span class="normal">691</span>
 <span class="normal">692</span>
 <span class="normal">693</span>
-<span class="normal">694</span>
-<span class="normal">695</span>
-<span class="normal">696</span>
-<span class="normal">697</span>
-<span class="normal">698</span>
-<span class="normal">699</span>
-<span class="normal">700</span>
-<span class="normal">701</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">694</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">build_model</span><span class="p">(</span>
     <span class="bp">cls</span><span class="p">,</span> <span class="n">model_cfg</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">args</span><span class="p">:</span> <span class="n">argparse</span><span class="o">.</span><span class="n">Namespace</span><span class="p">,</span> <span class="n">device</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Model</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This static function builds the model used in the experiment. The configuration of the model is given in</span>
-<span class="sd">    the value of the &#39;model&#39; key in your specified &#39;model_cfg&#39;.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This static function builds the model used in the experiment. The</span>
+<span class="sd">    configuration of the model is given in the value of the &#39;model&#39; key in your</span>
+<span class="sd">    specified &#39;model_cfg&#39;.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        model_cfg: Dict</span>
@@ -8715,7 +8675,6 @@ Model Configuration</p>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        The target Model object initialized by your given configuration</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">assert</span> <span class="s2">&quot;model_type&quot;</span> <span class="ow">in</span> <span class="n">model_cfg</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="s2">&quot;Please specify the model_type!&quot;</span>
     <span class="k">assert</span> <span class="s2">&quot;module_conf&quot;</span> <span class="ow">in</span> <span class="n">model_cfg</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="s2">&quot;Please specify the module_conf!&quot;</span>
@@ -8755,8 +8714,9 @@ Model Configuration</p>
 
     <div class="doc doc-contents ">
 
-        <p>This static function builds the OptimSchedulers used in the pipeline. The configuration of the
-OptimSchedulers is given in the value of 'optim_sches' key in your specified 'train_cfg'.</p>
+        <p>This static function builds the OptimSchedulers used in the pipeline. The
+configuration of the OptimSchedulers is given in the value of 'optim_sches' key
+in your specified 'train_cfg'.</p>
 <p>This function must be done after DDP wrapping because we need to make sure that the model parameters received
 by the optimizer in each process are identical. With the identical model parameters, it's safe to consider that
 the optimizer parameters are also identical.</p>
@@ -8852,7 +8812,14 @@ The input arguments. Used to pass accum_grad, grad_clip, and grad_norm_type to y
 
             <details class="quote">
               <summary>Source code in <code>speechain/runner.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">703</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">696</span>
+<span class="normal">697</span>
+<span class="normal">698</span>
+<span class="normal">699</span>
+<span class="normal">700</span>
+<span class="normal">701</span>
+<span class="normal">702</span>
+<span class="normal">703</span>
 <span class="normal">704</span>
 <span class="normal">705</span>
 <span class="normal">706</span>
@@ -8921,21 +8888,13 @@ The input arguments. Used to pass accum_grad, grad_clip, and grad_norm_type to y
 <span class="normal">769</span>
 <span class="normal">770</span>
 <span class="normal">771</span>
-<span class="normal">772</span>
-<span class="normal">773</span>
-<span class="normal">774</span>
-<span class="normal">775</span>
-<span class="normal">776</span>
-<span class="normal">777</span>
-<span class="normal">778</span>
-<span class="normal">779</span>
-<span class="normal">780</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">772</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">build_optim_sches</span><span class="p">(</span>
     <span class="bp">cls</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">Model</span><span class="p">,</span> <span class="n">optim_sche_cfg</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">args</span><span class="p">:</span> <span class="n">argparse</span><span class="o">.</span><span class="n">Namespace</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">OptimScheduler</span><span class="p">]</span> <span class="ow">or</span> <span class="n">OptimScheduler</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This static function builds the OptimSchedulers used in the pipeline. The configuration of the</span>
-<span class="sd">    OptimSchedulers is given in the value of &#39;optim_sches&#39; key in your specified &#39;train_cfg&#39;.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This static function builds the OptimSchedulers used in the pipeline. The</span>
+<span class="sd">    configuration of the OptimSchedulers is given in the value of &#39;optim_sches&#39; key</span>
+<span class="sd">    in your specified &#39;train_cfg&#39;.</span>
 
 <span class="sd">    This function must be done after DDP wrapping because we need to make sure that the model parameters received</span>
 <span class="sd">    by the optimizer in each process are identical. With the identical model parameters, it&#39;s safe to consider that</span>
@@ -8951,7 +8910,6 @@ The input arguments. Used to pass accum_grad, grad_clip, and grad_norm_type to y
 
 <span class="sd">    Returns:</span>
 <span class="sd">        The Dict of the initialized OptimSchedulers.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># single-optimizer scenario</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">optim_sche_cfg</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="p">(</span>
@@ -9077,23 +9035,23 @@ The input arguments. Used to pass accum_grad, grad_clip, and grad_norm_type to y
 
             <details class="quote">
               <summary>Source code in <code>speechain/runner.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">846</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">837</span>
+<span class="normal">838</span>
+<span class="normal">839</span>
+<span class="normal">840</span>
+<span class="normal">841</span>
+<span class="normal">842</span>
+<span class="normal">843</span>
+<span class="normal">844</span>
+<span class="normal">845</span>
+<span class="normal">846</span>
 <span class="normal">847</span>
 <span class="normal">848</span>
 <span class="normal">849</span>
 <span class="normal">850</span>
 <span class="normal">851</span>
 <span class="normal">852</span>
-<span class="normal">853</span>
-<span class="normal">854</span>
-<span class="normal">855</span>
-<span class="normal">856</span>
-<span class="normal">857</span>
-<span class="normal">858</span>
-<span class="normal">859</span>
-<span class="normal">860</span>
-<span class="normal">861</span>
-<span class="normal">862</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">853</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">dict_transform</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">src_dict</span><span class="p">,</span> <span class="n">transform_func</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 
@@ -9182,7 +9140,17 @@ The input arguments. Used to pass accum_grad, grad_clip, and grad_norm_type to y
 
             <details class="quote">
               <summary>Source code in <code>speechain/runner.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1601</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1591</span>
+<span class="normal">1592</span>
+<span class="normal">1593</span>
+<span class="normal">1594</span>
+<span class="normal">1595</span>
+<span class="normal">1596</span>
+<span class="normal">1597</span>
+<span class="normal">1598</span>
+<span class="normal">1599</span>
+<span class="normal">1600</span>
+<span class="normal">1601</span>
 <span class="normal">1602</span>
 <span class="normal">1603</span>
 <span class="normal">1604</span>
@@ -9210,17 +9178,7 @@ The input arguments. Used to pass accum_grad, grad_clip, and grad_norm_type to y
 <span class="normal">1626</span>
 <span class="normal">1627</span>
 <span class="normal">1628</span>
-<span class="normal">1629</span>
-<span class="normal">1630</span>
-<span class="normal">1631</span>
-<span class="normal">1632</span>
-<span class="normal">1633</span>
-<span class="normal">1634</span>
-<span class="normal">1635</span>
-<span class="normal">1636</span>
-<span class="normal">1637</span>
-<span class="normal">1638</span>
-<span class="normal">1639</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">1629</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">gather_all_iter_ascii</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">iterator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">,</span> <span class="n">device</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 
@@ -9280,8 +9238,8 @@ The input arguments. Used to pass accum_grad, grad_clip, and grad_norm_type to y
 
     <div class="doc doc-contents ">
 
-        <p>The beginning of a experiment branch (training or testing).
-This function decides the single-GPU or multi-GPU training sub-branch.</p>
+        <p>The beginning of a experiment branch (training or testing). This function
+decides the single-GPU or multi-GPU training sub-branch.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -9317,7 +9275,19 @@ The input arguments for the experiment.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/runner.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1938</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1926</span>
+<span class="normal">1927</span>
+<span class="normal">1928</span>
+<span class="normal">1929</span>
+<span class="normal">1930</span>
+<span class="normal">1931</span>
+<span class="normal">1932</span>
+<span class="normal">1933</span>
+<span class="normal">1934</span>
+<span class="normal">1935</span>
+<span class="normal">1936</span>
+<span class="normal">1937</span>
+<span class="normal">1938</span>
 <span class="normal">1939</span>
 <span class="normal">1940</span>
 <span class="normal">1941</span>
@@ -9415,30 +9385,14 @@ The input arguments for the experiment.</p>
 <span class="normal">2033</span>
 <span class="normal">2034</span>
 <span class="normal">2035</span>
-<span class="normal">2036</span>
-<span class="normal">2037</span>
-<span class="normal">2038</span>
-<span class="normal">2039</span>
-<span class="normal">2040</span>
-<span class="normal">2041</span>
-<span class="normal">2042</span>
-<span class="normal">2043</span>
-<span class="normal">2044</span>
-<span class="normal">2045</span>
-<span class="normal">2046</span>
-<span class="normal">2047</span>
-<span class="normal">2048</span>
-<span class="normal">2049</span>
-<span class="normal">2050</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">2036</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="n">argparse</span><span class="o">.</span><span class="n">Namespace</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    The beginning of a experiment branch (training or testing).</span>
-<span class="sd">    This function decides the single-GPU or multi-GPU training sub-branch.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The beginning of a experiment branch (training or testing). This function</span>
+<span class="sd">    decides the single-GPU or multi-GPU training sub-branch.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        args: argparse.Namespace</span>
 <span class="sd">            The input arguments for the experiment.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># This block is for safely calling torch.cuda API in the main process</span>
     <span class="k">try</span><span class="p">:</span>
@@ -9614,7 +9568,17 @@ The input arguments for the experiment.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/runner.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1641</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1631</span>
+<span class="normal">1632</span>
+<span class="normal">1633</span>
+<span class="normal">1634</span>
+<span class="normal">1635</span>
+<span class="normal">1636</span>
+<span class="normal">1637</span>
+<span class="normal">1638</span>
+<span class="normal">1639</span>
+<span class="normal">1640</span>
+<span class="normal">1641</span>
 <span class="normal">1642</span>
 <span class="normal">1643</span>
 <span class="normal">1644</span>
@@ -9897,27 +9861,13 @@ The input arguments for the experiment.</p>
 <span class="normal">1921</span>
 <span class="normal">1922</span>
 <span class="normal">1923</span>
-<span class="normal">1924</span>
-<span class="normal">1925</span>
-<span class="normal">1926</span>
-<span class="normal">1927</span>
-<span class="normal">1928</span>
-<span class="normal">1929</span>
-<span class="normal">1930</span>
-<span class="normal">1931</span>
-<span class="normal">1932</span>
-<span class="normal">1933</span>
-<span class="normal">1934</span>
-<span class="normal">1935</span>
-<span class="normal">1936</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">1924</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">main_worker</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">gpu</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="n">argparse</span><span class="o">.</span><span class="n">Namespace</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    The main body of a process on one GPU.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The main body of a process on one GPU.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        gpu:</span>
 <span class="sd">        args:</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># --- 0. Random Seed Preparation --- #</span>
     <span class="c1"># set different random seeds for the different GPU processes in DDP mode to avoid the process homogeneity</span>
@@ -10252,7 +10202,9 @@ The input arguments for the experiment.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/runner.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 72</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
 <span class="normal"> 73</span>
 <span class="normal"> 74</span>
 <span class="normal"> 75</span>
@@ -10726,18 +10678,12 @@ The input arguments for the experiment.</p>
 <span class="normal">543</span>
 <span class="normal">544</span>
 <span class="normal">545</span>
-<span class="normal">546</span>
-<span class="normal">547</span>
-<span class="normal">548</span>
-<span class="normal">549</span>
-<span class="normal">550</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">546</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    The static function that outputs all the default arguments for the runner.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The static function that outputs all the default arguments for the runner.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        a Dict containing the key-value pairs of all arguments</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
 
@@ -11230,8 +11176,9 @@ The input arguments for the experiment.</p>
 
     <div class="doc doc-contents ">
 
-        <p>load the model parameters to the current process. This operation is necessary in our toolkit because we need to
-make sure that the models in all the processes have the same buffer and parameter tensors.</p>
+        <p>Load the model parameters to the current process. This operation is necessary
+in our toolkit because we need to make sure that the models in all the processes
+have the same buffer and parameter tensors.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -11334,7 +11281,15 @@ The train-valid monitor used to monitor the training phase</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/runner.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">782</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">774</span>
+<span class="normal">775</span>
+<span class="normal">776</span>
+<span class="normal">777</span>
+<span class="normal">778</span>
+<span class="normal">779</span>
+<span class="normal">780</span>
+<span class="normal">781</span>
+<span class="normal">782</span>
 <span class="normal">783</span>
 <span class="normal">784</span>
 <span class="normal">785</span>
@@ -11387,22 +11342,13 @@ The train-valid monitor used to monitor the training phase</p>
 <span class="normal">832</span>
 <span class="normal">833</span>
 <span class="normal">834</span>
-<span class="normal">835</span>
-<span class="normal">836</span>
-<span class="normal">837</span>
-<span class="normal">838</span>
-<span class="normal">839</span>
-<span class="normal">840</span>
-<span class="normal">841</span>
-<span class="normal">842</span>
-<span class="normal">843</span>
-<span class="normal">844</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">835</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">resume</span><span class="p">(</span>
     <span class="bp">cls</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="n">argparse</span><span class="o">.</span><span class="n">Namespace</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">Model</span><span class="p">,</span> <span class="n">monitor</span><span class="p">:</span> <span class="n">TrainValidMonitor</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    load the model parameters to the current process. This operation is necessary in our toolkit because we need to</span>
-<span class="sd">    make sure that the models in all the processes have the same buffer and parameter tensors.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load the model parameters to the current process. This operation is necessary</span>
+<span class="sd">    in our toolkit because we need to make sure that the models in all the processes</span>
+<span class="sd">    have the same buffer and parameter tensors.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        args: argparse.Namespace</span>
@@ -11415,7 +11361,6 @@ The train-valid monitor used to monitor the training phase</p>
 <span class="sd">    Returns:</span>
 <span class="sd">        The number of the starting epoch. If the training resumes from an existing checkpoint, then the starting</span>
 <span class="sd">        epoch will be loaded from the checkpoint; otherwise, 1 will be returned.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># start the training from the existing checkpoint</span>
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">resume</span><span class="p">:</span>
@@ -11480,11 +11425,26 @@ The train-valid monitor used to monitor the training phase</p>
 
     <div class="doc doc-contents ">
 
-        <p>The preparation area of Runner where the configuration is parsed and converted into code-friendly format.</p>
+        <p>The preparation area of Runner where the configuration is parsed and
+converted into code-friendly format.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/runner.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2052</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2038</span>
+<span class="normal">2039</span>
+<span class="normal">2040</span>
+<span class="normal">2041</span>
+<span class="normal">2042</span>
+<span class="normal">2043</span>
+<span class="normal">2044</span>
+<span class="normal">2045</span>
+<span class="normal">2046</span>
+<span class="normal">2047</span>
+<span class="normal">2048</span>
+<span class="normal">2049</span>
+<span class="normal">2050</span>
+<span class="normal">2051</span>
+<span class="normal">2052</span>
 <span class="normal">2053</span>
 <span class="normal">2054</span>
 <span class="normal">2055</span>
@@ -11556,28 +11516,10 @@ The train-valid monitor used to monitor the training phase</p>
 <span class="normal">2121</span>
 <span class="normal">2122</span>
 <span class="normal">2123</span>
-<span class="normal">2124</span>
-<span class="normal">2125</span>
-<span class="normal">2126</span>
-<span class="normal">2127</span>
-<span class="normal">2128</span>
-<span class="normal">2129</span>
-<span class="normal">2130</span>
-<span class="normal">2131</span>
-<span class="normal">2132</span>
-<span class="normal">2133</span>
-<span class="normal">2134</span>
-<span class="normal">2135</span>
-<span class="normal">2136</span>
-<span class="normal">2137</span>
-<span class="normal">2138</span>
-<span class="normal">2139</span>
-<span class="normal">2140</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">2124</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    The preparation area of Runner where the configuration is parsed and converted into code-friendly format.</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The preparation area of Runner where the configuration is parsed and</span>
+<span class="sd">    converted into code-friendly format.&quot;&quot;&quot;</span>
     <span class="c1"># --- 0. Get the Command Line Arguments --- #</span>
     <span class="n">args</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span>
 
@@ -11682,7 +11624,8 @@ The train-valid monitor used to monitor the training phase</p>
 
     <div class="doc doc-contents ">
 
-        <p>Set random seeds for python environment, numpy environment and torch environment</p>
+        <p>Set random seeds for python environment, numpy environment and torch
+environment.</p>
 
 
 <details class="note" open>
@@ -11696,33 +11639,31 @@ The train-valid monitor used to monitor the training phase</p>
 </details>
             <details class="quote">
               <summary>Source code in <code>speechain/runner.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1583</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1574</span>
+<span class="normal">1575</span>
+<span class="normal">1576</span>
+<span class="normal">1577</span>
+<span class="normal">1578</span>
+<span class="normal">1579</span>
+<span class="normal">1580</span>
+<span class="normal">1581</span>
+<span class="normal">1582</span>
+<span class="normal">1583</span>
 <span class="normal">1584</span>
 <span class="normal">1585</span>
 <span class="normal">1586</span>
 <span class="normal">1587</span>
 <span class="normal">1588</span>
-<span class="normal">1589</span>
-<span class="normal">1590</span>
-<span class="normal">1591</span>
-<span class="normal">1592</span>
-<span class="normal">1593</span>
-<span class="normal">1594</span>
-<span class="normal">1595</span>
-<span class="normal">1596</span>
-<span class="normal">1597</span>
-<span class="normal">1598</span>
-<span class="normal">1599</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">1589</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">set_random_seeds</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Set random seeds for python environment, numpy environment and torch environment</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Set random seeds for python environment, numpy environment and torch</span>
+<span class="sd">    environment.</span>
 
 <span class="sd">    Note:</span>
 <span class="sd">        1. torch.random.manual_seed(seed) is the same with torch.manual_seed(seed),</span>
 <span class="sd">            so it is not necessary to be included here.</span>
 <span class="sd">        2. torch.cuda.manual_seed_all(seed) is also not included here because we initialize the processes on</span>
 <span class="sd">            different GPUs with different random seeds depending on the GPU number to avoid the process homogeneity.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
     <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
@@ -11819,7 +11760,16 @@ The model to be trained.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/runner.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1312</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1303</span>
+<span class="normal">1304</span>
+<span class="normal">1305</span>
+<span class="normal">1306</span>
+<span class="normal">1307</span>
+<span class="normal">1308</span>
+<span class="normal">1309</span>
+<span class="normal">1310</span>
+<span class="normal">1311</span>
+<span class="normal">1312</span>
 <span class="normal">1313</span>
 <span class="normal">1314</span>
 <span class="normal">1315</span>
@@ -12079,16 +12029,7 @@ The model to be trained.</p>
 <span class="normal">1569</span>
 <span class="normal">1570</span>
 <span class="normal">1571</span>
-<span class="normal">1572</span>
-<span class="normal">1573</span>
-<span class="normal">1574</span>
-<span class="normal">1575</span>
-<span class="normal">1576</span>
-<span class="normal">1577</span>
-<span class="normal">1578</span>
-<span class="normal">1579</span>
-<span class="normal">1580</span>
-<span class="normal">1581</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">1572</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">test</span><span class="p">(</span>
     <span class="bp">cls</span><span class="p">,</span>
     <span class="n">args</span><span class="p">:</span> <span class="n">argparse</span><span class="o">.</span><span class="n">Namespace</span><span class="p">,</span>
@@ -12518,7 +12459,16 @@ logging information.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/runner.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 889</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 880</span>
+<span class="normal"> 881</span>
+<span class="normal"> 882</span>
+<span class="normal"> 883</span>
+<span class="normal"> 884</span>
+<span class="normal"> 885</span>
+<span class="normal"> 886</span>
+<span class="normal"> 887</span>
+<span class="normal"> 888</span>
+<span class="normal"> 889</span>
 <span class="normal"> 890</span>
 <span class="normal"> 891</span>
 <span class="normal"> 892</span>
@@ -12930,16 +12880,7 @@ logging information.</p>
 <span class="normal">1298</span>
 <span class="normal">1299</span>
 <span class="normal">1300</span>
-<span class="normal">1301</span>
-<span class="normal">1302</span>
-<span class="normal">1303</span>
-<span class="normal">1304</span>
-<span class="normal">1305</span>
-<span class="normal">1306</span>
-<span class="normal">1307</span>
-<span class="normal">1308</span>
-<span class="normal">1309</span>
-<span class="normal">1310</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">1301</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">train</span><span class="p">(</span>
     <span class="bp">cls</span><span class="p">,</span>
     <span class="n">args</span><span class="p">:</span> <span class="n">argparse</span><span class="o">.</span><span class="n">Namespace</span><span class="p">,</span>

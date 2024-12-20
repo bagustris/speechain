@@ -3791,9 +3791,9 @@ Date: 2022.07</p>
               Bases: <code><span title="abc.ABC">ABC</span></code></p>
 
 
-        <p>OptimScheduler is the base class of all OptimScheduler objects that combine the roles of traditional optimizers and
-schedulers together. Its main job is optimizing the target model parameters and scheduling the learning rate during
-training.</p>
+        <p>OptimScheduler is the base class of all OptimScheduler objects that combine the
+roles of traditional optimizers and schedulers together. Its main job is optimizing
+the target model parameters and scheduling the learning rate during training.</p>
 <p>In this toolkit, we combine traditional optimizers and schedulers into a single class: OptimScheduler. Each
 OptimScheduler object has one built-in member optimizer (torch.optim.Optimizer) which is initialized automatically
 by <code>optim_type</code> and <code>optim_conf</code> given in your configuration.</p>
@@ -4125,28 +4125,14 @@ by <code>optim_type</code> and <code>optim_conf</code> given in your configurati
 <span class="normal">336</span>
 <span class="normal">337</span>
 <span class="normal">338</span>
-<span class="normal">339</span>
-<span class="normal">340</span>
-<span class="normal">341</span>
-<span class="normal">342</span>
-<span class="normal">343</span>
-<span class="normal">344</span>
-<span class="normal">345</span>
-<span class="normal">346</span>
-<span class="normal">347</span>
-<span class="normal">348</span>
-<span class="normal">349</span>
-<span class="normal">350</span>
-<span class="normal">351</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">OptimScheduler</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    OptimScheduler is the base class of all OptimScheduler objects that combine the roles of traditional optimizers and</span>
-<span class="sd">    schedulers together. Its main job is optimizing the target model parameters and scheduling the learning rate during</span>
-<span class="sd">    training.</span>
+<span class="normal">339</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">OptimScheduler</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;OptimScheduler is the base class of all OptimScheduler objects that combine the</span>
+<span class="sd">    roles of traditional optimizers and schedulers together. Its main job is optimizing</span>
+<span class="sd">    the target model parameters and scheduling the learning rate during training.</span>
 
 <span class="sd">    In this toolkit, we combine traditional optimizers and schedulers into a single class: OptimScheduler. Each</span>
 <span class="sd">    OptimScheduler object has one built-in member optimizer (torch.optim.Optimizer) which is initialized automatically</span>
 <span class="sd">    by `optim_type` and `optim_conf` given in your configuration.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
@@ -4165,10 +4151,10 @@ by <code>optim_type</code> and <code>optim_conf</code> given in your configurati
         <span class="n">grad_norm_type</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">,</span>
         <span class="o">**</span><span class="n">sche_conf</span><span class="p">,</span>
     <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This initialization function initializes the general part shared by all OptimScheduler subclasses.</span>
-<span class="sd">        At the end of this function, an interface function `sche_init()` is called to initialize the customized part of</span>
-<span class="sd">        each OptimScheduler subclass.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This initialization function initializes the general part shared by all</span>
+<span class="sd">        OptimScheduler subclasses. At the end of this function, an interface function</span>
+<span class="sd">        `sche_init()` is called to initialize the customized part of each OptimScheduler</span>
+<span class="sd">        subclass.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            # --- Arguments received from exp_cfg --- #</span>
@@ -4260,17 +4246,15 @@ by <code>optim_type</code> and <code>optim_conf</code> given in your configurati
 
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">sche_init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">sche_conf</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This abstract interface function is the customized initialization function which decides how the learning rate</span>
-<span class="sd">        is scheduled as the training goes.</span>
-<span class="sd">        This interface is mandatory to be overridden.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This abstract interface function is the customized initialization function</span>
+<span class="sd">        which decides how the learning rate is scheduled as the training goes. This</span>
+<span class="sd">        interface is mandatory to be overridden.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            **sche_conf: Dict</span>
 <span class="sd">                The arguments used to initialize the customized part of this OptimScheduler.</span>
 <span class="sd">                For more details about the learning rate scheduling strategy, please refer to the docstring of</span>
 <span class="sd">                `sche_init()` of your target OptimScheduler subclass.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 
@@ -4283,8 +4267,8 @@ by <code>optim_type</code> and <code>optim_conf</code> given in your configurati
         <span class="n">epoch_num</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
         <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This function optimizes the target parameters of the built-in model pointer with the input training losses.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This function optimizes the target parameters of the built-in model pointer</span>
+<span class="sd">        with the input training losses.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            losses: Dict[str, torch.Tensor]</span>
@@ -4300,7 +4284,6 @@ by <code>optim_type</code> and <code>optim_conf</code> given in your configurati
 <span class="sd">                This argument is used to update the learning rate for the current step by `self.update_lr()`.</span>
 <span class="sd">            logger:</span>
 <span class="sd">                Lazily passed logger object. Used to record logging information during optimization.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># --- 0. Initial Preparation Part --- #</span>
         <span class="c1"># get the real step number based on accum_grad</span>
@@ -4383,8 +4366,8 @@ by <code>optim_type</code> and <code>optim_conf</code> given in your configurati
 
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">update_lr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">real_step</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">epoch_num</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This abstract interface function generates the learning rate by the input step number.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This abstract interface function generates the learning rate by the input</span>
+<span class="sd">        step number.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            real_step: int</span>
@@ -4394,28 +4377,25 @@ by <code>optim_type</code> and <code>optim_conf</code> given in your configurati
 
 <span class="sd">        Returns: float</span>
 <span class="sd">            The learning rate used for parameter optimization in the current training step.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 
     <span class="k">def</span> <span class="nf">get_lr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This function returns the current learning rate of the built-in `torch.optim.Optimizer` member.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This function returns the current learning rate of the built-in</span>
+<span class="sd">        `torch.optim.Optimizer` member.</span>
 
 <span class="sd">        Returns: float</span>
 <span class="sd">            The value of the learning rates obtained from `self.optimizer.param_groups`.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">param_groups</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;lr&quot;</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">state_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This function returns the current status of the OptimScheduler object for checkpoint storage.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This function returns the current status of the OptimScheduler object for</span>
+<span class="sd">        checkpoint storage.</span>
 
 <span class="sd">        Returns: Dict</span>
 <span class="sd">            The status Dict containing the current status of the built-in `torch.optim.Optimizer` and the built-in</span>
 <span class="sd">            `torch.cuda.amp.GradScaler` (if had).</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">optimizer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span>
@@ -4423,13 +4403,12 @@ by <code>optim_type</code> and <code>optim_conf</code> given in your configurati
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">load_state_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This function loads the existing checkpoint information into the _OptimScheduler_ object as the starting status.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This function loads the existing checkpoint information into the</span>
+<span class="sd">        _OptimScheduler_ object as the starting status.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            state_dict: Dict</span>
 <span class="sd">                The status information loaded from the existing checkpoint.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># load the optimizer</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">state_dict</span><span class="p">[</span><span class="s2">&quot;optimizer&quot;</span><span class="p">])</span>
@@ -4438,16 +4417,15 @@ by <code>optim_type</code> and <code>optim_conf</code> given in your configurati
             <span class="bp">self</span><span class="o">.</span><span class="n">scaler</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">state_dict</span><span class="p">[</span><span class="s2">&quot;scaler&quot;</span><span class="p">])</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This function returns the description string of the _OptimScheduler_ object.</span>
-<span class="sd">        There is a general description part shared by all the _OptimScheduler_ subclasses.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This function returns the description string of the _OptimScheduler_ object.</span>
+<span class="sd">        There is a general description part shared by all the _OptimScheduler_</span>
+<span class="sd">        subclasses.</span>
 
 <span class="sd">        In this function, an interface hook function `extra_repr_fn()` will be called to generate the specific</span>
 <span class="sd">        description part of each _OptimScheduler_ subclass.</span>
 
 <span class="sd">        Returns: str</span>
 <span class="sd">            The description string for the OptimScheduler object.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(&quot;</span>
@@ -4457,17 +4435,15 @@ by <code>optim_type</code> and <code>optim_conf</code> given in your configurati
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">extra_repr_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This interface hook function returns the specific part of the description string of the OptimScheduler object.</span>
-<span class="sd">        The original implementation in the base class returns an empty string.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This interface hook function returns the specific part of the description</span>
+<span class="sd">        string of the OptimScheduler object. The original implementation in the base</span>
+<span class="sd">        class returns an empty string.</span>
 
 <span class="sd">        In principle, this interface hook function must be overridden by each _OptimScheduler_ subclass.</span>
 <span class="sd">        But there won&#39;t be any errors if you don&#39;t override it in your implementation.</span>
 
 <span class="sd">        Returns: str</span>
 <span class="sd">            The specific part of the description string of the OptimScheduler object.</span>
-
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
@@ -4496,9 +4472,10 @@ by <code>optim_type</code> and <code>optim_conf</code> given in your configurati
 
     <div class="doc doc-contents ">
 
-        <p>This initialization function initializes the general part shared by all OptimScheduler subclasses.
-At the end of this function, an interface function <code>sche_init()</code> is called to initialize the customized part of
-each OptimScheduler subclass.</p>
+        <p>This initialization function initializes the general part shared by all
+OptimScheduler subclasses. At the end of this function, an interface function
+<code>sche_init()</code> is called to initialize the customized part of each OptimScheduler
+subclass.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4712,7 +4689,9 @@ Mainly used to decide the learning rate scheduling strategy.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/optim_sche/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 31</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
 <span class="normal"> 32</span>
 <span class="normal"> 33</span>
 <span class="normal"> 34</span>
@@ -4817,9 +4796,7 @@ Mainly used to decide the learning rate scheduling strategy.</p>
 <span class="normal">133</span>
 <span class="normal">134</span>
 <span class="normal">135</span>
-<span class="normal">136</span>
-<span class="normal">137</span>
-<span class="normal">138</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="normal">136</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">optim_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">optim_conf</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
@@ -4835,10 +4812,10 @@ Mainly used to decide the learning rate scheduling strategy.</p>
     <span class="n">grad_norm_type</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">,</span>
     <span class="o">**</span><span class="n">sche_conf</span><span class="p">,</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This initialization function initializes the general part shared by all OptimScheduler subclasses.</span>
-<span class="sd">    At the end of this function, an interface function `sche_init()` is called to initialize the customized part of</span>
-<span class="sd">    each OptimScheduler subclass.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This initialization function initializes the general part shared by all</span>
+<span class="sd">    OptimScheduler subclasses. At the end of this function, an interface function</span>
+<span class="sd">    `sche_init()` is called to initialize the customized part of each OptimScheduler</span>
+<span class="sd">    subclass.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        # --- Arguments received from exp_cfg --- #</span>
@@ -4945,7 +4922,8 @@ Mainly used to decide the learning rate scheduling strategy.</p>
     <div class="doc doc-contents ">
 
         <p>This function returns the description string of the <em>OptimScheduler</em> object.
-There is a general description part shared by all the <em>OptimScheduler</em> subclasses.</p>
+There is a general description part shared by all the <em>OptimScheduler</em>
+subclasses.</p>
 <p>In this function, an interface hook function <code>extra_repr_fn()</code> will be called to generate the specific
 description part of each <em>OptimScheduler</em> subclass.</p>
 
@@ -4973,34 +4951,32 @@ description part of each <em>OptimScheduler</em> subclass.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/optim_sche/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">319</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
 <span class="normal">320</span>
 <span class="normal">321</span>
 <span class="normal">322</span>
 <span class="normal">323</span>
 <span class="normal">324</span>
 <span class="normal">325</span>
-<span class="normal">326</span>
-<span class="normal">327</span>
-<span class="normal">328</span>
-<span class="normal">329</span>
-<span class="normal">330</span>
-<span class="normal">331</span>
-<span class="normal">332</span>
-<span class="normal">333</span>
-<span class="normal">334</span>
-<span class="normal">335</span>
-<span class="normal">336</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This function returns the description string of the _OptimScheduler_ object.</span>
-<span class="sd">    There is a general description part shared by all the _OptimScheduler_ subclasses.</span>
+<span class="normal">326</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function returns the description string of the _OptimScheduler_ object.</span>
+<span class="sd">    There is a general description part shared by all the _OptimScheduler_</span>
+<span class="sd">    subclasses.</span>
 
 <span class="sd">    In this function, an interface hook function `extra_repr_fn()` will be called to generate the specific</span>
 <span class="sd">    description part of each _OptimScheduler_ subclass.</span>
 
 <span class="sd">    Returns: str</span>
 <span class="sd">        The description string for the OptimScheduler object.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">(</span>
         <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(&quot;</span>
@@ -5025,8 +5001,9 @@ description part of each <em>OptimScheduler</em> subclass.</p>
 
     <div class="doc doc-contents ">
 
-        <p>This interface hook function returns the specific part of the description string of the OptimScheduler object.
-The original implementation in the base class returns an empty string.</p>
+        <p>This interface hook function returns the specific part of the description
+string of the OptimScheduler object. The original implementation in the base
+class returns an empty string.</p>
 <p>In principle, this interface hook function must be overridden by each <em>OptimScheduler</em> subclass.
 But there won't be any errors if you don't override it in your implementation.</p>
 
@@ -5055,31 +5032,27 @@ But there won't be any errors if you don't override it in your implementation.</
 
             <details class="quote">
               <summary>Source code in <code>speechain/optim_sche/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">338</span>
-<span class="normal">339</span>
-<span class="normal">340</span>
-<span class="normal">341</span>
-<span class="normal">342</span>
-<span class="normal">343</span>
-<span class="normal">344</span>
-<span class="normal">345</span>
-<span class="normal">346</span>
-<span class="normal">347</span>
-<span class="normal">348</span>
-<span class="normal">349</span>
-<span class="normal">350</span>
-<span class="normal">351</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">extra_repr_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This interface hook function returns the specific part of the description string of the OptimScheduler object.</span>
-<span class="sd">    The original implementation in the base class returns an empty string.</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">extra_repr_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This interface hook function returns the specific part of the description</span>
+<span class="sd">    string of the OptimScheduler object. The original implementation in the base</span>
+<span class="sd">    class returns an empty string.</span>
 
 <span class="sd">    In principle, this interface hook function must be overridden by each _OptimScheduler_ subclass.</span>
 <span class="sd">    But there won&#39;t be any errors if you don&#39;t override it in your implementation.</span>
 
 <span class="sd">    Returns: str</span>
 <span class="sd">        The specific part of the description string of the OptimScheduler object.</span>
-
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="s2">&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
@@ -5099,7 +5072,8 @@ But there won't be any errors if you don't override it in your implementation.</
 
     <div class="doc doc-contents ">
 
-        <p>This function returns the current learning rate of the built-in <code>torch.optim.Optimizer</code> member.</p>
+        <p>This function returns the current learning rate of the built-in
+<code>torch.optim.Optimizer</code> member.</p>
 
 
     <p><span class="doc-section-title">float</span></p>
@@ -5125,21 +5099,19 @@ But there won't be any errors if you don't override it in your implementation.</
 
             <details class="quote">
               <summary>Source code in <code>speechain/optim_sche/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">280</span>
-<span class="normal">281</span>
-<span class="normal">282</span>
-<span class="normal">283</span>
-<span class="normal">284</span>
-<span class="normal">285</span>
-<span class="normal">286</span>
-<span class="normal">287</span>
-<span class="normal">288</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_lr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This function returns the current learning rate of the built-in `torch.optim.Optimizer` member.</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_lr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function returns the current learning rate of the built-in</span>
+<span class="sd">    `torch.optim.Optimizer` member.</span>
 
 <span class="sd">    Returns: float</span>
 <span class="sd">        The value of the learning rates obtained from `self.optimizer.param_groups`.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">param_groups</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;lr&quot;</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
@@ -5159,7 +5131,8 @@ But there won't be any errors if you don't override it in your implementation.</
 
     <div class="doc doc-contents ">
 
-        <p>This function loads the existing checkpoint information into the <em>OptimScheduler</em> object as the starting status.</p>
+        <p>This function loads the existing checkpoint information into the
+<em>OptimScheduler</em> object as the starting status.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -5195,27 +5168,25 @@ The status information loaded from the existing checkpoint.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/optim_sche/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">304</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
 <span class="normal">305</span>
 <span class="normal">306</span>
 <span class="normal">307</span>
-<span class="normal">308</span>
-<span class="normal">309</span>
-<span class="normal">310</span>
-<span class="normal">311</span>
-<span class="normal">312</span>
-<span class="normal">313</span>
-<span class="normal">314</span>
-<span class="normal">315</span>
-<span class="normal">316</span>
-<span class="normal">317</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">load_state_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This function loads the existing checkpoint information into the _OptimScheduler_ object as the starting status.</span>
+<span class="normal">308</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">load_state_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function loads the existing checkpoint information into the</span>
+<span class="sd">    _OptimScheduler_ object as the starting status.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        state_dict: Dict</span>
 <span class="sd">            The status information loaded from the existing checkpoint.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># load the optimizer</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">state_dict</span><span class="p">[</span><span class="s2">&quot;optimizer&quot;</span><span class="p">])</span>
@@ -5243,9 +5214,9 @@ The status information loaded from the existing checkpoint.</p>
 
     <div class="doc doc-contents ">
 
-        <p>This abstract interface function is the customized initialization function which decides how the learning rate
-is scheduled as the training goes.
-This interface is mandatory to be overridden.</p>
+        <p>This abstract interface function is the customized initialization function
+which decides how the learning rate is scheduled as the training goes. This
+interface is mandatory to be overridden.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -5282,7 +5253,9 @@ For more details about the learning rate scheduling strategy, please refer to th
 
             <details class="quote">
               <summary>Source code in <code>speechain/optim_sche/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">140</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
 <span class="normal">141</span>
 <span class="normal">142</span>
 <span class="normal">143</span>
@@ -5292,23 +5265,17 @@ For more details about the learning rate scheduling strategy, please refer to th
 <span class="normal">147</span>
 <span class="normal">148</span>
 <span class="normal">149</span>
-<span class="normal">150</span>
-<span class="normal">151</span>
-<span class="normal">152</span>
-<span class="normal">153</span>
-<span class="normal">154</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
+<span class="normal">150</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
 <span class="k">def</span> <span class="nf">sche_init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">sche_conf</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This abstract interface function is the customized initialization function which decides how the learning rate</span>
-<span class="sd">    is scheduled as the training goes.</span>
-<span class="sd">    This interface is mandatory to be overridden.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This abstract interface function is the customized initialization function</span>
+<span class="sd">    which decides how the learning rate is scheduled as the training goes. This</span>
+<span class="sd">    interface is mandatory to be overridden.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        **sche_conf: Dict</span>
 <span class="sd">            The arguments used to initialize the customized part of this OptimScheduler.</span>
 <span class="sd">            For more details about the learning rate scheduling strategy, please refer to the docstring of</span>
 <span class="sd">            `sche_init()` of your target OptimScheduler subclass.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 </code></pre></div></td></tr></table></div>
@@ -5328,7 +5295,8 @@ For more details about the learning rate scheduling strategy, please refer to th
 
     <div class="doc doc-contents ">
 
-        <p>This function returns the current status of the OptimScheduler object for checkpoint storage.</p>
+        <p>This function returns the current status of the OptimScheduler object for
+checkpoint storage.</p>
 
 
     <p><span class="doc-section-title">Dict</span></p>
@@ -5365,26 +5333,24 @@ For more details about the learning rate scheduling strategy, please refer to th
 
             <details class="quote">
               <summary>Source code in <code>speechain/optim_sche/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">290</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
 <span class="normal">291</span>
 <span class="normal">292</span>
 <span class="normal">293</span>
-<span class="normal">294</span>
-<span class="normal">295</span>
-<span class="normal">296</span>
-<span class="normal">297</span>
-<span class="normal">298</span>
-<span class="normal">299</span>
-<span class="normal">300</span>
-<span class="normal">301</span>
-<span class="normal">302</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">state_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This function returns the current status of the OptimScheduler object for checkpoint storage.</span>
+<span class="normal">294</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">state_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function returns the current status of the OptimScheduler object for</span>
+<span class="sd">    checkpoint storage.</span>
 
 <span class="sd">    Returns: Dict</span>
 <span class="sd">        The status Dict containing the current status of the built-in `torch.optim.Optimizer` and the built-in</span>
 <span class="sd">        `torch.cuda.amp.GradScaler` (if had).</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
         <span class="n">optimizer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span>
@@ -5407,7 +5373,8 @@ For more details about the learning rate scheduling strategy, please refer to th
 
     <div class="doc doc-contents ">
 
-        <p>This function optimizes the target parameters of the built-in model pointer with the input training losses.</p>
+        <p>This function optimizes the target parameters of the built-in model pointer
+with the input training losses.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -5510,7 +5477,11 @@ This argument is used to update the learning rate for the current step by <code>
 
             <details class="quote">
               <summary>Source code in <code>speechain/optim_sche/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">156</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
 <span class="normal">157</span>
 <span class="normal">158</span>
 <span class="normal">159</span>
@@ -5610,12 +5581,7 @@ This argument is used to update the learning rate for the current step by <code>
 <span class="normal">253</span>
 <span class="normal">254</span>
 <span class="normal">255</span>
-<span class="normal">256</span>
-<span class="normal">257</span>
-<span class="normal">258</span>
-<span class="normal">259</span>
-<span class="normal">260</span>
-<span class="normal">261</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">step</span><span class="p">(</span>
+<span class="normal">256</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">step</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">losses</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">],</span>
     <span class="n">time_func</span><span class="p">,</span>
@@ -5624,8 +5590,8 @@ This argument is used to update the learning rate for the current step by <code>
     <span class="n">epoch_num</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
     <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This function optimizes the target parameters of the built-in model pointer with the input training losses.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function optimizes the target parameters of the built-in model pointer</span>
+<span class="sd">    with the input training losses.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        losses: Dict[str, torch.Tensor]</span>
@@ -5641,7 +5607,6 @@ This argument is used to update the learning rate for the current step by <code>
 <span class="sd">            This argument is used to update the learning rate for the current step by `self.update_lr()`.</span>
 <span class="sd">        logger:</span>
 <span class="sd">            Lazily passed logger object. Used to record logging information during optimization.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># --- 0. Initial Preparation Part --- #</span>
     <span class="c1"># get the real step number based on accum_grad</span>
@@ -5742,7 +5707,8 @@ This argument is used to update the learning rate for the current step by <code>
 
     <div class="doc doc-contents ">
 
-        <p>This abstract interface function generates the learning rate by the input step number.</p>
+        <p>This abstract interface function generates the learning rate by the input
+step number.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -5803,7 +5769,12 @@ training steps where parameter optimization is done.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/optim_sche/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">263</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
 <span class="normal">264</span>
 <span class="normal">265</span>
 <span class="normal">266</span>
@@ -5812,16 +5783,10 @@ training steps where parameter optimization is done.</p>
 <span class="normal">269</span>
 <span class="normal">270</span>
 <span class="normal">271</span>
-<span class="normal">272</span>
-<span class="normal">273</span>
-<span class="normal">274</span>
-<span class="normal">275</span>
-<span class="normal">276</span>
-<span class="normal">277</span>
-<span class="normal">278</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
+<span class="normal">272</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
 <span class="k">def</span> <span class="nf">update_lr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">real_step</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">epoch_num</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This abstract interface function generates the learning rate by the input step number.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This abstract interface function generates the learning rate by the input</span>
+<span class="sd">    step number.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        real_step: int</span>
@@ -5831,7 +5796,6 @@ training steps where parameter optimization is done.</p>
 
 <span class="sd">    Returns: float</span>
 <span class="sd">        The learning rate used for parameter optimization in the current training step.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 </code></pre></div></td></tr></table></div>

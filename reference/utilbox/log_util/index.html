@@ -3649,11 +3649,12 @@ Date: 2022.07</p>
 
     <div class="doc doc-contents ">
 
-        <p>Decorator to make all other processes in distributed training wait for the master process to do something.
-Have no influence on the single-GPU training case.</p>
-<p>However, this ContextManager function will cause an extra GPU memory consumption for each process in the
-multi-GPU training setting. These memory occupations are neither allocated memory nor reserved memory,
-which may be the CUDA context memory. I haven't found any effective solutions to release them so far.</p>
+        <p>Decorator to make all other processes in distributed training wait for the master
+process to do something. Have no influence on the single-GPU training case.</p>
+<p>However, this ContextManager function will cause an extra GPU memory consumption for
+each process in the multi-GPU training setting. These memory occupations are neither
+allocated memory nor reserved memory, which may be the CUDA context memory. I
+haven't found any effective solutions to release them so far.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/utilbox/log_util.py</code></summary>
@@ -3673,13 +3674,13 @@ which may be the CUDA context memory. I haven't found any effective solutions to
 <span class="normal">33</span>
 <span class="normal">34</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@contextmanager</span>
 <span class="k">def</span> <span class="nf">distributed_zero_first</span><span class="p">(</span><span class="n">distributed</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">rank</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Decorator to make all other processes in distributed training wait for the master process to do something.</span>
-<span class="sd">    Have no influence on the single-GPU training case.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Decorator to make all other processes in distributed training wait for the master</span>
+<span class="sd">    process to do something. Have no influence on the single-GPU training case.</span>
 
-<span class="sd">    However, this ContextManager function will cause an extra GPU memory consumption for each process in the</span>
-<span class="sd">    multi-GPU training setting. These memory occupations are neither allocated memory nor reserved memory,</span>
-<span class="sd">    which may be the CUDA context memory. I haven&#39;t found any effective solutions to release them so far.</span>
+<span class="sd">    However, this ContextManager function will cause an extra GPU memory consumption for</span>
+<span class="sd">    each process in the multi-GPU training setting. These memory occupations are neither</span>
+<span class="sd">    allocated memory nor reserved memory, which may be the CUDA context memory. I</span>
+<span class="sd">    haven&#39;t found any effective solutions to release them so far.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">distributed</span> <span class="ow">and</span> <span class="n">rank</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">torch</span><span class="o">.</span><span class="n">distributed</span><span class="o">.</span><span class="n">barrier</span><span class="p">()</span>
@@ -4024,11 +4025,8 @@ https://github.com/espnet/espnet/blob/a2abaf11c81e58653263d6cc8f957c0dfd9677e7/e
 <span class="normal">164</span>
 <span class="normal">165</span>
 <span class="normal">166</span>
-<span class="normal">167</span>
-<span class="normal">168</span>
-<span class="normal">169</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">model_summary</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">Model</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Return the information summary of the model for logging.</span>
+<span class="normal">167</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">model_summary</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">Model</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the information summary of the model for logging.</span>
 
 <span class="sd">    Codes borrowed from</span>
 <span class="sd">    https://github.com/espnet/espnet/blob/a2abaf11c81e58653263d6cc8f957c0dfd9677e7/espnet2/torch_utils/model_summary.py#L48</span>
@@ -4037,7 +4035,6 @@ https://github.com/espnet/espnet/blob/a2abaf11c81e58653263d6cc8f957c0dfd9677e7/e
 <span class="sd">        model:</span>
 
 <span class="sd">    Returns:</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">get_human_readable_count</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>

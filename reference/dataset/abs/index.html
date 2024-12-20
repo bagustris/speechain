@@ -3809,9 +3809,11 @@ Date: 2022.07</p>
               Bases: <code><span title="torch.utils.data.Dataset">Dataset</span></code>, <code><span title="abc.ABC">ABC</span></code></p>
 
 
-        <p>Base class for reading and packaging data instances from disk into memory for model training or testing.</p>
-<p>The Dataset receives indices of selected data instances from a Dataloader object, created by a high-level Iterator.
-Post-processing steps may need to be executed in the Model object later as the output batches might not be fully processed.</p>
+        <p>Base class for reading and packaging data instances from disk into memory for
+model training or testing.</p>
+<p>The Dataset receives indices of selected data instances from a Dataloader object,
+created by a high-level Iterator. Post-processing steps may need to be executed in
+the Model object later as the output batches might not be fully processed.</p>
 
 
 
@@ -4285,22 +4287,13 @@ Post-processing steps may need to be executed in the Model object later as the o
 <span class="normal">481</span>
 <span class="normal">482</span>
 <span class="normal">483</span>
-<span class="normal">484</span>
-<span class="normal">485</span>
-<span class="normal">486</span>
-<span class="normal">487</span>
-<span class="normal">488</span>
-<span class="normal">489</span>
-<span class="normal">490</span>
-<span class="normal">491</span>
-<span class="normal">492</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Dataset</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="p">,</span> <span class="n">ABC</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="normal">484</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Dataset</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="p">,</span> <span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class for reading and packaging data instances from disk into memory for</span>
+<span class="sd">    model training or testing.</span>
 
-<span class="sd">    Base class for reading and packaging data instances from disk into memory for model training or testing.</span>
-
-<span class="sd">    The Dataset receives indices of selected data instances from a Dataloader object, created by a high-level Iterator.</span>
-<span class="sd">    Post-processing steps may need to be executed in the Model object later as the output batches might not be fully processed.</span>
-
+<span class="sd">    The Dataset receives indices of selected data instances from a Dataloader object,</span>
+<span class="sd">    created by a high-level Iterator. Post-processing steps may need to be executed in</span>
+<span class="sd">    the Model object later as the output batches might not be fully processed.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
@@ -4309,9 +4302,9 @@ Post-processing steps may need to be executed in the Model object later as the o
         <span class="n">data_selection</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">dataset_conf</span><span class="p">,</span>
     <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This initialization function reads the main body of the data instances into the memory. The main body is used to</span>
-<span class="sd">        extract individual data instances from the disk to form a batch during model training or testing.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This initialization function reads the main body of the data instances into</span>
+<span class="sd">        the memory. The main body is used to extract individual data instances from the</span>
+<span class="sd">        disk to form a batch during model training or testing.</span>
 
 <span class="sd">        The hook dataset_init_fn() is executed here after reading the main body of data instances.</span>
 
@@ -4438,8 +4431,8 @@ Post-processing steps may need to be executed in the Model object later as the o
     <span class="k">def</span> <span class="nf">data_len_register_fn</span><span class="p">(</span>
         <span class="n">main_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]],</span> <span class="kc">None</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Static hook function that registers default information about the length of each data instance.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Static hook function that registers default information about the length of</span>
+<span class="sd">        each data instance.</span>
 
 <span class="sd">        By default, this function does nothing. If you need to decide the data length on-the-fly, override this function</span>
 <span class="sd">        with your own implementation.</span>
@@ -4453,8 +4446,7 @@ Post-processing steps may need to be executed in the Model object later as the o
         <span class="k">return</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="nf">dataset_init_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">dataset_conf</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Hook function that initializes the custom parts of dataset implementations.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Hook function that initializes the custom parts of dataset implementations.</span>
 
 <span class="sd">        By default, this function does nothing. If your Dataset subclass has custom parts, override this function</span>
 <span class="sd">        with your own implementation.</span>
@@ -4471,8 +4463,7 @@ Post-processing steps may need to be executed in the Model object later as the o
         <span class="n">selection_num</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span>
         <span class="n">meta_info</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Selects data instances based on the provided selection strategy.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Selects data instances based on the provided selection strategy.</span>
 
 <span class="sd">        Returns a new list of selected data instances.</span>
 
@@ -4505,7 +4496,6 @@ Post-processing steps may need to be executed in the Model object later as the o
 
 <span class="sd">        Returns: List[str]</span>
 <span class="sd">            List[str]: A list of selected data instance indices.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># Convert data_index to numpy.array for easier manipulation</span>
         <span class="n">sorted_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data_index</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
@@ -4628,21 +4618,20 @@ Post-processing steps may need to be executed in the Model object later as the o
         <span class="k">return</span> <span class="n">sorted_data</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">get_data_index</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This function is designed to make users know the data indices of this Dataset object without accessing its</span>
-<span class="sd">        members for lower coupling.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This function is designed to make users know the data indices of this Dataset</span>
+<span class="sd">        object without accessing its members for lower coupling.</span>
 
 <span class="sd">        Returns: List[str]</span>
 <span class="sd">            The list of the indices of all data instances in this dataset.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_index</span>
 
     <span class="k">def</span> <span class="nf">remove_data_by_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This function removes the corresponding data instance from this Dataset object by the given index. It&#39;s mainly</span>
-<span class="sd">        used for solving the index mismatch of data instances with the high-level Iterator object.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This function removes the corresponding data instance from this Dataset</span>
+<span class="sd">        object by the given index.</span>
 
+<span class="sd">        It&#39;s mainly used for solving the index mismatch of data instances with the high-</span>
+<span class="sd">        level Iterator object.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># remove the data instances with the given index from self.main_data</span>
         <span class="k">for</span> <span class="n">data_type</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">main_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
@@ -4650,9 +4639,9 @@ Post-processing steps may need to be executed in the Model object later as the o
                 <span class="bp">self</span><span class="o">.</span><span class="n">main_data</span><span class="p">[</span><span class="n">data_type</span><span class="p">]</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This function is the implementation of the one in the parent class `torch.utils.data.Dataset`.  This function</span>
-<span class="sd">        is activated by the _Dataloader_ object one data instance a time. In each time, this function receives an index</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This function is the implementation of the one in the parent class</span>
+<span class="sd">        `torch.utils.data.Dataset`.  This function is activated by the _Dataloader_</span>
+<span class="sd">        object one data instance a time. In each time, this function receives an index</span>
 <span class="sd">        and returns the selected data instance.</span>
 
 <span class="sd">        The hook `proc_main_data_fn()` is executed here after extracting the main body of the selected data instance.</span>
@@ -4672,9 +4661,9 @@ Post-processing steps may need to be executed in the Model object later as the o
         <span class="k">return</span> <span class="n">outputs</span>
 
     <span class="k">def</span> <span class="nf">extract_main_data_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">main_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This hook function extracts the selected data instance from the disk to the memory. If you want to implement</span>
-<span class="sd">        your own data instance extraction, please override this hook function and give your logic here.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This hook function extracts the selected data instance from the disk to the</span>
+<span class="sd">        memory. If you want to implement your own data instance extraction, please</span>
+<span class="sd">        override this hook function and give your logic here.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            main_data: Dict[str, str]</span>
@@ -4684,15 +4673,14 @@ Post-processing steps may need to be executed in the Model object later as the o
 
 <span class="sd">        Returns: Dict[str, Any]</span>
 <span class="sd">            The dictionary containing the extracted data instance.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">main_data</span>
 
     <span class="k">def</span> <span class="nf">collate_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This hook function decides how to preprocess a list of extracted data instance dictionary before giving them to</span>
-<span class="sd">        the model. This hook function is used as the value of the argument collate_fn for initializing Dataloader object</span>
-<span class="sd">        at the beginning of each epoch.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This hook function decides how to preprocess a list of extracted data</span>
+<span class="sd">        instance dictionary before giving them to the model. This hook function is used</span>
+<span class="sd">        as the value of the argument collate_fn for initializing Dataloader object at</span>
+<span class="sd">        the beginning of each epoch.</span>
 
 <span class="sd">        If you have your own batch collating strategy, we don&#39;t recommend you to override this hook but another hook</span>
 <span class="sd">        named `collate_main_data_fn()`.</span>
@@ -4705,7 +4693,6 @@ Post-processing steps may need to be executed in the Model object later as the o
 
 <span class="sd">        Returns: Dict[str, Any]</span>
 <span class="sd">            The batch dictionary that will be passed to the model.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># preprocess List[Dict[str, Any]] to Dict[str, List[Any]]</span>
         <span class="n">outputs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
@@ -4725,11 +4712,11 @@ Post-processing steps may need to be executed in the Model object later as the o
     <span class="k">def</span> <span class="nf">collate_main_data_fn</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">batch_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span> <span class="ow">or</span> <span class="n">List</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This hook function decides how to preprocess a dictionary of the extracted batch of data instances before giving</span>
-<span class="sd">        them to the model. The original hook in the base class packages all the elements other than strings of the batch</span>
-<span class="sd">        into a `torch.Tensor`. Therefore, the `torch.Tensor` elements must have the same shape. The string elements will</span>
-<span class="sd">        remain a list.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This hook function decides how to preprocess a dictionary of the extracted</span>
+<span class="sd">        batch of data instances before giving them to the model. The original hook in</span>
+<span class="sd">        the base class packages all the elements other than strings of the batch into a</span>
+<span class="sd">        `torch.Tensor`. Therefore, the `torch.Tensor` elements must have the same shape.</span>
+<span class="sd">        The string elements will remain a list.</span>
 
 <span class="sd">        If you have your own batch collating strategy, please override this hook function and give your logic here.</span>
 
@@ -4741,7 +4728,6 @@ Post-processing steps may need to be executed in the Model object later as the o
 
 <span class="sd">        Returns: Dict[str, torch.Tensor or List]</span>
 <span class="sd">            The dictionary containing the collated batch of data instances.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># extract the main body of data instances by the hook interface implementation</span>
         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">batch_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
@@ -4793,8 +4779,9 @@ Post-processing steps may need to be executed in the Model object later as the o
 
     <div class="doc doc-contents ">
 
-        <p>This function is the implementation of the one in the parent class <code>torch.utils.data.Dataset</code>.  This function
-is activated by the <em>Dataloader</em> object one data instance a time. In each time, this function receives an index
+        <p>This function is the implementation of the one in the parent class
+<code>torch.utils.data.Dataset</code>.  This function is activated by the <em>Dataloader</em>
+object one data instance a time. In each time, this function receives an index
 and returns the selected data instance.</p>
 <p>The hook <code>proc_main_data_fn()</code> is executed here after extracting the main body of the selected data instance.</p>
 
@@ -4855,7 +4842,12 @@ The index of the selected data instance given by the Dataloader object.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/dataset/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">375</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">370</span>
+<span class="normal">371</span>
+<span class="normal">372</span>
+<span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
 <span class="normal">376</span>
 <span class="normal">377</span>
 <span class="normal">378</span>
@@ -4870,15 +4862,10 @@ The index of the selected data instance given by the Dataloader object.</p>
 <span class="normal">387</span>
 <span class="normal">388</span>
 <span class="normal">389</span>
-<span class="normal">390</span>
-<span class="normal">391</span>
-<span class="normal">392</span>
-<span class="normal">393</span>
-<span class="normal">394</span>
-<span class="normal">395</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This function is the implementation of the one in the parent class `torch.utils.data.Dataset`.  This function</span>
-<span class="sd">    is activated by the _Dataloader_ object one data instance a time. In each time, this function receives an index</span>
+<span class="normal">390</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function is the implementation of the one in the parent class</span>
+<span class="sd">    `torch.utils.data.Dataset`.  This function is activated by the _Dataloader_</span>
+<span class="sd">    object one data instance a time. In each time, this function receives an index</span>
 <span class="sd">    and returns the selected data instance.</span>
 
 <span class="sd">    The hook `proc_main_data_fn()` is executed here after extracting the main body of the selected data instance.</span>
@@ -4913,8 +4900,9 @@ The index of the selected data instance given by the Dataloader object.</p>
 
     <div class="doc doc-contents ">
 
-        <p>This initialization function reads the main body of the data instances into the memory. The main body is used to
-extract individual data instances from the disk to form a batch during model training or testing.</p>
+        <p>This initialization function reads the main body of the data instances into
+the memory. The main body is used to extract individual data instances from the
+disk to form a batch during model training or testing.</p>
 <p>The hook dataset_init_fn() is executed here after reading the main body of data instances.</p>
 
 
@@ -5025,7 +5013,8 @@ Multiple strategies can be specified in a list. Each data selection strategy mus
 
             <details class="quote">
               <summary>Source code in <code>speechain/dataset/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 29</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 28</span>
+<span class="normal"> 29</span>
 <span class="normal"> 30</span>
 <span class="normal"> 31</span>
 <span class="normal"> 32</span>
@@ -5153,16 +5142,15 @@ Multiple strategies can be specified in a list. Each data selection strategy mus
 <span class="normal">154</span>
 <span class="normal">155</span>
 <span class="normal">156</span>
-<span class="normal">157</span>
-<span class="normal">158</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="normal">157</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">main_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]],</span>
     <span class="n">data_selection</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">dataset_conf</span><span class="p">,</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This initialization function reads the main body of the data instances into the memory. The main body is used to</span>
-<span class="sd">    extract individual data instances from the disk to form a batch during model training or testing.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This initialization function reads the main body of the data instances into</span>
+<span class="sd">    the memory. The main body is used to extract individual data instances from the</span>
+<span class="sd">    disk to form a batch during model training or testing.</span>
 
 <span class="sd">    The hook dataset_init_fn() is executed here after reading the main body of data instances.</span>
 
@@ -5301,9 +5289,10 @@ Multiple strategies can be specified in a list. Each data selection strategy mus
 
     <div class="doc doc-contents ">
 
-        <p>This hook function decides how to preprocess a list of extracted data instance dictionary before giving them to
-the model. This hook function is used as the value of the argument collate_fn for initializing Dataloader object
-at the beginning of each epoch.</p>
+        <p>This hook function decides how to preprocess a list of extracted data
+instance dictionary before giving them to the model. This hook function is used
+as the value of the argument collate_fn for initializing Dataloader object at
+the beginning of each epoch.</p>
 <p>If you have your own batch collating strategy, we don't recommend you to override this hook but another hook
 named <code>collate_main_data_fn()</code>.</p>
 <p>This function should return the processed batch data in the form of a dictionary.</p>
@@ -5365,7 +5354,13 @@ The tuple of data instance dictionaries extracted by <code>extract_main_data_fn(
 
             <details class="quote">
               <summary>Source code in <code>speechain/dataset/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">414</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">408</span>
+<span class="normal">409</span>
+<span class="normal">410</span>
+<span class="normal">411</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
 <span class="normal">415</span>
 <span class="normal">416</span>
 <span class="normal">417</span>
@@ -5390,18 +5385,11 @@ The tuple of data instance dictionaries extracted by <code>extract_main_data_fn(
 <span class="normal">436</span>
 <span class="normal">437</span>
 <span class="normal">438</span>
-<span class="normal">439</span>
-<span class="normal">440</span>
-<span class="normal">441</span>
-<span class="normal">442</span>
-<span class="normal">443</span>
-<span class="normal">444</span>
-<span class="normal">445</span>
-<span class="normal">446</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">collate_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This hook function decides how to preprocess a list of extracted data instance dictionary before giving them to</span>
-<span class="sd">    the model. This hook function is used as the value of the argument collate_fn for initializing Dataloader object</span>
-<span class="sd">    at the beginning of each epoch.</span>
+<span class="normal">439</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">collate_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This hook function decides how to preprocess a list of extracted data</span>
+<span class="sd">    instance dictionary before giving them to the model. This hook function is used</span>
+<span class="sd">    as the value of the argument collate_fn for initializing Dataloader object at</span>
+<span class="sd">    the beginning of each epoch.</span>
 
 <span class="sd">    If you have your own batch collating strategy, we don&#39;t recommend you to override this hook but another hook</span>
 <span class="sd">    named `collate_main_data_fn()`.</span>
@@ -5414,7 +5402,6 @@ The tuple of data instance dictionaries extracted by <code>extract_main_data_fn(
 
 <span class="sd">    Returns: Dict[str, Any]</span>
 <span class="sd">        The batch dictionary that will be passed to the model.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># preprocess List[Dict[str, Any]] to Dict[str, List[Any]]</span>
     <span class="n">outputs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
@@ -5447,10 +5434,11 @@ The tuple of data instance dictionaries extracted by <code>extract_main_data_fn(
 
     <div class="doc doc-contents ">
 
-        <p>This hook function decides how to preprocess a dictionary of the extracted batch of data instances before giving
-them to the model. The original hook in the base class packages all the elements other than strings of the batch
-into a <code>torch.Tensor</code>. Therefore, the <code>torch.Tensor</code> elements must have the same shape. The string elements will
-remain a list.</p>
+        <p>This hook function decides how to preprocess a dictionary of the extracted
+batch of data instances before giving them to the model. The original hook in
+the base class packages all the elements other than strings of the batch into a
+<code>torch.Tensor</code>. Therefore, the <code>torch.Tensor</code> elements must have the same shape.
+The string elements will remain a list.</p>
 <p>If you have your own batch collating strategy, please override this hook function and give your logic here.</p>
 
 
@@ -5512,7 +5500,14 @@ elements in the batch.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/dataset/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">448</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">441</span>
+<span class="normal">442</span>
+<span class="normal">443</span>
+<span class="normal">444</span>
+<span class="normal">445</span>
+<span class="normal">446</span>
+<span class="normal">447</span>
+<span class="normal">448</span>
 <span class="normal">449</span>
 <span class="normal">450</span>
 <span class="normal">451</span>
@@ -5545,22 +5540,14 @@ elements in the batch.</p>
 <span class="normal">478</span>
 <span class="normal">479</span>
 <span class="normal">480</span>
-<span class="normal">481</span>
-<span class="normal">482</span>
-<span class="normal">483</span>
-<span class="normal">484</span>
-<span class="normal">485</span>
-<span class="normal">486</span>
-<span class="normal">487</span>
-<span class="normal">488</span>
-<span class="normal">489</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">collate_main_data_fn</span><span class="p">(</span>
+<span class="normal">481</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">collate_main_data_fn</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">batch_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">]</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span> <span class="ow">or</span> <span class="n">List</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This hook function decides how to preprocess a dictionary of the extracted batch of data instances before giving</span>
-<span class="sd">    them to the model. The original hook in the base class packages all the elements other than strings of the batch</span>
-<span class="sd">    into a `torch.Tensor`. Therefore, the `torch.Tensor` elements must have the same shape. The string elements will</span>
-<span class="sd">    remain a list.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This hook function decides how to preprocess a dictionary of the extracted</span>
+<span class="sd">    batch of data instances before giving them to the model. The original hook in</span>
+<span class="sd">    the base class packages all the elements other than strings of the batch into a</span>
+<span class="sd">    `torch.Tensor`. Therefore, the `torch.Tensor` elements must have the same shape.</span>
+<span class="sd">    The string elements will remain a list.</span>
 
 <span class="sd">    If you have your own batch collating strategy, please override this hook function and give your logic here.</span>
 
@@ -5572,7 +5559,6 @@ elements in the batch.</p>
 
 <span class="sd">    Returns: Dict[str, torch.Tensor or List]</span>
 <span class="sd">        The dictionary containing the collated batch of data instances.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># extract the main body of data instances by the hook interface implementation</span>
     <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">batch_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
@@ -5616,7 +5602,8 @@ elements in the batch.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Static hook function that registers default information about the length of each data instance.</p>
+        <p>Static hook function that registers default information about the length of
+each data instance.</p>
 <p>By default, this function does nothing. If you need to decide the data length on-the-fly, override this function
 with your own implementation.</p>
 
@@ -5676,7 +5663,8 @@ with your own implementation.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/dataset/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">160</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">159</span>
+<span class="normal">160</span>
 <span class="normal">161</span>
 <span class="normal">162</span>
 <span class="normal">163</span>
@@ -5691,13 +5679,12 @@ with your own implementation.</p>
 <span class="normal">172</span>
 <span class="normal">173</span>
 <span class="normal">174</span>
-<span class="normal">175</span>
-<span class="normal">176</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
+<span class="normal">175</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
 <span class="k">def</span> <span class="nf">data_len_register_fn</span><span class="p">(</span>
     <span class="n">main_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]],</span> <span class="kc">None</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Static hook function that registers default information about the length of each data instance.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Static hook function that registers default information about the length of</span>
+<span class="sd">    each data instance.</span>
 
 <span class="sd">    By default, this function does nothing. If you need to decide the data length on-the-fly, override this function</span>
 <span class="sd">    with your own implementation.</span>
@@ -5855,7 +5842,9 @@ Defines the selection strategy:
 
             <details class="quote">
               <summary>Source code in <code>speechain/dataset/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">190</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
 <span class="normal">191</span>
 <span class="normal">192</span>
 <span class="normal">193</span>
@@ -6012,19 +6001,14 @@ Defines the selection strategy:
 <span class="normal">344</span>
 <span class="normal">345</span>
 <span class="normal">346</span>
-<span class="normal">347</span>
-<span class="normal">348</span>
-<span class="normal">349</span>
-<span class="normal">350</span>
-<span class="normal">351</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
+<span class="normal">347</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
 <span class="k">def</span> <span class="nf">data_selection</span><span class="p">(</span>
     <span class="n">data_index</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
     <span class="n">selection_mode</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">selection_num</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span>
     <span class="n">meta_info</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Selects data instances based on the provided selection strategy.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Selects data instances based on the provided selection strategy.</span>
 
 <span class="sd">    Returns a new list of selected data instances.</span>
 
@@ -6057,7 +6041,6 @@ Defines the selection strategy:
 
 <span class="sd">    Returns: List[str]</span>
 <span class="sd">        List[str]: A list of selected data instance indices.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Convert data_index to numpy.array for easier manipulation</span>
     <span class="n">sorted_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data_index</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
@@ -6231,7 +6214,8 @@ with your own implementation.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/dataset/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">178</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">177</span>
+<span class="normal">178</span>
 <span class="normal">179</span>
 <span class="normal">180</span>
 <span class="normal">181</span>
@@ -6239,11 +6223,8 @@ with your own implementation.</p>
 <span class="normal">183</span>
 <span class="normal">184</span>
 <span class="normal">185</span>
-<span class="normal">186</span>
-<span class="normal">187</span>
-<span class="normal">188</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">dataset_init_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">dataset_conf</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Hook function that initializes the custom parts of dataset implementations.</span>
+<span class="normal">186</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">dataset_init_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">dataset_conf</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Hook function that initializes the custom parts of dataset implementations.</span>
 
 <span class="sd">    By default, this function does nothing. If your Dataset subclass has custom parts, override this function</span>
 <span class="sd">    with your own implementation.</span>
@@ -6269,8 +6250,9 @@ with your own implementation.</p>
 
     <div class="doc doc-contents ">
 
-        <p>This hook function extracts the selected data instance from the disk to the memory. If you want to implement
-your own data instance extraction, please override this hook function and give your logic here.</p>
+        <p>This hook function extracts the selected data instance from the disk to the
+memory. If you want to implement your own data instance extraction, please
+override this hook function and give your logic here.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -6331,7 +6313,12 @@ embedding.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/dataset/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">397</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">392</span>
+<span class="normal">393</span>
+<span class="normal">394</span>
+<span class="normal">395</span>
+<span class="normal">396</span>
+<span class="normal">397</span>
 <span class="normal">398</span>
 <span class="normal">399</span>
 <span class="normal">400</span>
@@ -6340,16 +6327,10 @@ embedding.</p>
 <span class="normal">403</span>
 <span class="normal">404</span>
 <span class="normal">405</span>
-<span class="normal">406</span>
-<span class="normal">407</span>
-<span class="normal">408</span>
-<span class="normal">409</span>
-<span class="normal">410</span>
-<span class="normal">411</span>
-<span class="normal">412</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">extract_main_data_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">main_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This hook function extracts the selected data instance from the disk to the memory. If you want to implement</span>
-<span class="sd">    your own data instance extraction, please override this hook function and give your logic here.</span>
+<span class="normal">406</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">extract_main_data_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">main_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This hook function extracts the selected data instance from the disk to the</span>
+<span class="sd">    memory. If you want to implement your own data instance extraction, please</span>
+<span class="sd">    override this hook function and give your logic here.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        main_data: Dict[str, str]</span>
@@ -6359,7 +6340,6 @@ embedding.</p>
 
 <span class="sd">    Returns: Dict[str, Any]</span>
 <span class="sd">        The dictionary containing the extracted data instance.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">main_data</span>
 </code></pre></div></td></tr></table></div>
@@ -6379,8 +6359,8 @@ embedding.</p>
 
     <div class="doc doc-contents ">
 
-        <p>This function is designed to make users know the data indices of this Dataset object without accessing its
-members for lower coupling.</p>
+        <p>This function is designed to make users know the data indices of this Dataset
+object without accessing its members for lower coupling.</p>
 
 
     <p><span class="doc-section-title">List[str]</span></p>
@@ -6407,23 +6387,19 @@ members for lower coupling.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/dataset/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">353</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
 <span class="normal">354</span>
 <span class="normal">355</span>
-<span class="normal">356</span>
-<span class="normal">357</span>
-<span class="normal">358</span>
-<span class="normal">359</span>
-<span class="normal">360</span>
-<span class="normal">361</span>
-<span class="normal">362</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_data_index</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This function is designed to make users know the data indices of this Dataset object without accessing its</span>
-<span class="sd">    members for lower coupling.</span>
+<span class="normal">356</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_data_index</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function is designed to make users know the data indices of this Dataset</span>
+<span class="sd">    object without accessing its members for lower coupling.</span>
 
 <span class="sd">    Returns: List[str]</span>
 <span class="sd">        The list of the indices of all data instances in this dataset.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_index</span>
 </code></pre></div></td></tr></table></div>
@@ -6443,25 +6419,29 @@ members for lower coupling.</p>
 
     <div class="doc doc-contents ">
 
-        <p>This function removes the corresponding data instance from this Dataset object by the given index. It's mainly
-used for solving the index mismatch of data instances with the high-level Iterator object.</p>
+        <p>This function removes the corresponding data instance from this Dataset
+object by the given index.</p>
+<p>It's mainly used for solving the index mismatch of data instances with the high-
+level Iterator object.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/dataset/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">364</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
 <span class="normal">365</span>
 <span class="normal">366</span>
 <span class="normal">367</span>
-<span class="normal">368</span>
-<span class="normal">369</span>
-<span class="normal">370</span>
-<span class="normal">371</span>
-<span class="normal">372</span>
-<span class="normal">373</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">remove_data_by_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This function removes the corresponding data instance from this Dataset object by the given index. It&#39;s mainly</span>
-<span class="sd">    used for solving the index mismatch of data instances with the high-level Iterator object.</span>
+<span class="normal">368</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">remove_data_by_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function removes the corresponding data instance from this Dataset</span>
+<span class="sd">    object by the given index.</span>
 
+<span class="sd">    It&#39;s mainly used for solving the index mismatch of data instances with the high-</span>
+<span class="sd">    level Iterator object.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># remove the data instances with the given index from self.main_data</span>
     <span class="k">for</span> <span class="n">data_type</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">main_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>

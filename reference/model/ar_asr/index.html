@@ -3719,7 +3719,8 @@ Date: 2022.07</p>
               Bases: <code><span title="speechain.model.abs.Model">Model</span></code></p>
 
 
-        <p>Auto-Regressive Attention-based Automatic Speech Recognition (AR-ASR) implementation.</p>
+        <p>Auto-Regressive Attention-based Automatic Speech Recognition (AR-ASR)
+implementation.</p>
 <p>The neural network structure of an <code>ASR</code> Model object is made up of 3 Module members:</p>
 <ol>
 <li>
@@ -4758,10 +4759,9 @@ Date: 2022.07</p>
 <span class="normal">1038</span>
 <span class="normal">1039</span>
 <span class="normal">1040</span>
-<span class="normal">1041</span>
-<span class="normal">1042</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ARASR</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Auto-Regressive Attention-based Automatic Speech Recognition (AR-ASR) implementation.</span>
+<span class="normal">1041</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ARASR</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Auto-Regressive Attention-based Automatic Speech Recognition (AR-ASR)</span>
+<span class="sd">    implementation.</span>
 
 <span class="sd">    The neural network structure of an `ASR` Model object is made up of 3 Module members:</span>
 
@@ -4780,7 +4780,6 @@ Date: 2022.07</p>
 <span class="sd">        3. `postnet` predicts the probability of the next tokens by the decoder hidden representations.</span>
 
 <span class="sd">    3. (optional) a CTC layer made up of a &#39;TokenPostnet&#39;</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
@@ -5893,7 +5892,8 @@ Please refer to speechain.criterion.att_guid.AttentionGuidance for more details.
 
             <details class="quote">
               <summary>Source code in <code>speechain/model/ar_asr.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">249</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">248</span>
+<span class="normal">249</span>
 <span class="normal">250</span>
 <span class="normal">251</span>
 <span class="normal">252</span>
@@ -5972,8 +5972,7 @@ Please refer to speechain.criterion.att_guid.AttentionGuidance for more details.
 <span class="normal">325</span>
 <span class="normal">326</span>
 <span class="normal">327</span>
-<span class="normal">328</span>
-<span class="normal">329</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">criterion_init</span><span class="p">(</span>
+<span class="normal">328</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">criterion_init</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">ce_loss</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">ilm_loss</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -6272,7 +6271,8 @@ For more details, please refer to speechain.infer_func.beam_search.beam_searchin
 
             <details class="quote">
               <summary>Source code in <code>speechain/model/ar_asr.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 730</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 729</span>
+<span class="normal"> 730</span>
 <span class="normal"> 731</span>
 <span class="normal"> 732</span>
 <span class="normal"> 733</span>
@@ -6583,8 +6583,7 @@ For more details, please refer to speechain.infer_func.beam_search.beam_searchin
 <span class="normal">1038</span>
 <span class="normal">1039</span>
 <span class="normal">1040</span>
-<span class="normal">1041</span>
-<span class="normal">1042</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">inference</span><span class="p">(</span>
+<span class="normal">1041</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">inference</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">infer_conf</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
     <span class="n">feat</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -7066,7 +7065,8 @@ Controls whether the attention matrices of each layer in the encoder and decoder
 
             <details class="quote">
               <summary>Source code in <code>speechain/model/ar_asr.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">342</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">341</span>
+<span class="normal">342</span>
 <span class="normal">343</span>
 <span class="normal">344</span>
 <span class="normal">345</span>
@@ -7213,8 +7213,7 @@ Controls whether the attention matrices of each layer in the encoder and decoder
 <span class="normal">486</span>
 <span class="normal">487</span>
 <span class="normal">488</span>
-<span class="normal">489</span>
-<span class="normal">490</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">module_forward</span><span class="p">(</span>
+<span class="normal">489</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">module_forward</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">epoch</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">feat</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -7710,7 +7709,8 @@ The string indicating where the .pth model parameter file is placed.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/model/ar_asr.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 61</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 60</span>
+<span class="normal"> 61</span>
 <span class="normal"> 62</span>
 <span class="normal"> 63</span>
 <span class="normal"> 64</span>
@@ -7895,8 +7895,7 @@ The string indicating where the .pth model parameter file is placed.</p>
 <span class="normal">243</span>
 <span class="normal">244</span>
 <span class="normal">245</span>
-<span class="normal">246</span>
-<span class="normal">247</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
+<span class="normal">246</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">token_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">token_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -8122,7 +8121,8 @@ The string indicating where the .pth model parameter file is placed.</p>
 
               <details class="quote">
                 <summary>Source code in <code>speechain/model/ar_asr.py</code></summary>
-                <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1045</span>
+                <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1044</span>
+<span class="normal">1045</span>
 <span class="normal">1046</span>
 <span class="normal">1047</span>
 <span class="normal">1048</span>
@@ -8379,15 +8379,8 @@ The string indicating where the .pth model parameter file is placed.</p>
 <span class="normal">1299</span>
 <span class="normal">1300</span>
 <span class="normal">1301</span>
-<span class="normal">1302</span>
-<span class="normal">1303</span>
-<span class="normal">1304</span>
-<span class="normal">1305</span>
-<span class="normal">1306</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">MultiDataLoaderARASR</span><span class="p">(</span><span class="n">ARASR</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Auto-Regressive ASR model trained by multiple dataloaders.</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="normal">1302</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">MultiDataLoaderARASR</span><span class="p">(</span><span class="n">ARASR</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Auto-Regressive ASR model trained by multiple dataloaders.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">criterion_init</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>

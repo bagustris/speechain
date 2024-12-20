@@ -3806,7 +3806,8 @@ Date: 2022.09</p>
               Bases: <code><span title="speechain.model.abs.Model">Model</span></code></p>
 
 
-        <p>Auto-Regressive Attention-based Text-To-Speech Synthesis Model. (single-speaker or multi-speaker)</p>
+        <p>Auto-Regressive Attention-based Text-To-Speech Synthesis Model.</p>
+<p>(single-speaker or multi-speaker)</p>
 
 
 
@@ -4754,9 +4755,9 @@ Date: 2022.09</p>
 <span class="normal">972</span>
 <span class="normal">973</span>
 <span class="normal">974</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ARTTS</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Auto-Regressive Attention-based Text-To-Speech Synthesis Model. (single-speaker or multi-speaker)</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Auto-Regressive Attention-based Text-To-Speech Synthesis Model.</span>
 
+<span class="sd">    (single-speaker or multi-speaker)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
@@ -8486,7 +8487,8 @@ RNN can be considered to one-layer attention, so return_att_layer_num &gt; 1 is 
               Bases: <code><a class="autorefs autorefs-internal" title="model.ar_tts.ARTTS" href="#model.ar_tts.ARTTS">ARTTS</a></code></p>
 
 
-        <p>Auto-Regressive TTS model trained by multiple dataloaders on different domains.</p>
+        <p>Auto-Regressive TTS model trained by multiple dataloaders on different
+domains.</p>
 
 
 
@@ -8762,13 +8764,9 @@ RNN can be considered to one-layer attention, so return_att_layer_num &gt; 1 is 
 <span class="normal">1241</span>
 <span class="normal">1242</span>
 <span class="normal">1243</span>
-<span class="normal">1244</span>
-<span class="normal">1245</span>
-<span class="normal">1246</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">MultiDomainARTTS</span><span class="p">(</span><span class="n">ARTTS</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Auto-Regressive TTS model trained by multiple dataloaders on different domains.</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="normal">1244</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">MultiDomainARTTS</span><span class="p">(</span><span class="n">ARTTS</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Auto-Regressive TTS model trained by multiple dataloaders on different</span>
+<span class="sd">    domains.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">criterion_init</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -9094,7 +9092,9 @@ RNN can be considered to one-layer attention, so return_att_layer_num &gt; 1 is 
 
             <details class="quote">
               <summary>Source code in <code>speechain/model/ar_tts.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1103</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1101</span>
+<span class="normal">1102</span>
+<span class="normal">1103</span>
 <span class="normal">1104</span>
 <span class="normal">1105</span>
 <span class="normal">1106</span>
@@ -9206,9 +9206,7 @@ RNN can be considered to one-layer attention, so return_att_layer_num &gt; 1 is 
 <span class="normal">1212</span>
 <span class="normal">1213</span>
 <span class="normal">1214</span>
-<span class="normal">1215</span>
-<span class="normal">1216</span>
-<span class="normal">1217</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">criterion_forward</span><span class="p">(</span>
+<span class="normal">1215</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">criterion_forward</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">data_output_dict</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -9390,7 +9388,9 @@ RNN can be considered to one-layer attention, so return_att_layer_num &gt; 1 is 
 
             <details class="quote">
               <summary>Source code in <code>speechain/model/ar_tts.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1219</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1217</span>
+<span class="normal">1218</span>
+<span class="normal">1219</span>
 <span class="normal">1220</span>
 <span class="normal">1221</span>
 <span class="normal">1222</span>
@@ -9415,9 +9415,7 @@ RNN can be considered to one-layer attention, so return_att_layer_num &gt; 1 is 
 <span class="normal">1241</span>
 <span class="normal">1242</span>
 <span class="normal">1243</span>
-<span class="normal">1244</span>
-<span class="normal">1245</span>
-<span class="normal">1246</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">inference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">infer_conf</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span> <span class="o">**</span><span class="n">test_batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="normal">1244</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">inference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">infer_conf</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span> <span class="o">**</span><span class="n">test_batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">    Args:</span>
@@ -9496,7 +9494,9 @@ RNN can be considered to one-layer attention, so return_att_layer_num &gt; 1 is 
 
             <details class="quote">
               <summary>Source code in <code>speechain/model/ar_tts.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1066</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1064</span>
+<span class="normal">1065</span>
+<span class="normal">1066</span>
 <span class="normal">1067</span>
 <span class="normal">1068</span>
 <span class="normal">1069</span>
@@ -9529,9 +9529,7 @@ RNN can be considered to one-layer attention, so return_att_layer_num &gt; 1 is 
 <span class="normal">1096</span>
 <span class="normal">1097</span>
 <span class="normal">1098</span>
-<span class="normal">1099</span>
-<span class="normal">1100</span>
-<span class="normal">1101</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">module_forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">batch_data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span> <span class="ow">or</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]:</span>
+<span class="normal">1099</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">module_forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">batch_data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span> <span class="ow">or</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">    Args:</span>

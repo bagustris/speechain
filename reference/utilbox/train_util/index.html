@@ -3703,7 +3703,8 @@ Date: 2022.07</p>
 
     <div class="doc doc-contents ">
 
-        <p>Round the float number in [X.0, X.5) to X and the float number in (X.5, {X+1}.0] to X+1</p>
+        <p>Round the float number in [X.0, X.5) to X and the float number in (X.5, {X+1}.0]
+to X+1.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/utilbox/train_util.py</code></summary>
@@ -3715,15 +3716,9 @@ Date: 2022.07</p>
 <span class="normal">156</span>
 <span class="normal">157</span>
 <span class="normal">158</span>
-<span class="normal">159</span>
-<span class="normal">160</span>
-<span class="normal">161</span>
-<span class="normal">162</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">float_near_round</span><span class="p">(</span><span class="n">input_float</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-
-<span class="sd">    Round the float number in [X.0, X.5) to X and the float number in (X.5, {X+1}.0] to X+1</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="normal">159</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">float_near_round</span><span class="p">(</span><span class="n">input_float</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Round the float number in [X.0, X.5) to X and the float number in (X.5, {X+1}.0]</span>
+<span class="sd">    to X+1.&quot;&quot;&quot;</span>
     <span class="n">int_part</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">input_float</span><span class="p">)</span>
     <span class="n">frac_part</span> <span class="o">=</span> <span class="n">input_float</span> <span class="o">-</span> <span class="n">int_part</span>
     <span class="k">if</span> <span class="n">frac_part</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">:</span>
@@ -3747,8 +3742,9 @@ Date: 2022.07</p>
 
     <div class="doc doc-contents ">
 
-        <p>Get the specified number of indices with minimum values from the input frequency dictionary,
-optionally applying frequency weights, and return the updated frequency dictionary.</p>
+        <p>Get the specified number of indices with minimum values from the input frequency
+dictionary, optionally applying frequency weights, and return the updated frequency
+dictionary.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -3857,7 +3853,10 @@ A tuple containing a list of the selected minimum indices and the updated freque
 
             <details class="quote">
               <summary>Source code in <code>speechain/utilbox/train_util.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">169</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
 <span class="normal">170</span>
 <span class="normal">171</span>
 <span class="normal">172</span>
@@ -3906,18 +3905,15 @@ A tuple containing a list of the selected minimum indices and the updated freque
 <span class="normal">215</span>
 <span class="normal">216</span>
 <span class="normal">217</span>
-<span class="normal">218</span>
-<span class="normal">219</span>
-<span class="normal">220</span>
-<span class="normal">221</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_min_indices_by_freq</span><span class="p">(</span>
+<span class="normal">218</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_min_indices_by_freq</span><span class="p">(</span>
     <span class="n">freq_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]],</span>
     <span class="n">shuffle</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">chosen_idx_num</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
     <span class="n">freq_weights</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="ow">or</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">List</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Get the specified number of indices with minimum values from the input frequency dictionary,</span>
-<span class="sd">    optionally applying frequency weights, and return the updated frequency dictionary.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the specified number of indices with minimum values from the input frequency</span>
+<span class="sd">    dictionary, optionally applying frequency weights, and return the updated frequency</span>
+<span class="sd">    dictionary.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        freq_dict (Dict[Any, Union[int, float]]):</span>

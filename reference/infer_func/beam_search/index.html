@@ -3812,25 +3812,11 @@ https://github.com/huggingface/transformers/blob/518bd02c9b71291333ef374f055a4d1
 <span class="normal">100</span>
 <span class="normal">101</span>
 <span class="normal">102</span>
-<span class="normal">103</span>
-<span class="normal">104</span>
-<span class="normal">105</span>
-<span class="normal">106</span>
-<span class="normal">107</span>
-<span class="normal">108</span>
-<span class="normal">109</span>
-<span class="normal">110</span>
-<span class="normal">111</span>
-<span class="normal">112</span>
-<span class="normal">113</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">BeamHypotheses</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Beam Hypothesis Container.</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="normal">103</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">BeamHypotheses</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Beam Hypothesis Container.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">beam_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">max_length</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">length_penalty</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Initialize n-best list of hypotheses.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize n-best list of hypotheses.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            beam_size: int</span>
@@ -3854,21 +3840,17 @@ https://github.com/huggingface/transformers/blob/518bd02c9b71291333ef374f055a4d1
         <span class="bp">self</span><span class="o">.</span><span class="n">worst_score</span> <span class="o">=</span> <span class="mf">1e9</span>
 
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Number of hypotheses generated so far.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Number of hypotheses generated so far.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">beams</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hyp</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">sum_logprobs</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Add a new hypothesis to the container.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a new hypothesis to the container.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            hyp: (hypo_len,)</span>
 <span class="sd">                The generated hypothesis transcript.</span>
 <span class="sd">            sum_logprobs: float</span>
 <span class="sd">                The sum of log probability of each token prediction in the hypothesis.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># normalize the sum of log probability by the hypothesis length</span>
         <span class="n">score</span> <span class="o">=</span> <span class="n">sum_logprobs</span> <span class="o">/</span> <span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">hyp</span><span class="p">)</span> <span class="o">+</span> <span class="n">eps</span><span class="p">)</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">length_penalty</span><span class="p">)</span>
@@ -3889,8 +3871,7 @@ https://github.com/huggingface/transformers/blob/518bd02c9b71291333ef374f055a4d1
                 <span class="bp">self</span><span class="o">.</span><span class="n">worst_score</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">worst_score</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">is_done</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">best_sum_logprobs</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">curr_len</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        whether the beam searching of this container is done or not</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Whether the beam searching of this container is done or not.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            best_sum_logprobs: float</span>
@@ -3902,7 +3883,6 @@ https://github.com/huggingface/transformers/blob/518bd02c9b71291333ef374f055a4d1
 <span class="sd">            A flag that indicates whether the beam searching of this container is done.</span>
 <span class="sd">            True means the container already has &#39;beam_size&#39; hypotheses and the current hypothesis is not better than anyone of them.</span>
 <span class="sd">            False means either the container has some empty beams or the current input hypothesis is better than the worst hypothesis.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># some beams are empty</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">beam_size</span><span class="p">:</span>
@@ -4013,7 +3993,10 @@ length_penalty=1 means no penalty on lengths.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/infer_func/beam_search.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">27</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
 <span class="normal">28</span>
 <span class="normal">29</span>
 <span class="normal">30</span>
@@ -4032,13 +4015,8 @@ length_penalty=1 means no penalty on lengths.</p>
 <span class="normal">43</span>
 <span class="normal">44</span>
 <span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">beam_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">max_length</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">length_penalty</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Initialize n-best list of hypotheses.</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">beam_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">max_length</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">length_penalty</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize n-best list of hypotheses.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        beam_size: int</span>
@@ -4081,14 +4059,10 @@ length_penalty=1 means no penalty on lengths.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/infer_func/beam_search.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Number of hypotheses generated so far.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Number of hypotheses generated so far.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">beams</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>
@@ -4160,7 +4134,13 @@ The sum of log probability of each token prediction in the hypothesis.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/infer_func/beam_search.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">58</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
 <span class="normal">59</span>
 <span class="normal">60</span>
 <span class="normal">61</span>
@@ -4179,24 +4159,14 @@ The sum of log probability of each token prediction in the hypothesis.</p>
 <span class="normal">74</span>
 <span class="normal">75</span>
 <span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span>
-<span class="normal">80</span>
-<span class="normal">81</span>
-<span class="normal">82</span>
-<span class="normal">83</span>
-<span class="normal">84</span>
-<span class="normal">85</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hyp</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">sum_logprobs</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Add a new hypothesis to the container.</span>
+<span class="normal">77</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hyp</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">sum_logprobs</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a new hypothesis to the container.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        hyp: (hypo_len,)</span>
 <span class="sd">            The generated hypothesis transcript.</span>
 <span class="sd">        sum_logprobs: float</span>
 <span class="sd">            The sum of log probability of each token prediction in the hypothesis.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># normalize the sum of log probability by the hypothesis length</span>
     <span class="n">score</span> <span class="o">=</span> <span class="n">sum_logprobs</span> <span class="o">/</span> <span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">hyp</span><span class="p">)</span> <span class="o">+</span> <span class="n">eps</span><span class="p">)</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">length_penalty</span><span class="p">)</span>
@@ -4232,7 +4202,7 @@ The sum of log probability of each token prediction in the hypothesis.</p>
 
     <div class="doc doc-contents ">
 
-        <p>whether the beam searching of this container is done or not</p>
+        <p>Whether the beam searching of this container is done or not.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4325,7 +4295,15 @@ The length of the current input hypothesis</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/infer_func/beam_search.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 87</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
 <span class="normal"> 88</span>
 <span class="normal"> 89</span>
 <span class="normal"> 90</span>
@@ -4341,19 +4319,8 @@ The length of the current input hypothesis</p>
 <span class="normal">100</span>
 <span class="normal">101</span>
 <span class="normal">102</span>
-<span class="normal">103</span>
-<span class="normal">104</span>
-<span class="normal">105</span>
-<span class="normal">106</span>
-<span class="normal">107</span>
-<span class="normal">108</span>
-<span class="normal">109</span>
-<span class="normal">110</span>
-<span class="normal">111</span>
-<span class="normal">112</span>
-<span class="normal">113</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">is_done</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">best_sum_logprobs</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">curr_len</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    whether the beam searching of this container is done or not</span>
+<span class="normal">103</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">is_done</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">best_sum_logprobs</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">curr_len</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Whether the beam searching of this container is done or not.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        best_sum_logprobs: float</span>
@@ -4365,7 +4332,6 @@ The length of the current input hypothesis</p>
 <span class="sd">        A flag that indicates whether the beam searching of this container is done.</span>
 <span class="sd">        True means the container already has &#39;beam_size&#39; hypotheses and the current hypothesis is not better than anyone of them.</span>
 <span class="sd">        False means either the container has some empty beams or the current input hypothesis is better than the worst hypothesis.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># some beams are empty</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">beam_size</span><span class="p">:</span>
@@ -4404,8 +4370,8 @@ The length of the current input hypothesis</p>
 
     <div class="doc doc-contents ">
 
-        <p>Batch version of beam searching to enable parallel computation. The basic idea is reshaping batch_size sentences
-into (batch_size * beam_size) sentences.</p>
+        <p>Batch version of beam searching to enable parallel computation. The basic idea is
+reshaping batch_size sentences into (batch_size * beam_size) sentences.</p>
 <p>However, the hypothesis text probabilities calculated by a batch of inputs and a single input are slightly
 different due to the model accuracy. in rare cases, the best hypothesis with the highest probability may be different
 when the beam searching process is performed in the batch level.</p>
@@ -4768,7 +4734,17 @@ sent_per_beam &gt; 1 is mainly used for data augmentation (under development).</
 
             <details class="quote">
               <summary>Source code in <code>speechain/infer_func/beam_search.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">116</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
 <span class="normal">117</span>
 <span class="normal">118</span>
 <span class="normal">119</span>
@@ -5202,19 +5178,7 @@ sent_per_beam &gt; 1 is mainly used for data augmentation (under development).</
 <span class="normal">547</span>
 <span class="normal">548</span>
 <span class="normal">549</span>
-<span class="normal">550</span>
-<span class="normal">551</span>
-<span class="normal">552</span>
-<span class="normal">553</span>
-<span class="normal">554</span>
-<span class="normal">555</span>
-<span class="normal">556</span>
-<span class="normal">557</span>
-<span class="normal">558</span>
-<span class="normal">559</span>
-<span class="normal">560</span>
-<span class="normal">561</span>
-<span class="normal">562</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">beam_searching</span><span class="p">(</span>
+<span class="normal">550</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">beam_searching</span><span class="p">(</span>
     <span class="n">enc_feat</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
     <span class="n">enc_feat_mask</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
     <span class="n">asr_decode_fn</span><span class="p">,</span>
@@ -5237,9 +5201,8 @@ sent_per_beam &gt; 1 is mainly used for data augmentation (under development).</
     <span class="n">ilm_sub_weight</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
     <span class="n">sent_per_beam</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Batch version of beam searching to enable parallel computation. The basic idea is reshaping batch_size sentences</span>
-<span class="sd">    into (batch_size * beam_size) sentences.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Batch version of beam searching to enable parallel computation. The basic idea is</span>
+<span class="sd">    reshaping batch_size sentences into (batch_size * beam_size) sentences.</span>
 
 <span class="sd">    However, the hypothesis text probabilities calculated by a batch of inputs and a single input are slightly</span>
 <span class="sd">    different due to the model accuracy. in rare cases, the best hypothesis with the highest probability may be different</span>
@@ -5306,7 +5269,6 @@ sent_per_beam &gt; 1 is mainly used for data augmentation (under development).</
 <span class="sd">        sent_per_beam: int</span>
 <span class="sd">            The number of sentences in each beam that are returned in this function.</span>
 <span class="sd">            sent_per_beam &gt; 1 is mainly used for data augmentation (under development).</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># --- 0. Arguments Checking --- #</span>
     <span class="k">if</span> <span class="n">sent_per_beam</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>

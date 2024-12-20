@@ -3685,9 +3685,11 @@ Date: 2022.07</p>
               Bases: <code><span title="speechain.module.abs.Module">Module</span></code></p>
 
 
-        <p>The acoustic frontend where the input is raw speech waveforms and the output is log-mel spectrogram.</p>
-<p>The waveform is first converted into linear spectrogram by STFT. Then, the linear spectrogram is converted into
-log-mel spectrogram by mel-fbank filters. Finally, the delta features of log-mel spectrogram are calculated if specified.</p>
+        <p>The acoustic frontend where the input is raw speech waveforms and the output is
+log-mel spectrogram.</p>
+<p>The waveform is first converted into linear spectrogram by STFT. Then, the linear
+spectrogram is converted into log-mel spectrogram by mel-fbank filters. Finally, the
+delta features of log-mel spectrogram are calculated if specified.</p>
 
 
 
@@ -3908,12 +3910,12 @@ log-mel spectrogram by mel-fbank filters. Finally, the delta features of log-mel
 <span class="normal">224</span>
 <span class="normal">225</span>
 <span class="normal">226</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Speech2MelSpec</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    The acoustic frontend where the input is raw speech waveforms and the output is log-mel spectrogram.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The acoustic frontend where the input is raw speech waveforms and the output is</span>
+<span class="sd">    log-mel spectrogram.</span>
 
-<span class="sd">    The waveform is first converted into linear spectrogram by STFT. Then, the linear spectrogram is converted into</span>
-<span class="sd">    log-mel spectrogram by mel-fbank filters. Finally, the delta features of log-mel spectrogram are calculated if specified.</span>
-
+<span class="sd">    The waveform is first converted into linear spectrogram by STFT. Then, the linear</span>
+<span class="sd">    spectrogram is converted into log-mel spectrogram by mel-fbank filters. Finally, the</span>
+<span class="sd">    delta features of log-mel spectrogram are calculated if specified.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>

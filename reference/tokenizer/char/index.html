@@ -3647,7 +3647,8 @@ Date: 2022.07</p>
               Bases: <code><span title="speechain.tokenizer.abs.Tokenizer">Tokenizer</span></code></p>
 
 
-        <p>Tokenizer implementation that converts the input sentence string into a list of graphemes (characters).</p>
+        <p>Tokenizer implementation that converts the input sentence string into a list of
+graphemes (characters).</p>
 
 
 
@@ -3697,13 +3698,9 @@ Date: 2022.07</p>
 <span class="normal">50</span>
 <span class="normal">51</span>
 <span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">CharTokenizer</span><span class="p">(</span><span class="n">Tokenizer</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Tokenizer implementation that converts the input sentence string into a list of graphemes (characters).</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="normal">53</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">CharTokenizer</span><span class="p">(</span><span class="n">Tokenizer</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tokenizer implementation that converts the input sentence string into a list of</span>
+<span class="sd">    graphemes (characters).&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">text2tensor</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -3852,7 +3849,9 @@ Date: 2022.07</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/tokenizer/char.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">18</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
@@ -3887,9 +3886,7 @@ Date: 2022.07</p>
 <span class="normal">50</span>
 <span class="normal">51</span>
 <span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">text2tensor</span><span class="p">(</span>
+<span class="normal">53</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">text2tensor</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">no_sos</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>

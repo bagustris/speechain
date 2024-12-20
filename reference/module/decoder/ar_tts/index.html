@@ -3850,13 +3850,8 @@ Date: 2022.09</p>
 <span class="normal">210</span>
 <span class="normal">211</span>
 <span class="normal">212</span>
-<span class="normal">213</span>
-<span class="normal">214</span>
-<span class="normal">215</span>
-<span class="normal">216</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ARTTSDecoder</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Decoder Module for Autoregressive TTS model.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="normal">213</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ARTTSDecoder</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Decoder Module for Autoregressive TTS model.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -4034,12 +4029,11 @@ Date: 2022.09</p>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">turn_on_dropout</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        turn on the dropout layers of the decoder prenet during inference.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Turn on the dropout layers of the decoder prenet during inference.</span>
+
 <span class="sd">        Reference: the second paragraph from the bottom in Sec 2.2 of</span>
 <span class="sd">            &#39;Natural TTS Synthesis by Conditioning WaveNet on Mel Spectrogram Predictions&#39;</span>
 <span class="sd">            https://arxiv.org/pdf/1712.05884.pdf</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">assert</span> <span class="nb">hasattr</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;prenet&quot;</span>
@@ -4072,14 +4066,19 @@ Date: 2022.09</p>
 
     <div class="doc doc-contents ">
 
-        <p>turn on the dropout layers of the decoder prenet during inference.
-Reference: the second paragraph from the bottom in Sec 2.2 of
-    'Natural TTS Synthesis by Conditioning WaveNet on Mel Spectrogram Predictions'
-    https://arxiv.org/pdf/1712.05884.pdf</p>
+        <p>Turn on the dropout layers of the decoder prenet during inference.</p>
 
+
+<details class="reference" open>
+  <summary>the second paragraph from the bottom in Sec 2.2 of</summary>
+  <p>'Natural TTS Synthesis by Conditioning WaveNet on Mel Spectrogram Predictions'
+https://arxiv.org/pdf/1712.05884.pdf</p>
+</details>
             <details class="quote">
               <summary>Source code in <code>speechain/module/decoder/ar_tts.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">204</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
 <span class="normal">205</span>
 <span class="normal">206</span>
 <span class="normal">207</span>
@@ -4088,16 +4087,12 @@ Reference: the second paragraph from the bottom in Sec 2.2 of
 <span class="normal">210</span>
 <span class="normal">211</span>
 <span class="normal">212</span>
-<span class="normal">213</span>
-<span class="normal">214</span>
-<span class="normal">215</span>
-<span class="normal">216</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">turn_on_dropout</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    turn on the dropout layers of the decoder prenet during inference.</span>
+<span class="normal">213</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">turn_on_dropout</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Turn on the dropout layers of the decoder prenet during inference.</span>
+
 <span class="sd">    Reference: the second paragraph from the bottom in Sec 2.2 of</span>
 <span class="sd">        &#39;Natural TTS Synthesis by Conditioning WaveNet on Mel Spectrogram Predictions&#39;</span>
 <span class="sd">        https://arxiv.org/pdf/1712.05884.pdf</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">assert</span> <span class="nb">hasattr</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;prenet&quot;</span>

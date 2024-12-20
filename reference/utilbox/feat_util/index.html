@@ -3667,12 +3667,15 @@ Date: 2022.12</p>
 
     <div class="doc doc-contents ">
 
-        <p>For the details about the arguments and returns,
-    please refer to ${SPEECHAIN_ROOT}/speechain/module/frontend/speech2mel.py</p>
+        <p>For the details about the arguments and returns, please refer to
+${SPEECHAIN_ROOT}/speechain/module/frontend/speech2mel.py.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/utilbox/feat_util.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">110</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
 <span class="normal">111</span>
 <span class="normal">112</span>
 <span class="normal">113</span>
@@ -3743,14 +3746,7 @@ Date: 2022.12</p>
 <span class="normal">178</span>
 <span class="normal">179</span>
 <span class="normal">180</span>
-<span class="normal">181</span>
-<span class="normal">182</span>
-<span class="normal">183</span>
-<span class="normal">184</span>
-<span class="normal">185</span>
-<span class="normal">186</span>
-<span class="normal">187</span>
-<span class="normal">188</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">convert_wav_to_logmel</span><span class="p">(</span>
+<span class="normal">181</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">convert_wav_to_logmel</span><span class="p">(</span>
     <span class="n">wav</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
     <span class="n">n_mels</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
     <span class="n">hop_length</span><span class="p">:</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">float</span><span class="p">,</span>
@@ -3772,12 +3768,8 @@ Date: 2022.12</p>
     <span class="n">delta_order</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
     <span class="n">delta_N</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-
-<span class="sd">    For the details about the arguments and returns,</span>
-<span class="sd">        please refer to ${SPEECHAIN_ROOT}/speechain/module/frontend/speech2mel.py</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;For the details about the arguments and returns, please refer to</span>
+<span class="sd">    ${SPEECHAIN_ROOT}/speechain/module/frontend/speech2mel.py.&quot;&quot;&quot;</span>
     <span class="c1"># if hop_length and win_length are given in the unit of seconds, turn them into the corresponding time steps</span>
     <span class="n">hop_length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">hop_length</span> <span class="o">*</span> <span class="n">sr</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">hop_length</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="k">else</span> <span class="n">hop_length</span>
     <span class="n">win_length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">win_length</span> <span class="o">*</span> <span class="n">sr</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">win_length</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="k">else</span> <span class="n">win_length</span>
@@ -3846,12 +3838,20 @@ Date: 2022.12</p>
 
     <div class="doc doc-contents ">
 
-        <p>For the details about the arguments and returns,
-    please refer to ${SPEECHAIN_ROOT}/speechain/utilbox/feat_util.convert_wav_to_logmel() and librosa.feature.mfcc</p>
+        <p>For the details about the arguments and returns, please refer to
+${SPEECHAIN_ROOT}/speechain/utilbox/feat_util.convert_wav_to_logmel() and
+librosa.feature.mfcc.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/utilbox/feat_util.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">191</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
 <span class="normal">192</span>
 <span class="normal">193</span>
 <span class="normal">194</span>
@@ -3913,17 +3913,7 @@ Date: 2022.12</p>
 <span class="normal">250</span>
 <span class="normal">251</span>
 <span class="normal">252</span>
-<span class="normal">253</span>
-<span class="normal">254</span>
-<span class="normal">255</span>
-<span class="normal">256</span>
-<span class="normal">257</span>
-<span class="normal">258</span>
-<span class="normal">259</span>
-<span class="normal">260</span>
-<span class="normal">261</span>
-<span class="normal">262</span>
-<span class="normal">263</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">convert_wav_to_mfcc</span><span class="p">(</span>
+<span class="normal">253</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">convert_wav_to_mfcc</span><span class="p">(</span>
     <span class="n">wav</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
     <span class="n">hop_length</span><span class="p">:</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">float</span><span class="p">,</span>
     <span class="n">win_length</span><span class="p">:</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">float</span><span class="p">,</span>
@@ -3946,12 +3936,9 @@ Date: 2022.12</p>
     <span class="n">delta_order</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
     <span class="n">delta_N</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-
-<span class="sd">    For the details about the arguments and returns,</span>
-<span class="sd">        please refer to ${SPEECHAIN_ROOT}/speechain/utilbox/feat_util.convert_wav_to_logmel() and librosa.feature.mfcc</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;For the details about the arguments and returns, please refer to</span>
+<span class="sd">    ${SPEECHAIN_ROOT}/speechain/utilbox/feat_util.convert_wav_to_logmel() and</span>
+<span class="sd">    librosa.feature.mfcc.&quot;&quot;&quot;</span>
     <span class="c1"># if hop_length and win_length are given in the unit of seconds, turn them into the corresponding time steps</span>
     <span class="n">hop_length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">hop_length</span> <span class="o">*</span> <span class="n">sr</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">hop_length</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="k">else</span> <span class="n">hop_length</span>
     <span class="n">win_length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">win_length</span> <span class="o">*</span> <span class="n">sr</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">win_length</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="k">else</span> <span class="n">win_length</span>
@@ -4013,7 +4000,8 @@ Date: 2022.12</p>
 
     <div class="doc doc-contents ">
 
-        <p>The function that converts a waveform to a pitch contour by dio &amp; stonemask of pyworld.</p>
+        <p>The function that converts a waveform to a pitch contour by dio &amp; stonemask of
+pyworld.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4174,7 +4162,17 @@ Whether to return the pitch in torch.Tensor. If False, np.ndarray will be return
 
             <details class="quote">
               <summary>Source code in <code>speechain/utilbox/feat_util.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">266</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
 <span class="normal">267</span>
 <span class="normal">268</span>
 <span class="normal">269</span>
@@ -4247,19 +4245,7 @@ Whether to return the pitch in torch.Tensor. If False, np.ndarray will be return
 <span class="normal">336</span>
 <span class="normal">337</span>
 <span class="normal">338</span>
-<span class="normal">339</span>
-<span class="normal">340</span>
-<span class="normal">341</span>
-<span class="normal">342</span>
-<span class="normal">343</span>
-<span class="normal">344</span>
-<span class="normal">345</span>
-<span class="normal">346</span>
-<span class="normal">347</span>
-<span class="normal">348</span>
-<span class="normal">349</span>
-<span class="normal">350</span>
-<span class="normal">351</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">convert_wav_to_pitch</span><span class="p">(</span>
+<span class="normal">339</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">convert_wav_to_pitch</span><span class="p">(</span>
     <span class="n">wav</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="ow">or</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
     <span class="n">hop_length</span><span class="p">:</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">256</span><span class="p">,</span>
     <span class="n">sr</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">22050</span><span class="p">,</span>
@@ -4268,9 +4254,8 @@ Whether to return the pitch in torch.Tensor. If False, np.ndarray will be return
     <span class="n">continuous_f0</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">return_tensor</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="ow">or</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-
-<span class="sd">    The function that converts a waveform to a pitch contour by dio &amp; stonemask of pyworld.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The function that converts a waveform to a pitch contour by dio &amp; stonemask of</span>
+<span class="sd">    pyworld.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        wav: (n_sample, 1) or (n_sample,)</span>
@@ -4290,7 +4275,6 @@ Whether to return the pitch in torch.Tensor. If False, np.ndarray will be return
 
 <span class="sd">    Returns:</span>
 <span class="sd">        f0: (n_frame,)</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">hop_length</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
         <span class="n">hop_length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">hop_length</span> <span class="o">*</span> <span class="n">sr</span><span class="p">)</span>
@@ -4362,8 +4346,8 @@ Whether to return the pitch in torch.Tensor. If False, np.ndarray will be return
 
     <div class="doc doc-contents ">
 
-        <p>For the details about the arguments and returns,
-    please refer to ${SPEECHAIN_ROOT}/speechain/module/frontend/speech2linear.py</p>
+        <p>For the details about the arguments and returns, please refer to
+${SPEECHAIN_ROOT}/speechain/module/frontend/speech2linear.py.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/utilbox/feat_util.py</code></summary>
@@ -4433,10 +4417,7 @@ Whether to return the pitch in torch.Tensor. If False, np.ndarray will be return
 <span class="normal">101</span>
 <span class="normal">102</span>
 <span class="normal">103</span>
-<span class="normal">104</span>
-<span class="normal">105</span>
-<span class="normal">106</span>
-<span class="normal">107</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">convert_wav_to_stft</span><span class="p">(</span>
+<span class="normal">104</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">convert_wav_to_stft</span><span class="p">(</span>
     <span class="n">wav</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
     <span class="n">hop_length</span><span class="p">:</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">float</span><span class="p">,</span>
     <span class="n">win_length</span><span class="p">:</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">float</span><span class="p">,</span>
@@ -4451,11 +4432,8 @@ Whether to return the pitch in torch.Tensor. If False, np.ndarray will be return
     <span class="n">logging</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">log_base</span><span class="p">:</span> <span class="nb">float</span> <span class="ow">or</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    For the details about the arguments and returns,</span>
-<span class="sd">        please refer to ${SPEECHAIN_ROOT}/speechain/module/frontend/speech2linear.py</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;For the details about the arguments and returns, please refer to</span>
+<span class="sd">    ${SPEECHAIN_ROOT}/speechain/module/frontend/speech2linear.py.&quot;&quot;&quot;</span>
     <span class="c1"># if hop_length and win_length are given in the unit of seconds, turn them into the corresponding time steps</span>
     <span class="n">hop_length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">hop_length</span> <span class="o">*</span> <span class="n">sr</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">hop_length</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="k">else</span> <span class="n">hop_length</span>
     <span class="n">win_length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">win_length</span> <span class="o">*</span> <span class="n">sr</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">win_length</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="k">else</span> <span class="n">win_length</span>

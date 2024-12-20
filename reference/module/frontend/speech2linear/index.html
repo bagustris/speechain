@@ -3685,7 +3685,8 @@ Date: 2022.07</p>
               Bases: <code><span title="speechain.module.abs.Module">Module</span></code></p>
 
 
-        <p>The acoustic frontend where the input is raw speech waveforms and the output is linear spectrogram.</p>
+        <p>The acoustic frontend where the input is raw speech waveforms and the output is
+linear spectrogram.</p>
 
 
 
@@ -4048,13 +4049,9 @@ Date: 2022.07</p>
 <span class="normal">367</span>
 <span class="normal">368</span>
 <span class="normal">369</span>
-<span class="normal">370</span>
-<span class="normal">371</span>
-<span class="normal">372</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Speech2LinearSpec</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    The acoustic frontend where the input is raw speech waveforms and the output is linear spectrogram.</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="normal">370</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Speech2LinearSpec</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The acoustic frontend where the input is raw speech waveforms and the output is</span>
+<span class="sd">    linear spectrogram.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -4507,7 +4504,9 @@ The lengths of input speech data</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/frontend/speech2linear.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">144</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
 <span class="normal">145</span>
 <span class="normal">146</span>
 <span class="normal">147</span>
@@ -4613,9 +4612,7 @@ The lengths of input speech data</p>
 <span class="normal">247</span>
 <span class="normal">248</span>
 <span class="normal">249</span>
-<span class="normal">250</span>
-<span class="normal">251</span>
-<span class="normal">252</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speech</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">speech_len</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+<span class="normal">250</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speech</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">speech_len</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">    Args:</span>
@@ -5030,7 +5027,9 @@ The log base for the log-mel spectrogram. None means the natural log base e.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/frontend/speech2linear.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 22</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
 <span class="normal"> 23</span>
 <span class="normal"> 24</span>
 <span class="normal"> 25</span>
@@ -5148,9 +5147,7 @@ The log base for the log-mel spectrogram. None means the natural log base e.</p>
 <span class="normal">137</span>
 <span class="normal">138</span>
 <span class="normal">139</span>
-<span class="normal">140</span>
-<span class="normal">141</span>
-<span class="normal">142</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
+<span class="normal">140</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">hop_length</span><span class="p">:</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">float</span><span class="p">,</span>
     <span class="n">win_length</span><span class="p">:</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">float</span><span class="p">,</span>
@@ -5355,7 +5352,9 @@ The log base for the log-mel spectrogram. None means the natural log base e.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/frontend/speech2linear.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">254</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
 <span class="normal">255</span>
 <span class="normal">256</span>
 <span class="normal">257</span>
@@ -5452,9 +5451,7 @@ The log base for the log-mel spectrogram. None means the natural log base e.</p>
 <span class="normal">348</span>
 <span class="normal">349</span>
 <span class="normal">350</span>
-<span class="normal">351</span>
-<span class="normal">352</span>
-<span class="normal">353</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">recover</span><span class="p">(</span>
+<span class="normal">351</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">recover</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">feat</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">feat_len</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">inv_preemph_winlen</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>

@@ -1003,6 +1003,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="forward_step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#infer_func.ctc_decoding.CTCPrefixScorer.forward_step--arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1011,6 +1026,21 @@
       permute_mem
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="permute_mem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#infer_func.ctc_decoding.CTCPrefixScorer.permute_mem--arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3586,6 +3616,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="forward_step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#infer_func.ctc_decoding.CTCPrefixScorer.forward_step--arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -3594,6 +3639,21 @@
       permute_mem
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="permute_mem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#infer_func.ctc_decoding.CTCPrefixScorer.permute_mem--arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3876,7 +3936,8 @@ ctc_window_size: int
 <span class="normal">192</span>
 <span class="normal">193</span>
 <span class="normal">194</span>
-<span class="normal">195</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">CTCPrefixScorer</span><span class="p">:</span>
+<span class="normal">195</span>
+<span class="normal">196</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">CTCPrefixScorer</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;This class implements the CTC prefix scorer of Algorithm 2 in</span>
 <span class="sd">    reference: https://www.merl.com/publications/docs/TR2017-190.pdf.</span>
 <span class="sd">    Official implementation: https://github.com/espnet/espnet/blob/master/espnet/nets/ctc_prefix_score.py</span>
@@ -3944,8 +4005,8 @@ ctc_window_size: int
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">forward_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;This method if one step of forwarding operation</span>
-<span class="sd">        for the prefix ctc scorer.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This method if one step of forwarding operation for the prefix ctc scorer.</span>
+
 <span class="sd">        Arguments</span>
 <span class="sd">        ---------</span>
 <span class="sd">        g : torch.Tensor</span>
@@ -4030,8 +4091,9 @@ ctc_window_size: int
         <span class="k">return</span> <span class="n">psi</span> <span class="o">-</span> <span class="n">psi_prev</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">psi</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">permute_mem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">memory</span><span class="p">,</span> <span class="n">beam_idx</span><span class="p">,</span> <span class="n">token_idx</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;This method permutes the CTC model memory</span>
-<span class="sd">        to synchronize the memory index with the current output.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This method permutes the CTC model memory to synchronize the memory index</span>
+<span class="sd">        with the current output.</span>
+
 <span class="sd">        Arguments</span>
 <span class="sd">        ---------</span>
 <span class="sd">        memory : No limit</span>
@@ -4092,10 +4154,8 @@ ctc_window_size: int
 
     <div class="doc doc-contents ">
 
-        <p>This method if one step of forwarding operation
-for the prefix ctc scorer.
-Arguments</p>
-<hr />
+        <p>This method if one step of forwarding operation for the prefix ctc scorer.</p>
+<h5 id="infer_func.ctc_decoding.CTCPrefixScorer.forward_step--arguments">Arguments</h5>
 <p>g : torch.Tensor
     The tensor of prefix label sequences, h = g + c.
 state : tuple
@@ -4188,8 +4248,8 @@ state : tuple
 <span class="normal">155</span>
 <span class="normal">156</span>
 <span class="normal">157</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;This method if one step of forwarding operation</span>
-<span class="sd">    for the prefix ctc scorer.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This method if one step of forwarding operation for the prefix ctc scorer.</span>
+
 <span class="sd">    Arguments</span>
 <span class="sd">    ---------</span>
 <span class="sd">    g : torch.Tensor</span>
@@ -4289,10 +4349,9 @@ state : tuple
 
     <div class="doc doc-contents ">
 
-        <p>This method permutes the CTC model memory
-to synchronize the memory index with the current output.
-Arguments</p>
-<hr />
+        <p>This method permutes the CTC model memory to synchronize the memory index
+with the current output.</p>
+<h5 id="infer_func.ctc_decoding.CTCPrefixScorer.permute_mem--arguments">Arguments</h5>
 <p>memory : No limit
     The memory variable to be permuted.
 index : torch.Tensor
@@ -4339,9 +4398,11 @@ Return</p>
 <span class="normal">192</span>
 <span class="normal">193</span>
 <span class="normal">194</span>
-<span class="normal">195</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">permute_mem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">memory</span><span class="p">,</span> <span class="n">beam_idx</span><span class="p">,</span> <span class="n">token_idx</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;This method permutes the CTC model memory</span>
-<span class="sd">    to synchronize the memory index with the current output.</span>
+<span class="normal">195</span>
+<span class="normal">196</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">permute_mem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">memory</span><span class="p">,</span> <span class="n">beam_idx</span><span class="p">,</span> <span class="n">token_idx</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This method permutes the CTC model memory to synchronize the memory index</span>
+<span class="sd">    with the current output.</span>
+
 <span class="sd">    Arguments</span>
 <span class="sd">    ---------</span>
 <span class="sd">    memory : No limit</span>

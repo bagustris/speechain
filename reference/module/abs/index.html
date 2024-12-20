@@ -3929,12 +3929,7 @@ module_init() and forward(). module_init() is for module initialization and forw
 <span class="normal">170</span>
 <span class="normal">171</span>
 <span class="normal">172</span>
-<span class="normal">173</span>
-<span class="normal">174</span>
-<span class="normal">175</span>
-<span class="normal">176</span>
-<span class="normal">177</span>
-<span class="normal">178</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Module</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span> <span class="n">ABC</span><span class="p">):</span>
+<span class="normal">173</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Module</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span> <span class="n">ABC</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Module is the base class for all Module objects in this toolkit. For all the Model objects in this toolkit, their</span>
 <span class="sd">    neural networks are constructed by many Module objects in a nested structure.</span>
@@ -3968,8 +3963,7 @@ module_init() and forward(). module_init() is for module initialization and forw
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">distributed</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">module_conf</span>
     <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This initialization function is shared by all _Module_ subclasses.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This initialization function is shared by all _Module_ subclasses.</span>
 
 <span class="sd">        There are two built-in variable members: `input_size` and `output_size`. `input_size` is the last dimension of</span>
 <span class="sd">        the input tensor while `output_size` is the last dimension of the output tensor.</span>
@@ -4005,23 +3999,22 @@ module_init() and forward(). module_init() is for module initialization and forw
 
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">module_conf</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Abstract interface function for customized initialization of each _Module_ subclass.</span>
-<span class="sd">        This interface function is mandatory to be overridden by your implementation.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Abstract interface function for customized initialization of each _Module_</span>
+<span class="sd">        subclass. This interface function is mandatory to be overridden by your</span>
+<span class="sd">        implementation.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            **module_conf:</span>
 <span class="sd">                The arguments used for customized Module initialization.</span>
 <span class="sd">                For more details, please refer to the docstring of your target Module subclass.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This abstract interface function is the customized implementation of `torch.nn.Module.forward()` used during</span>
-<span class="sd">        model forward calculation. This interface function is mandatory to be overridden by your implementation.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This abstract interface function is the customized implementation of</span>
+<span class="sd">        `torch.nn.Module.forward()` used during model forward calculation. This</span>
+<span class="sd">        interface function is mandatory to be overridden by your implementation.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            **kwargs:</span>
@@ -4031,15 +4024,13 @@ module_init() and forward(). module_init() is for module initialization and forw
 <span class="sd">        Returns:</span>
 <span class="sd">            Module forward calculation results.</span>
 <span class="sd">            For more details, please refer to the docstring of `forward()` of your target _Module_ subclass.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 
     <span class="k">def</span> <span class="nf">recover</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This interface function is used to recover the module forward calculation results back to the input data.</span>
-<span class="sd">        It can be considered as the reverse process of `forward()`.</span>
-<span class="sd">        This interface function is not mandatory to be overridden.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This interface function is used to recover the module forward calculation</span>
+<span class="sd">        results back to the input data. It can be considered as the reverse process of</span>
+<span class="sd">        `forward()`. This interface function is not mandatory to be overridden.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            **kwargs:</span>
@@ -4049,26 +4040,25 @@ module_init() and forward(). module_init() is for module initialization and forw
 <span class="sd">        Returns:</span>
 <span class="sd">            The recovered data or closely-recovered data (sometimes `forward()` may not be totally recoverable).</span>
 <span class="sd">            For more details, please refer to the docstring of `recover()` of your target _Module_ subclass.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 
     <span class="k">def</span> <span class="nf">reset_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This abstract interface function is used to initialize the customized parameters in the _Module_ subclass if</span>
-<span class="sd">        had. Some _Module_ subclasses have their customized parameters with specific initialization functions.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This abstract interface function is used to initialize the customized</span>
+<span class="sd">        parameters in the _Module_ subclass if had. Some _Module_ subclasses have their</span>
+<span class="sd">        customized parameters with specific initialization functions.</span>
 
 <span class="sd">        If your _Module_ implementation has some customized parameters and you want to initialize them by yourself,</span>
 <span class="sd">        please give the initialization logic in this interface function.</span>
 
 <span class="sd">        This interface function is not mandatory to be overridden.</span>
 <span class="sd">        Note: Don&#39;t forget to add `self.default_init_modules.append(YourModule)` in `model_init()` of your _Model_.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 
     <span class="k">def</span> <span class="nf">get_recordable_para</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;This function returns the parameters of the module that you want to record as part of step information.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This function returns the parameters of the module that you want to record as</span>
+<span class="sd">        part of step information.</span>
 
 <span class="sd">        If you want to record the value of the customized parameters of your module:</span>
 
@@ -4239,12 +4229,10 @@ Whether the <em>Model</em> object this <em>Module</em> object is belong to is di
 <span class="normal">76</span>
 <span class="normal">77</span>
 <span class="normal">78</span>
-<span class="normal">79</span>
-<span class="normal">80</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="normal">79</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">distributed</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">module_conf</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This initialization function is shared by all _Module_ subclasses.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This initialization function is shared by all _Module_ subclasses.</span>
 
 <span class="sd">    There are two built-in variable members: `input_size` and `output_size`. `input_size` is the last dimension of</span>
 <span class="sd">    the input tensor while `output_size` is the last dimension of the output tensor.</span>
@@ -4298,8 +4286,9 @@ Whether the <em>Model</em> object this <em>Module</em> object is belong to is di
 
     <div class="doc doc-contents ">
 
-        <p>This abstract interface function is the customized implementation of <code>torch.nn.Module.forward()</code> used during
-model forward calculation. This interface function is mandatory to be overridden by your implementation.</p>
+        <p>This abstract interface function is the customized implementation of
+<code>torch.nn.Module.forward()</code> used during model forward calculation. This
+interface function is mandatory to be overridden by your implementation.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4365,7 +4354,9 @@ For more details, please refer to the docstring of <code>forward()</code> of you
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 96</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
 <span class="normal"> 97</span>
 <span class="normal"> 98</span>
 <span class="normal"> 99</span>
@@ -4378,14 +4369,11 @@ For more details, please refer to the docstring of <code>forward()</code> of you
 <span class="normal">106</span>
 <span class="normal">107</span>
 <span class="normal">108</span>
-<span class="normal">109</span>
-<span class="normal">110</span>
-<span class="normal">111</span>
-<span class="normal">112</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
+<span class="normal">109</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
 <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This abstract interface function is the customized implementation of `torch.nn.Module.forward()` used during</span>
-<span class="sd">    model forward calculation. This interface function is mandatory to be overridden by your implementation.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This abstract interface function is the customized implementation of</span>
+<span class="sd">    `torch.nn.Module.forward()` used during model forward calculation. This</span>
+<span class="sd">    interface function is mandatory to be overridden by your implementation.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        **kwargs:</span>
@@ -4395,7 +4383,6 @@ For more details, please refer to the docstring of <code>forward()</code> of you
 <span class="sd">    Returns:</span>
 <span class="sd">        Module forward calculation results.</span>
 <span class="sd">        For more details, please refer to the docstring of `forward()` of your target _Module_ subclass.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 </code></pre></div></td></tr></table></div>
@@ -4415,7 +4402,8 @@ For more details, please refer to the docstring of <code>forward()</code> of you
 
     <div class="doc doc-contents ">
 
-        <p>This function returns the parameters of the module that you want to record as part of step information.</p>
+        <p>This function returns the parameters of the module that you want to record as
+part of step information.</p>
 <p>If you want to record the value of the customized parameters of your module:</p>
 <ol>
 <li>
@@ -4485,7 +4473,13 @@ For more details, please refer to the docstring of <code>forward()</code> of you
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">146</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
 <span class="normal">147</span>
 <span class="normal">148</span>
 <span class="normal">149</span>
@@ -4512,13 +4506,9 @@ For more details, please refer to the docstring of <code>forward()</code> of you
 <span class="normal">170</span>
 <span class="normal">171</span>
 <span class="normal">172</span>
-<span class="normal">173</span>
-<span class="normal">174</span>
-<span class="normal">175</span>
-<span class="normal">176</span>
-<span class="normal">177</span>
-<span class="normal">178</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_recordable_para</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function returns the parameters of the module that you want to record as part of step information.</span>
+<span class="normal">173</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_recordable_para</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function returns the parameters of the module that you want to record as</span>
+<span class="sd">    part of step information.</span>
 
 <span class="sd">    If you want to record the value of the customized parameters of your module:</span>
 
@@ -4571,8 +4561,9 @@ For more details, please refer to the docstring of <code>forward()</code> of you
 
     <div class="doc doc-contents ">
 
-        <p>Abstract interface function for customized initialization of each <em>Module</em> subclass.
-This interface function is mandatory to be overridden by your implementation.</p>
+        <p>Abstract interface function for customized initialization of each <em>Module</em>
+subclass. This interface function is mandatory to be overridden by your
+implementation.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4607,7 +4598,8 @@ For more details, please refer to the docstring of your target Module subclass.<
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">82</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">81</span>
+<span class="normal">82</span>
 <span class="normal">83</span>
 <span class="normal">84</span>
 <span class="normal">85</span>
@@ -4617,19 +4609,16 @@ For more details, please refer to the docstring of your target Module subclass.<
 <span class="normal">89</span>
 <span class="normal">90</span>
 <span class="normal">91</span>
-<span class="normal">92</span>
-<span class="normal">93</span>
-<span class="normal">94</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
+<span class="normal">92</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
 <span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">module_conf</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Abstract interface function for customized initialization of each _Module_ subclass.</span>
-<span class="sd">    This interface function is mandatory to be overridden by your implementation.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Abstract interface function for customized initialization of each _Module_</span>
+<span class="sd">    subclass. This interface function is mandatory to be overridden by your</span>
+<span class="sd">    implementation.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        **module_conf:</span>
 <span class="sd">            The arguments used for customized Module initialization.</span>
 <span class="sd">            For more details, please refer to the docstring of your target Module subclass.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 </code></pre></div></td></tr></table></div>
@@ -4649,9 +4638,9 @@ For more details, please refer to the docstring of your target Module subclass.<
 
     <div class="doc doc-contents ">
 
-        <p>This interface function is used to recover the module forward calculation results back to the input data.
-It can be considered as the reverse process of <code>forward()</code>.
-This interface function is not mandatory to be overridden.</p>
+        <p>This interface function is used to recover the module forward calculation
+results back to the input data. It can be considered as the reverse process of
+<code>forward()</code>. This interface function is not mandatory to be overridden.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4717,7 +4706,10 @@ For more details, please refer to the docstring of <code>recover()</code> of you
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">114</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
 <span class="normal">115</span>
 <span class="normal">116</span>
 <span class="normal">117</span>
@@ -4728,16 +4720,10 @@ For more details, please refer to the docstring of <code>recover()</code> of you
 <span class="normal">122</span>
 <span class="normal">123</span>
 <span class="normal">124</span>
-<span class="normal">125</span>
-<span class="normal">126</span>
-<span class="normal">127</span>
-<span class="normal">128</span>
-<span class="normal">129</span>
-<span class="normal">130</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">recover</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This interface function is used to recover the module forward calculation results back to the input data.</span>
-<span class="sd">    It can be considered as the reverse process of `forward()`.</span>
-<span class="sd">    This interface function is not mandatory to be overridden.</span>
+<span class="normal">125</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">recover</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This interface function is used to recover the module forward calculation</span>
+<span class="sd">    results back to the input data. It can be considered as the reverse process of</span>
+<span class="sd">    `forward()`. This interface function is not mandatory to be overridden.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        **kwargs:</span>
@@ -4747,7 +4733,6 @@ For more details, please refer to the docstring of <code>recover()</code> of you
 <span class="sd">    Returns:</span>
 <span class="sd">        The recovered data or closely-recovered data (sometimes `forward()` may not be totally recoverable).</span>
 <span class="sd">        For more details, please refer to the docstring of `recover()` of your target _Module_ subclass.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 </code></pre></div></td></tr></table></div>
@@ -4767,8 +4752,9 @@ For more details, please refer to the docstring of <code>recover()</code> of you
 
     <div class="doc doc-contents ">
 
-        <p>This abstract interface function is used to initialize the customized parameters in the <em>Module</em> subclass if
-had. Some <em>Module</em> subclasses have their customized parameters with specific initialization functions.</p>
+        <p>This abstract interface function is used to initialize the customized
+parameters in the <em>Module</em> subclass if had. Some <em>Module</em> subclasses have their
+customized parameters with specific initialization functions.</p>
 <p>If your <em>Module</em> implementation has some customized parameters and you want to initialize them by yourself,
 please give the initialization logic in this interface function.</p>
 <p>This interface function is not mandatory to be overridden.
@@ -4776,29 +4762,27 @@ Note: Don't forget to add <code>self.default_init_modules.append(YourModule)</co
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">132</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
 <span class="normal">133</span>
 <span class="normal">134</span>
 <span class="normal">135</span>
 <span class="normal">136</span>
 <span class="normal">137</span>
-<span class="normal">138</span>
-<span class="normal">139</span>
-<span class="normal">140</span>
-<span class="normal">141</span>
-<span class="normal">142</span>
-<span class="normal">143</span>
-<span class="normal">144</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">reset_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This abstract interface function is used to initialize the customized parameters in the _Module_ subclass if</span>
-<span class="sd">    had. Some _Module_ subclasses have their customized parameters with specific initialization functions.</span>
+<span class="normal">138</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">reset_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This abstract interface function is used to initialize the customized</span>
+<span class="sd">    parameters in the _Module_ subclass if had. Some _Module_ subclasses have their</span>
+<span class="sd">    customized parameters with specific initialization functions.</span>
 
 <span class="sd">    If your _Module_ implementation has some customized parameters and you want to initialize them by yourself,</span>
 <span class="sd">    please give the initialization logic in this interface function.</span>
 
 <span class="sd">    This interface function is not mandatory to be overridden.</span>
 <span class="sd">    Note: Don&#39;t forget to add `self.default_init_modules.append(YourModule)` in `model_init()` of your _Model_.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 </code></pre></div></td></tr></table></div>

@@ -3643,7 +3643,8 @@
               Bases: <code><span title="speechain.tokenizer.abs.Tokenizer">Tokenizer</span></code></p>
 
 
-        <p>Tokenizer implementation that converts the input sentence string into phoneme tokens by the g2p package.</p>
+        <p>Tokenizer implementation that converts the input sentence string into phoneme
+tokens by the g2p package.</p>
 <p>References: https://github.com/Kyubyong/g2p</p>
 
 
@@ -3716,13 +3717,11 @@
 <span class="normal">172</span>
 <span class="normal">173</span>
 <span class="normal">174</span>
-<span class="normal">175</span>
-<span class="normal">176</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">GraphemeToPhonemeTokenizer</span><span class="p">(</span><span class="n">Tokenizer</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Tokenizer implementation that converts the input sentence string into phoneme tokens by the g2p package.</span>
+<span class="normal">175</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">GraphemeToPhonemeTokenizer</span><span class="p">(</span><span class="n">Tokenizer</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tokenizer implementation that converts the input sentence string into phoneme</span>
+<span class="sd">    tokens by the g2p package.</span>
 
 <span class="sd">    References: https://github.com/Kyubyong/g2p</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">text2tensor</span><span class="p">(</span>
@@ -3817,7 +3816,8 @@ model forward.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/tokenizer/g2p.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">120</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">119</span>
+<span class="normal">120</span>
 <span class="normal">121</span>
 <span class="normal">122</span>
 <span class="normal">123</span>
@@ -3872,8 +3872,7 @@ model forward.</p>
 <span class="normal">172</span>
 <span class="normal">173</span>
 <span class="normal">174</span>
-<span class="normal">175</span>
-<span class="normal">176</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">text2tensor</span><span class="p">(</span>
+<span class="normal">175</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">text2tensor</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">text</span><span class="p">:</span> <span class="nb">str</span> <span class="ow">or</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
     <span class="n">no_sos</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>

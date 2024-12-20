@@ -3779,7 +3779,7 @@
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_hparams</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">savedir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">run_opts</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Load pretrained model&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Load pretrained model.&quot;&quot;&quot;</span>
         <span class="n">model</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">model_type</span><span class="o">=</span><span class="s2">&quot;ecapa&quot;</span> <span class="k">if</span> <span class="s2">&quot;ecapa&quot;</span> <span class="ow">in</span> <span class="n">source</span> <span class="k">else</span> <span class="s2">&quot;xvector&quot;</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">run_opts</span> <span class="ow">and</span> <span class="s2">&quot;device&quot;</span> <span class="ow">in</span> <span class="n">run_opts</span><span class="p">:</span>
@@ -3823,7 +3823,7 @@
 
     <div class="doc doc-contents ">
 
-        <p>Load pretrained model</p>
+        <p>Load pretrained model.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/encoder/speaker.py</code></summary>
@@ -3844,7 +3844,7 @@
 <span class="normal">115</span>
 <span class="normal">116</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">from_hparams</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">savedir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">run_opts</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load pretrained model&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load pretrained model.&quot;&quot;&quot;</span>
     <span class="n">model</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">model_type</span><span class="o">=</span><span class="s2">&quot;ecapa&quot;</span> <span class="k">if</span> <span class="s2">&quot;ecapa&quot;</span> <span class="ow">in</span> <span class="n">source</span> <span class="k">else</span> <span class="s2">&quot;xvector&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">run_opts</span> <span class="ow">and</span> <span class="s2">&quot;device&quot;</span> <span class="ow">in</span> <span class="n">run_opts</span><span class="p">:</span>

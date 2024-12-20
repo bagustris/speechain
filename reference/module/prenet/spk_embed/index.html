@@ -3681,9 +3681,10 @@
               Bases: <code><span title="speechain.module.abs.Module">Module</span></code></p>
 
 
-        <p>SpeakerEmbedPrenet is a module for integrating speaker embeddings into a TTS model.
-It supports both open-set and close-set multi-speaker TTS and can combine speaker embeddings with encoder
-and/or decoder inputs.</p>
+        <p>SpeakerEmbedPrenet is a module for integrating speaker embeddings into a TTS
+model.</p>
+<p>It supports both open-set and close-set multi-speaker TTS and can combine speaker
+embeddings with encoder and/or decoder inputs.</p>
 
 
 
@@ -3915,13 +3916,12 @@ and/or decoder inputs.</p>
 <span class="normal">227</span>
 <span class="normal">228</span>
 <span class="normal">229</span>
-<span class="normal">230</span>
-<span class="normal">231</span>
-<span class="normal">232</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">SpeakerEmbedPrenet</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    SpeakerEmbedPrenet is a module for integrating speaker embeddings into a TTS model.</span>
-<span class="sd">    It supports both open-set and close-set multi-speaker TTS and can combine speaker embeddings with encoder</span>
-<span class="sd">    and/or decoder inputs.</span>
+<span class="normal">230</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">SpeakerEmbedPrenet</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;SpeakerEmbedPrenet is a module for integrating speaker embeddings into a TTS</span>
+<span class="sd">    model.</span>
+
+<span class="sd">    It supports both open-set and close-set multi-speaker TTS and can combine speaker</span>
+<span class="sd">    embeddings with encoder and/or decoder inputs.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
@@ -3934,8 +3934,7 @@ and/or decoder inputs.</p>
         <span class="n">dec_comb</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">encdec_same_proj</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Initialize the SpeakerEmbedPrenet module with the given configuration.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the SpeakerEmbedPrenet module with the given configuration.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            d_model: int</span>
@@ -4011,8 +4010,7 @@ and/or decoder inputs.</p>
             <span class="bp">self</span><span class="o">.</span><span class="n">final_proj_dec</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">proj_in_size</span><span class="p">,</span> <span class="n">d_model</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spk_ids</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">spk_feat</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Forward pass of the SpeakerEmbedPrenet module to obtain speaker features.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Forward pass of the SpeakerEmbedPrenet module to obtain speaker features.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            spk_ids: torch.Tensor</span>
@@ -4068,8 +4066,7 @@ and/or decoder inputs.</p>
         <span class="n">enc_output</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
         <span class="n">dec_input</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Combine speaker features with TTS model&#39;s encoder and/or decoder inputs.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Combine speaker features with TTS model&#39;s encoder and/or decoder inputs.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            spk_feat: torch.Tensor</span>
@@ -4278,7 +4275,8 @@ TTS decoder input (optional)</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/prenet/spk_embed.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">151</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">150</span>
+<span class="normal">151</span>
 <span class="normal">152</span>
 <span class="normal">153</span>
 <span class="normal">154</span>
@@ -4354,17 +4352,14 @@ TTS decoder input (optional)</p>
 <span class="normal">224</span>
 <span class="normal">225</span>
 <span class="normal">226</span>
-<span class="normal">227</span>
-<span class="normal">228</span>
-<span class="normal">229</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">combine_spk_feat</span><span class="p">(</span>
+<span class="normal">227</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">combine_spk_feat</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">spk_feat</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
     <span class="n">spk_feat_lookup</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
     <span class="n">enc_output</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
     <span class="n">dec_input</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Combine speaker features with TTS model&#39;s encoder and/or decoder inputs.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Combine speaker features with TTS model&#39;s encoder and/or decoder inputs.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        spk_feat: torch.Tensor</span>
@@ -4575,10 +4570,8 @@ pretrained speaker embeddings for open-set TTS (optional)</p>
 <span class="normal">145</span>
 <span class="normal">146</span>
 <span class="normal">147</span>
-<span class="normal">148</span>
-<span class="normal">149</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spk_ids</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">spk_feat</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Forward pass of the SpeakerEmbedPrenet module to obtain speaker features.</span>
+<span class="normal">148</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spk_ids</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">spk_feat</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Forward pass of the SpeakerEmbedPrenet module to obtain speaker features.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        spk_ids: torch.Tensor</span>
@@ -4803,8 +4796,7 @@ whether to use the same projection layer for encoder and decoder</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/prenet/spk_embed.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">14</span>
-<span class="normal">15</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span>
 <span class="normal">18</span>
@@ -4897,8 +4889,7 @@ whether to use the same projection layer for encoder and decoder</p>
     <span class="n">dec_comb</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">encdec_same_proj</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Initialize the SpeakerEmbedPrenet module with the given configuration.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize the SpeakerEmbedPrenet module with the given configuration.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        d_model: int</span>

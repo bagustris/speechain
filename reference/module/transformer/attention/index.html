@@ -3805,10 +3805,7 @@ https://github.com/OpenNMT/OpenNMT-py</p>
 <span class="normal">130</span>
 <span class="normal">131</span>
 <span class="normal">132</span>
-<span class="normal">133</span>
-<span class="normal">134</span>
-<span class="normal">135</span>
-<span class="normal">136</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">MultiHeadedAttention</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+<span class="normal">133</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">MultiHeadedAttention</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A Multi-Head Attention layer has:</span>
 <span class="sd">        · Query linear layer</span>
@@ -3829,8 +3826,7 @@ https://github.com/OpenNMT/OpenNMT-py</p>
         <span class="n">dropout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
         <span class="n">scale_dp_by_head</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Create a multi-headed attention layer.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a multi-headed attention layer.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            num_heads:</span>
@@ -3910,8 +3906,7 @@ https://github.com/OpenNMT/OpenNMT-py</p>
         <span class="n">q</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
         <span class="n">mask</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Computes multi-headed attention.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Computes multi-headed attention.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            k: keys   [B, M, D] with M being the sentence length.</span>
@@ -3920,7 +3915,6 @@ https://github.com/OpenNMT/OpenNMT-py</p>
 <span class="sd">            mask: optional mask [B, 1, M]</span>
 
 <span class="sd">        Returns:</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kvq_forward</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
@@ -4039,7 +4033,8 @@ https://github.com/OpenNMT/OpenNMT-py</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/transformer/attention.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">111</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">110</span>
+<span class="normal">111</span>
 <span class="normal">112</span>
 <span class="normal">113</span>
 <span class="normal">114</span>
@@ -4061,18 +4056,14 @@ https://github.com/OpenNMT/OpenNMT-py</p>
 <span class="normal">130</span>
 <span class="normal">131</span>
 <span class="normal">132</span>
-<span class="normal">133</span>
-<span class="normal">134</span>
-<span class="normal">135</span>
-<span class="normal">136</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span>
+<span class="normal">133</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">k</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
     <span class="n">v</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
     <span class="n">q</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
     <span class="n">mask</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Computes multi-headed attention.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Computes multi-headed attention.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        k: keys   [B, M, D] with M being the sentence length.</span>
@@ -4081,7 +4072,6 @@ https://github.com/OpenNMT/OpenNMT-py</p>
 <span class="sd">        mask: optional mask [B, 1, M]</span>
 
 <span class="sd">    Returns:</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kvq_forward</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
@@ -4209,16 +4199,14 @@ https://github.com/OpenNMT/OpenNMT-py</p>
 <span class="normal">62</span>
 <span class="normal">63</span>
 <span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
+<span class="normal">65</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">num_heads</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
     <span class="n">d_model</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
     <span class="n">dropout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
     <span class="n">scale_dp_by_head</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Create a multi-headed attention layer.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a multi-headed attention layer.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        num_heads:</span>

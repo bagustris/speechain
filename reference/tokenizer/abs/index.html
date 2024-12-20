@@ -3701,8 +3701,8 @@ Date: 2022.07</p>
               Bases: <code><span title="abc.ABC">ABC</span></code></p>
 
 
-        <p>Tokenizer is the base class of all the <em>Tokenizer</em> objects in this toolkit.
-It on-the-fly transforms text data between strings and tensors.</p>
+        <p>Tokenizer is the base class of all the <em>Tokenizer</em> objects in this toolkit. It
+on-the-fly transforms text data between strings and tensors.</p>
 <p>For data storage and visualization, the text data should be in the form of strings which is not friendly for model
 forward calculation. For model forward calculation, the text data is better to be in the form of vectors
 (<code>torch.tensor</code> or <code>numpy.ndarray</code>).</p>
@@ -3849,23 +3849,13 @@ forward calculation. For model forward calculation, the text data is better to b
 <span class="normal">149</span>
 <span class="normal">150</span>
 <span class="normal">151</span>
-<span class="normal">152</span>
-<span class="normal">153</span>
-<span class="normal">154</span>
-<span class="normal">155</span>
-<span class="normal">156</span>
-<span class="normal">157</span>
-<span class="normal">158</span>
-<span class="normal">159</span>
-<span class="normal">160</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Tokenizer</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Tokenizer is the base class of all the _Tokenizer_ objects in this toolkit.</span>
-<span class="sd">    It on-the-fly transforms text data between strings and tensors.</span>
+<span class="normal">152</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Tokenizer</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tokenizer is the base class of all the _Tokenizer_ objects in this toolkit. It</span>
+<span class="sd">    on-the-fly transforms text data between strings and tensors.</span>
 
 <span class="sd">    For data storage and visualization, the text data should be in the form of strings which is not friendly for model</span>
 <span class="sd">    forward calculation. For model forward calculation, the text data is better to be in the form of vectors</span>
 <span class="sd">    (`torch.tensor` or `numpy.ndarray`).</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">token_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">copy_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">tokenizer_conf</span><span class="p">):</span>
@@ -3925,9 +3915,8 @@ forward calculation. For model forward calculation, the text data is better to b
     <span class="k">def</span> <span class="nf">tokenizer_init_fn</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">token_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">copy_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">tokenizer_conf</span>
     <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This hook interface function initializes the customized part of a _Tokenizer_ subclass if had.</span>
-<span class="sd">        This interface is not mandatory to be overridden.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This hook interface function initializes the customized part of a _Tokenizer_</span>
+<span class="sd">        subclass if had. This interface is not mandatory to be overridden.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            copy_path: str = None</span>
@@ -3936,13 +3925,11 @@ forward calculation. For model forward calculation, the text data is better to b
 <span class="sd">            **tokenizer_conf:</span>
 <span class="sd">                The arguments used by tokenizer_init_fn() for your customized Tokenizer initialization.</span>
 <span class="sd">                For more details, please refer to the docstring of your target Tokenizer subclass.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">pass</span>
 
     <span class="k">def</span> <span class="nf">tensor2text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tensor</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This functions decodes a text tensor into a human-friendly string.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This functions decodes a text tensor into a human-friendly string.</span>
 
 <span class="sd">        The default implementation transforms each token index in the input tensor to the token string by `</span>
 <span class="sd">        self.idx2token`. If the token index is `self.unk_idx`, an asterisk (*) will be used to represent an unknown</span>
@@ -3957,7 +3944,6 @@ forward calculation. For model forward calculation, the text data is better to b
 
 <span class="sd">        Returns:</span>
 <span class="sd">            The string of the decoded sentence.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">token_list</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">tensor</span><span class="o">.</span><span class="n">tolist</span><span class="p">():</span>
@@ -3981,10 +3967,9 @@ forward calculation. For model forward calculation, the text data is better to b
         <span class="n">no_eos</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">return_tensor</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span> <span class="ow">or</span> <span class="n">List</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This functions encodes a text string into a model-friendly tensor.</span>
-<span class="sd">        This interface is mandatory to be overridden.</span>
-<span class="sd">        By default, this function will attach two &lt;sos/eos&gt; at the beginning and end of the returned token id sequence.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This functions encodes a text string into a model-friendly tensor. This</span>
+<span class="sd">        interface is mandatory to be overridden. By default, this function will attach</span>
+<span class="sd">        two &lt;sos/eos&gt; at the beginning and end of the returned token id sequence.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            text: str</span>
@@ -3998,7 +3983,6 @@ forward calculation. For model forward calculation, the text data is better to b
 
 <span class="sd">        Returns: torch.LongTensor</span>
 <span class="sd">            The tensor of the encoded sentence</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 </code></pre></div></td></tr></table></div>
@@ -4103,7 +4087,9 @@ If not given, no backup will be saved.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/tokenizer/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">28</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
 <span class="normal">29</span>
 <span class="normal">30</span>
 <span class="normal">31</span>
@@ -4153,9 +4139,7 @@ If not given, no backup will be saved.</p>
 <span class="normal">75</span>
 <span class="normal">76</span>
 <span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span>
-<span class="normal">80</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">token_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">copy_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">tokenizer_conf</span><span class="p">):</span>
+<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">token_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">copy_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">tokenizer_conf</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function registers some shared member variables for all _Tokenizer_ subclasses:</span>
 <span class="sd">    1. `self.idx2token`: the mapping Dict from the token index to token string.</span>
@@ -4288,7 +4272,11 @@ to decode the input tensor rather than the built-in <code>self.idx2token</code>,
 
             <details class="quote">
               <summary>Source code in <code>speechain/tokenizer/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">100</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
 <span class="normal">101</span>
 <span class="normal">102</span>
 <span class="normal">103</span>
@@ -4313,15 +4301,8 @@ to decode the input tensor rather than the built-in <code>self.idx2token</code>,
 <span class="normal">122</span>
 <span class="normal">123</span>
 <span class="normal">124</span>
-<span class="normal">125</span>
-<span class="normal">126</span>
-<span class="normal">127</span>
-<span class="normal">128</span>
-<span class="normal">129</span>
-<span class="normal">130</span>
-<span class="normal">131</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">tensor2text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tensor</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This functions decodes a text tensor into a human-friendly string.</span>
+<span class="normal">125</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">tensor2text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tensor</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This functions decodes a text tensor into a human-friendly string.</span>
 
 <span class="sd">    The default implementation transforms each token index in the input tensor to the token string by `</span>
 <span class="sd">    self.idx2token`. If the token index is `self.unk_idx`, an asterisk (*) will be used to represent an unknown</span>
@@ -4336,7 +4317,6 @@ to decode the input tensor rather than the built-in <code>self.idx2token</code>,
 
 <span class="sd">    Returns:</span>
 <span class="sd">        The string of the decoded sentence.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">token_list</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">tensor</span><span class="o">.</span><span class="n">tolist</span><span class="p">():</span>
@@ -4372,9 +4352,9 @@ to decode the input tensor rather than the built-in <code>self.idx2token</code>,
 
     <div class="doc doc-contents ">
 
-        <p>This functions encodes a text string into a model-friendly tensor.
-This interface is mandatory to be overridden.
-By default, this function will attach two <sos/eos> at the beginning and end of the returned token id sequence.</p>
+        <p>This functions encodes a text string into a model-friendly tensor. This
+interface is mandatory to be overridden. By default, this function will attach
+two <sos/eos> at the beginning and end of the returned token id sequence.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4484,7 +4464,13 @@ Whether to return the tokenization results as a tensor. If False, a List will be
 
             <details class="quote">
               <summary>Source code in <code>speechain/tokenizer/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">133</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
 <span class="normal">134</span>
 <span class="normal">135</span>
 <span class="normal">136</span>
@@ -4503,15 +4489,7 @@ Whether to return the tokenization results as a tensor. If False, a List will be
 <span class="normal">149</span>
 <span class="normal">150</span>
 <span class="normal">151</span>
-<span class="normal">152</span>
-<span class="normal">153</span>
-<span class="normal">154</span>
-<span class="normal">155</span>
-<span class="normal">156</span>
-<span class="normal">157</span>
-<span class="normal">158</span>
-<span class="normal">159</span>
-<span class="normal">160</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
+<span class="normal">152</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@abstractmethod</span>
 <span class="k">def</span> <span class="nf">text2tensor</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -4519,10 +4497,9 @@ Whether to return the tokenization results as a tensor. If False, a List will be
     <span class="n">no_eos</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">return_tensor</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span> <span class="ow">or</span> <span class="n">List</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This functions encodes a text string into a model-friendly tensor.</span>
-<span class="sd">    This interface is mandatory to be overridden.</span>
-<span class="sd">    By default, this function will attach two &lt;sos/eos&gt; at the beginning and end of the returned token id sequence.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This functions encodes a text string into a model-friendly tensor. This</span>
+<span class="sd">    interface is mandatory to be overridden. By default, this function will attach</span>
+<span class="sd">    two &lt;sos/eos&gt; at the beginning and end of the returned token id sequence.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        text: str</span>
@@ -4536,7 +4513,6 @@ Whether to return the tokenization results as a tensor. If False, a List will be
 
 <span class="sd">    Returns: torch.LongTensor</span>
 <span class="sd">        The tensor of the encoded sentence</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 </code></pre></div></td></tr></table></div>
@@ -4556,8 +4532,8 @@ Whether to return the tokenization results as a tensor. If False, a List will be
 
     <div class="doc doc-contents ">
 
-        <p>This hook interface function initializes the customized part of a <em>Tokenizer</em> subclass if had.
-This interface is not mandatory to be overridden.</p>
+        <p>This hook interface function initializes the customized part of a <em>Tokenizer</em>
+subclass if had. This interface is not mandatory to be overridden.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4610,7 +4586,9 @@ For more details, please refer to the docstring of your target Tokenizer subclas
 
             <details class="quote">
               <summary>Source code in <code>speechain/tokenizer/abs.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">82</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
 <span class="normal">83</span>
 <span class="normal">84</span>
 <span class="normal">85</span>
@@ -4622,16 +4600,11 @@ For more details, please refer to the docstring of your target Tokenizer subclas
 <span class="normal">91</span>
 <span class="normal">92</span>
 <span class="normal">93</span>
-<span class="normal">94</span>
-<span class="normal">95</span>
-<span class="normal">96</span>
-<span class="normal">97</span>
-<span class="normal">98</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">tokenizer_init_fn</span><span class="p">(</span>
+<span class="normal">94</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">tokenizer_init_fn</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">token_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">copy_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">tokenizer_conf</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This hook interface function initializes the customized part of a _Tokenizer_ subclass if had.</span>
-<span class="sd">    This interface is not mandatory to be overridden.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This hook interface function initializes the customized part of a _Tokenizer_</span>
+<span class="sd">    subclass if had. This interface is not mandatory to be overridden.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        copy_path: str = None</span>
@@ -4640,7 +4613,6 @@ For more details, please refer to the docstring of your target Tokenizer subclas
 <span class="sd">        **tokenizer_conf:</span>
 <span class="sd">            The arguments used by tokenizer_init_fn() for your customized Tokenizer initialization.</span>
 <span class="sd">            For more details, please refer to the docstring of your target Tokenizer subclass.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span>
 </code></pre></div></td></tr></table></div>

@@ -3645,8 +3645,8 @@
               Bases: <code><span title="speechain.module.abs.Module">Module</span></code></p>
 
 
-        <p>Batch-level SpecAugment.
-Implemented based on
+        <p>Batch-level SpecAugment.</p>
+<p>Implemented based on
     'SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition'
     reference: https://arxiv.org/pdf/1904.08779.pdf
 This implementation is inspired by
@@ -3880,18 +3880,15 @@ This implementation is inspired by
 <span class="normal">225</span>
 <span class="normal">226</span>
 <span class="normal">227</span>
-<span class="normal">228</span>
-<span class="normal">229</span>
-<span class="normal">230</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">SpecAugment</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Batch-level SpecAugment.</span>
+<span class="normal">228</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">SpecAugment</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Batch-level SpecAugment.</span>
+
 <span class="sd">    Implemented based on</span>
 <span class="sd">        &#39;SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition&#39;</span>
 <span class="sd">        reference: https://arxiv.org/pdf/1904.08779.pdf</span>
 <span class="sd">    This implementation is inspired by</span>
 <span class="sd">        https://github.com/espnet/espnet/blob/36e824be58ea6c6844e3d87b11e382f90ba4fb22/espnet2/layers/time_warp.py#L9</span>
 <span class="sd">        https://github.com/speechbrain/speechbrain/blob/develop/speechbrain/lobes/augment.py#L116</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
@@ -3949,8 +3946,8 @@ This implementation is inspired by
         <span class="bp">self</span><span class="o">.</span><span class="n">feat_norm</span> <span class="o">=</span> <span class="n">feat_norm</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">feat</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">feat_len</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Both the time warping and time masking are done within the minimum length of all the utterance in the input batch.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Both the time warping and time masking are done within the minimum length of</span>
+<span class="sd">        all the utterance in the input batch.</span>
 
 <span class="sd">        This practice is to make sure that the time warping and masking are done in the effective area of the input data</span>
 <span class="sd">        and the feature length information are still valid after augmentation.</span>
@@ -3960,7 +3957,6 @@ This implementation is inspired by
 <span class="sd">            feat_len:</span>
 
 <span class="sd">        Returns:</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">batch_size</span><span class="p">,</span> <span class="n">feat_dim</span> <span class="o">=</span> <span class="n">feat</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">feat</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
         <span class="n">time_maxlen</span><span class="p">,</span> <span class="n">time_minlen</span> <span class="o">=</span> <span class="n">feat_len</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="n">feat_len</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
@@ -4131,7 +4127,8 @@ This implementation is inspired by
 
     <div class="doc doc-contents ">
 
-        <p>Both the time warping and time masking are done within the minimum length of all the utterance in the input batch.</p>
+        <p>Both the time warping and time masking are done within the minimum length of
+all the utterance in the input batch.</p>
 <p>This practice is to make sure that the time warping and masking are done in the effective area of the input data
 and the feature length information are still valid after augmentation.</p>
 
@@ -4185,7 +4182,8 @@ and the feature length information are still valid after augmentation.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/augment/specaug.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 74</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 73</span>
+<span class="normal"> 74</span>
 <span class="normal"> 75</span>
 <span class="normal"> 76</span>
 <span class="normal"> 77</span>
@@ -4317,11 +4315,9 @@ and the feature length information are still valid after augmentation.</p>
 <span class="normal">203</span>
 <span class="normal">204</span>
 <span class="normal">205</span>
-<span class="normal">206</span>
-<span class="normal">207</span>
-<span class="normal">208</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">feat</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">feat_len</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Both the time warping and time masking are done within the minimum length of all the utterance in the input batch.</span>
+<span class="normal">206</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">feat</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">feat_len</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Both the time warping and time masking are done within the minimum length of</span>
+<span class="sd">    all the utterance in the input batch.</span>
 
 <span class="sd">    This practice is to make sure that the time warping and masking are done in the effective area of the input data</span>
 <span class="sd">    and the feature length information are still valid after augmentation.</span>
@@ -4331,7 +4327,6 @@ and the feature length information are still valid after augmentation.</p>
 <span class="sd">        feat_len:</span>
 
 <span class="sd">    Returns:</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">batch_size</span><span class="p">,</span> <span class="n">feat_dim</span> <span class="o">=</span> <span class="n">feat</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">feat</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">time_maxlen</span><span class="p">,</span> <span class="n">time_minlen</span> <span class="o">=</span> <span class="n">feat_len</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="n">feat_len</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>

@@ -3663,9 +3663,10 @@
               Bases: <code><span title="speechain.module.abs.Module">Module</span></code></p>
 
 
-        <p>Stand-Alone module of the autoregressive language model. This module has two usages:
-    1. language model training by speechain.model.lm.LM
-    2. ASR-LM joint decoding by speechain.model.ar_asr.ARASR</p>
+        <p>Stand-Alone module of the autoregressive language model.</p>
+<p>This module has two usages:
+1. language model training by speechain.model.lm.LM
+2. ASR-LM joint decoding by speechain.model.ar_asr.ARASR</p>
 
 
 
@@ -3753,11 +3754,11 @@
 <span class="normal">88</span>
 <span class="normal">89</span>
 <span class="normal">90</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">LanguageModel</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Stand-Alone module of the autoregressive language model. This module has two usages:</span>
-<span class="sd">        1. language model training by speechain.model.lm.LM</span>
-<span class="sd">        2. ASR-LM joint decoding by speechain.model.ar_asr.ARASR</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Stand-Alone module of the autoregressive language model.</span>
 
+<span class="sd">    This module has two usages:</span>
+<span class="sd">    1. language model training by speechain.model.lm.LM</span>
+<span class="sd">    2. ASR-LM joint decoding by speechain.model.ar_asr.ARASR</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">embedding_class_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">embed</span><span class="o">=</span><span class="n">EmbedPrenet</span><span class="p">)</span>

@@ -3702,7 +3702,12 @@
 
               <details class="quote">
                 <summary>Source code in <code>speechain/module/conformer/encoder.py</code></summary>
-                <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">218</span>
+                <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
 <span class="normal">219</span>
 <span class="normal">220</span>
 <span class="normal">221</span>
@@ -3804,15 +3809,8 @@
 <span class="normal">317</span>
 <span class="normal">318</span>
 <span class="normal">319</span>
-<span class="normal">320</span>
-<span class="normal">321</span>
-<span class="normal">322</span>
-<span class="normal">323</span>
-<span class="normal">324</span>
-<span class="normal">325</span>
-<span class="normal">326</span>
-<span class="normal">327</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ConformerEncoder</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+<span class="normal">320</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ConformerEncoder</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -3881,8 +3879,7 @@
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">subsequent_mask</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">maxlen</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Mask out subsequent positions (to prevent attending to future positions)</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Mask out subsequent positions (to prevent attending to future positions)</span>
 <span class="sd">        Transformer helper function.</span>
 
 <span class="sd">        Args:</span>
@@ -3891,7 +3888,6 @@
 <span class="sd">                size of mask (2nd and 3rd dim)</span>
 
 <span class="sd">        Returns:</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="o">~</span><span class="n">torch</span><span class="o">.</span><span class="n">triu</span><span class="p">(</span>
             <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">maxlen</span><span class="p">,</span> <span class="n">maxlen</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">bool</span><span class="p">),</span> <span class="n">diagonal</span><span class="o">=</span><span class="mi">1</span>
@@ -4004,7 +4000,12 @@ size of mask (2nd and 3rd dim)</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/conformer/encoder.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">286</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
 <span class="normal">287</span>
 <span class="normal">288</span>
 <span class="normal">289</span>
@@ -4013,17 +4014,9 @@ size of mask (2nd and 3rd dim)</p>
 <span class="normal">292</span>
 <span class="normal">293</span>
 <span class="normal">294</span>
-<span class="normal">295</span>
-<span class="normal">296</span>
-<span class="normal">297</span>
-<span class="normal">298</span>
-<span class="normal">299</span>
-<span class="normal">300</span>
-<span class="normal">301</span>
-<span class="normal">302</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
+<span class="normal">295</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
 <span class="k">def</span> <span class="nf">subsequent_mask</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">maxlen</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Mask out subsequent positions (to prevent attending to future positions)</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Mask out subsequent positions (to prevent attending to future positions)</span>
 <span class="sd">    Transformer helper function.</span>
 
 <span class="sd">    Args:</span>
@@ -4032,7 +4025,6 @@ size of mask (2nd and 3rd dim)</p>
 <span class="sd">            size of mask (2nd and 3rd dim)</span>
 
 <span class="sd">    Returns:</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="o">~</span><span class="n">torch</span><span class="o">.</span><span class="n">triu</span><span class="p">(</span>
         <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">maxlen</span><span class="p">,</span> <span class="n">maxlen</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">bool</span><span class="p">),</span> <span class="n">diagonal</span><span class="o">=</span><span class="mi">1</span>
@@ -4217,12 +4209,7 @@ size of mask (2nd and 3rd dim)</p>
 <span class="normal">207</span>
 <span class="normal">208</span>
 <span class="normal">209</span>
-<span class="normal">210</span>
-<span class="normal">211</span>
-<span class="normal">212</span>
-<span class="normal">213</span>
-<span class="normal">214</span>
-<span class="normal">215</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ConformerEncoderLayer</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+<span class="normal">210</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ConformerEncoderLayer</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">d_model</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">512</span><span class="p">,</span>
@@ -4279,8 +4266,7 @@ size of mask (2nd and 3rd dim)</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">dropout</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="n">res_dropout</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">mask</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">posenc</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Forward pass for a single transformer encoder layer.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Forward pass for a single transformer encoder layer.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            src: (batch, src_maxlen, d_model)</span>
@@ -4290,7 +4276,6 @@ size of mask (2nd and 3rd dim)</p>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            The output of this Transformer encoder layer and the attention matrix</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="s2">&quot;Front Positional FeedForward Layer part&quot;</span>
         <span class="c1"># go through the LayerNorm layer before the feedforward layer or not</span>
@@ -4306,7 +4291,6 @@ size of mask (2nd and 3rd dim)</p>
             <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">layernorm_first</span>
             <span class="k">else</span> <span class="n">front_fdfwd_output</span>
         <span class="p">)</span>
-
         <span class="s2">&quot;Relative Positional Multi-head Attention Layer part&quot;</span>
         <span class="c1"># go through the LayerNorm layer before the multi-head attention layer or not</span>
         <span class="n">front_fdfwd_output_norm</span> <span class="o">=</span> <span class="p">(</span>
@@ -4331,7 +4315,6 @@ size of mask (2nd and 3rd dim)</p>
             <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">layernorm_first</span>
             <span class="k">else</span> <span class="n">relpos_mha_output</span>
         <span class="p">)</span>
-
         <span class="s2">&quot;Convolutional Module part&quot;</span>
         <span class="c1"># go through the LayerNorm layer before the feedforward layer or not</span>
         <span class="n">relpos_mha_output_norm</span> <span class="o">=</span> <span class="p">(</span>
@@ -4350,7 +4333,6 @@ size of mask (2nd and 3rd dim)</p>
             <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">layernorm_first</span>
             <span class="k">else</span> <span class="n">conv_output</span>
         <span class="p">)</span>
-
         <span class="s2">&quot;Rear Positional FeedForward Layer part&quot;</span>
         <span class="c1"># go through the LayerNorm layer before the feedforward layer or not</span>
         <span class="n">conv_output_norm</span> <span class="o">=</span> <span class="p">(</span>
@@ -4559,14 +4541,8 @@ input mask</p>
 <span class="normal">207</span>
 <span class="normal">208</span>
 <span class="normal">209</span>
-<span class="normal">210</span>
-<span class="normal">211</span>
-<span class="normal">212</span>
-<span class="normal">213</span>
-<span class="normal">214</span>
-<span class="normal">215</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">mask</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">posenc</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Forward pass for a single transformer encoder layer.</span>
+<span class="normal">210</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">mask</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">posenc</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Forward pass for a single transformer encoder layer.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        src: (batch, src_maxlen, d_model)</span>
@@ -4576,7 +4552,6 @@ input mask</p>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        The output of this Transformer encoder layer and the attention matrix</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="s2">&quot;Front Positional FeedForward Layer part&quot;</span>
     <span class="c1"># go through the LayerNorm layer before the feedforward layer or not</span>
@@ -4592,7 +4567,6 @@ input mask</p>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">layernorm_first</span>
         <span class="k">else</span> <span class="n">front_fdfwd_output</span>
     <span class="p">)</span>
-
     <span class="s2">&quot;Relative Positional Multi-head Attention Layer part&quot;</span>
     <span class="c1"># go through the LayerNorm layer before the multi-head attention layer or not</span>
     <span class="n">front_fdfwd_output_norm</span> <span class="o">=</span> <span class="p">(</span>
@@ -4617,7 +4591,6 @@ input mask</p>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">layernorm_first</span>
         <span class="k">else</span> <span class="n">relpos_mha_output</span>
     <span class="p">)</span>
-
     <span class="s2">&quot;Convolutional Module part&quot;</span>
     <span class="c1"># go through the LayerNorm layer before the feedforward layer or not</span>
     <span class="n">relpos_mha_output_norm</span> <span class="o">=</span> <span class="p">(</span>
@@ -4636,7 +4609,6 @@ input mask</p>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">layernorm_first</span>
         <span class="k">else</span> <span class="n">conv_output</span>
     <span class="p">)</span>
-
     <span class="s2">&quot;Rear Positional FeedForward Layer part&quot;</span>
     <span class="c1"># go through the LayerNorm layer before the feedforward layer or not</span>
     <span class="n">conv_output_norm</span> <span class="o">=</span> <span class="p">(</span>

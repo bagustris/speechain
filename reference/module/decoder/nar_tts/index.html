@@ -4140,12 +4140,8 @@ Date: 2023.02</p>
 <span class="normal">499</span>
 <span class="normal">500</span>
 <span class="normal">501</span>
-<span class="normal">502</span>
-<span class="normal">503</span>
-<span class="normal">504</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">FastSpeech2Decoder</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Decoder Module for Non-Autoregressive FastSpeech2 model.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="normal">502</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">FastSpeech2Decoder</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Decoder Module for Non-Autoregressive FastSpeech2 model.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -4278,8 +4274,8 @@ Date: 2023.02</p>
     <span class="k">def</span> <span class="nf">average_scalar_by_duration</span><span class="p">(</span>
         <span class="n">frame_scalar</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">duration</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">duration_len</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span>
     <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Compute the average scalar value for each token in a batch of variable length frames.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the average scalar value for each token in a batch of variable length</span>
+<span class="sd">        frames.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">          frame_scalar:</span>
@@ -4657,7 +4653,8 @@ Date: 2023.02</p>
 
     <div class="doc doc-contents ">
 
-        <p>Compute the average scalar value for each token in a batch of variable length frames.</p>
+        <p>Compute the average scalar value for each token in a batch of variable length
+frames.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4775,7 +4772,9 @@ Date: 2023.02</p>
 </details>
             <details class="quote">
               <summary>Source code in <code>speechain/module/decoder/nar_tts.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">152</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
 <span class="normal">153</span>
 <span class="normal">154</span>
 <span class="normal">155</span>
@@ -4827,14 +4826,12 @@ Date: 2023.02</p>
 <span class="normal">201</span>
 <span class="normal">202</span>
 <span class="normal">203</span>
-<span class="normal">204</span>
-<span class="normal">205</span>
-<span class="normal">206</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
+<span class="normal">204</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
 <span class="k">def</span> <span class="nf">average_scalar_by_duration</span><span class="p">(</span>
     <span class="n">frame_scalar</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">duration</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">duration_len</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Compute the average scalar value for each token in a batch of variable length frames.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the average scalar value for each token in a batch of variable length</span>
+<span class="sd">    frames.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">      frame_scalar:</span>

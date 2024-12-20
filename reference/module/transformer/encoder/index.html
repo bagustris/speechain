@@ -3780,7 +3780,9 @@ Reference:
 
               <details class="quote">
                 <summary>Source code in <code>speechain/module/transformer/encoder.py</code></summary>
-                <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">148</span>
+                <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
 <span class="normal">149</span>
 <span class="normal">150</span>
 <span class="normal">151</span>
@@ -3981,14 +3983,7 @@ Reference:
 <span class="normal">346</span>
 <span class="normal">347</span>
 <span class="normal">348</span>
-<span class="normal">349</span>
-<span class="normal">350</span>
-<span class="normal">351</span>
-<span class="normal">352</span>
-<span class="normal">353</span>
-<span class="normal">354</span>
-<span class="normal">355</span>
-<span class="normal">356</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">TransformerEncoder</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+<span class="normal">349</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">TransformerEncoder</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The Transformer encoder for any Sequence-to-Sequence tasks.</span>
 <span class="sd">    Reference:</span>
@@ -4138,8 +4133,7 @@ Reference:
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">subsequent_mask</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">maxlen</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Mask out subsequent positions (to prevent attending to future positions)</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Mask out subsequent positions (to prevent attending to future positions)</span>
 <span class="sd">        Transformer helper function.</span>
 
 <span class="sd">        Args:</span>
@@ -4148,18 +4142,15 @@ Reference:
 <span class="sd">                size of mask (2nd and 3rd dim)</span>
 
 <span class="sd">        Returns:</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="o">~</span><span class="n">torch</span><span class="o">.</span><span class="n">triu</span><span class="p">(</span>
             <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">maxlen</span><span class="p">,</span> <span class="n">maxlen</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">bool</span><span class="p">),</span> <span class="n">diagonal</span><span class="o">=</span><span class="mi">1</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">mask</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Pass the input (and mask) through each layer in turn.</span>
-<span class="sd">        Applies a Transformer encoder to sequence of embeddings x.</span>
-<span class="sd">        The input mini-batch x needs to be sorted by src length.</span>
-<span class="sd">        x and mask should have the same dimensions [batch, time, dim].</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Pass the input (and mask) through each layer in turn. Applies a Transformer</span>
+<span class="sd">        encoder to sequence of embeddings x. The input mini-batch x needs to be sorted</span>
+<span class="sd">        by src length. x and mask should have the same dimensions [batch, time, dim].</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            src: (batch_size, src_maxlen, embed_size)</span>
@@ -4171,7 +4162,6 @@ Reference:
 <span class="sd">            The output of the Transformer encoder with its mask.</span>
 <span class="sd">            The outputs of each Transformer encoder layer will be returned as a List.</span>
 <span class="sd">            The attention matrix of each Transformer encoder layer will also be returned as a List.</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="c1"># add position encoding to word embeddings</span>
@@ -4223,10 +4213,9 @@ Reference:
 
     <div class="doc doc-contents ">
 
-        <p>Pass the input (and mask) through each layer in turn.
-Applies a Transformer encoder to sequence of embeddings x.
-The input mini-batch x needs to be sorted by src length.
-x and mask should have the same dimensions [batch, time, dim].</p>
+        <p>Pass the input (and mask) through each layer in turn. Applies a Transformer
+encoder to sequence of embeddings x. The input mini-batch x needs to be sorted
+by src length. x and mask should have the same dimensions [batch, time, dim].</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4319,7 +4308,11 @@ indicates padding areas (zeros where padding)</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/transformer/encoder.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">314</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
 <span class="normal">315</span>
 <span class="normal">316</span>
 <span class="normal">317</span>
@@ -4354,19 +4347,10 @@ indicates padding areas (zeros where padding)</p>
 <span class="normal">346</span>
 <span class="normal">347</span>
 <span class="normal">348</span>
-<span class="normal">349</span>
-<span class="normal">350</span>
-<span class="normal">351</span>
-<span class="normal">352</span>
-<span class="normal">353</span>
-<span class="normal">354</span>
-<span class="normal">355</span>
-<span class="normal">356</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">mask</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Pass the input (and mask) through each layer in turn.</span>
-<span class="sd">    Applies a Transformer encoder to sequence of embeddings x.</span>
-<span class="sd">    The input mini-batch x needs to be sorted by src length.</span>
-<span class="sd">    x and mask should have the same dimensions [batch, time, dim].</span>
+<span class="normal">349</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">mask</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pass the input (and mask) through each layer in turn. Applies a Transformer</span>
+<span class="sd">    encoder to sequence of embeddings x. The input mini-batch x needs to be sorted</span>
+<span class="sd">    by src length. x and mask should have the same dimensions [batch, time, dim].</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        src: (batch_size, src_maxlen, embed_size)</span>
@@ -4378,7 +4362,6 @@ indicates padding areas (zeros where padding)</p>
 <span class="sd">        The output of the Transformer encoder with its mask.</span>
 <span class="sd">        The outputs of each Transformer encoder layer will be returned as a List.</span>
 <span class="sd">        The attention matrix of each Transformer encoder layer will also be returned as a List.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="c1"># add position encoding to word embeddings</span>
@@ -4759,7 +4742,9 @@ perform the final normalization.</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/transformer/encoder.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">170</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
 <span class="normal">171</span>
 <span class="normal">172</span>
 <span class="normal">173</span>
@@ -4881,9 +4866,7 @@ perform the final normalization.</p>
 <span class="normal">289</span>
 <span class="normal">290</span>
 <span class="normal">291</span>
-<span class="normal">292</span>
-<span class="normal">293</span>
-<span class="normal">294</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
+<span class="normal">292</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">module_init</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">posenc_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;mix&quot;</span><span class="p">,</span>
     <span class="n">posenc_maxlen</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">,</span>
@@ -5082,7 +5065,9 @@ size of mask (2nd and 3rd dim)</p>
 
             <details class="quote">
               <summary>Source code in <code>speechain/module/transformer/encoder.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">296</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
 <span class="normal">297</span>
 <span class="normal">298</span>
 <span class="normal">299</span>
@@ -5094,14 +5079,9 @@ size of mask (2nd and 3rd dim)</p>
 <span class="normal">305</span>
 <span class="normal">306</span>
 <span class="normal">307</span>
-<span class="normal">308</span>
-<span class="normal">309</span>
-<span class="normal">310</span>
-<span class="normal">311</span>
-<span class="normal">312</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
+<span class="normal">308</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
 <span class="k">def</span> <span class="nf">subsequent_mask</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">maxlen</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Mask out subsequent positions (to prevent attending to future positions)</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Mask out subsequent positions (to prevent attending to future positions)</span>
 <span class="sd">    Transformer helper function.</span>
 
 <span class="sd">    Args:</span>
@@ -5110,7 +5090,6 @@ size of mask (2nd and 3rd dim)</p>
 <span class="sd">            size of mask (2nd and 3rd dim)</span>
 
 <span class="sd">    Returns:</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="o">~</span><span class="n">torch</span><span class="o">.</span><span class="n">triu</span><span class="p">(</span>
         <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">maxlen</span><span class="p">,</span> <span class="n">maxlen</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">bool</span><span class="p">),</span> <span class="n">diagonal</span><span class="o">=</span><span class="mi">1</span>
@@ -5283,9 +5262,7 @@ size of mask (2nd and 3rd dim)</p>
 <span class="normal">140</span>
 <span class="normal">141</span>
 <span class="normal">142</span>
-<span class="normal">143</span>
-<span class="normal">144</span>
-<span class="normal">145</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">TransformerEncoderLayer</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+<span class="normal">143</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">TransformerEncoderLayer</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A single Transformer encoder layer has:</span>
 <span class="sd">    · a Multi-head attention sublayer</span>
@@ -5367,8 +5344,7 @@ size of mask (2nd and 3rd dim)</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">fdfwd_layernorm</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">LayerNorm</span><span class="p">(</span><span class="n">d_model</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">mask</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Forward pass for a single transformer encoder layer.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Forward pass for a single transformer encoder layer.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            src: (batch, src_maxlen, d_model)</span>
@@ -5378,7 +5354,6 @@ size of mask (2nd and 3rd dim)</p>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            The output of this Transformer encoder layer and the attention matrix</span>
-
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="s2">&quot;Multi-head Attention Layer part&quot;</span>
@@ -5556,11 +5531,8 @@ input mask</p>
 <span class="normal">140</span>
 <span class="normal">141</span>
 <span class="normal">142</span>
-<span class="normal">143</span>
-<span class="normal">144</span>
-<span class="normal">145</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">mask</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Forward pass for a single transformer encoder layer.</span>
+<span class="normal">143</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">mask</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Forward pass for a single transformer encoder layer.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        src: (batch, src_maxlen, d_model)</span>
@@ -5570,7 +5542,6 @@ input mask</p>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        The output of this Transformer encoder layer and the attention matrix</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="s2">&quot;Multi-head Attention Layer part&quot;</span>
