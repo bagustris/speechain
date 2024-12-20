@@ -3779,14 +3779,14 @@ Below is the nested <em>Module</em> tree of an encoder-decoder ASR model:</p>
 </code></pre>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/module#table-of-contents">Back to the table of contents</a></p>
 <h2 id="api-document">API Document</h2>
-<p><em>Non-overridable backbone functions:</em>
+<p><em>Non-overridable backbone functions:</em><br />
    1. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/module#speechainmoduleabsmodule__init__self-input_size-distributed-module_conf">speechain.module.abs.Module.__init__</a>  </p>
 <p><em>Overridable interface functions:</em><br />
-   2. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/module#speechainmoduleabsmodulemodule_initself-module_conf">speechain.module.abs.Module.module_init</a>
-   3. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/module#speechainmoduleabsmoduleforwardself-kwargs">speechain.module.abs.Module.forward</a>
-   4. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/module#speechainmoduleabsmodulerecoverself-kwargs">speechain.module.abs.Module.recover</a>
-   5. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/module#speechainmoduleabsmodulereset_parametersself">speechain.module.abs.Module.reset_parameters</a>
-   6. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/module#speechainmoduleabsmoduleget_recordable_paraself">speechain.module.abs.Module.get_recordable_para</a></p>
+   1. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/module#speechainmoduleabsmodulemodule_initself-module_conf">speechain.module.abs.Module.module_init</a><br />
+   2. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/module#speechainmoduleabsmoduleforwardself-kwargs">speechain.module.abs.Module.forward</a><br />
+   3. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/module#speechainmoduleabsmodulerecoverself-kwargs">speechain.module.abs.Module.recover</a><br />
+   4. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/module#speechainmoduleabsmodulereset_parametersself">speechain.module.abs.Module.reset_parameters</a><br />
+   5. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/module#speechainmoduleabsmoduleget_recordable_paraself">speechain.module.abs.Module.get_recordable_para</a></p>
 <h3 id="speechainmoduleabsmodule__init__self-input_size-distributed-module_conf">speechain.module.abs.Module.__init__(self, input_size, distributed, **module_conf)</h3>
 <ul>
 <li><strong>Description:</strong><br />
@@ -3801,7 +3801,7 @@ Below is the nested <em>Module</em> tree of an encoder-decoder ASR model:</p>
     The last dimension of the tensor from the front <em>Module</em> object. If not given, this argument would be None.</li>
 <li><em><strong>distributed:</strong></em> bool = False<br />
     Whether the <em>Model</em> object this <em>Module</em> object is belong to is distributed to multiple GPUs.</li>
-<li><em><strong>**module_conf:</strong></em><br />
+<li><em>*<strong>*module_conf:</strong></em><br />
     The arguments used by <code>module_init()</code> for your customized <em>Module</em> initialization.</li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/module#api-document">Back to the API list</a></p>
@@ -3811,7 +3811,7 @@ Below is the nested <em>Module</em> tree of an encoder-decoder ASR model:</p>
   Abstract interface function for customized initialization of each <em>Module</em> subclass. 
   This interface function is mandatory to be overridden by your implementation.</li>
 <li><strong>Arguments:</strong></li>
-<li><em><strong>**module_conf:</strong></em><br />
+<li><em>*<strong>*module_conf:</strong></em><br />
     The arguments used for customized Module initialization.
     For more details, please refer to the docstring of your target Module subclass.</li>
 </ul>
@@ -3837,7 +3837,7 @@ Below is the nested <em>Module</em> tree of an encoder-decoder ASR model:</p>
   It can be considered as the reverse process of <code>forward()</code>.<br />
   This interface function is not mandatory to be overridden.</li>
 <li><strong>Arguments:</strong></li>
-<li><em><strong>**kwargs:</strong></em><br />
+<li><em>*<strong>*kwargs:</strong></em><br />
     The input forward calculation results to be recovered. 
     For more details, please refer to the docstring of <code>recover()</code> of your target <em>Module</em> subclass.</li>
 <li><strong>Return:</strong><br />
@@ -3848,9 +3848,9 @@ Below is the nested <em>Module</em> tree of an encoder-decoder ASR model:</p>
 <h3 id="speechainmoduleabsmodulereset_parametersself">speechain.module.abs.Module.reset_parameters(self)</h3>
 <ul>
 <li><strong>Description:</strong><br />
-  This abstract interface function is used to initialize the customized parameters in the <em>Module</em> subclass if had. 
+  This abstract interface function is used to initialize the customized parameters in the <em>Module</em> subclass if had.<br />
   Some <em>Module</em> subclasses have their customized parameters with specific initialization functions.<br />
-  If your <em>Module</em> implementation has some customized parameters and you want to initialize them by yourself, 
+  If your <em>Module</em> implementation has some customized parameters and you want to initialize them by yourself,<br />
   please give the initialization logic in this interface function.<br />
   This interface function is not mandatory to be overridden.<br />
 <strong>Note:</strong> Don't forget to add <code>self.default_init_modules.append(YourModule)</code> in <code>model_init()</code> of your <em>Model</em>.</li>

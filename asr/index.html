@@ -3678,7 +3678,7 @@
         <th>Test Other</th>  
     </tr>
    <tr>
-      <td rowspan="8">librispeech</td>
+      <td rowspan="9">librispeech</td>
       <td rowspan="1">train-clean-5</td>
       <td>5-bpe5k_conformer-small_lr2e-3</td>
       <td>15.2% / 35.8%</td>
@@ -3739,7 +3739,7 @@
 
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/recipes/asr#table-of-contents">Back to the table of contents</a></p>
 <h2 id="pretrained-models-for-reproducibility">Pretrained Models for Reproducibility</h2>
-<p>For reproducibility of our ASR model configuration files in <code>${SPEECHAIN_ROOT}/recipes/asr/</code>, we provide the following pretrained models to ensure consistent performance:
+<p>For reproducibility of our ASR model configuration files in <code>${SPEECHAIN_ROOT}/recipes/asr/</code>, we provide the following pretrained models to ensure consistent performance:<br />
 1. SentencePiece tokenizer models (<a href="https://drive.google.com/drive/u/0/folders/1ZrnodlK2Ta6wnvhpXf79W27omSUVOaG0">GoogleDrive</a>). 
    * Please download tokenizer model and vocabulary to where your dataset is dumped. The default path is <code>${SPEECHAIN_ROOT}/datasets</code>. <br />
 <strong>Note:</strong> If your dataset is dumped outside SpeeChain, please replace <code>${SPEECHAIN_ROOT}/datasets</code> in the following commands by your place.
@@ -3780,7 +3780,7 @@
       gdown -O ${SPEECHAIN_ROOT}/recipes/lm/librispeech/lm_text/exp/100-bpe5k_transformer_gelu/models https://drive.google.com/uc?id=1ZsFKRb8UBpzDjWcjpQcxt4rT4J6CuKAm</p>
 <p># Download LM configuration
   gdown -O ${SPEECHAIN_ROOT}/recipes/lm/librispeech/lm_text/exp/100-bpe5k_transformer_gelu https://drive.google.com/uc?id=1TRtIOu2ptXTKphY77cF3fne9b-i-vNJD
-  <code>3. **train-960:**</code>
+  <code>2. **train-960:**</code>
   # Download LM model
   gdown -O ${SPEECHAIN_ROOT}/recipes/lm/librispeech/train-960_lm_text/exp/960-bpe5k_transformer_gelu/models https://drive.google.com/uc?id=1hMFlaJVojonyBiwaXmC_I7iLxI-kSWit</p>
 <p># Download LM configuration
@@ -3801,7 +3801,7 @@ More details on how to dump a dataset can be found <a href="https://github.com/b
 <li>Train and evaluate the ASR model on your target training set
    <code>cd ${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960
    bash run.sh --exp_cfg 960-bpe5k_transformer-wide_ctc_perturb (--ngpu x --gpus x,x)</code>
-   <strong>Note:</strong> </li>
+   <strong>Note:</strong>   </li>
 <li>Review the comments on the top of the configuration file to ensure that your computational resources fit the configuration before training the model.
       If your resources do not match the configuration, adjust it by <code>--ngpu</code> and <code>--gpus</code> to match your available GPU memory.</li>
 <li>To save the experimental results outside the toolkit folder <code>${SPEECHAIN_ROOT}</code>, 

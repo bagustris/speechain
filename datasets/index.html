@@ -4005,10 +4005,10 @@ This file is mainly used for training multi-speaker TTS models.</p>
    1. Go to the folder of your target dataset <code>${SPEECHAIN_ROOT}/datasets/{dataset_name}</code> (e.g. if you want to dump LibriTTS, please go to <code>${SPEECHAIN_ROOT}/datasets/libritts</code>)
    2. Run <code>bash run.sh --help</code> to familiarize yourself with the involved arguments.
    3. Run <code>bash run.sh</code> to dump your target dataset (add some arguments if needed).</p>
-<p><strong>Note:</strong><br />
-   1. <strong>If you already have the <em>decompressed</em> dataset on your disk</strong>, please attach the argument <code>--src_path {the-path-of-your-existing-dataset}</code> to the command <code>bash run.sh</code> in the no.3 step above.
-   Please make sure that <code>src_path</code> is an absolute path starting with a slash '/' and the content of <code>src_path</code> should be exactly the same with the one downloaded from the internet (please see the help message of <code>--src_path</code> in each <code>run.sh</code>).
-   2. <strong>If you want to save the dumped data and metadata files outside the toolkit folder (<code>${SPEECHAIN_ROOT}</code>)</strong>, please attach the argument <code>--tgt_path {the-path-you-want-to-save-files}</code> to the command <code>bash run.sh</code> in the no.3 step above.
+<p><strong>Note:</strong>  <br />
+   1. <strong>If you already have the <em>decompressed</em> dataset on your disk</strong>, please attach the argument <code>--src_path {the-path-of-your-existing-dataset}</code> to the command <code>bash run.sh</code> in the no.3 step above.<br />
+   Please make sure that <code>src_path</code> is an absolute path starting with a slash '/' and the content of <code>src_path</code> should be exactly the same with the one downloaded from the internet (please see the help message of <code>--src_path</code> in each <code>run.sh</code>).<br />
+   2. <strong>If you want to save the dumped data and metadata files outside the toolkit folder (<code>${SPEECHAIN_ROOT}</code>)</strong>, please attach the argument <code>--tgt_path {the-path-you-want-to-save-files}</code> to the command <code>bash run.sh</code> in the no.3 step above.<br />
    Please make sure that <code>tgt_path</code> is an absolute path starting with a slash '/'.</p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/datasets#table-of-contents">Back to the table of contents</a></p>
 <h2 id="how-to-extract-speaker-embedding-by-my-own-model">How to Extract Speaker Embedding by my own model</h2>

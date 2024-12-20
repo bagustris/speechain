@@ -4033,12 +4033,12 @@ The configuration format is shown below.</p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#table-of-contents">Back to the table of contents</a></p>
 <h2 id="api-document">API Document</h2>
 <p><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#speechainmodelabsmodel"><strong>speechain.model.abs.Model</strong></a><br />
-1. <em>Non-overridable backbone functions:</em>
+1. <em>Non-overridable backbone functions:</em><br />
    1. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#__init__self-args-device-model_conf-module_conf-criterion_conf">__init__</a>
-   2. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#batch_to_cudaself-data">batch_to_cuda</a>
-   3. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#forwardself-batch_data-epoch-kwargs">forward</a>
-   4. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#aver_metrics_across_procsself-metrics-batch_data">aver_metrics_across_procs</a>
-   5. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#evaluateself-test_batch-infer_conf">evaluate</a></p>
+   2. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#batch_to_cudaself-data">batch_to_cuda</a><br />
+   3. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#forwardself-batch_data-epoch-kwargs">forward</a><br />
+   4. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#aver_metrics_across_procsself-metrics-batch_data">aver_metrics_across_procs</a><br />
+   5. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#evaluateself-test_batch-infer_conf">evaluate</a>  </p>
 <ol>
 <li><em>Overridable interface functions:</em>  </li>
 <li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#bad_cases_selection_init_fn">bad_cases_selection_init_fn</a></li>
@@ -4053,10 +4053,10 @@ The configuration format is shown below.</p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#table-of-contents">Back to the table of contents</a></p>
 <h3 id="speechainmodelabsmodel">speechain.model.abs.Model</h3>
 <p><em>speechain.model.abs.Model</em> is the base class for all models in this toolkit. 
-The main job of a model includes: 
-1. (optional) preprocess the input batch data to the trainable format
-2. calculate the model prediction results by the <em>Module</em> members
-3. evaluate the prediction results by the <em>Criterion</em> members</p>
+The main job of a model includes: <br />
+1. (optional) preprocess the input batch data to the trainable format<br />
+2. calculate the model prediction results by the <em>Module</em> members<br />
+3. evaluate the prediction results by the <em>Criterion</em> members  </p>
 <p>Each model has several built-in <em>Module</em> members that make up the neural network structure of the model. 
 These <em>Module</em> members will be initialized by the <code>module_conf</code> given in your configuration.</p>
 <p>There are a built-in dictionary named <code>init_class_dict</code> and a built-in list named <code>default_init_modules</code> in the base class.
@@ -4089,34 +4089,32 @@ These <em>Module</em> members will be initialized by the <code>module_conf</code
 <li>
 <p>Finally, the specified parts of your model will be frozen if <code>frozen_modules</code> is given. 
    If there is only one frozen module, you can directly give the string of its name to <code>frozen_modules</code> like <code>frozen_modules: {module_name}</code>. 
-   If there are multiple modules you want to freeze, you can give their names in a list as
-      ```
-      frozen_modules:</p>
-<ul>
-<li>{module_name1}</li>
-<li>{module_name2}</li>
-<li>...
-  <code>``
-   Moreover, the frozen granularity depends on your input</code>frozen_modules`. For example,</li>
-</ul>
+   If there are multiple modules you want to freeze, you can give their names in a list as</p>
+<p><code>frozen_modules:
+   - {module_name1}
+   - {module_name2}
+   - ...</code></p>
 </li>
-<li>If you give <code>frozen_modules: encoder_prenet</code>, all parameters of the prenet of your encoder will be frozen</li>
-<li>If you give <code>frozen_modules: encoder_prenet.conv</code>, only the convolution layers of the prenet of your encoder will be frozen</li>
-<li>If you give <code>frozen_modules: encoder_prenet.conv.0</code>, only the first convolution layer of the prenet of your encoder will be frozen</li>
-<li>If you give <code>frozen_modules: encoder_prenet.conv.0.bias</code>, only the bias vector of the first convolution layer of the prenet of your encoder will be frozen</li>
-<li><strong>Arguments:</strong></li>
-<li><em><strong>args:</strong></em> argparse.Namespace<br />
-Experiment pipeline arguments received from the <code>Runner</code> object in <code>runner.py</code>.</li>
-<li><em><strong>device:</strong></em> torch.device<br />
-The computational device used for model calculation in the current GPU process.</li>
-<li><em><strong>model_conf:</strong></em> Dict<br />
-The model configuration used for general model initialization.</li>
-<li><em><strong>module_conf:</strong></em> Dict<br />
-The module configuration used for network structure initialization.</li>
-<li><em><strong>criterion_conf:</strong></em> Dict = None<br />
-The criterion configuration used for criterion (loss functions and evaluation metrics) initialization.</li>
 </ol>
+<p>Moreover, the frozen granularity depends on your input <code>frozen_modules</code>. For example,
+   1. If you give <code>frozen_modules: encoder_prenet</code>, all parameters of the prenet of your encoder will be frozen<br />
+   2. If you give <code>frozen_modules: encoder_prenet.conv</code>, only the convolution layers of the prenet of your encoder will be frozen<br />
+   3. If you give <code>frozen_modules: encoder_prenet.conv.0</code>, only the first convolution layer of the prenet of your encoder will be frozen<br />
+   4. If you give <code>frozen_modules: encoder_prenet.conv.0.bias</code>, only the bias vector of the first convolution layer of the prenet of your encoder will be frozen</p>
 </li>
+<li>
+<p><strong>Arguments:</strong>  </p>
+</li>
+<li><em><strong>args:</strong></em> argparse.Namespace<br />
+    Experiment pipeline arguments received from the <code>Runner</code> object in <code>runner.py</code>.</li>
+<li><em><strong>device:</strong></em> torch.device <br />
+    The computational device used for model calculation in the current GPU process.</li>
+<li><em><strong>model_conf:</strong></em> Dict<br />
+    The model configuration used for general model initialization.</li>
+<li><em><strong>module_conf:</strong></em> Dict<br />
+    The module configuration used for network structure initialization.</li>
+<li><em><strong>criterion_conf:</strong></em> Dict = None<br />
+    The criterion configuration used for criterion (loss functions and evaluation metrics) initialization.</li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#api-document">Back to the API list</a></p>
 <h4 id="batch_to_cudaself-data">batch_to_cuda(self, data)</h4>
@@ -4142,20 +4140,22 @@ The criterion configuration used for criterion (loss functions and evaluation me
 <li>obtain the model prediction results</li>
 <li>calculate the loss function and evaluate the prediction results</li>
 </ol>
-<p>For each step above, we provide interface functions for you to override and make your own implementation.
-* <strong>Arguments:</strong>
-  * <em><strong>batch_data:</strong></em> Dict<br />
-The input batch data received from the <code>train</code> or <code>valid</code> dataloader object in the experimental pipeline. 
-The batch is in the form of a Dict where the key is the data name and the value is the data content. 
-  * <em><strong>epoch:</strong></em> int = None<br />
-The number of the current epoch. Used for real-time model visualization and model prediction.
-  * <em><strong><em>*kwargs:</em>*_<br />
-The additional arguments for real-time model visualization. If given, the code will go through the model visualization branch.
-* </strong>Return:**<br />
-In the training branch, the loss functions and evaluation metrics will be returned each of which is in the form of a _Dict</em>.<br />
-In the validation branch, only the evaluation metrics will be returned.<br />
-In the visualization branch, the model snapshots on the given validation instance will be returned.</p>
+<p>For each step above, we provide interface functions for you to override and make your own implementation.</p>
 </li>
+<li>
+<p><strong>Arguments:</strong>  </p>
+</li>
+<li><em><strong>batch_data:</strong></em> Dict<br />
+    The input batch data received from the <code>train</code> or <code>valid</code> dataloader object in the experimental pipeline.<br />
+    The batch is in the form of a Dict where the key is the data name and the value is the data content.   </li>
+<li><em><strong>epoch:</strong></em> int = None <br />
+    The number of the current epoch. Used for real-time model visualization and model prediction.  </li>
+<li><em><strong>**kwargs:</strong></em><br />
+    The additional arguments for real-time model visualization. If given, the code will go through the model visualization branch.  </li>
+<li><strong>Return:</strong><br />
+    In the training branch, the loss functions and evaluation metrics will be returned each of which is in the form of a <em>Dict</em>.<br />
+    In the validation branch, only the evaluation metrics will be returned.<br />
+    In the visualization branch, the model snapshots on the given validation instance will be returned.  </li>
 </ul>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/model#api-document">Back to the API list</a></p>
 <h4 id="aver_metrics_across_procsself-metrics-batch_data">aver_metrics_across_procs(self, metrics, batch_data)</h4>

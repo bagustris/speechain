@@ -3754,13 +3754,15 @@ For model forward calculation, the text data is better to be in the form of vect
     This functions encodes a text string into a model-friendly tensor.<br />
     This interface is mandatory to be overridden.<br />
     By default, this function will attach two <sos/eos> at the beginning and end of the returned token id sequence.</li>
-<li><strong>Arguments:</strong></li>
+<li><strong>Arguments:</strong>  <ul>
 <li><em><strong>text:</strong></em> str<br />
-    The input text string to be encoded</li>
+  The input text string to be encoded</li>
 <li><em><strong>no_sos:</strong></em> bool = False<br />
-    Whether to remove the <sos/eos> at the beginning of the token id sequence.</li>
+  Whether to remove the <sos/eos> at the beginning of the token id sequence.</li>
 <li><em><strong>no_eos:</strong></em> bool = False<br />
-    Whether to remove the <sos/eos> at the end of the token id sequence.</li>
+  Whether to remove the <sos/eos> at the end of the token id sequence.</li>
+</ul>
+</li>
 <li><strong>Return:</strong> torch.LongTensor<br />
     The tensor of the encoded sentence</li>
 </ul>
