@@ -21,7 +21,7 @@ from speechain.module.encoder.tts import TTSEncoder
 from speechain.tokenizer.char import CharTokenizer
 from speechain.tokenizer.g2p import GraphemeToPhonemeTokenizer
 from speechain.utilbox.data_loading_util import parse_path_args
-from speechain.utilbox.sb_util import get_speechbrain_hifigan
+from speechain.utilbox.vocoder_util import get_hifigan_vocoder
 from speechain.utilbox.tensor_util import to_cpu
 from speechain.utilbox.train_util import get_min_indices_by_freq
 
@@ -842,7 +842,7 @@ class FastSpeech2(Model):
             if self.vocoder == "gl":
                 self.vocode_func = self.decoder.feat_frontend.recover
             else:
-                self.vocode_func = get_speechbrain_hifigan(
+                self.vocode_func = get_hifigan_vocoder(
                     device=self.device,
                     sample_rate=self.sample_rate,
                     use_multi_speaker=hasattr(self.decoder, "spk_emb"),

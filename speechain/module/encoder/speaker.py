@@ -101,16 +101,39 @@ class EncoderClassifier(nn.Module):
     @classmethod
     def from_hparams(cls, source, savedir=None, run_opts=None):
         """Load pretrained model."""
-        model = cls(model_type="ecapa" if "ecapa" in source else "xvector")
+        model_type = "ecapa" if "ecapa" in source else "xvector"
+        model = cls(model_type=model_type)
+        
+        device = run_opts.get("device", "cpu") if run_opts else "cpu"
+        model = model.to(device)
 
-        if run_opts and "device" in run_opts:
-            model = model.to(run_opts["device"])
-
-        if savedir:
+        # Download the model if it doesn't exist
+        if savedir and source:
+            import urllib.request
+            import os
+            
+            os.makedirs(savedir, exist_ok=True)
             weights_path = os.path.join(savedir, "encoder.pth")
+            
+            if not os.path.exists(weights_path):
+                # Map source names to download URLs
+                source_map = {
+                    "speechbrain/spkrec-ecapa-voxceleb": "https://github.com/speechbrain/speechbrain/releases/download/v0.5.12/spkrec-ecapa-voxceleb-1b1642a.ckpt",
+                    "speechbrain/spkrec-xvect-voxceleb": "https://github.com/speechbrain/speechbrain/releases/download/v0.5.12/spkrec-xvect-voxceleb-6b71f0c.ckpt"
+                }
+                
+                if source in source_map:
+                    print(f"Downloading {source} model to {weights_path}")
+                    urllib.request.urlretrieve(source_map[source], weights_path)
+                else:
+                    raise ValueError(f"Unknown source: {source}. Available sources: {list(source_map.keys())}")
+            
+            # Load pretrained weights
             if os.path.exists(weights_path):
                 model.load_state_dict(
-                    torch.load(weights_path, map_location=run_opts["device"])
+                    torch.load(weights_path, map_location=device)
                 )
+            else:
+                raise FileNotFoundError(f"Weights file not found: {weights_path}")
 
         return model

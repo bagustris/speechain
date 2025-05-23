@@ -118,17 +118,39 @@ class HIFIGAN(nn.Module):
             model: Loaded HiFiGAN model
         """
         model = cls()
-
+        device = run_opts.get("device", "cpu") if run_opts else "cpu"
+        
         # Set device
-        if run_opts and "device" in run_opts:
-            model = model.to(run_opts["device"])
+        model = model.to(device)
 
-        # Load pretrained weights based on source
-        if savedir:
+        # Download the model if it doesn't exist
+        if savedir and source:
+            import urllib.request
+            import os
+            
+            os.makedirs(savedir, exist_ok=True)
             weights_path = os.path.join(savedir, "generator.pth")
+            
+            if not os.path.exists(weights_path):
+                # Map source names to download URLs
+                source_map = {
+                    "speechbrain/tts-hifigan-ljspeech": "https://github.com/speechbrain/speechbrain/releases/download/v0.5.12/tts-hifigan-ljspeech-1f7889e.ckpt",
+                    "speechbrain/tts-hifigan-libritts-16kHz": "https://github.com/speechbrain/speechbrain/releases/download/v0.5.12/tts-hifigan-libritts-16khz-3bfe42d.ckpt",
+                    "speechbrain/tts-hifigan-libritts-22050Hz": "https://github.com/speechbrain/speechbrain/releases/download/v0.5.12/tts-hifigan-libritts-22050hz-8a96610.ckpt"
+                }
+                
+                if source in source_map:
+                    print(f"Downloading {source} model to {weights_path}")
+                    urllib.request.urlretrieve(source_map[source], weights_path)
+                else:
+                    raise ValueError(f"Unknown source: {source}. Available sources: {list(source_map.keys())}")
+            
+            # Load pretrained weights
             if os.path.exists(weights_path):
                 model.load_state_dict(
-                    torch.load(weights_path, map_location=run_opts["device"])
+                    torch.load(weights_path, map_location=device)
                 )
+            else:
+                raise FileNotFoundError(f"Weights file not found: {weights_path}")
 
         return model
