@@ -12,7 +12,7 @@ scipy==1.7.0
 seaborn==0.11.2
 sentencepiece==0.1.96
 SoundFile==0.10.3.post1
-speechbrain==0.5.9
+# speechbrain==0.5.9  #bagustris/speechain#4
 torch==2.4.0
 torchaudio==0.13.0
 torchvision==0.11.2+cu113

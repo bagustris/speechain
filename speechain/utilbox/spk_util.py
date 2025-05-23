@@ -54,7 +54,7 @@ def extract_spk_feat(
         for i in range(len(wav_list)):
             wav_matrix[i][: wav_len[i]] = wav_list[i]
 
-        spk_feat = speechbrain_model.encode_batch(
+        spk_feat = speaker_model.encode_batch(
             wavs=wav_matrix, wav_lens=wav_len / max_wav_len
         )
         if save_path is None:
@@ -75,17 +75,17 @@ def extract_spk_feat(
         # refresh the current batch
         return []
 
-    # initialize the speaker embedding model and downloading path for speechbrain API
-    download_dir = parse_path_args("datasets/spk_emb_models")
+    # initialize the speaker embedding model and downloading path
+    download_dir = parse_path_args("datasets/speaker_models")
     if spk_emb_model == "ecapa":
-        speechbrain_args = dict(
-            source="speechbrain/spkrec-ecapa-voxceleb",
-            savedir=os.path.join(download_dir, "spkrec-ecapa-voxceleb"),
+        model_args = dict(
+            source="speechbrain/spkrec-ecapa-voxceleb",  # Using compatible model identifiers
+            savedir=os.path.join(download_dir, "ecapa-voxceleb"),
         )
     elif spk_emb_model == "xvector":
-        speechbrain_args = dict(
-            source="speechbrain/spkrec-xvect-voxceleb",
-            savedir=os.path.join(download_dir, "spkrec-xvect-voxceleb"),
+        model_args = dict(
+            source="speechbrain/spkrec-xvect-voxceleb",  # Using compatible model identifiers
+            savedir=os.path.join(download_dir, "xvect-voxceleb"),
         )
     else:
         raise ValueError(
@@ -94,8 +94,8 @@ def extract_spk_feat(
         )
 
     device = f"cuda:{gpu_id}" if gpu_id >= 0 else "cpu"
-    speechbrain_args.update(run_opts=dict(device=device))
-    speechbrain_model = EncoderClassifier.from_hparams(**speechbrain_args)
+    model_args.update(run_opts=dict(device=device))
+    speaker_model = EncoderClassifier.from_hparams(**model_args)
 
     idx2spk_feat, spk2aver_spk_feat, resamplers = {}, {}, {}
     # loop each speaker
