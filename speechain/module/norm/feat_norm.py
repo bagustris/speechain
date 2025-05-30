@@ -13,7 +13,7 @@ class FeatureNormalization(Module):
     """The feature normalization frontend that makes every feature dimension the
     distribution with 0 mean and 1 variance.
 
-    As SpeechBrain, we also provide four kinds of feature normalization with different granularities.
+    We provide four kinds of feature normalization with different granularities:
         1. utterance-level normalization: the mean and std are calculated on each individual utterance.
         2. batch-level normalization: the mean and std are calculated on all the utterances in a training batch.
         3. group-level normalization: the mean and std are calculated on all the utterances in a group.
@@ -22,7 +22,7 @@ class FeatureNormalization(Module):
         4. global-level normalization: the mean and std are calculated on all the utterances in the training set.
 
     We approximate group-level and global-level mean & std by taking their moving average during training.
-    Different from SpeechBrain, we initialize all the mean & std variables lazily in the forward() function.
+    We initialize all the mean & std variables lazily in the forward() function.
     Another difference is that our moving average is calculated by each batch as BatchNorm does.
 
     In the DDP mode, the mean & std will be synchronized across all the processes before being used to normalize the

@@ -13,7 +13,6 @@ class SpecAugment(Module):
         reference: https://arxiv.org/pdf/1904.08779.pdf
     This implementation is inspired by
         https://github.com/espnet/espnet/blob/36e824be58ea6c6844e3d87b11e382f90ba4fb22/espnet2/layers/time_warp.py#L9
-        https://github.com/speechbrain/speechbrain/blob/develop/speechbrain/lobes/augment.py#L116
     """
 
     def module_init(

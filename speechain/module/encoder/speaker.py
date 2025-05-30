@@ -101,16 +101,21 @@ class EncoderClassifier(nn.Module):
     @classmethod
     def from_hparams(cls, source, savedir=None, run_opts=None):
         """Load pretrained model."""
-        model = cls(model_type="ecapa" if "ecapa" in source else "xvector")
+        model_type = "ecapa" if "ecapa" in source else "xvector"
+        model = cls(model_type=model_type)
+        
+        device = run_opts.get("device", "cpu") if run_opts else "cpu"
+        model = model.to(device)
 
-        if run_opts and "device" in run_opts:
-            model = model.to(run_opts["device"])
-
-        if savedir:
-            weights_path = os.path.join(savedir, "encoder.pth")
+        # Download the model if it doesn't exist
+        if savedir and source:
+            weights_path = download_model_weights(source, savedir, device)
+            # Load pretrained weights
             if os.path.exists(weights_path):
                 model.load_state_dict(
-                    torch.load(weights_path, map_location=run_opts["device"])
+                    torch.load(weights_path, map_location=device)
                 )
+            else:
+                raise FileNotFoundError(f"Weights file not found: {weights_path}")
 
         return model

@@ -4,11 +4,19 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+## [0.2.0] - 2025-05-23 
+
+### ✨ New Features
+
+- Removed SpeechBrain dependency
+- Added custom implementation of HiFiGAN vocoder
+- Added custom implementation of speaker embedding models
+- Added test script for vocoder and speaker embedding
+
 ### 🐛 Bug Fixes
 
 - Bugs in metadata_generator.py librispeech
 - Conflict in lm_text/exp_cfg/100-*
-- Linting
 - Linting
 
 ### 💼 Other

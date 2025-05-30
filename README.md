@@ -8,6 +8,8 @@ _SpeeChain is currently in beta._ Contribution to this toolkit is warmly welcome
 If you find our toolkit helpful for your research, we sincerely hope that you can give us a star⭐! 
 Anytime when you encounter problems when using our toolkit, please don't hesitate to leave us an issue!
 
+> **Note**: As of v0.2, SpeeChain no longer depends on SpeechBrain. We've implemented our own HiFiGAN vocoder and speaker embedding models that are compatible with SpeechBrain's pre-trained weights. See [docs/vocoder.md](docs/vocoder.md) for more details.
+
 ## Table of Contents
 1. [**Machine Speech Chain**](https://github.com/bagustris/SpeeChain#machine-speech-chain)
 2. [**Toolkit Characteristics**](https://github.com/bagustris/SpeeChain#toolkit-characteristics)
