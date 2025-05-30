@@ -8,7 +8,10 @@ from typing import Dict, List
 
 import numpy as np
 
-from datasets.meta_post_processor import SpeechTextMetaPostProcessor
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from meta_post_processor import SpeechTextMetaPostProcessor
 
 
 class LibriSpeechMetaPostProcessor(SpeechTextMetaPostProcessor):
