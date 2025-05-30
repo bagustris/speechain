@@ -140,7 +140,7 @@ class HIFIGAN(nn.Module):
                 }
                 
                 if source in source_map:
-                    print(f"Downloading {source} model to {weights_path}")
+                    logging.info(f"Downloading {source} model to {weights_path}")
                     urllib.request.urlretrieve(source_map[source], weights_path)
                 else:
                     raise ValueError(f"Unknown source: {source}. Available sources: {list(source_map.keys())}")
