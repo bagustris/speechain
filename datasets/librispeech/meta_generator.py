@@ -12,7 +12,10 @@ from typing import Dict, List
 
 from tqdm import tqdm
 
-from datasets.meta_generator import SpeechTextMetaGenerator
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from meta_generator import SpeechTextMetaGenerator
 from speechain.utilbox.dump_util import en_text_process
 
 
