@@ -109,25 +109,7 @@ class EncoderClassifier(nn.Module):
 
         # Download the model if it doesn't exist
         if savedir and source:
-            import urllib.request
-            import os
-            
-            os.makedirs(savedir, exist_ok=True)
-            weights_path = os.path.join(savedir, "encoder.pth")
-            
-            if not os.path.exists(weights_path):
-                # Map source names to download URLs
-                source_map = {
-                    "speechbrain/spkrec-ecapa-voxceleb": "https://github.com/speechbrain/speechbrain/releases/download/v0.5.12/spkrec-ecapa-voxceleb-1b1642a.ckpt",
-                    "speechbrain/spkrec-xvect-voxceleb": "https://github.com/speechbrain/speechbrain/releases/download/v0.5.12/spkrec-xvect-voxceleb-6b71f0c.ckpt"
-                }
-                
-                if source in source_map:
-                    print(f"Downloading {source} model to {weights_path}")
-                    urllib.request.urlretrieve(source_map[source], weights_path)
-                else:
-                    raise ValueError(f"Unknown source: {source}. Available sources: {list(source_map.keys())}")
-            
+            weights_path = download_model_weights(source, savedir, device)
             # Load pretrained weights
             if os.path.exists(weights_path):
                 model.load_state_dict(
