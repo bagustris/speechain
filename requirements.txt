@@ -17,3 +17,4 @@ torch==2.4.0
 torchaudio==0.13.0
 torchvision==0.11.2+cu113
 tqdm==4.66.2
+textgrid==1.6.1

@@ -10,9 +10,10 @@ import os
 import time
 from contextlib import contextmanager
 
-import humanfriendly
 import numpy as np
 import torch
+
+from speechain.utilbox import humanfriendly
 
 from speechain.model.abs import Model
 
