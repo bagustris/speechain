@@ -11,10 +11,10 @@
       
       
       
-        <link rel="prev" href="../criterion/">
+        <link rel="prev" href="../tokenizer/">
       
       
-        <link rel="next" href="../iterator/">
+        <link rel="next" href="../reference/criterion/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Dataset (Class) - Speechain</title>
+        <title>TTS LJSpeech - Speechain</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dataset-class" class="md-skip">
+        <a href="#tts-ljspeech-tutorial-fastspeech2-experiments" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dataset (Class)
+              TTS LJSpeech
             
           </span>
         </div>
@@ -412,37 +412,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dataset (Class)
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../dataset/" class="md-nav__link">
         
   
   
@@ -458,214 +431,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Table of Contents
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuration-file-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuration File Format
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dataset-library" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dataset Library
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-document" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        API Document
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="API Document">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#speechaindatasetabsdataset" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        speechain.dataset.abs.Dataset
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="speechain.dataset.abs.Dataset">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#__init__self-main_data-data_selection-dataset_conf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        __init__(self, main_data, data_selection, **dataset_conf)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#__getitem__self-index" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        __getitem__(self, index)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data_selectionself-selection_mode-selection_num-meta_info" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        data_selection(self, selection_mode, selection_num, meta_info)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_data_indexself" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_data_index(self)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remove_data_by_indexself" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        remove_data_by_index(self)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dataset_init_fnself-dataset_conf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        dataset_init_fn(self, **dataset_conf)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#extract_main_data_fnbatch_dict-main_data" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        extract_main_data_fn(batch_dict, main_data)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#collate_fnself-batch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        collate_fn(self, batch)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#collate_main_data_fnself-batch_dict" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        collate_main_data_fn(self, batch_dict)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-mix-multiple-data-sources-in-my-dataset-object" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How to Mix Multiple Data Sources in my Dataset Object
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-perform-data-selection-in-my-dataset-object" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How to Perform Data Selection in my Dataset Object
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -809,18 +574,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" checked>
         
           
           <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
@@ -841,7 +608,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_14">
             <span class="md-nav__icon md-icon"></span>
             
@@ -856,10 +623,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../tts_ljspeech_tutorial/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TTS LJSpeech
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -875,6 +669,347 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-using-uv-venv-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A: Using uv + venv (Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-using-conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B: Using Conda
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-download-ljspeech-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Download LJSpeech Dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-install-montreal-forced-aligner-mfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Install Montreal Forced Aligner (MFA)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-generate-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Generate Metadata
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-run-mfa-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Run MFA Alignment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-post-process-mfa-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Post-process MFA Output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-generate-duration-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Generate Duration Data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Training
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 7: Training">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#train-no-punctuation-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Train No-Punctuation Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#train-punctuation-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Train Punctuation Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Training Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-inference-generate-speech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8: Inference (Generate Speech)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 8: Inference (Generate Speech)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-wav-files-from-no-punctuation-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generate WAV Files from No-Punctuation Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-wav-files-from-punctuation-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generate WAV Files from Punctuation Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hifi-gan-vocoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HiFi-GAN Vocoder
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuda-out-of-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CUDA Out of Memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mfa-alignment-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MFA Alignment Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-speechain_root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing SPEECHAIN_ROOT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch-cuda-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PyTorch CUDA Compatibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expected-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4762,10 +4897,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Table of Contents
+        Prerequisites
       
     </span>
   </a>
@@ -4773,56 +4908,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-file-format" class="md-nav__link">
+  <a href="#environment-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration File Format
+        Environment Setup
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dataset-library" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dataset Library
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-document" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        API Document
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="API Document">
+    <nav class="md-nav" aria-label="Environment Setup">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#speechaindatasetabsdataset" class="md-nav__link">
+  <a href="#option-a-using-uv-venv-recommended" class="md-nav__link">
     <span class="md-ellipsis">
       
-        speechain.dataset.abs.Dataset
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="speechain.dataset.abs.Dataset">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#__init__self-main_data-data_selection-dataset_conf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        __init__(self, main_data, data_selection, **dataset_conf)
+        Option A: Using uv + venv (Recommended)
       
     </span>
   </a>
@@ -4830,87 +4931,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#__getitem__self-index" class="md-nav__link">
+  <a href="#option-b-using-conda" class="md-nav__link">
     <span class="md-ellipsis">
       
-        __getitem__(self, index)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data_selectionself-selection_mode-selection_num-meta_info" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        data_selection(self, selection_mode, selection_num, meta_info)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_data_indexself" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_data_index(self)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remove_data_by_indexself" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        remove_data_by_index(self)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dataset_init_fnself-dataset_conf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        dataset_init_fn(self, **dataset_conf)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#extract_main_data_fnbatch_dict-main_data" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        extract_main_data_fn(batch_dict, main_data)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#collate_fnself-batch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        collate_fn(self, batch)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#collate_main_data_fnself-batch_dict" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        collate_main_data_fn(self, batch_dict)
+        Option B: Using Conda
       
     </span>
   </a>
@@ -4921,17 +4945,12 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#how-to-mix-multiple-data-sources-in-my-dataset-object" class="md-nav__link">
+  <a href="#step-1-download-ljspeech-dataset" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to Mix Multiple Data Sources in my Dataset Object
+        Step 1: Download LJSpeech Dataset
       
     </span>
   </a>
@@ -4939,10 +4958,259 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-perform-data-selection-in-my-dataset-object" class="md-nav__link">
+  <a href="#step-2-install-montreal-forced-aligner-mfa" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to Perform Data Selection in my Dataset Object
+        Step 2: Install Montreal Forced Aligner (MFA)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-generate-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Generate Metadata
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-run-mfa-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Run MFA Alignment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-post-process-mfa-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Post-process MFA Output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-generate-duration-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Generate Duration Data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Training
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 7: Training">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#train-no-punctuation-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Train No-Punctuation Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#train-punctuation-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Train Punctuation Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Training Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-inference-generate-speech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8: Inference (Generate Speech)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 8: Inference (Generate Speech)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-wav-files-from-no-punctuation-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generate WAV Files from No-Punctuation Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-wav-files-from-punctuation-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generate WAV Files from Punctuation Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hifi-gan-vocoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HiFi-GAN Vocoder
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuda-out-of-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CUDA Out of Memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mfa-alignment-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MFA Alignment Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-speechain_root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing SPEECHAIN_ROOT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch-cuda-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PyTorch CUDA Compatibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expected-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
       
     </span>
   </a>
@@ -4969,372 +5237,325 @@
   
 
 
-<h1 id="dataset-class">Dataset (Class)</h1>
-<p><a href="https://github.com/bagustris/SpeeChain/blob/main/speechain/dataset/abs.py"><em>Dataset</em></a> is the base class that takes charge of reading the data instances from the disk into the memory and packaging them into a batch for model training or testing.</p>
-<p>A <em>Dataset</em> object receives indices of the selected data instances from the <em>Dataloader</em> object created by the high-level <em>Iterator</em> object.
-The output batches of packaged data instances generated by the <em>Dataset</em> object may not be well-processed. 
-Some post-processing steps need to be done in the <em>Model</em> object later.</p>
-<p>👆<a href="https://github.com/bagustris/SpeeChain/blob/main/handbook.md#speechain-handbook">Back to the handbook page</a></p>
-<h2 id="table-of-contents">Table of Contents</h2>
-<ol>
-<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#configuration-file-format"><strong>Configuration File Format</strong></a></li>
-<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#dataset-library"><strong>Dataset Library</strong></a></li>
-<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#api-document"><strong>API Document</strong></a></li>
-<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#how-to-mix-multiple-data-sources-in-my-dataset-object"><strong>How to Mix Multiple Data Sources in my Dataset Object</strong></a></li>
-<li><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#how-to-perform-data-selection-in-my-dataset-object"><strong>How to Perform Data Selection in my Dataset Object</strong></a></li>
-</ol>
-<h2 id="configuration-file-format">Configuration File Format</h2>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">dataset_conf</span><span class="p">:</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">main_data</span><span class="p">:</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="p p-Indicator">{</span><span class="nv">data_name1</span><span class="p p-Indicator">}:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">data_file_path1</span><span class="p p-Indicator">}</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="p p-Indicator">{</span><span class="nv">data_name2</span><span class="p p-Indicator">}:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">data_file_path2</span><span class="p p-Indicator">}</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">...</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">data_selection</span><span class="p">:</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="c1"># Customized Arguments passed to the hook dataset_init_fn()</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<h1 id="tts-ljspeech-tutorial-fastspeech2-experiments">TTS LJSpeech Tutorial: FastSpeech2 Experiments</h1>
+<p>This tutorial guides you through running Text-to-Speech (TTS) experiments on the LJSpeech dataset using FastSpeech2 with two configurations: <strong>no-punctuation</strong> and <strong>punctuation</strong>.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li><strong>GPU</strong>: NVIDIA GPU with at least 8GB VRAM (tested on RTX 3090/5090)</li>
+<li><strong>OS</strong>: Linux (Ubuntu 20.04+ recommended)</li>
+<li><strong>Storage</strong>: ~20GB free space for dataset and models</li>
+</ul>
+<h2 id="environment-setup">Environment Setup</h2>
+<h3 id="option-a-using-uv-venv-recommended">Option A: Using uv + venv (Recommended)</h3>
+<p>This option uses <code>uv</code> for fast Python environment management without conda.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Install uv if not already installed</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Navigate to the speechain directory</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">cd</span><span class="w"> </span>/path/to/speechain
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Create virtual environment with Python 3.10</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>uv<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.10
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># Activate the environment</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># Install PyTorch (adjust CUDA version as needed)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1"># For CUDA 12.1:</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/cu121
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="c1"># For newer GPUs (e.g., RTX 5090 with sm_120), use PyTorch nightly:</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--pre<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/nightly/cu128
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="c1"># Install speechain requirements</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="c1"># Install speechain in development mode</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </span></code></pre></div>
-<ul>
-<li>
-<p>The first-level key should be <code>dataset_conf</code> to fit the setting of <em>Iterator</em>.  </p>
-</li>
-<li>
-<p>The second-level keys are made up of two parts:</p>
-<ol>
-<li>
-<p><strong>main_data:</strong><br />
-    The main body dictionary of the data instances you want to load for training or testing your models.<br />
-    Each key-value item corresponds to a data variable in a data instance where the key is the variable name and the value is the file path of the data to be extracted.<br />
-    For more details about how to give <code>data_name</code>, please refer to the API document of your target <em>Dataset</em> subclass.</p>
-</li>
-<li>
-<p><strong>data_selection:</strong><br />
-    This argument defines how to select the target data instances in the given dataset.<br />
-    For more details about how to configure this argument, please refer to the AIP document below.</p>
-</li>
-<li>
-<p>Arguments that are passed to the hook <code>dataset_init_fn()</code> for customized <em>Dataset</em> initialization. 
-   For more details about the customized arguments, please refer to the AIP document of your target <em>Dataset</em> subclass.</p>
-</li>
-</ol>
-</li>
-</ul>
-<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#table-of-contents">Back to the table of contents</a></p>
-<h2 id="dataset-library">Dataset Library</h2>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/speechain
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span>/dataset
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span>/abs.py<span class="w">             </span><span class="c1"># Abstract class of Dataset. Base of all Dataset implementations.</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span>/speech_text.py<span class="w">     </span><span class="c1"># Dataset implementation of speech-text datasets. Mainly used for ASR and TTS models.</span>
+<h3 id="option-b-using-conda">Option B: Using Conda</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Create conda environment</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>speechain<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10<span class="w"> </span>-y
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>conda<span class="w"> </span>activate<span class="w"> </span>speechain
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># Install PyTorch with CUDA</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>conda<span class="w"> </span>install<span class="w"> </span>pytorch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>pytorch-cuda<span class="o">=</span><span class="m">12</span>.1<span class="w"> </span>-c<span class="w"> </span>pytorch<span class="w"> </span>-c<span class="w"> </span>nvidia
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># Install requirements</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1"># Install speechain</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </span></code></pre></div>
-👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#table-of-contents">Back to the table of contents</a></p>
-<h2 id="api-document">API Document</h2>
-<p><a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#speechaindatasetabsdataset"><strong>speechain.dataset.abs.Dataset</strong></a>  </p>
-<p><em>Non-overridable backbone functions:</em><br />
-   1. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#__init__self-main_data-data_selection-dataset_conf">__init__</a><br />
-   2. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#__getitem__self-index">__getitem__</a><br />
-   3. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#data_selectionself-selection_mode-selection_num-meta_info">data_selection</a><br />
-   4. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#get_data_indexself">get_data_index</a><br />
-   5. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#remove_data_by_indexself">remove_data_by_index</a><br />
-   6. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#collate_fnself-batch">collate_fn</a>  </p>
-<p><em>Overridable interface functions:</em><br />
-   1. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#dataset_init_fnself-dataset_conf">dataset_init_fn</a><br />
-   2. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#extract_main_data_fnbatch_dict-main_data">extract_main_data_fn</a><br />
-   3. <a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#collate_main_data_fnself-batch_dict">collate_main_data_fn</a>  </p>
-<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#table-of-contents">Back to the table of contents</a></p>
-<h3 id="speechaindatasetabsdataset">speechain.dataset.abs.Dataset</h3>
-<p>This base class inherits <code>torch.utils.data.Dataset</code> and provides three hook functions: <code>dataset_init_fn()</code>, <code>extract_main_data_fn()</code>, and <code>collate_main_data_fn()</code>. 
-If you want to make your own <em>Dataset</em> implementation, please follow the instructions to override those hooks.</p>
-<h4 id="__init__self-main_data-data_selection-dataset_conf">__init__(self, main_data, data_selection, **dataset_conf)</h4>
-<ul>
-<li><strong>Description:</strong><br />
-  This initialization function reads the main body of the data instances into its memory. 
-  The main body is used to extract individual data instances from the disk to form a batch during model training or testing.<br />
-  The hook <code>dataset_init_fn()</code> is executed here after reading the main body files.</li>
-<li>
-<p><strong>Arguments:</strong></p>
-<ul>
-<li><em><strong>main_data:</strong></em> Dict[str, str or List[str]]<br />
-The main body dictionary of the data instances used in this Dataset object. 
-In each key-value item, the key is the name of the data variable and the value is the absolute path of the target <em>idx2data</em> files.
-The value can be given as a single path string or a list of multiple path strings.  </li>
-<li>
-<p><strong><em>data_selection:</em></strong> List[str or List[str]] = None<br />
-  The strategies for data selection during the iterator initialization to shrink the used data instances.
-  Multiple strategies can be specified in a list. Each data selection strategy must be either a bi-list (non-meta strategy) or tri-list (meta strategy).  </p>
-<ol>
-<li>
-<p><em>non-meta strategy:</em><br />
-The rule-based selection strategies that don't involve metadata. 
-These strategies should be given as a bi-list, i.e., ['selection mode', 'selection number'].<br />
-'selection mode' indicates the way to select data instances while 'selection number' indicates how many data instances to be selected.<br />
-Currently, available non-meta selection modes include:</p>
-<ol>
-<li>'order': Select the data instances from the beginning of the dataset.  </li>
-<li>'rev_order': Select the data instances from the end of the dataset.  </li>
-<li>'random': Randomly select the data instances from the dataset.<br />
-<strong>Note:</strong> You should keep the same
-random seeds for all the GPU processes in the DDP mode to ensure that the selected data instances
-are the same in each process. In this case, please set the 'same_proc_seed' argument to True in
-your configuration given to speechain.runner.py.  </li>
-</ol>
-</li>
-<li>
-<p><em>meta strategy:</em><br />
-The selection strategies that involves metadata. 
-These strategies should be given as a tri-list, i.e., ['selection mode', 'selection threshold', 'metadata path']. <br />
-'selection mode' indicates the way to select data instances, 'selection threshold' indicates the metadata threshold to select data instances, and 'metadata path' indicates where is the metadata used for selection.<br />
-Currently, available meta selection modes include:</p>
-<ol>
-<li>'min': Select the data instances who have smaller metadata.  </li>
-<li>'max': Select the data instances who have larger  metadata.  </li>
-<li>'middle': Remove the data instances whose metadata is the largest and smallest.  </li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><em>*<strong>*dataset_conf:</strong></em><br />
-The configuration arguments for customized Dataset initialization.</p>
-</li>
-</ul>
-</li>
-</ul>
-<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#api-document">Back to the API list</a></p>
-<h4 id="__getitem__self-index">__getitem__(self, index)</h4>
-<ul>
-<li><strong>Description:</strong><br />
-    This function is the implementation of the one in the parent class <code>torch.utils.data.Dataset</code>. 
-    This function is activated by the <em>Dataloader</em> object one data instance a time. 
-    In each time, this function receives an index and returns the selected data instance.<br />
-    The hook <code>extract_main_data_fn()</code> is executed here to extract the main body of the selected data instance from the disk.   </li>
-<li><strong>Arguments:</strong><ul>
-<li><em><strong>index:</strong></em> str<br />
-  The index of the selected data instance given by the <em>Dataloader</em> object.</li>
-</ul>
-</li>
-<li><strong>Return:</strong> Dict[str, Any]<br />
-    A dictionary containing a data instance.</li>
-</ul>
-<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#api-document">Back to the API list</a></p>
-<h4 id="data_selectionself-selection_mode-selection_num-meta_info">data_selection(self, selection_mode, selection_num, meta_info)</h4>
-<ul>
-<li><strong>Description:</strong><br />
-    This function executes the data selection by the input selection strategy arguments. 
-    A new batching view of the selected data instances will be returned.</li>
-<li>
-<p><strong>Arguments:</strong>  </p>
-<ul>
-<li><em><strong>selection_mode:</strong></em> str<br />
-  The mode indicating how the data instances are selected. 
-  Selection modes are grouped by different types of data selection strategies.</li>
-<li><em>non-meta strategy:</em><br />
-    The rule-based selection strategies that don't involve metadata. 
-    Currently, available non-meta selection modes include:<ol>
-<li>'order': Select the data instances from the beginning of the dataset.</li>
-<li>'rev_order': Select the data instances from the end of the dataset.</li>
-<li>'random': Randomly select the data instances from the dataset.<br />
-<strong>Note:</strong> You should keep the same
-  random seeds for all the GPU processes in the DDP mode to ensure that the selected data instances
-  are the same in each process. In this case, please set the 'same_proc_seed' argument to True in
-  your configuration given to speechain.runner.py.</li>
-</ol>
-</li>
-<li><em>meta strategy:</em><br />
-    The selection strategies that involves metadata. 
-    Currently, available meta selection modes include:<ol>
-<li>'min': Select the data instances who have smaller metadata.</li>
-<li>'max': Select the data instances who have larger  metadata.</li>
-<li>'middle': Remove the data instances whose metadata is the largest and smallest.</li>
-</ol>
-</li>
-<li><em><strong>selection_num:</strong></em> float or int or str<br />
-  This argument has the different usage with different data types.  </li>
-<li><em>float</em> type:<br />
-  Float value represents the relative number of data instances to be selected. 
-  If <em>selection_num</em> is given as a float number, it must be between 0 and 1.</li>
-<li><em>int</em> type:<br />
-  Integer value represents the absolute number of data instances to be selected. 
-  If <em>selection_num</em> is given as an interger number, it must be negative (its absolute value will be taken).</li>
-<li><em>str</em> type:<br />
-  String value represents the metadata threshold used to select the data instances. 
-  Only 'min' and 'max' modes support string <em>selection_num</em>.<br />
-<strong>Note:</strong> You can use the !-suffixed representer <code>!str</code> to convert a float or integer number to a string in your .<em>yaml</em> file.</li>
-<li><em><strong>meta_info:</strong></em> str = None<br />
-  The path where the metadata information used for selection is placed. 
-  Only the meta strategies 'min', 'max', and 'middle' need this argument.</li>
-</ul>
-</li>
-<li>
-<p><strong>Return:</strong> List[str]<br />
-    A list of indices of the selected data instances.</p>
-</li>
-</ul>
-<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#api-document">Back to the API list</a></p>
-<h4 id="get_data_indexself">get_data_index(self)</h4>
-<ul>
-<li><strong>Description:</strong><br />
-    This function is designed to make users know the data indices of this <em>Dataset</em> object without accessing its members for the lower coupling principle.</li>
-<li><strong>Return:</strong> List[str]<br />
-    The list of the indices of all data instances in this dataset.</li>
-</ul>
-<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#api-document">Back to the API list</a></p>
-<h4 id="remove_data_by_indexself">remove_data_by_index(self)</h4>
-<ul>
-<li><strong>Description:</strong><br />
-  This function removes the corresponding data instance from this <em>Dataset</em> object by the given index. 
-  It's mainly used for solving the index mismatch of data instances with the high-level <em>Iterator</em> object.</li>
-</ul>
-<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#api-document">Back to the API list</a></p>
-<h4 id="dataset_init_fnself-dataset_conf">dataset_init_fn(self, **dataset_conf)</h4>
-<ul>
-<li><strong>Description:</strong><br />
- This hook function initializes the customized part of your <em>Dataset</em> implementations.
- This hook is not mandatory to be overridden and the original one in the base class does nothing.
- If your <em>Dataset</em> subclass has some customized part, please override this hook function and put your logic here.</li>
-<li><strong>Arguments:</strong><ul>
-<li><em>*<strong>*dataset_conf:</strong></em><br />
-  The configuration arguments for customized Dataset initialization received from <code>__init__()</code>.</li>
-</ul>
-</li>
-</ul>
-<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#api-document">Back to the API list</a></p>
-<h4 id="extract_main_data_fnbatch_dict-main_data">extract_main_data_fn(batch_dict, main_data)</h4>
-<ul>
-<li><strong>Description:</strong><br />
-    This hook function extracts the selected data instance from the disk to the memory. 
-    The original hook in the base class does nothing and directly return <code>main_data</code>. 
-    If you want to implement your own data instance extraction, please override this hook function and give your logic here.</li>
-<li><strong>Arguments:</strong><ul>
-<li><em><strong>main_data:</strong></em> Dict[str, str]<br />
-  The dictionary containing necessary information for extracting the data instance from the disk to the memory. 
-  For example, the audio file path for the waveform data and the feature file path for the speaker embedding.</li>
-</ul>
-</li>
-<li><strong>Return:</strong> Dict[str, Any]<br />
-    The dictionary containing the extracted data instance.</li>
-</ul>
-<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#api-document">Back to the API list</a></p>
-<h4 id="collate_fnself-batch">collate_fn(self, batch)</h4>
-<ul>
-<li><strong>Description:</strong><br />
-    This hook function is used as the value of the argument <code>collate_fn</code> for initializing Dataloader object at the beginning of each epoch.<br />
-    If you have your own batch collating strategy, we don't recommend you to override this hook but another hook named <code>collate_main_data_fn()</code>.
-    This function should return the processed batch data in the form of a dictionary.</li>
-<li><strong>Arguments:</strong><ul>
-<li><em><strong>batch:</strong></em> List[Dict[str, Any]]<br />
-  The tuple of data instance dictionaries extracted by <code>extract_main_data_fn()</code>.</li>
-</ul>
-</li>
-<li><strong>Return:</strong> Dict[str, Any]<br />
-    The batch dictionary that will be passed to the model.</li>
-</ul>
-<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#api-document">Back to the API list</a></p>
-<h4 id="collate_main_data_fnself-batch_dict">collate_main_data_fn(self, batch_dict)</h4>
-<ul>
-<li><strong>Description:</strong><br />
-    This hook function decides how to preprocess a dictionary of the extracted batch of data instances before giving them to the model. 
-    The original hook in the base class packages all the elements other than strings of the batch into a <code>torch.Tensor</code>. 
-    Therefore, the <code>torch.Tensor</code> elements must have the same shape. The string elements will remain a list.<br />
-    If you have your own batch collating strategy, please override this hook function and give your logic here.</li>
-<li><strong>Arguments:</strong><ul>
-<li><em><strong>batch_dict:</strong></em> Dict[str, List]<br />
-  The reshaped dictionary of the extracted batch. 
-  In each key-value item, the key is the name of the data variable that will be passed to the model and the value is the list of unorganized data from all the elements in the batch.</li>
-</ul>
-</li>
-<li><strong>Return:</strong> Dict[str, torch.Tensor or List]<br />
-  The dictionary containing the collated batch of data instances.</li>
-</ul>
-<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#api-document">Back to the API list</a></p>
-<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#table-of-contents">Back to the table of contents</a></p>
-<h2 id="how-to-mix-multiple-data-sources-in-my-dataset-object">How to Mix Multiple Data Sources in my Dataset Object</h2>
-<p>If you want to initialize your iterator with multiple datasets and want your 
-dataloader to pick up batches from the mixed dataset, 
-you can simply give a list of file paths to the <em>src_data</em> 
-and <em>tgt_label</em> arguments to initialize the built-in dataset 
-of your iterator like the example below.
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">data_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./datasets/speech/librispeech/data/wav</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">train</span><span class="p">:</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">block.BlockIterator</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">conf</span><span class="p">:</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="nt">dataset_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">speech.speech_text.SpeechTextDataset</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="nt">dataset_conf</span><span class="p">:</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">            </span><span class="nt">src_data</span><span class="p">:</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;data_root&gt;/train_clean_100/feat.scp</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;data_root&gt;/train_clean_360/feat.scp</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;data_root&gt;/train_other_500/feat.scp</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">            </span><span class="nt">tgt_label</span><span class="p">:</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;data_root&gt;/train_clean_100/text</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;data_root&gt;/train_clean_100/text</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;data_root&gt;/train_other_500/text</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">...</span>
-</span></code></pre></div></p>
-<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#table-of-contents">Back to the table of contents</a></p>
-<h2 id="how-to-perform-data-selection-in-my-dataset-object">How to Perform Data Selection in my Dataset Object</h2>
-<p>If you only need to load a part of the data samples from the built-in dataset, 
-you can use the arguments <em>selection_mode</em> and <em>selection_num</em>. 
-<em>selection_mode</em> specifies the selection method and <em>selection_num</em> specifies 
-the number of selected samples. 
-<em>selection_num</em> can be given as a positive float number 
-or a negative integer number. 
-The positive float number means the ratio of the dataset. 
-In the example below, the first 50% of <em>LibriSpeech-train_clean_100</em> 
-will be selected. 
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">data_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./datasets/speech/librispeech/data/wav</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">train</span><span class="p">:</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">block.BlockIterator</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">conf</span><span class="p">:</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="nt">dataset_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">speech.speech_text.SpeechTextDataset</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="nt">dataset_conf</span><span class="p">:</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">            </span><span class="nt">src_data</span><span class="p">:</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;data_root&gt;/train_clean_100/feat.scp</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">            </span><span class="nt">tgt_label</span><span class="p">:</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;data_root&gt;/train_clean_100/text</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="nt">selection_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">order</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="nt">selection_num</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">...</span>
-</span></code></pre></div></p>
-<p>The negative integer number means the absolute number of the selected samples. 
-In the example below, 1000 data samples of <em>LibriSpeech-train_clean_100</em> 
-will be randomly selected. 
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">data_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./datasets/speech/librispeech/data/wav</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">train</span><span class="p">:</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">block.BlockIterator</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">conf</span><span class="p">:</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">        </span><span class="nt">dataset_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">speech.speech_text.SpeechTextDataset</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">        </span><span class="nt">dataset_conf</span><span class="p">:</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">            </span><span class="nt">src_data</span><span class="p">:</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;data_root&gt;/train_clean_100/feat.scp</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">            </span><span class="nt">tgt_label</span><span class="p">:</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;data_root&gt;/train_clean_100/text</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="l l-Scalar l-Scalar-Plain">)</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">selection_mode</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">random</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">selection_num</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1000</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<h2 id="step-1-download-ljspeech-dataset">Step 1: Download LJSpeech Dataset</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Set environment variable</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SPEECHAIN_ROOT</span><span class="o">=</span>/path/to/speechain
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Navigate to dataset directory</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$SPEECHAIN_ROOT</span>/datasets/ljspeech
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Download LJSpeech dataset</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>bash<span class="w"> </span>data_download.sh
 </span></code></pre></div>
-Moreover, data selection and datasets mixing can be used in a single iterator 
-but they will be done sequentially. 
-In the example below, <em>train_clean_100</em>, <em>train_clean_360</em>, 
-and <em>train_other_500</em> datasets of the <em>LibriSpeech</em> corpus will be first mixed 
-into a large dataset, and then the last 50% of the large dataset 
-will be selected.
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">data_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./datasets/speech/librispeech/data/wav</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">train</span><span class="p">:</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">block.BlockIterator</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">conf</span><span class="p">:</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="nt">dataset_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">speech.speech_text.SpeechTextDataset</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="nt">dataset_conf</span><span class="p">:</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">            </span><span class="nt">src_data</span><span class="p">:</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;data_root&gt;/train_clean_100/feat.scp</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;data_root&gt;/train_clean_360/feat.scp</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;data_root&gt;/train_other_500/feat.scp</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">            </span><span class="nt">tgt_label</span><span class="p">:</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;data_root&gt;/train_clean_100/text</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;data_root&gt;/train_clean_360/text</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;data_root&gt;/train_other_500/text</span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">)</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">        </span><span class="nt">selection_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rev_order</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">        </span><span class="nt">selection_num</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<p>This downloads and extracts the LJSpeech dataset (~2.6GB) to <code>datasets/ljspeech/data/</code>.</p>
+<h2 id="step-2-install-montreal-forced-aligner-mfa">Step 2: Install Montreal Forced Aligner (MFA)</h2>
+<p>MFA is required for phoneme alignment. <strong>This step requires conda</strong> even if you're using venv for the main environment.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Create a separate conda environment for MFA</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>aligner<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>montreal-forced-aligner<span class="w"> </span>-y
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Activate MFA environment</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>conda<span class="w"> </span>activate<span class="w"> </span>aligner
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Download MFA models</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>mfa<span class="w"> </span>model<span class="w"> </span>download<span class="w"> </span>acoustic<span class="w"> </span>english_us_arpa
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>mfa<span class="w"> </span>model<span class="w"> </span>download<span class="w"> </span>dictionary<span class="w"> </span>english_us_arpa
+</span></code></pre></div>
+<h2 id="step-3-generate-metadata">Step 3: Generate Metadata</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Activate your main environment (venv or conda)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">source</span><span class="w"> </span><span class="nv">$SPEECHAIN_ROOT</span>/.venv/bin/activate<span class="w">  </span><span class="c1"># or: conda activate speechain</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Set environment</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SPEECHAIN_ROOT</span><span class="o">=</span>/path/to/speechain
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$SPEECHAIN_ROOT</span>/datasets/ljspeech
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1"># Generate metadata for train/valid/test splits</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>python<span class="w"> </span>meta_generator.py
+</span></code></pre></div>
+<h2 id="step-4-run-mfa-alignment">Step 4: Run MFA Alignment</h2>
+<p><strong>Important</strong>: This step must be run in the conda MFA environment.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Activate MFA environment</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>conda<span class="w"> </span>activate<span class="w"> </span>aligner
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Navigate to dataset preparation scripts</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$SPEECHAIN_ROOT</span>/datasets
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Prepare data for MFA alignment</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>bash<span class="w"> </span>mfa_preparation.sh<span class="w"> </span>ljspeech
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># Run MFA alignment (this may take 30-60 minutes)</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1"># The script aligns phonemes to audio using the english_us_arpa model</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>mfa<span class="w"> </span>align<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="nv">$SPEECHAIN_ROOT</span>/datasets/ljspeech/data/mfa_input<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span>english_us_arpa<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span>english_us_arpa<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">    </span><span class="nv">$SPEECHAIN_ROOT</span>/datasets/ljspeech/data/mfa/acoustic<span class="o">=</span><span class="nv">english_us_arpa_lexicon</span><span class="o">=</span>english_us_arpa<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span>--clean
+</span></code></pre></div>
+<h2 id="step-5-post-process-mfa-output">Step 5: Post-process MFA Output</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Switch back to main environment</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">source</span><span class="w"> </span><span class="nv">$SPEECHAIN_ROOT</span>/.venv/bin/activate<span class="w">  </span><span class="c1"># or: conda activate speechain</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$SPEECHAIN_ROOT</span>/datasets/ljspeech
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1"># Generate duration files from MFA alignment</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>python<span class="w"> </span>meta_post_processor.py
+</span></code></pre></div>
+<h2 id="step-6-generate-duration-data">Step 6: Generate Duration Data</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$SPEECHAIN_ROOT</span>/datasets/pyscripts
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># Generate duration files for training</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>python<span class="w"> </span>duration_calculator.py<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span>--data_root<span class="w"> </span><span class="nv">$SPEECHAIN_ROOT</span>/datasets/ljspeech/data<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span>--mfa_model<span class="w"> </span><span class="nv">acoustic</span><span class="o">=</span><span class="nv">english_us_arpa_lexicon</span><span class="o">=</span>english_us_arpa
+</span></code></pre></div>
+<h2 id="step-7-training">Step 7: Training</h2>
+<h3 id="train-no-punctuation-model">Train No-Punctuation Model</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Activate main environment</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">source</span><span class="w"> </span><span class="nv">$SPEECHAIN_ROOT</span>/.venv/bin/activate
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SPEECHAIN_ROOT</span><span class="o">=</span>/path/to/speechain
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$SPEECHAIN_ROOT</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># Run training (adjust num_epochs in config for full training)</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>python<span class="w"> </span>speechain/runner.py<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">    </span>--config<span class="w"> </span>recipes/tts/ljspeech/exp_cfg/22.05khz_mfa_fastspeech2.yaml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span>--train<span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">    </span>--test<span class="w"> </span><span class="nb">false</span>
+</span></code></pre></div>
+<h3 id="train-punctuation-model">Train Punctuation Model</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>python<span class="w"> </span>speechain/runner.py<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span>--config<span class="w"> </span>recipes/tts/ljspeech/exp_cfg/22.05khz_mfa_fastspeech2_punc.yaml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span>--train<span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span>--test<span class="w"> </span><span class="nb">false</span>
+</span></code></pre></div>
+<h3 id="training-configuration">Training Configuration</h3>
+<p>Key parameters in the config files (<code>recipes/tts/ljspeech/exp_cfg/</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>num_epochs</code></td>
+<td>Number of training epochs</td>
+<td>500</td>
+</tr>
+<tr>
+<td><code>batch_len</code></td>
+<td>Batch length for training</td>
+<td>1.5e7</td>
+</tr>
+<tr>
+<td><code>ngpu</code></td>
+<td>Number of GPUs</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>early_stopping_patience</code></td>
+<td>Epochs before early stopping</td>
+<td>20</td>
+</tr>
+<tr>
+<td><code>valid_per_epochs</code></td>
+<td>Validation frequency</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>For quick experiments, you can reduce <code>num_epochs</code> to 5-10.</p>
+<h2 id="step-8-inference-generate-speech">Step 8: Inference (Generate Speech)</h2>
+<h3 id="generate-wav-files-from-no-punctuation-model">Generate WAV Files from No-Punctuation Model</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>python<span class="w"> </span>speechain/runner.py<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span>--config<span class="w"> </span>recipes/tts/ljspeech/exp_cfg/22.05khz_mfa_fastspeech2.yaml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span>--train<span class="w"> </span><span class="nb">false</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span>--test<span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span>--test_model<span class="w"> </span>latest
+</span></code></pre></div>
+<p>Output WAV files will be saved to:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>recipes/tts/ljspeech/exp/22.05khz_mfa_fastspeech2/default_inference/latest/test/wav/
 </span></code></pre></div></p>
-<p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/speechain/dataset#table-of-contents">Back to the table of contents</a></p>
+<h3 id="generate-wav-files-from-punctuation-model">Generate WAV Files from Punctuation Model</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>python<span class="w"> </span>speechain/runner.py<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span>--config<span class="w"> </span>recipes/tts/ljspeech/exp_cfg/22.05khz_mfa_fastspeech2_punc.yaml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span>--train<span class="w"> </span><span class="nb">false</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span>--test<span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span>--test_model<span class="w"> </span>latest
+</span></code></pre></div>
+<p>Output WAV files will be saved to:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>recipes/tts/ljspeech/exp/22.05khz_mfa_fastspeech2_punc/default_inference/latest/test/wav/
+</span></code></pre></div></p>
+<h2 id="hifi-gan-vocoder">HiFi-GAN Vocoder</h2>
+<p>The HiFi-GAN vocoder converts mel spectrograms to audio waveforms. It is <strong>automatically downloaded</strong> from Hugging Face Hub on first use:</p>
+<ul>
+<li>Model: <code>speechbrain/tts-hifigan-ljspeech</code></li>
+<li>Cache location: <code>recipes/tts/speechbrain_vocoder/hifigan-ljspeech/</code></li>
+</ul>
+<p>No manual download is required.</p>
+<h2 id="output-structure">Output Structure</h2>
+<p>After training and inference, the experiment folder structure looks like:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>recipes/tts/ljspeech/exp/
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>├── 22.05khz_mfa_fastspeech2/          # No-punctuation experiment
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>│   ├── models/                         # Saved model checkpoints
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>│   │   ├── epoch_1.pth
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>│   │   ├── epoch_2.pth
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>│   │   ├── ...
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>│   │   └── latest.pth -&gt; epoch_N.pth
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>│   ├── tensorboard/                    # Training logs
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>│   ├── figures/                        # Visualization
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>│   ├── default_inference/
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>│   │   └── latest/
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>│   │       └── test/
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>│   │           └── wav/                # Generated WAV files
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>│   └── train.log
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>│
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>└── 22.05khz_mfa_fastspeech2_punc/      # Punctuation experiment
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>    ├── models/
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>    ├── tensorboard/
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>    ├── figures/
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>    ├── default_inference/
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>    │   └── latest/
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>    │       └── test/
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>    │           └── wav/                # Generated WAV files
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>    └── train.log
+</span></code></pre></div>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="cuda-out-of-memory">CUDA Out of Memory</h3>
+<p>Reduce <code>batch_len</code> in the config file:
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">batch_len</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0e7</span><span class="w">  </span><span class="c1"># Reduce from 1.5e7</span>
+</span></code></pre></div></p>
+<h3 id="mfa-alignment-errors">MFA Alignment Errors</h3>
+<p>Ensure you're using the conda <code>aligner</code> environment:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>aligner
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>mfa<span class="w"> </span>model<span class="w"> </span>download<span class="w"> </span>acoustic<span class="w"> </span>english_us_arpa
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>mfa<span class="w"> </span>model<span class="w"> </span>download<span class="w"> </span>dictionary<span class="w"> </span>english_us_arpa
+</span></code></pre></div></p>
+<h3 id="missing-speechain_root">Missing SPEECHAIN_ROOT</h3>
+<p>Always set the environment variable before running:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SPEECHAIN_ROOT</span><span class="o">=</span>/path/to/speechain
+</span></code></pre></div></p>
+<h3 id="pytorch-cuda-compatibility">PyTorch CUDA Compatibility</h3>
+<p>For newer GPUs (RTX 40xx, 50xx), you may need PyTorch nightly:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--pre<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/nightly/cu128
+</span></code></pre></div></p>
+<h2 id="quick-reference">Quick Reference</h2>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Environment</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Setup</td>
+<td>venv/conda</td>
+<td><code>uv venv .venv --python 3.10</code></td>
+</tr>
+<tr>
+<td>2. Download data</td>
+<td>venv/conda</td>
+<td><code>bash data_download.sh</code></td>
+</tr>
+<tr>
+<td>3. Install MFA</td>
+<td>conda only</td>
+<td><code>conda create -n aligner -c conda-forge montreal-forced-aligner</code></td>
+</tr>
+<tr>
+<td>4. Generate meta</td>
+<td>venv/conda</td>
+<td><code>python meta_generator.py</code></td>
+</tr>
+<tr>
+<td>5. MFA alignment</td>
+<td>conda (aligner)</td>
+<td><code>mfa align ...</code></td>
+</tr>
+<tr>
+<td>6. Post-process</td>
+<td>venv/conda</td>
+<td><code>python meta_post_processor.py</code></td>
+</tr>
+<tr>
+<td>7. Training</td>
+<td>venv/conda</td>
+<td><code>python speechain/runner.py --train true</code></td>
+</tr>
+<tr>
+<td>8. Inference</td>
+<td>venv/conda</td>
+<td><code>python speechain/runner.py --test true</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="expected-results">Expected Results</h2>
+<p>After training for 5 epochs (quick experiment):
+- Training loss: ~2.5-3.0
+- Generated WAV files: 523 samples per experiment
+- Audio quality: Intelligible but may have artifacts (more epochs improve quality)</p>
+<p>For production-quality speech, train for 200+ epochs or until early stopping.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://keithito.com/LJ-Speech-Dataset/">LJSpeech Dataset</a></li>
+<li><a href="https://arxiv.org/abs/2006.04558">FastSpeech2 Paper</a></li>
+<li><a href="https://montreal-forced-aligner.readthedocs.io/">Montreal Forced Aligner</a></li>
+<li><a href="https://arxiv.org/abs/2010.05646">HiFi-GAN Paper</a></li>
+</ul>
 
 
 
