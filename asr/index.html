@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -4898,23 +4898,23 @@ More details on how to dump a dataset can be found <a href="https://github.com/b
 <h3 id="use-an-existing-dataset-with-a-pre-tuned-configuration">Use an existing dataset with a pre-tuned configuration</h3>
 <ol>
 <li>
-<p>locate a <em>.yaml</em> configuration file in <code>${SPEECHAIN_ROOT}/recipes/asr</code>. 
-   Suppose we want to train an ASR model by the configuration <code>${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960/exp_cfg/960-bpe5k_transformer-wide_ctc_perturb.yaml</code>.</p>
+<p>Locate a <em>.yaml</em> configuration file in <code>${SPEECHAIN_ROOT}/recipes/asr</code>. 
+   Suppose we want to train an ASR model by the configuration <code>${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-clean-5/exp_cfg/5-bpe1k_conformer-small_lr2e-3.yaml</code>.</p>
 </li>
 <li>
 <p>Train and evaluate the ASR model on your target training set</p>
 </li>
 </ol>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">SPEECHAIN_ROOT</span><span class="si">}</span>/recipes/asr/librispeech/train-960
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>bash<span class="w"> </span>run.sh<span class="w"> </span>--exp_cfg<span class="w"> </span><span class="m">960</span>-bpe5k_transformer-wide_ctc_perturb<span class="w"> </span><span class="o">(</span>--ngpu<span class="w"> </span>x<span class="w"> </span>--gpus<span class="w"> </span>x,x<span class="o">)</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>bash<span class="w"> </span>run.sh<span class="w"> </span>--exp_cfg<span class="w"> </span><span class="m">5</span>-bpe1k_conformer-small_lr2e-3<span class="w"> </span><span class="o">(</span>--ngpu<span class="w"> </span>x<span class="w"> </span>--gpus<span class="w"> </span>x,x<span class="o">)</span>
 </span></code></pre></div>
    <strong>Note:</strong> <br />
       1. Review the comments on the top of the configuration file to ensure that your computational resources fit the configuration before training the model.<br />
       If your resources do not match the configuration, adjust it by <code>--ngpu</code> and <code>--gpus</code> to match your available GPU memory.<br />
       2. To save the experimental results outside the toolkit folder <code>${SPEECHAIN_ROOT}</code>, 
          specify your desired location by appending <code>--train_result_path {your-target-path}</code> to <code>bash run.sh</code>.<br />
-         In this example, <code>bash run.sh --exp_cfg 960-bpe5k_transformer-wide_ctc_perturb --train_result_path /a/b/c</code>
-         will save results to <code>/a/b/c/960-bpe5k_transformer-wide_ctc_perturb</code>.</p>
+         In this example, <code>bash run.sh --exp_cfg 5-bpe1k_conformer-small_lr2e-3 --train_result_path /a/b/c</code>
+         will save results to <code>/a/b/c/5-bpe1k_conformer-small_lr2e-3</code>.</p>
 <h3 id="creating-a-new-configuration-for-a-non-existing-dataset">Creating a new configuration for a non-existing dataset</h3>
 <ol>
 <li>
@@ -5059,10 +5059,10 @@ More details on how to dump a dataset can be found <a href="https://github.com/b
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../javascripts/katex.js"></script>
       
