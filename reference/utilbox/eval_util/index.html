@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -2208,34 +2208,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../module/encoder/test_speaker/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    test_speaker
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../module/encoder/tts/" class="md-nav__link">
         
   
@@ -3238,34 +3210,6 @@
     
   
     hifigan
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../module/vocoder/test_hifigan/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    test_hifigan
   
 
     
@@ -4421,34 +4365,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../test_humanfriendly/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    test_humanfriendly
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../text_util/" class="md-nav__link">
         
   
@@ -4783,7 +4699,11 @@ Date: 2022.07</p>
 <span class="normal"><a href="#__codelineno-0-61">61</a></span>
 <span class="normal"><a href="#__codelineno-0-62">62</a></span>
 <span class="normal"><a href="#__codelineno-0-63">63</a></span>
-<span class="normal"><a href="#__codelineno-0-64">64</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_word_edit_alignment</span><span class="p">(</span><span class="n">hypo</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">real</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="normal"><a href="#__codelineno-0-64">64</a></span>
+<span class="normal"><a href="#__codelineno-0-65">65</a></span>
+<span class="normal"><a href="#__codelineno-0-66">66</a></span>
+<span class="normal"><a href="#__codelineno-0-67">67</a></span>
+<span class="normal"><a href="#__codelineno-0-68">68</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_word_edit_alignment</span><span class="p">(</span><span class="n">hypo</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">real</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="sd">    Args:</span>
@@ -4830,12 +4750,16 @@ Date: 2022.07</p>
 </span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a>            <span class="n">hypo_words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hypo_word_list</span><span class="p">[</span><span class="n">op</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
 </span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57"></a>            <span class="n">real_words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">real_word_list</span><span class="p">[</span><span class="n">op</span><span class="p">[</span><span class="mi">3</span><span class="p">]])</span>
 </span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58"></a>
-</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59"></a>    <span class="n">align_table</span> <span class="o">=</span> <span class="n">get_table_strings</span><span class="p">(</span>
-</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60"></a>        <span class="n">contents</span><span class="o">=</span><span class="p">[</span><span class="n">hypo_words</span><span class="p">,</span> <span class="n">word_ops</span><span class="p">,</span> <span class="n">real_words</span><span class="p">],</span>
-</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61"></a>        <span class="n">first_col</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Hypothesis&quot;</span><span class="p">,</span> <span class="s2">&quot;Alignment&quot;</span><span class="p">,</span> <span class="s2">&quot;Reference&quot;</span><span class="p">],</span>
-</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62"></a>    <span class="p">)</span>
-</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63"></a>
-</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64"></a>    <span class="k">return</span> <span class="n">insertion</span><span class="p">,</span> <span class="n">deletion</span><span class="p">,</span> <span class="n">substitution</span><span class="p">,</span> <span class="n">align_table</span>
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59"></a>    <span class="c1"># Create headers for each word position</span>
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60"></a>    <span class="n">headers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;Word </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hypo_words</span><span class="p">))]</span>
+</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61"></a>
+</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62"></a>    <span class="n">align_table</span> <span class="o">=</span> <span class="n">get_table_strings</span><span class="p">(</span>
+</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63"></a>        <span class="n">contents</span><span class="o">=</span><span class="p">[</span><span class="n">hypo_words</span><span class="p">,</span> <span class="n">word_ops</span><span class="p">,</span> <span class="n">real_words</span><span class="p">],</span>
+</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64"></a>        <span class="n">first_col</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Hypothesis&quot;</span><span class="p">,</span> <span class="s2">&quot;Alignment&quot;</span><span class="p">,</span> <span class="s2">&quot;Reference&quot;</span><span class="p">],</span>
+</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65"></a>        <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66"></a>    <span class="p">)</span>
+</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67"></a>
+</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68"></a>    <span class="k">return</span> <span class="n">insertion</span><span class="p">,</span> <span class="n">deletion</span><span class="p">,</span> <span class="n">substitution</span><span class="p">,</span> <span class="n">align_table</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>

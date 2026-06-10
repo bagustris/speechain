@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -2325,34 +2325,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/module/encoder/test_speaker/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    test_speaker
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../reference/module/encoder/tts/" class="md-nav__link">
         
   
@@ -3355,34 +3327,6 @@
     
   
     hifigan
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../reference/module/vocoder/test_hifigan/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    test_hifigan
   
 
     
@@ -4471,34 +4415,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/utilbox/test_humanfriendly/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    test_humanfriendly
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../reference/utilbox/text_util/" class="md-nav__link">
         
   
@@ -4914,7 +4830,12 @@ More details on how to dump a dataset can be found <a href="https://github.com/b
       2. To save the experimental results outside the toolkit folder <code>${SPEECHAIN_ROOT}</code>, 
          specify your desired location by appending <code>--train_result_path {your-target-path}</code> to <code>bash run.sh</code>.<br />
          In this example, <code>bash run.sh --exp_cfg 5-bpe1k_conformer-small_lr2e-3 --train_result_path /a/b/c</code>
-         will save results to <code>/a/b/c/5-bpe1k_conformer-small_lr2e-3</code>.</p>
+         will save results to <code>/a/b/c/5-bpe1k_conformer-small_lr2e-3</code>.
+      3. Dev-clean is not calculated by default (to save computation time). After training has completed, run evaluation on <code>dev-clean</code>:
+         <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">SPEECHAIN_ROOT</span><span class="si">}</span>/recipes/asr/librispeech/train-clean-100
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>bash<span class="w"> </span>run.sh<span class="w"> </span>--train<span class="w"> </span><span class="nb">false</span><span class="w"> </span>--exp_cfg<span class="w"> </span>exp_cfg/100-bpe5k_conformer-large_lr2e-3<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span>--data_cfg<span class="w"> </span>data_cfg/test_dev-clean.yaml
+</span></code></pre></div></p>
 <h3 id="creating-a-new-configuration-for-a-non-existing-dataset">Creating a new configuration for a non-existing dataset</h3>
 <ol>
 <li>
@@ -4922,44 +4843,44 @@ More details on how to dump a dataset can be found <a href="https://github.com/b
 </li>
 <li>
 <p>Create a folder for your dumped dataset <code>${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}</code>:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mkdir<span class="w"> </span><span class="si">${</span><span class="nv">SPEECHAIN_ROOT</span><span class="si">}</span>/recipes/asr/<span class="o">{</span>your-new-dataset<span class="o">}</span>/<span class="o">{</span>your-target-subset<span class="o">}</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>cp<span class="w"> </span><span class="si">${</span><span class="nv">SPEECHAIN_ROOT</span><span class="si">}</span>/recipes/asr/librispeech/train-960/run.sh<span class="w"> </span><span class="si">${</span><span class="nv">SPEECHAIN_ROOT</span><span class="si">}</span>/recipes/asr/<span class="o">{</span>your-new-dataset<span class="o">}</span>/<span class="o">{</span>your-target-subset<span class="o">}</span>/run.sh
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>mkdir<span class="w"> </span><span class="si">${</span><span class="nv">SPEECHAIN_ROOT</span><span class="si">}</span>/recipes/asr/<span class="o">{</span>your-new-dataset<span class="o">}</span>/<span class="o">{</span>your-target-subset<span class="o">}</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>cp<span class="w"> </span><span class="si">${</span><span class="nv">SPEECHAIN_ROOT</span><span class="si">}</span>/recipes/asr/librispeech/train-960/run.sh<span class="w"> </span><span class="si">${</span><span class="nv">SPEECHAIN_ROOT</span><span class="si">}</span>/recipes/asr/<span class="o">{</span>your-new-dataset<span class="o">}</span>/<span class="o">{</span>your-target-subset<span class="o">}</span>/run.sh
 </span></code></pre></div>
    <strong>Note:</strong>  </p>
 <ul>
 <li>Update the arguments <code>dataset</code> and <code>subset</code> (line no.16 &amp; 17) in <code>${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}/run.sh</code>:  </li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>dataset=librispeech -&gt; &#39;your-new-dataset&#39;
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>subset=&#39;train-960&#39; -&gt; &#39;your-new-dataset&#39;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>dataset=librispeech -&gt; &#39;your-new-dataset&#39;
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>subset=&#39;train-960&#39; -&gt; &#39;your-new-dataset&#39;
 </span></code></pre></div>
 </li>
 <li>
 <p>Copy a pre-tuned configuration file into your newly created folder. 
    Suppose we want to use the configuration <code>${SPEECHAIN_ROOT}/recipes/asr/librispeech/train-960/exp_cfg/960-bpe5k_transformer-wide_ctc_perturb.yaml</code>:<br />
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">SPEECHAIN_ROOT</span><span class="si">}</span>/recipes/asr/<span class="o">{</span>your-new-dataset<span class="o">}</span>/<span class="o">{</span>your-target-subset<span class="o">}</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>mkdir<span class="w"> </span>./data_cfg<span class="w"> </span>./exp_cfg
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>cp<span class="w"> </span><span class="si">${</span><span class="nv">SPEECHAIN_ROOT</span><span class="si">}</span>/recipes/asr/librispeech/train-960/exp_cfg/960-bpe5k_transformer-wide_ctc_perturb.yaml<span class="w"> </span>./exp_cfg
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">SPEECHAIN_ROOT</span><span class="si">}</span>/recipes/asr/<span class="o">{</span>your-new-dataset<span class="o">}</span>/<span class="o">{</span>your-target-subset<span class="o">}</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>mkdir<span class="w"> </span>./data_cfg<span class="w"> </span>./exp_cfg
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>cp<span class="w"> </span><span class="si">${</span><span class="nv">SPEECHAIN_ROOT</span><span class="si">}</span>/recipes/asr/librispeech/train-960/exp_cfg/960-bpe5k_transformer-wide_ctc_perturb.yaml<span class="w"> </span>./exp_cfg
 </span></code></pre></div>
    <strong>Note:</strong>  </p>
 <ul>
 <li>Update the dataset arguments at the beginning of your selected configuration:
-  <div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a># dataset-related
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>dataset: librispeech -&gt; &#39;your-new-dataset&#39;
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>train_set: train-960 -&gt; &#39;your-target-subset&#39;
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>valid_set: dev -&gt; &#39;valid-set-of-new-dataset&#39;
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a># tokenizer-related
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>txt_format: asr
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>vocab_set: train-960 -&gt; &#39;your-target-subset&#39;
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>token_type: sentencepiece
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>token_num: bpe5k
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a># dataset-related
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>dataset: librispeech -&gt; &#39;your-new-dataset&#39;
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>train_set: train-960 -&gt; &#39;your-target-subset&#39;
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>valid_set: dev -&gt; &#39;valid-set-of-new-dataset&#39;
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a># tokenizer-related
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>txt_format: asr
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>vocab_set: train-960 -&gt; &#39;your-target-subset&#39;
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>token_type: sentencepiece
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>token_num: bpe5k
 </span></code></pre></div></li>
 </ul>
 </li>
 <li>
 <p>Train the ASR model on your target training set:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">SPEECHAIN_ROOT</span><span class="si">}</span>/recipes/asr/<span class="o">{</span>your-new-dataset<span class="o">}</span>/<span class="o">{</span>your-target-subset<span class="o">}</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>bash<span class="w"> </span>run.sh<span class="w"> </span>--test<span class="w"> </span><span class="nb">false</span><span class="w"> </span>--exp_cfg<span class="w"> </span><span class="m">960</span>-bpe5k_transformer-wide_ctc_perturb<span class="w"> </span><span class="o">(</span>--ngpu<span class="w"> </span>x<span class="w"> </span>--gpus<span class="w"> </span>x,x<span class="o">)</span>
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">SPEECHAIN_ROOT</span><span class="si">}</span>/recipes/asr/<span class="o">{</span>your-new-dataset<span class="o">}</span>/<span class="o">{</span>your-target-subset<span class="o">}</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>bash<span class="w"> </span>run.sh<span class="w"> </span>--test<span class="w"> </span><span class="nb">false</span><span class="w"> </span>--exp_cfg<span class="w"> </span><span class="m">960</span>-bpe5k_transformer-wide_ctc_perturb<span class="w"> </span><span class="o">(</span>--ngpu<span class="w"> </span>x<span class="w"> </span>--gpus<span class="w"> </span>x,x<span class="o">)</span>
 </span></code></pre></div>
    <strong>Note:</strong>  </p>
 <ol>
@@ -4970,16 +4891,16 @@ More details on how to dump a dataset can be found <a href="https://github.com/b
 </li>
 <li>
 <p>Tune the inference hyperparameters on the corresponding validation set
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>cp<span class="w"> </span><span class="si">${</span><span class="nv">SPEECHAIN_ROOT</span><span class="si">}</span>/recipes/asr/librispeech/train-960/data_cfg/test_dev-clean+other.yaml<span class="w"> </span>./data_cfg
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>mv<span class="w"> </span>./data_cfg/test_dev-clean.yaml<span class="w"> </span>./data_cfg/test_<span class="o">{</span>your-valid-set-name<span class="o">}</span>.yaml
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>bash<span class="w"> </span>run.sh<span class="w"> </span>--train<span class="w"> </span><span class="nb">false</span><span class="w"> </span>--exp_cfg<span class="w"> </span><span class="m">960</span>-bpe5k_transformer-wide_ctc_perturb<span class="w"> </span>--data_cfg<span class="w"> </span>test_<span class="o">{</span>your-valid-set-name<span class="o">}</span>
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>cp<span class="w"> </span><span class="si">${</span><span class="nv">SPEECHAIN_ROOT</span><span class="si">}</span>/recipes/asr/librispeech/train-960/data_cfg/test_dev-clean+other.yaml<span class="w"> </span>./data_cfg
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>mv<span class="w"> </span>./data_cfg/test_dev-clean.yaml<span class="w"> </span>./data_cfg/test_<span class="o">{</span>your-valid-set-name<span class="o">}</span>.yaml
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>bash<span class="w"> </span>run.sh<span class="w"> </span>--train<span class="w"> </span><span class="nb">false</span><span class="w"> </span>--exp_cfg<span class="w"> </span><span class="m">960</span>-bpe5k_transformer-wide_ctc_perturb<span class="w"> </span>--data_cfg<span class="w"> </span>test_<span class="o">{</span>your-valid-set-name<span class="o">}</span>
 </span></code></pre></div>
    <strong>Note:</strong>  </p>
 <ol>
 <li>
 <p>Update the dataset arguments in <code>./data_cfg/test_{your-valid-set-name}.yaml</code>:
-     <div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>dataset: librispeech -&gt; &#39;your-new-dataset&#39;
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>valid_dset: &amp;valid_dset dev-clean -&gt; &amp;valid_dset &#39;valid-set-of-new-dataset&#39;
+     <div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>dataset: librispeech -&gt; &#39;your-new-dataset&#39;
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>valid_dset: &amp;valid_dset dev-clean -&gt; &amp;valid_dset &#39;valid-set-of-new-dataset&#39;
 </span></code></pre></div></p>
 </li>
 <li>
@@ -4991,7 +4912,7 @@ More details on how to dump a dataset can be found <a href="https://github.com/b
 </li>
 <li>
 <p>Evaluate the trained ASR model on the official test sets
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>bash<span class="w"> </span>run.sh<span class="w"> </span>--train<span class="w"> </span><span class="nb">false</span><span class="w"> </span>--exp_cfg<span class="w"> </span><span class="m">960</span>-bpe5k_transformer-wide_ctc_perturb<span class="w"> </span>--infer_cfg<span class="w"> </span><span class="s2">&quot;{the-best-configuration-you-get-during-validation-tuning}&quot;</span>
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>bash<span class="w"> </span>run.sh<span class="w"> </span>--train<span class="w"> </span><span class="nb">false</span><span class="w"> </span>--exp_cfg<span class="w"> </span><span class="m">960</span>-bpe5k_transformer-wide_ctc_perturb<span class="w"> </span>--infer_cfg<span class="w"> </span><span class="s2">&quot;{the-best-configuration-you-get-during-validation-tuning}&quot;</span>
 </span></code></pre></div>
    <strong>Note:</strong>  </p>
 <ol>

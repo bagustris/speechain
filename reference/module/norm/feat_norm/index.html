@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -2210,34 +2210,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../encoder/test_speaker/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    test_speaker
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../encoder/tts/" class="md-nav__link">
         
   
@@ -3392,34 +3364,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../vocoder/test_hifigan/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    test_hifigan
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -4475,34 +4419,6 @@
     
   
     tensor_util
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../utilbox/test_humanfriendly/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    test_humanfriendly
   
 
     
@@ -5955,7 +5871,7 @@ input utterances. The synchronization method is different in different scenarios
 </span><span id="__span-0-472"><a id="__codelineno-0-472" name="__codelineno-0-472"></a>        <span class="k">if</span> <span class="n">epoch</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">_batch&quot;</span><span class="p">):</span>
 </span><span id="__span-0-473"><a id="__codelineno-0-473" name="__codelineno-0-473"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">register_buffer</span><span class="p">(</span>
 </span><span id="__span-0-474"><a id="__codelineno-0-474" name="__codelineno-0-474"></a>                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">_batch&quot;</span><span class="p">,</span>
-</span><span id="__span-0-475"><a id="__codelineno-0-475" name="__codelineno-0-475"></a>                <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">cuda</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="n">curr_aver_mean</span><span class="o">.</span><span class="n">device</span><span class="p">),</span>
+</span><span id="__span-0-475"><a id="__codelineno-0-475" name="__codelineno-0-475"></a>                <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="n">curr_aver_mean</span><span class="o">.</span><span class="n">device</span><span class="p">),</span>
 </span><span id="__span-0-476"><a id="__codelineno-0-476" name="__codelineno-0-476"></a>            <span class="p">)</span>
 </span><span id="__span-0-477"><a id="__codelineno-0-477" name="__codelineno-0-477"></a>        <span class="k">elif</span> <span class="n">epoch</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_epoch_num</span><span class="p">:</span>
 </span><span id="__span-0-478"><a id="__codelineno-0-478" name="__codelineno-0-478"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">register_buffer</span><span class="p">(</span>
@@ -7329,7 +7245,7 @@ Usually, the value of this argument is lower than a half of the number of warmup
 </span><span id="__span-0-472"><a id="__codelineno-0-472" name="__codelineno-0-472"></a>    <span class="k">if</span> <span class="n">epoch</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">_batch&quot;</span><span class="p">):</span>
 </span><span id="__span-0-473"><a id="__codelineno-0-473" name="__codelineno-0-473"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">register_buffer</span><span class="p">(</span>
 </span><span id="__span-0-474"><a id="__codelineno-0-474" name="__codelineno-0-474"></a>            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">_batch&quot;</span><span class="p">,</span>
-</span><span id="__span-0-475"><a id="__codelineno-0-475" name="__codelineno-0-475"></a>            <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">cuda</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="n">curr_aver_mean</span><span class="o">.</span><span class="n">device</span><span class="p">),</span>
+</span><span id="__span-0-475"><a id="__codelineno-0-475" name="__codelineno-0-475"></a>            <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="n">curr_aver_mean</span><span class="o">.</span><span class="n">device</span><span class="p">),</span>
 </span><span id="__span-0-476"><a id="__codelineno-0-476" name="__codelineno-0-476"></a>        <span class="p">)</span>
 </span><span id="__span-0-477"><a id="__codelineno-0-477" name="__codelineno-0-477"></a>    <span class="k">elif</span> <span class="n">epoch</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_epoch_num</span><span class="p">:</span>
 </span><span id="__span-0-478"><a id="__codelineno-0-478" name="__codelineno-0-478"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">register_buffer</span><span class="p">(</span>
