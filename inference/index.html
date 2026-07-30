@@ -11,25 +11,25 @@
       
       
       
-        <link rel="prev" href="../monitor/">
+        <link rel="prev" href="../tts/">
       
       
-        <link rel="next" href="abs/">
+        <link rel="next" href="../criterion/">
       
       
         
       
       
-      <link rel="icon" href="../../img/favicon.ico">
+      <link rel="icon" href="../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>optim_sche - Speechain</title>
+        <title>Standalone Inference - Speechain</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
       
 
@@ -48,13 +48,13 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../../css/code_select.css">
+      <link rel="stylesheet" href="../css/code_select.css">
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#optim_sche" class="md-skip">
+        <a href="#standalone-inference" class="md-skip">
           Skip to content
         </a>
       
@@ -88,9 +88,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Speechain" class="md-header__button md-logo" aria-label="Speechain" data-md-component="logo">
+    <a href=".." title="Speechain" class="md-header__button md-logo" aria-label="Speechain" data-md-component="logo">
       
-  <img src="../../img/speechain_inverted.png" alt="logo">
+  <img src="../img/speechain_inverted.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              optim_sche
+              Standalone Inference
             
           </span>
         </div>
@@ -197,9 +197,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Speechain" class="md-nav__button md-logo" aria-label="Speechain" data-md-component="logo">
+    <a href=".." title="Speechain" class="md-nav__button md-logo" aria-label="Speechain" data-md-component="logo">
       
-  <img src="../../img/speechain_inverted.png" alt="logo">
+  <img src="../img/speechain_inverted.png" alt="logo">
 
     </a>
     Speechain
@@ -226,7 +226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -253,7 +253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../handbook/" class="md-nav__link">
+      <a href="../handbook/" class="md-nav__link">
         
   
   
@@ -280,7 +280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../datasets/" class="md-nav__link">
+      <a href="../datasets/" class="md-nav__link">
         
   
   
@@ -307,7 +307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../recipes/" class="md-nav__link">
+      <a href="../recipes/" class="md-nav__link">
         
   
   
@@ -334,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../asr/" class="md-nav__link">
+      <a href="../asr/" class="md-nav__link">
         
   
   
@@ -361,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tts/" class="md-nav__link">
+      <a href="../tts/" class="md-nav__link">
         
   
   
@@ -385,10 +385,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../inference/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standalone Inference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -404,6 +431,131 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asr-transcribe-your-own-audio-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ASR: transcribe your own audio files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tts-synthesize-your-own-sentences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TTS: synthesize your own sentences
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-line-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Command-Line Arguments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inference-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inference Configurations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-and-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes and Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -415,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../criterion/" class="md-nav__link">
+      <a href="../criterion/" class="md-nav__link">
         
   
   
@@ -442,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dataset/" class="md-nav__link">
+      <a href="../dataset/" class="md-nav__link">
         
   
   
@@ -469,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../iterator/" class="md-nav__link">
+      <a href="../iterator/" class="md-nav__link">
         
   
   
@@ -496,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../model/" class="md-nav__link">
+      <a href="../model/" class="md-nav__link">
         
   
   
@@ -523,7 +675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../module/" class="md-nav__link">
+      <a href="../module/" class="md-nav__link">
         
   
   
@@ -550,7 +702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../optim_sche/" class="md-nav__link">
+      <a href="../optim_sche/" class="md-nav__link">
         
   
   
@@ -577,7 +729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tokenizer/" class="md-nav__link">
+      <a href="../tokenizer/" class="md-nav__link">
         
   
   
@@ -651,7 +803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tts_ljspeech_tutorial/" class="md-nav__link">
+      <a href="../tts_ljspeech_tutorial/" class="md-nav__link">
         
   
   
@@ -683,20 +835,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
         
           
           <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
@@ -717,7 +867,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_16">
             <span class="md-nav__icon md-icon"></span>
             
@@ -747,7 +897,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../criterion/" class="md-nav__link ">
+            <a href="../reference/criterion/" class="md-nav__link ">
               
   
   
@@ -789,7 +939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../criterion/abs/" class="md-nav__link">
+      <a href="../reference/criterion/abs/" class="md-nav__link">
         
   
   
@@ -817,7 +967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../criterion/accuracy/" class="md-nav__link">
+      <a href="../reference/criterion/accuracy/" class="md-nav__link">
         
   
   
@@ -845,7 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../criterion/att_guid/" class="md-nav__link">
+      <a href="../reference/criterion/att_guid/" class="md-nav__link">
         
   
   
@@ -873,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../criterion/bce_logits/" class="md-nav__link">
+      <a href="../reference/criterion/bce_logits/" class="md-nav__link">
         
   
   
@@ -901,7 +1051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../criterion/cross_entropy/" class="md-nav__link">
+      <a href="../reference/criterion/cross_entropy/" class="md-nav__link">
         
   
   
@@ -929,7 +1079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../criterion/ctc/" class="md-nav__link">
+      <a href="../reference/criterion/ctc/" class="md-nav__link">
         
   
   
@@ -957,7 +1107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../criterion/error_rate/" class="md-nav__link">
+      <a href="../reference/criterion/error_rate/" class="md-nav__link">
         
   
   
@@ -985,7 +1135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../criterion/fbeta_score/" class="md-nav__link">
+      <a href="../reference/criterion/fbeta_score/" class="md-nav__link">
         
   
   
@@ -1013,7 +1163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../criterion/least_error/" class="md-nav__link">
+      <a href="../reference/criterion/least_error/" class="md-nav__link">
         
   
   
@@ -1041,7 +1191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../criterion/perplexity/" class="md-nav__link">
+      <a href="../reference/criterion/perplexity/" class="md-nav__link">
         
   
   
@@ -1089,7 +1239,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../dataset/" class="md-nav__link ">
+            <a href="../reference/dataset/" class="md-nav__link ">
               
   
   
@@ -1131,7 +1281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dataset/abs/" class="md-nav__link">
+      <a href="../reference/dataset/abs/" class="md-nav__link">
         
   
   
@@ -1159,7 +1309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dataset/speech_text/" class="md-nav__link">
+      <a href="../reference/dataset/speech_text/" class="md-nav__link">
         
   
   
@@ -1207,7 +1357,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../infer_func/" class="md-nav__link ">
+            <a href="../reference/infer_func/" class="md-nav__link ">
               
   
   
@@ -1249,7 +1399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../infer_func/beam_search/" class="md-nav__link">
+      <a href="../reference/infer_func/beam_search/" class="md-nav__link">
         
   
   
@@ -1277,7 +1427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../infer_func/ctc_decoding/" class="md-nav__link">
+      <a href="../reference/infer_func/ctc_decoding/" class="md-nav__link">
         
   
   
@@ -1305,7 +1455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../infer_func/tts_decoding/" class="md-nav__link">
+      <a href="../reference/infer_func/tts_decoding/" class="md-nav__link">
         
   
   
@@ -1341,7 +1491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../inference/" class="md-nav__link">
+      <a href="../reference/inference/" class="md-nav__link">
         
   
   
@@ -1381,7 +1531,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../iterator/" class="md-nav__link ">
+            <a href="../reference/iterator/" class="md-nav__link ">
               
   
   
@@ -1423,7 +1573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../iterator/abs/" class="md-nav__link">
+      <a href="../reference/iterator/abs/" class="md-nav__link">
         
   
   
@@ -1451,7 +1601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../iterator/block/" class="md-nav__link">
+      <a href="../reference/iterator/block/" class="md-nav__link">
         
   
   
@@ -1499,7 +1649,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../model/" class="md-nav__link ">
+            <a href="../reference/model/" class="md-nav__link ">
               
   
   
@@ -1541,7 +1691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../model/abs/" class="md-nav__link">
+      <a href="../reference/model/abs/" class="md-nav__link">
         
   
   
@@ -1569,7 +1719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../model/ar_asr/" class="md-nav__link">
+      <a href="../reference/model/ar_asr/" class="md-nav__link">
         
   
   
@@ -1597,7 +1747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../model/ar_tts/" class="md-nav__link">
+      <a href="../reference/model/ar_tts/" class="md-nav__link">
         
   
   
@@ -1625,7 +1775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../model/lm/" class="md-nav__link">
+      <a href="../reference/model/lm/" class="md-nav__link">
         
   
   
@@ -1653,7 +1803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../model/nar_tts/" class="md-nav__link">
+      <a href="../reference/model/nar_tts/" class="md-nav__link">
         
   
   
@@ -1701,7 +1851,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../module/" class="md-nav__link ">
+            <a href="../reference/module/" class="md-nav__link ">
               
   
   
@@ -1743,7 +1893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/abs/" class="md-nav__link">
+      <a href="../reference/module/abs/" class="md-nav__link">
         
   
   
@@ -1783,7 +1933,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../module/augment/" class="md-nav__link ">
+            <a href="../reference/module/augment/" class="md-nav__link ">
               
   
   
@@ -1825,7 +1975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/augment/specaug/" class="md-nav__link">
+      <a href="../reference/module/augment/specaug/" class="md-nav__link">
         
   
   
@@ -1873,7 +2023,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../module/conformer/" class="md-nav__link ">
+            <a href="../reference/module/conformer/" class="md-nav__link ">
               
   
   
@@ -1915,7 +2065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/conformer/attention/" class="md-nav__link">
+      <a href="../reference/module/conformer/attention/" class="md-nav__link">
         
   
   
@@ -1943,7 +2093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/conformer/encoder/" class="md-nav__link">
+      <a href="../reference/module/conformer/encoder/" class="md-nav__link">
         
   
   
@@ -1971,7 +2121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/conformer/pos_enc/" class="md-nav__link">
+      <a href="../reference/module/conformer/pos_enc/" class="md-nav__link">
         
   
   
@@ -2019,7 +2169,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../module/decoder/" class="md-nav__link ">
+            <a href="../reference/module/decoder/" class="md-nav__link ">
               
   
   
@@ -2061,7 +2211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/decoder/ar_asr/" class="md-nav__link">
+      <a href="../reference/module/decoder/ar_asr/" class="md-nav__link">
         
   
   
@@ -2089,7 +2239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/decoder/ar_tts/" class="md-nav__link">
+      <a href="../reference/module/decoder/ar_tts/" class="md-nav__link">
         
   
   
@@ -2117,7 +2267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/decoder/nar_tts/" class="md-nav__link">
+      <a href="../reference/module/decoder/nar_tts/" class="md-nav__link">
         
   
   
@@ -2165,7 +2315,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../module/encoder/" class="md-nav__link ">
+            <a href="../reference/module/encoder/" class="md-nav__link ">
               
   
   
@@ -2207,7 +2357,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/encoder/asr/" class="md-nav__link">
+      <a href="../reference/module/encoder/asr/" class="md-nav__link">
         
   
   
@@ -2235,7 +2385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/encoder/speaker/" class="md-nav__link">
+      <a href="../reference/module/encoder/speaker/" class="md-nav__link">
         
   
   
@@ -2263,7 +2413,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/encoder/tts/" class="md-nav__link">
+      <a href="../reference/module/encoder/tts/" class="md-nav__link">
         
   
   
@@ -2311,7 +2461,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../module/frontend/" class="md-nav__link ">
+            <a href="../reference/module/frontend/" class="md-nav__link ">
               
   
   
@@ -2353,7 +2503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/frontend/delta_feat/" class="md-nav__link">
+      <a href="../reference/module/frontend/delta_feat/" class="md-nav__link">
         
   
   
@@ -2381,7 +2531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/frontend/linear2mel/" class="md-nav__link">
+      <a href="../reference/module/frontend/linear2mel/" class="md-nav__link">
         
   
   
@@ -2409,7 +2559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/frontend/speech2linear/" class="md-nav__link">
+      <a href="../reference/module/frontend/speech2linear/" class="md-nav__link">
         
   
   
@@ -2437,7 +2587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/frontend/speech2mel/" class="md-nav__link">
+      <a href="../reference/module/frontend/speech2mel/" class="md-nav__link">
         
   
   
@@ -2485,7 +2635,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../module/norm/" class="md-nav__link ">
+            <a href="../reference/module/norm/" class="md-nav__link ">
               
   
   
@@ -2527,7 +2677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/norm/feat_norm/" class="md-nav__link">
+      <a href="../reference/module/norm/feat_norm/" class="md-nav__link">
         
   
   
@@ -2575,7 +2725,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../module/postnet/" class="md-nav__link ">
+            <a href="../reference/module/postnet/" class="md-nav__link ">
               
   
   
@@ -2617,7 +2767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/postnet/conv1d/" class="md-nav__link">
+      <a href="../reference/module/postnet/conv1d/" class="md-nav__link">
         
   
   
@@ -2645,7 +2795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/postnet/token/" class="md-nav__link">
+      <a href="../reference/module/postnet/token/" class="md-nav__link">
         
   
   
@@ -2693,7 +2843,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../module/prenet/" class="md-nav__link ">
+            <a href="../reference/module/prenet/" class="md-nav__link ">
               
   
   
@@ -2735,7 +2885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/prenet/conv1d/" class="md-nav__link">
+      <a href="../reference/module/prenet/conv1d/" class="md-nav__link">
         
   
   
@@ -2763,7 +2913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/prenet/conv2d/" class="md-nav__link">
+      <a href="../reference/module/prenet/conv2d/" class="md-nav__link">
         
   
   
@@ -2791,7 +2941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/prenet/embed/" class="md-nav__link">
+      <a href="../reference/module/prenet/embed/" class="md-nav__link">
         
   
   
@@ -2819,7 +2969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/prenet/linear/" class="md-nav__link">
+      <a href="../reference/module/prenet/linear/" class="md-nav__link">
         
   
   
@@ -2847,7 +2997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/prenet/spk_embed/" class="md-nav__link">
+      <a href="../reference/module/prenet/spk_embed/" class="md-nav__link">
         
   
   
@@ -2875,7 +3025,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/prenet/var_pred/" class="md-nav__link">
+      <a href="../reference/module/prenet/var_pred/" class="md-nav__link">
         
   
   
@@ -2923,7 +3073,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../module/standalone/" class="md-nav__link ">
+            <a href="../reference/module/standalone/" class="md-nav__link ">
               
   
   
@@ -2965,7 +3115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/standalone/lm/" class="md-nav__link">
+      <a href="../reference/module/standalone/lm/" class="md-nav__link">
         
   
   
@@ -3013,7 +3163,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../module/transformer/" class="md-nav__link ">
+            <a href="../reference/module/transformer/" class="md-nav__link ">
               
   
   
@@ -3055,7 +3205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/transformer/attention/" class="md-nav__link">
+      <a href="../reference/module/transformer/attention/" class="md-nav__link">
         
   
   
@@ -3083,7 +3233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/transformer/decoder/" class="md-nav__link">
+      <a href="../reference/module/transformer/decoder/" class="md-nav__link">
         
   
   
@@ -3111,7 +3261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/transformer/encoder/" class="md-nav__link">
+      <a href="../reference/module/transformer/encoder/" class="md-nav__link">
         
   
   
@@ -3139,7 +3289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/transformer/feed_forward/" class="md-nav__link">
+      <a href="../reference/module/transformer/feed_forward/" class="md-nav__link">
         
   
   
@@ -3167,7 +3317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/transformer/pos_enc/" class="md-nav__link">
+      <a href="../reference/module/transformer/pos_enc/" class="md-nav__link">
         
   
   
@@ -3215,7 +3365,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../module/vocoder/" class="md-nav__link ">
+            <a href="../reference/module/vocoder/" class="md-nav__link ">
               
   
   
@@ -3257,7 +3407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/vocoder/hifigan/" class="md-nav__link">
+      <a href="../reference/module/vocoder/hifigan/" class="md-nav__link">
         
   
   
@@ -3301,7 +3451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../monitor/" class="md-nav__link">
+      <a href="../reference/monitor/" class="md-nav__link">
         
   
   
@@ -3326,24 +3476,22 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_9" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../reference/optim_sche/" class="md-nav__link ">
               
   
   
@@ -3361,13 +3509,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_16_9" id="__nav_16_9_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_16_9" id="__nav_16_9_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_16_9_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_16_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_16_9">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3385,7 +3533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="abs/" class="md-nav__link">
+      <a href="../reference/optim_sche/abs/" class="md-nav__link">
         
   
   
@@ -3413,7 +3561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="exp/" class="md-nav__link">
+      <a href="../reference/optim_sche/exp/" class="md-nav__link">
         
   
   
@@ -3441,7 +3589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="noam/" class="md-nav__link">
+      <a href="../reference/optim_sche/noam/" class="md-nav__link">
         
   
   
@@ -3489,7 +3637,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../pyscripts/" class="md-nav__link ">
+            <a href="../reference/pyscripts/" class="md-nav__link ">
               
   
   
@@ -3531,7 +3679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyscripts/empty_file_checker/" class="md-nav__link">
+      <a href="../reference/pyscripts/empty_file_checker/" class="md-nav__link">
         
   
   
@@ -3559,7 +3707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyscripts/folder_summarizer/" class="md-nav__link">
+      <a href="../reference/pyscripts/folder_summarizer/" class="md-nav__link">
         
   
   
@@ -3587,7 +3735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyscripts/model_para_renamer/" class="md-nav__link">
+      <a href="../reference/pyscripts/model_para_renamer/" class="md-nav__link">
         
   
   
@@ -3615,7 +3763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyscripts/phn_duaration_visualizer/" class="md-nav__link">
+      <a href="../reference/pyscripts/phn_duaration_visualizer/" class="md-nav__link">
         
   
   
@@ -3643,7 +3791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyscripts/text_dist_visualizer/" class="md-nav__link">
+      <a href="../reference/pyscripts/text_dist_visualizer/" class="md-nav__link">
         
   
   
@@ -3671,7 +3819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyscripts/wavlen_dist_visualizer/" class="md-nav__link">
+      <a href="../reference/pyscripts/wavlen_dist_visualizer/" class="md-nav__link">
         
   
   
@@ -3707,7 +3855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../runner/" class="md-nav__link">
+      <a href="../reference/runner/" class="md-nav__link">
         
   
   
@@ -3735,7 +3883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../snapshooter/" class="md-nav__link">
+      <a href="../reference/snapshooter/" class="md-nav__link">
         
   
   
@@ -3775,7 +3923,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../tokenizer/" class="md-nav__link ">
+            <a href="../reference/tokenizer/" class="md-nav__link ">
               
   
   
@@ -3817,7 +3965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tokenizer/abs/" class="md-nav__link">
+      <a href="../reference/tokenizer/abs/" class="md-nav__link">
         
   
   
@@ -3845,7 +3993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tokenizer/char/" class="md-nav__link">
+      <a href="../reference/tokenizer/char/" class="md-nav__link">
         
   
   
@@ -3873,7 +4021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tokenizer/g2p/" class="md-nav__link">
+      <a href="../reference/tokenizer/g2p/" class="md-nav__link">
         
   
   
@@ -3901,7 +4049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tokenizer/sp/" class="md-nav__link">
+      <a href="../reference/tokenizer/sp/" class="md-nav__link">
         
   
   
@@ -3949,7 +4097,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../utilbox/" class="md-nav__link ">
+            <a href="../reference/utilbox/" class="md-nav__link ">
               
   
   
@@ -3991,7 +4139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../utilbox/data_loading_util/" class="md-nav__link">
+      <a href="../reference/utilbox/data_loading_util/" class="md-nav__link">
         
   
   
@@ -4019,7 +4167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../utilbox/data_saving_util/" class="md-nav__link">
+      <a href="../reference/utilbox/data_saving_util/" class="md-nav__link">
         
   
   
@@ -4047,7 +4195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../utilbox/dump_util/" class="md-nav__link">
+      <a href="../reference/utilbox/dump_util/" class="md-nav__link">
         
   
   
@@ -4075,7 +4223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../utilbox/eval_util/" class="md-nav__link">
+      <a href="../reference/utilbox/eval_util/" class="md-nav__link">
         
   
   
@@ -4103,7 +4251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../utilbox/feat_util/" class="md-nav__link">
+      <a href="../reference/utilbox/feat_util/" class="md-nav__link">
         
   
   
@@ -4131,7 +4279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../utilbox/humanfriendly/" class="md-nav__link">
+      <a href="../reference/utilbox/humanfriendly/" class="md-nav__link">
         
   
   
@@ -4159,7 +4307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../utilbox/import_util/" class="md-nav__link">
+      <a href="../reference/utilbox/import_util/" class="md-nav__link">
         
   
   
@@ -4187,7 +4335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../utilbox/log_util/" class="md-nav__link">
+      <a href="../reference/utilbox/log_util/" class="md-nav__link">
         
   
   
@@ -4215,7 +4363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../utilbox/md_util/" class="md-nav__link">
+      <a href="../reference/utilbox/md_util/" class="md-nav__link">
         
   
   
@@ -4243,7 +4391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../utilbox/regex_util/" class="md-nav__link">
+      <a href="../reference/utilbox/regex_util/" class="md-nav__link">
         
   
   
@@ -4271,7 +4419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../utilbox/sb_util/" class="md-nav__link">
+      <a href="../reference/utilbox/sb_util/" class="md-nav__link">
         
   
   
@@ -4299,7 +4447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../utilbox/spk_util/" class="md-nav__link">
+      <a href="../reference/utilbox/spk_util/" class="md-nav__link">
         
   
   
@@ -4327,7 +4475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../utilbox/tensor_util/" class="md-nav__link">
+      <a href="../reference/utilbox/tensor_util/" class="md-nav__link">
         
   
   
@@ -4355,7 +4503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../utilbox/text_util/" class="md-nav__link">
+      <a href="../reference/utilbox/text_util/" class="md-nav__link">
         
   
   
@@ -4383,7 +4531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../utilbox/train_util/" class="md-nav__link">
+      <a href="../reference/utilbox/train_util/" class="md-nav__link">
         
   
   
@@ -4411,7 +4559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../utilbox/type_util/" class="md-nav__link">
+      <a href="../reference/utilbox/type_util/" class="md-nav__link">
         
   
   
@@ -4439,7 +4587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../utilbox/yaml_util/" class="md-nav__link">
+      <a href="../reference/utilbox/yaml_util/" class="md-nav__link">
         
   
   
@@ -4492,6 +4640,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -4500,10 +4650,104 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#optim_sche" class="md-nav__link">
+  <a href="#table-of-contents" class="md-nav__link">
     <span class="md-ellipsis">
       
-        optim_sche
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asr-transcribe-your-own-audio-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ASR: transcribe your own audio files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tts-synthesize-your-own-sentences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TTS: synthesize your own sentences
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-line-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Command-Line Arguments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inference-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inference Configurations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-and-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes and Tips
       
     </span>
   </a>
@@ -4530,42 +4774,189 @@
   
 
 
-  <h1>optim_sche</h1>
-
-<div class="doc doc-object doc-module">
-
-
-
-<a id="optim_sche"></a>
-    <div class="doc doc-contents first">
-
-
-
-
-
-
-
-
-
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-    </div>
-
-</div>
+<h1 id="standalone-inference">Standalone Inference</h1>
+<p>SpeeChain provides a standalone inference engine, <code>speechain/inference.py</code>, that applies a trained ASR or TTS model directly to <strong>your own inputs</strong> — no dataset dumping or metadata preparation is required:</p>
+<ul>
+<li><strong>ASR:</strong> give one or more audio files (wav/flac) and get their transcripts.</li>
+<li><strong>TTS:</strong> give one or more raw text sentences and get the synthetic waveforms (a HiFi-GAN vocoder is automatically downloaded on the first use).</li>
+</ul>
+<p>This is different from the standard testing branch of <code>runner.py</code> (launched by <code>recipes/run.sh --train false</code>), which evaluates the model on the test sets described by the dumped dataset metadata (<code>idx2wav</code>, <code>idx2text</code>, <code>data_cfg</code>, ...) and produces the multi-level evaluation reports inside the experiment folder.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#quick-start">Quick Start</a></li>
+<li><a href="#command-line-arguments">Command-Line Arguments</a></li>
+<li><a href="#inference-configurations">Inference Configurations</a></li>
+<li><a href="#outputs">Outputs</a></li>
+<li><a href="#notes-and-tips">Notes and Tips</a></li>
+</ol>
+<h2 id="requirements">Requirements</h2>
+<p>Only the experiment folder of a trained model is required, which must contain:</p>
+<ol>
+<li><code>exp_cfg.yaml</code> (or <code>train_cfg.yaml</code>): the configuration files saved during training.</li>
+<li><code>models/{test_model}.pth</code>: the checkpoint of the model you want to use for inference.</li>
+</ol>
+<p>The script registers the toolkit root into both the environmental variables and <code>sys.path</code> by itself, so it can be executed from anywhere (not necessarily the toolkit root), and the in-toolkit relative paths (e.g., <code>recipes/...</code>, <code>config/...</code>) are resolved from <code>SPEECHAIN_ROOT</code>.</p>
+<p>👆<a href="#table-of-contents">Back to the table of contents</a></p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="asr-transcribe-your-own-audio-files">ASR: transcribe your own audio files</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># greedy decoding is used by default</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python<span class="w"> </span>speechain/inference.py<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span>--exp_path<span class="w"> </span>recipes/asr/librispeech/train-clean-100/exp/100-bpe5k_conformer-small_lr2e-3<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span>--test_model<span class="w"> </span>latest<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span>--audio<span class="w"> </span>/path/to/utterance1.wav<span class="w"> </span>/path/to/utterance2.flac
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># beam-search decoding with the hyperparameters given by an inline Dict</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>python<span class="w"> </span>speechain/inference.py<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span>--exp_path<span class="w"> </span>recipes/asr/librispeech/train-clean-100/exp/100-bpe5k_conformer-small_lr2e-3<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span>--test_model<span class="w"> </span>10_valid_accuracy_average<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span>--infer_cfg<span class="w"> </span><span class="s2">&quot;beam_size:16,ctc_weight:0.3&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span>--audio<span class="w"> </span>/path/to/utterance.wav
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1"># the decoding hyperparameters can also be given by an off-the-shelf configuration file</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>python<span class="w"> </span>speechain/inference.py<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span>--exp_path<span class="w"> </span>recipes/asr/librispeech/train-clean-100/exp/100-bpe5k_conformer-small_lr2e-3<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span>--test_model<span class="w"> </span>10_valid_accuracy_average<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span>--infer_cfg<span class="w"> </span>config/infer/asr/beam_search_lm.yaml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span>--audio<span class="w"> </span>/path/to/utterance.wav<span class="w"> </span>--output_path<span class="w"> </span>./transcripts
+</span></code></pre></div>
+<h3 id="tts-synthesize-your-own-sentences">TTS: synthesize your own sentences</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># one or more sentences can be given by --text</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>python<span class="w"> </span>speechain/inference.py<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span>--exp_path<span class="w"> </span>recipes/tts/ljspeech/exp/22.05khz_mfa_fastspeech2<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span>--test_model<span class="w"> </span>latest<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span>--text<span class="w"> </span><span class="s2">&quot;This is a test of the SpeeChain toolkit.&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span>--output_path<span class="w"> </span>./syn_wavs
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># or give a text file where each line is a sentence to be synthesized</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>python<span class="w"> </span>speechain/inference.py<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span>--exp_path<span class="w"> </span>recipes/tts/ljspeech/exp/22.05khz_mfa_fastspeech2<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span>--test_model<span class="w"> </span>latest<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span>--text_file<span class="w"> </span>/path/to/sentences.txt<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span>--output_path<span class="w"> </span>./syn_wavs
+</span></code></pre></div>
+<p>👆<a href="#table-of-contents">Back to the table of contents</a></p>
+<h2 id="command-line-arguments">Command-Line Arguments</h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--exp_path</code></td>
+<td><em>(required)</em></td>
+<td>The path of the experiment folder of your trained model. There must be <code>exp_cfg.yaml</code> (or <code>train_cfg.yaml</code>) and <code>models/</code> in this folder.</td>
+</tr>
+<tr>
+<td><code>--test_model</code></td>
+<td><code>latest</code></td>
+<td>The name of the checkpoint in <code>{exp_path}/models/</code> used for inference, e.g., <code>latest</code>, <code>10_valid_accuracy_average</code>, <code>epoch_100</code>. Both <code>.pth</code> and <code>.mdl</code> files are accepted.</td>
+</tr>
+<tr>
+<td><code>--infer_cfg</code></td>
+<td><code>None</code></td>
+<td>The inference (decoding) configuration, given either as an inline Dict string (e.g., <code>"beam_size:16,ctc_weight:0.3"</code>) or as the path of a .yaml configuration file (e.g., <code>config/infer/asr/beam_search.yaml</code>). See <a href="#inference-configurations">Inference Configurations</a> for the resolution priority.</td>
+</tr>
+<tr>
+<td><code>--audio</code></td>
+<td><code>None</code></td>
+<td><em>(ASR only)</em> One or more paths of the audio files (wav/flac) to be transcribed.</td>
+</tr>
+<tr>
+<td><code>--text</code></td>
+<td><code>None</code></td>
+<td><em>(TTS only)</em> One or more raw text sentences to be synthesized.</td>
+</tr>
+<tr>
+<td><code>--text_file</code></td>
+<td><code>None</code></td>
+<td><em>(TTS only)</em> The path of a text file where each line is a sentence to be synthesized. Ignored if <code>--text</code> is given.</td>
+</tr>
+<tr>
+<td><code>--output_path</code></td>
+<td><code>None</code></td>
+<td>The path where the inference results are saved. A relative path is interpreted from your current working directory. If not given, ASR results are only printed while TTS waveforms are saved to <code>{exp_path}/standalone_inference/</code>.</td>
+</tr>
+<tr>
+<td><code>--device</code></td>
+<td><code>None</code></td>
+<td>The device used for inference, e.g., <code>cpu</code>, <code>cuda</code>, <code>cuda:1</code>. It has the higher priority than <code>--gpu</code>.</td>
+</tr>
+<tr>
+<td><code>--gpu</code></td>
+<td><code>-1</code></td>
+<td>The GPU id used for inference. <code>-1</code> means using the first GPU if CUDA is available, otherwise using the CPU. Please give <code>--device cpu</code> if you want to use the CPU on a machine where CUDA is available.</td>
+</tr>
+<tr>
+<td><code>--trust_checkpoint</code></td>
+<td><code>False</code></td>
+<td>Whether to load the checkpoint in the unsafe mode of <code>torch.load()</code> if the safe mode fails. Only give this argument for the checkpoints whose source you trust (see <a href="#notes-and-tips">Notes and Tips</a>).</td>
+</tr>
+</tbody>
+</table>
+<p>The task type (ASR or TTS) is automatically decided by the <code>model_type</code> recorded in the experiment configuration, so <code>--audio</code> is ignored for a TTS model and <code>--text</code>/<code>--text_file</code> are ignored for an ASR model.</p>
+<p>👆<a href="#table-of-contents">Back to the table of contents</a></p>
+<h2 id="inference-configurations">Inference Configurations</h2>
+<p>The inference (decoding) configuration is resolved with the following priority:</p>
+<ol>
+<li><code>--infer_cfg</code> given in the terminal (an inline Dict string or the path of a .yaml file);</li>
+<li><code>infer_cfg</code> recorded in <code>exp_cfg.yaml</code> of your experiment;</li>
+<li>the default decoding configuration of the model.</li>
+</ol>
+<p>If multiple configurations are given (a <em>List</em> or the <code>shared_args</code>/<code>exclu_args</code> pair, see <a href="../handbook/#inference-configuration-for-hyperparameter-adjustment">the handbook</a>), only the first one is used because this script produces only one decoding result for each input.</p>
+<p>SpeeChain provides the following off-the-shelf inference configurations in <code>config/infer/</code>, which are shared by both the standalone inference engine and the standard testing branch of <code>runner.py</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Configuration file</th>
+<th>Task</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>config/infer/asr/greedy_decoding.yaml</code></td>
+<td>ASR</td>
+<td>Greedy decoding (<code>beam_size: 1</code>).</td>
+</tr>
+<tr>
+<td><code>config/infer/asr/beam_search.yaml</code></td>
+<td>ASR</td>
+<td>Beam-search decoding with CTC joint scoring (<code>beam_size: 16, ctc_weight: 0.2</code>). <code>ctc_weight</code> is silently ignored if your ASR model was trained without the CTC loss.</td>
+</tr>
+<tr>
+<td><code>config/infer/asr/beam_search_lm.yaml</code></td>
+<td>ASR</td>
+<td>Beam-search decoding with CTC &amp; LM joint scoring (<code>beam_size: 16, ctc_weight: 0.3, lm_weight: 0.6</code>). Requires the language model of your ASR model to be available (i.e., <code>lm_model_cfg</code> and <code>lm_model_path</code> in <code>model['customize_conf']</code> of your exp_cfg, or the built-in <code>lm_model_cfg.yaml</code> and <code>lm_model.pth</code> in your train_result_path).</td>
+</tr>
+<tr>
+<td><code>config/infer/tts/default.yaml</code></td>
+<td>TTS</td>
+<td>Default generation with the HiFi-GAN neural vocoder (<code>vocoder: hifigan, return_wav: true, return_feat: false</code>).</td>
+</tr>
+</tbody>
+</table>
+<p>For the details of all available decoding arguments, please refer to the docstring of <code>speechain/infer_func/beam_search.py</code> for ASR models and the docstring of <code>inference()</code> in <code>speechain/model/nar_tts.py</code> and <code>speechain/model/ar_tts.py</code> for TTS models.</p>
+<p>👆<a href="#table-of-contents">Back to the table of contents</a></p>
+<h2 id="outputs">Outputs</h2>
+<ul>
+<li><strong>ASR:</strong> the transcript of each input audio file is printed in the terminal. If <code>--output_path</code> is given, a <code>transcripts.txt</code> is also saved there where each line is <code>{utterance_idx} {transcript}</code>. The utterance indices are made from the file names of your audio files (the parent folder names and the occurrence order are attached when some files share the same name).</li>
+<li><strong>TTS:</strong> the synthetic waveforms are saved as <code>syn_001.wav</code>, <code>syn_002.wav</code>, ... in <code>--output_path</code> (<code>{exp_path}/standalone_inference/</code> by default), together with an <code>idx2text.txt</code> that records the mapping from the waveform indices to your input sentences.</li>
+</ul>
+<p>👆<a href="#table-of-contents">Back to the table of contents</a></p>
+<h2 id="notes-and-tips">Notes and Tips</h2>
+<ul>
+<li><strong>Audio preprocessing (ASR):</strong> multi-channel waveforms are averaged into a single channel before inference, and the input audio is resampled on the fly if its sampling rate is different from the one of the model (the resampler of each encountered sampling rate is cached to avoid re-creating it for every utterance).</li>
+<li><strong>Vocoder (TTS):</strong> the non-autoregressive TTS models (<code>speechain/model/nar_tts.py</code>) convert the generated acoustic features into waveforms by the HiFi-GAN vocoder, which is downloaded from SpeechBrain on the first use and is only available for the models working on 16kHz or 22.05kHz. Please give <code>vocoder: gl</code> in your <code>infer_cfg</code> for the other sampling rates. The autoregressive TTS models (<code>speechain/model/ar_tts.py</code>) only support Griffin-Lim vocoding and take <code>return_gl_wav</code> instead of <code>vocoder</code> &amp; <code>return_wav</code>.</li>
+<li><strong>Multi-speaker TTS:</strong> no reference speaker can be given to this script. A random reference speaker is picked up by the model for each sentence, so the voice of the synthetic waveforms is neither controllable nor reproducible.</li>
+<li><strong>Checkpoint safety:</strong> the checkpoints dumped by SpeeChain only contain the <code>state_dict()</code> of a Model object, so they are loaded in the safe mode of <code>torch.load()</code> (<code>weights_only=True</code>) where no pickled Python object is executed. If your checkpoint is in an old format that cannot be loaded in the safe mode, please make sure that you trust where it comes from and then give <code>--trust_checkpoint</code> to load it in the unsafe mode.</li>
+<li><strong>Read-only experiment folders:</strong> the standalone inference engine never rewrites the files in your experiment folder (e.g., the built-in LM copies <code>lm_model_cfg.yaml</code> &amp; <code>lm_model.pth</code> and the tokenizer backups <code>token_vocab</code> &amp; <code>token_model</code> are only created when they are absent or outdated), so it works properly even on a read-only or shared experiment folder.</li>
+</ul>
+<p>👆<a href="#table-of-contents">Back to the table of contents</a></p>
 
 
 
@@ -4615,12 +5006,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
-        <script src="../../javascripts/katex.js"></script>
+        <script src="../javascripts/katex.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       
