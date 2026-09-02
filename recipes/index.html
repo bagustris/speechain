@@ -4459,6 +4459,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../reference/utilbox/audio_util/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    audio_util
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../reference/utilbox/data_loading_util/" class="md-nav__link">
         
   
@@ -5115,9 +5143,9 @@ Follow the hyperlinks below to navigate to the README.md file for your target ta
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>            ...
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        /train-960              # Labeled data: train-960 (train-clean-460 + train-other-500)
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>            ...
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    /ljspeech               # TTS Recipes for the LJSpeech dataset, LJSpeech doesn&#39;t have the official subset division.
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    /ljspeech               # TTS Recipes for the LJSpeech dataset, LJSpeech doesn't have the official subset division.
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        ...
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    /vctk                   # TTS Recipes for the VCTK dataset, VCTK doesn&#39;t have the official subset division.
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    /vctk                   # TTS Recipes for the VCTK dataset, VCTK doesn't have the official subset division.
 </span></code></pre></div></p>
 <p>👆<a href="https://github.com/bagustris/SpeeChain/tree/main/recipes#table-of-contents">Back to the table of contents</a></p>
 <h3 id="offline-tts-to-asr-chain"><a href="https://github.com/bagustris/SpeeChain/tree/main/recipes/offline_tts2asr#offline-tts-to-asr-chain">Offline TTS-to-ASR Chain</a></h3>
@@ -5136,7 +5164,7 @@ Follow the hyperlinks below to navigate to the README.md file for your target ta
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>/data_cfg
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>/train_cfg
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>/exp_cfg
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>/exp                # &#39;exp&#39; folder of each model
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>/exp                # 'exp' folder of each model
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    /{exp_name}         # Name of a specific experiment
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        /{test_cfg_name}    # Name of a testing configuration file
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>            /{test_model_name}  # Name of the model you want to test the performance
@@ -5147,18 +5175,18 @@ Follow the hyperlinks below to navigate to the README.md file for your target ta
 </span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>                    test.log                # Log file that contains the testing process of a specific test set
 </span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>                    overall_results.md      # .md file that contains the model overall performance on the test set
 </span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>                    instance_reports.md     # .md file that contains the detailed performance reports of each testing instance
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>                    topn_(max/min)_{xxx}.md # .md file that contains the top-n bad cases selected by the metric &#39;xxx&#39;
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>                    idx2{xxx}               # suffix-free .txt files that contain individual metrics of each testing instance, a file corresponds to a metric &#39;xxx&#39;
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>                    topn_(max/min)_{xxx}.md # .md file that contains the top-n bad cases selected by the metric 'xxx'
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>                    idx2{xxx}               # suffix-free .txt files that contain individual metrics of each testing instance, a file corresponds to a metric 'xxx'
 </span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>                ...                 # other test sets
 </span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>            ...                 # other test models
 </span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>        ...                 # other test configurations
 </span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
 </span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>        models/             # This sub-folder contains all the model files
-</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>            N_{xxx}_average.pth # Average model obtained by the metric &#39;xxx&#39; on &#39;N&#39; best models
-</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>            {xxx}_best.pth      # File soft link to the best model obtained by the metric &#39;xxx&#39;
-</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>            {xxx}_best_2.pth    # File soft link to the second best model obtained by the metric &#39;xxx&#39;
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>            N_{xxx}_average.pth # Average model obtained by the metric 'xxx' on 'N' best models
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>            {xxx}_best.pth      # File soft link to the best model obtained by the metric 'xxx'
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>            {xxx}_best_2.pth    # File soft link to the second best model obtained by the metric 'xxx'
 </span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>            ...                
-</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>            {xxx}_best_n.pth    # File soft link to the n-th best model obtained by the metric &#39;xxx&#39;  
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>            {xxx}_best_n.pth    # File soft link to the n-th best model obtained by the metric 'xxx'  
 </span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>            epoch_{X}.pth       # Actual model file of the X-th epoch
 </span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>            epoch_{Y}.pth       # Actual model file of the Y-th epoch
 </span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>            ...          

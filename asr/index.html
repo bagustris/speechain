@@ -4459,6 +4459,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../reference/utilbox/audio_util/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    audio_util
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../reference/utilbox/data_loading_util/" class="md-nav__link">
         
   
@@ -5270,8 +5298,8 @@ More details on how to dump a dataset can be found <a href="https://github.com/b
 <ul>
 <li>Update the arguments <code>dataset</code> and <code>subset</code> (line no.16 &amp; 17) in <code>${SPEECHAIN_ROOT}/recipes/asr/{your-new-dataset}/{your-target-subset}/run.sh</code>:  </li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>dataset=librispeech -&gt; &#39;your-new-dataset&#39;
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>subset=&#39;train-960&#39; -&gt; &#39;your-new-dataset&#39;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>dataset=librispeech -&gt; 'your-new-dataset'
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>subset='train-960' -&gt; 'your-new-dataset'
 </span></code></pre></div>
 </li>
 <li>
@@ -5285,13 +5313,13 @@ More details on how to dump a dataset can be found <a href="https://github.com/b
 <ul>
 <li>Update the dataset arguments at the beginning of your selected configuration:
   <div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a># dataset-related
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>dataset: librispeech -&gt; &#39;your-new-dataset&#39;
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>train_set: train-960 -&gt; &#39;your-target-subset&#39;
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>valid_set: dev -&gt; &#39;valid-set-of-new-dataset&#39;
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>dataset: librispeech -&gt; 'your-new-dataset'
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>train_set: train-960 -&gt; 'your-target-subset'
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>valid_set: dev -&gt; 'valid-set-of-new-dataset'
 </span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
 </span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a># tokenizer-related
 </span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>txt_format: asr
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>vocab_set: train-960 -&gt; &#39;your-target-subset&#39;
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>vocab_set: train-960 -&gt; 'your-target-subset'
 </span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>token_type: sentencepiece
 </span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>token_num: bpe5k
 </span></code></pre></div></li>
@@ -5319,8 +5347,8 @@ More details on how to dump a dataset can be found <a href="https://github.com/b
 <ol>
 <li>
 <p>Update the dataset arguments in <code>./data_cfg/test_{your-valid-set-name}.yaml</code>:
-     <div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>dataset: librispeech -&gt; &#39;your-new-dataset&#39;
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>valid_dset: &amp;valid_dset dev-clean -&gt; &amp;valid_dset &#39;valid-set-of-new-dataset&#39;
+     <div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>dataset: librispeech -&gt; 'your-new-dataset'
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>valid_dset: &amp;valid_dset dev-clean -&gt; &amp;valid_dset 'valid-set-of-new-dataset'
 </span></code></pre></div></p>
 </li>
 <li>
@@ -5332,7 +5360,7 @@ More details on how to dump a dataset can be found <a href="https://github.com/b
 </li>
 <li>
 <p>Evaluate the trained ASR model on the official test sets
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>bash<span class="w"> </span>run.sh<span class="w"> </span>--train<span class="w"> </span><span class="nb">false</span><span class="w"> </span>--exp_cfg<span class="w"> </span><span class="m">960</span>-bpe5k_transformer-wide_ctc_perturb<span class="w"> </span>--infer_cfg<span class="w"> </span><span class="s2">&quot;{the-best-configuration-you-get-during-validation-tuning}&quot;</span>
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>bash<span class="w"> </span>run.sh<span class="w"> </span>--train<span class="w"> </span><span class="nb">false</span><span class="w"> </span>--exp_cfg<span class="w"> </span><span class="m">960</span>-bpe5k_transformer-wide_ctc_perturb<span class="w"> </span>--infer_cfg<span class="w"> </span><span class="s2">"{the-best-configuration-you-get-during-validation-tuning}"</span>
 </span></code></pre></div>
    <strong>Note:</strong>  </p>
 <ol>
@@ -5353,7 +5381,7 @@ More details on how to dump a dataset can be found <a href="https://github.com/b
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>python<span class="w"> </span>speechain/inference.py<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span>--exp_path<span class="w"> </span><span class="si">${</span><span class="nv">SPEECHAIN_ROOT</span><span class="si">}</span>/recipes/asr/librispeech/train-clean-100/exp/100-bpe5k_conformer-small_lr2e-3<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span>--test_model<span class="w"> </span>10_valid_accuracy_average<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span>--infer_cfg<span class="w"> </span><span class="s2">&quot;beam_size:16,ctc_weight:0.3&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span>--infer_cfg<span class="w"> </span><span class="s2">"beam_size:16,ctc_weight:0.3"</span><span class="w"> </span><span class="se">\</span>
 </span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span>--audio<span class="w"> </span>/path/to/utterance1.wav<span class="w"> </span>/path/to/utterance2.flac<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span>--output_path<span class="w"> </span>./transcripts
 </span></code></pre></div>
