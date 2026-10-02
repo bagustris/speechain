@@ -62,6 +62,30 @@ class TestEncoderClassifier:
         assert model.model_type == "ecapa"
         assert next(model.parameters()).device == self.device
 
+    def test_from_hparams_keeps_norm_stats_dimension(self, tmp_path, monkeypatch):
+        # offline: serve a local checkpoint and normalization stats instead of the hub
+        emb_dim = 192
+        ref = EncoderClassifier(model_type="ecapa")
+        ckpt = tmp_path / "embedding_model.ckpt"
+        torch.save(ref.embedding_model.state_dict(), ckpt)
+        norm = tmp_path / "mean_var_norm_emb.ckpt"
+        torch.save(
+            {"glob_mean": torch.randn(emb_dim), "glob_std": torch.rand(emb_dim) + 0.5},
+            norm,
+        )
+
+        def fake_download(repo_id, filename, cache_dir=None, **kwargs):
+            return str(ckpt if filename == "embedding_model.ckpt" else norm)
+
+        monkeypatch.setattr("huggingface_hub.hf_hub_download", fake_download)
+        model = EncoderClassifier.from_hparams(
+            source="speechbrain/spkrec-ecapa-voxceleb", run_opts={"device": self.device}
+        )
+        assert model.glob_mean.shape == (1, 1, emb_dim)
+        assert model.glob_std.shape == (1, 1, emb_dim)
+        emb = model.encode_batch(torch.randn(1, 16000), normalize=True)
+        assert emb.shape == (1, 1, emb_dim)
+
     def test_from_hparams_xvector(self):
         model = EncoderClassifier.from_hparams(
             source="speechbrain/spkrec-xvect-voxceleb", run_opts={"device": self.device}

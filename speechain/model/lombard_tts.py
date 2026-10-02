@@ -285,11 +285,16 @@ class LombardFastSpeech2(FastSpeech2):
             # map token boundaries onto the frame axis of the SNR predictor
             bounds = (torch.cumsum(dur, dim=0) / total * frame_len[i]).round().long()
             starts = torch.cat([bounds.new_zeros(1), bounds[:-1]])
+            n_frames = int(frame_len[i])
+            if n_frames <= 0:
+                continue
             for j in range(int(token_len[i])):
-                s, e = int(starts[j]), max(int(bounds[j]), int(starts[j]) + 1)
-                token_emb[i, j] = frame_emb[i, s : min(e, int(frame_len[i]))].mean(
-                    dim=0
-                )
+                # clamp the span to the valid frames so that every token averages
+                # at least one frame (zero-duration or trailing tokens would otherwise
+                # give an empty slice and NaN)
+                s = min(int(starts[j]), n_frames - 1)
+                e = min(max(int(bounds[j]), s + 1), n_frames)
+                token_emb[i, j] = frame_emb[i, s:e].mean(dim=0)
         return token_emb
 
     # --- Model forward --- #

@@ -271,3 +271,22 @@ class TestLombardFastSpeech2:
             frame_emb, torch.tensor([10]), torch.tensor([[5, 5]]), torch.tensor([2])
         )
         assert token_emb.squeeze().tolist() == [2.0, 7.0]
+
+    @pytest.mark.parametrize(
+        "durations", [[5, 0, 0], [0, 0, 0], [0, 5, 0], [10, 0, 0, 0]]
+    )
+    def test_frame_to_token_emb_zero_duration_spans(
+        self, token_path, tmp_path, durations
+    ):
+        # zero-duration / trailing tokens must still average at least one frame
+        model = build_model(token_path, tmp_path)
+        frame_emb = torch.arange(10.0).view(1, 10, 1)
+        n_tokens = len(durations)
+        token_emb = model.frame_to_token_emb(
+            frame_emb,
+            torch.tensor([10]),
+            torch.tensor([durations]),
+            torch.tensor([n_tokens]),
+        )
+        assert token_emb.shape == (1, n_tokens, 1)
+        assert torch.isfinite(token_emb).all()

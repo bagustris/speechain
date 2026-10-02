@@ -777,11 +777,13 @@ class EncoderClassifier(nn.Module):
                 filename="mean_var_norm_emb.ckpt",
                 cache_dir=savedir,
             )
-            stats = torch.load(norm_path, map_location="cpu", weights_only=True)
-            model.glob_mean = stats["glob_mean"].unsqueeze(0).unsqueeze(0)
-            model.glob_std = stats["glob_std"].reshape(1, 1, 1)
         except Exception:
-            pass
+            norm_path = None
+        if norm_path is not None:
+            stats = torch.load(norm_path, map_location="cpu", weights_only=True)
+            # keep the embedding dimension: (emb_dim,) -> (1, 1, emb_dim)
+            model.glob_mean = stats["glob_mean"].reshape(1, 1, -1)
+            model.glob_std = stats["glob_std"].reshape(1, 1, -1)
 
         device = run_opts.get("device", "cpu") if run_opts else "cpu"
         model = model.to(device)
